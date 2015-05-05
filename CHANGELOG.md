@@ -8,7 +8,7 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 
-# May 5th, 2015
+# May 5th, 2015  biotoolsXSD-1.1.xsd released
 Resource names may contain **only** certain characters and be <50 characters long.
 ## Added
 * "accessibility" (optional) added:  whether resource is accessible to all or not: enum of "Public" or "Private"
