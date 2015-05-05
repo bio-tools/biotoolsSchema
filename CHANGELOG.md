@@ -9,13 +9,13 @@ Description of changes are grouped as follows:
 
 
 # May 5th, 2015  biotoolsXSD-1.1.xsd released
-Resource names may contain **only** certain characters and be <50 characters long.
+
 ## Added
 * "accessibility" (optional) added:  whether resource is accessible to all or not: enum of "Public" or "Private"
 * New simple type URLFTP which is URL supporting FTP URLs
 
 ## Changed
-* 'publications' (1 max.) is now **mandatory**, 'publications->publicationsPrimaryID' is now mandatory (1 max.)
+* 'publications' (1 max.) **is now mandatory**, 'publications->publicationsPrimaryID' is now mandatory (1 max.)
 * "None" value added to valid patterns for 'CitationID' simpleType, i.e. 'publications->publicationsPrimaryID' may have a value of "None" if PMID, PMCID or DOI is not available.
 * 'Name' element pattern restriction added:  [A-Za-z0-9\.,\-_:;]*
 * 'Name' element maxLen facet restriction reduced from 100 to 50 characters
