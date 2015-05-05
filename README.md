@@ -1,5 +1,5 @@
 # What is biotoolsXSD?
-biotoolsXSD is an XML schema (XSD) used by the ELIXIR Tools & Data Services Registry ([https://elixir-registry.cbs.dtu.dk/#/]).  biotoolsXSD provides a resource description model for bioinformatics, suitable for the description of databases and tools, provided under a variety of interface.
+**biotoolsXSD** is an XML schema (XSD) used by the ELIXIR Tools & Data Services Registry (https://elixir-registry.cbs.dtu.dk/#/).  biotoolsXSD provides a resource description model for bioinformatics, suitable for the description of databases and tools, provided under a variety of interface.
 
 # Motivation
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The urgent need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
