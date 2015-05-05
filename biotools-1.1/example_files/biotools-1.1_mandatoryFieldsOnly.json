@@ -1,0 +1,23 @@
+[
+ {
+		"xmlns": "http://biotoolsregistry.org",
+		"xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+		"xsi:schemaLocation": "http://biotoolsregistry.org biotools-1.0.xsd",
+		"resource": {
+			"name": "ResourceName",
+			"homepage": "http://resourcename.org",
+			"resourceType": "Framework",
+			"interface": {
+				"interfaceType": "SQL"
+			},
+			"description": "Description of resource goes here.",
+			"topic": "EDAM Topic",
+			"function": {
+				"functionName": "EDAM Function"
+			},
+			"contact": {
+				"contactEmail": "FredBloggs@gmail.com"
+			}
+		}
+	}
+]
