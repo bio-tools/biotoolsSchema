@@ -19,7 +19,7 @@ Description of changes are grouped as follows:
 * "None" value added to valid patterns for 'CitationID' simpleType, i.e. 'publications->publicationsPrimaryID' may have a value of "None" if PMID, PMCID or DOI is not available.
 * 'Name' element pattern restriction added:  [A-Za-z0-9\.,\-_:;]*
 * 'Name' element maxLen facet restriction reduced from 100 to 50 characters
-* "Dataset" value added to enum of interface->interfaceType
+* "Dataset" value added to enum of resourceType
 * 'docs->docsDownload' type changed to URLFTP from URL
 * 'docs->docsCitationInstructions' changed to URLFTP from URL
 * 'docs->docsTermsOfUse' changed to URLFTP from URL
