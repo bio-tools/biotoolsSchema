@@ -20,23 +20,15 @@ biotoolsXSD is applicable to diverse bioinformatics software and interface types
 * Web User Interfaces
 * Functional URLs
 
-# People
 
-## Developers
-* Jon Ison (CBS-DTU, DK) *- lead developer*
-* Kristoffer Rapacki (CBS-DTU, DK)
-* Piotr Chmura (CBS-DTU, DK)
-* Emil Rydza (CBS-DTU, DK)
-* Matúš Kalaš (University of Bergen, NO)
-* Hervé Ménager (Institut Pasteur, FR) 
+# Documentation and website
 
-## Contributors
-Thanks to the many people who have contributed - if you're not listed below, please let us know!
-* Julie McMurry (EMBL-EBI, UK)
-* Helen Parkinson (EMBL-EBI, UK)
-* Delegates of the many BioMedBridges and ELIXIR workshops 
+Full user documentation of biotoolsXSD is available at 
 
-# Mandatory attributes
+https://elixir-registry.cbs.dtu.dk/#/downloads.
+
+
+## Mandatory attributes
 Attribute | Description
 --------- | -----------
 name | Canonical resource name
@@ -54,9 +46,20 @@ contactURL* | URL of contact
 (* one of contactEmail or contactURL must be specified)
 
 
-# Documentation and website
 
-Full user documentation of biotoolsXSD is available at 
+# People
 
-https://elixir-registry.cbs.dtu.dk/#/downloads.
+## Developers
+* Jon Ison (CBS-DTU, DK) *- lead developer*
+* Kristoffer Rapacki (CBS-DTU, DK)
+* Piotr Chmura (CBS-DTU, DK)
+* Emil Rydza (CBS-DTU, DK)
+* Matúš Kalaš (University of Bergen, NO)
+* Hervé Ménager (Institut Pasteur, FR) 
+
+## Contributors
+Thanks to the many people who have contributed - if you're not listed below, please let us know!
+* Julie McMurry (EMBL-EBI, UK)
+* Helen Parkinson (EMBL-EBI, UK)
+* Delegates of the many BioMedBridges and ELIXIR workshops 
 
