@@ -18,12 +18,12 @@ Description of changes are grouped as follows:
 * maxLen facet restriction on all elements of type 'Text' removed (was 512), such that the length restriction of 1000 (defined on 'Text') applies
 * Single space added to 'Name' simpleType pattern restriction, which is now  [\p{Zs}A-Za-z0-9\.,\-_:;]*
 * The following elements (all simpleType) changed type to simpleType 'Name':
---* 'collection'
---* 'usesName'
---* 'function->input/output->dataHandle'
---* 'elxirInfo->elixirStatus'
---* 'elxirInfo->elixirNode'
---* 'function->functionHandle'
+  * 'collection'
+  * 'usesName'
+  * 'function->input/output->dataHandle'
+  * 'elxirInfo->elixirStatus'
+  * 'elxirInfo->elixirNode'
+  * 'function->functionHandle'
 
 **potentially breaking change:**
 * 'tag' element (was complexType ontologyTerm) also changed to simpleType "Name"
