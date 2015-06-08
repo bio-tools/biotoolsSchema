@@ -59,6 +59,8 @@ contactURL* | URL of contact
 
 ## Contributors
 Thanks to the many people who have contributed - if you're not listed below, please let us know!
+* Heinz Stockinger (ELIXIR-CH)
+* Frederik Coppens (ELIXIR-CH)
 * Julie McMurry (EMBL-EBI, UK)
 * Helen Parkinson (EMBL-EBI, UK)
 * Delegates of the many BioMedBridges and ELIXIR workshops 
