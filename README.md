@@ -37,6 +37,8 @@ Thanks to the many people who have contributed - if you're not listed below, ple
 * Delegates of the many BioMedBridges and ELIXIR workshops 
 
 # Mandatory attributes
+Attribute | Description
+--------- | -----------
 interfaceType | Resource interface type: "Command-line", "Desktop GUI", "SOAP WS", "REST API", "Web UI", "URL", "API", "SQL" or "SPARQL"
 name | Canonical resource name
 homepage | Resource homepage (URL)
