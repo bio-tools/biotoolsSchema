@@ -36,6 +36,22 @@ Thanks to the many people who have contributed - if you're not listed below, ple
 * Helen Parkinson (EMBL-EBI, UK)
 * Delegates of the many BioMedBridges and ELIXIR workshops 
 
+# Mandatory attributes
+interfaceType | Resource interface type: "Command-line", "Desktop GUI", "SOAP WS", "REST API", "Web UI", "URL", "API", "SQL" or "SPARQL"
+name | Canonical resource name
+homepage | Resource homepage (URL)
+resourceType | Basic resource type: "Dataset", "Database",  "Framework", "Library", "Suite", "Widget", "virtual machine", "Tool", "Tool (query and retrieval)", "Tool (analysis)", "Tool (deposition)", "Tool (visualiser)", "Tool (utility)" or "Other"
+description | Short textual description of the resource
+topic | General domain the resource serves or other general category for it: EDAM Topic term(s)
+function->functionName | Name(s) of the resource function(s): EDAM Operation term(s)
+function->input->dataType | Type of input data (if any): EDAM Data term(s)
+function->output->dataType | Type of ouput data (if any): EDAM Data term(s)
+contact->contactEmail* | Email address of contact
+contact->contactURL* | URL of contact
+
+(* one of contactEmail or contactURL must be specified)
+
+
 # Documentation and website
 
 Full user documentation of biotoolsXSD is available at 

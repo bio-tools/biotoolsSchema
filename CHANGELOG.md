@@ -8,6 +8,28 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 
+# June 8th, 2015  biotoolsXSD-1.2.xsd released
+
+## Added
+* Bash added to enum of 'language' element
+* tag maxlen facet set to 50
+
+## Changed
+* maxLen facet restriction on all elements of type 'Text' removed (was 512), such that the length restriction of 1000 (defined on 'Text') applies
+* Single space added to 'Name' simpleType pattern restriction, which is now  [\p{Zs}A-Za-z0-9\.,\-_:;]*
+* The following elements (all simpleType) changed type to simpleType 'Name':
+--* 'collection'
+--* 'usesName'
+--* 'function->input/output->dataHandle'
+--* 'elxirInfo->elixirStatus'
+--* 'elxirInfo->elixirNode'
+--* 'function->functionHandle'
+
+**potentially breaking change:**
+* 'tag' element (was complexType ontologyTerm) also changed to simpleType "Name"
+
+
+
 # May 5th, 2015  biotoolsXSD-1.1.xsd released
 
 ## Added
