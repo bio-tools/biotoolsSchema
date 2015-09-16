@@ -11,11 +11,14 @@ Bioinformaticians routinely use a large and diverse set of tools and data, and d
 # Applications 
 biotoolsXSD is applicable to diverse bioinformatics software and interface types, including:
 * Databases
-* Tools	
-* Widgets	
-* Frameworks	
+* **Tools**	including downloadable pacakages which you install, configure and run yourself
+* Services available on the Web
+* Workflows
+* Platforms, e.g. suites, workbenches, workflow systems, frameworks etc.	
+* Containers, e.g. 
+* 
 * Libraries	
-* Suites	
+* 	
 * Virtual machines	
 * Command line interfaces
 * Desktop GUIs
