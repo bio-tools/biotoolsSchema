@@ -6,26 +6,23 @@ biotoolsXSD defines 55 important scientific, technical and administrative attrib
 biotoolsXSD is used by the Tools & Data Services Registry (https://elixir-registry.cbs.dtu.dk/).  
 
 # Motivation
-Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The urgent need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
+Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
 
 # Applications 
 biotoolsXSD is applicable to diverse bioinformatics software and interface types, including:
-* Databases
+* Databases including repositories, datasets, registries etc.
 * **Tools**	including downloadable pacakages which you install, configure and run yourself
-* Services available on the Web
-* Workflows
-* Platforms, e.g. suites, workbenches, workflow systems, frameworks etc.	
-* Containers, e.g. 
-* 
-* Libraries	
-* 	
-* Virtual machines	
+* **Services** available for immediate use, e.g. on the Web
+* **Workflows** definitions that may involve multiple databases, tools and services
+* **Platforms** including suites, workbenches, workflow systems, frameworks etc.	
+* **Containers** which provide data and services in a portable envionment, e.g. VMs and Docker. 
+* **Libraries** of code for building tools, including widgets, plug-ins, toolkits etc.	
 * Command line interfaces
+* Web User interfaces
 * Desktop GUIs
 * SOAP Web Services
-* REST APIs
-* Web User Interfaces
-* Functional URLs
+* HTTP Web Services including simple URL, RESTful APIs etc.
+
 
 
 # Documentation and website
