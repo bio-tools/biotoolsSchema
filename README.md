@@ -1,5 +1,9 @@
 # What is biotoolsXSD?
-**biotoolsXSD** is a formalised XML schema (XSD) which defines a resource description model for bioinformatics.  It is can be used to describe software including databases, tools, services and so on, available under a variety of interfaces.  biotoolsXSD defines 55 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 10 attributes, mandating the necessary and sufficient information to support resource search and discovery.  It is used by the Tools & Data Services Registry (https://elixir-registry.cbs.dtu.dk/#/).  
+**biotoolsXSD** is a formalised XML schema (XSD) which defines a resource description model for bioinformatics.  It can be used to describe software including databases, tools, services and so on, available under a variety of interfaces. 
+
+biotoolsXSD defines 55 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 10 attributes, mandating the necessary and sufficient information to support resource search and discovery.  
+
+biotoolsXSD is used by the Tools & Data Services Registry (https://elixir-registry.cbs.dtu.dk/#/).  
 
 # Motivation
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The urgent need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
@@ -25,7 +29,7 @@ biotoolsXSD is applicable to diverse bioinformatics software and interface types
 
 Full user documentation of biotoolsXSD is available at 
 
-https://elixir-registry.cbs.dtu.dk/#/downloads.
+https://elixir-registry.cbs.dtu.dk/schema
 
 
 ## Mandatory attributes
