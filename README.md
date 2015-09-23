@@ -3,7 +3,7 @@
 
 biotoolsXSD defines 55 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 10 attributes, mandating the necessary and sufficient information to support resource search and discovery.  
 
-biotoolsXSD is used by the Tools & Data Services Registry (https://elixir-registry.cbs.dtu.dk/).  
+biotoolsXSD is used by the [Tools & Data Services Registry](https://elixir-registry.cbs.dtu.dk/).
 
 # Motivation
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
@@ -28,15 +28,18 @@ homepage | Resource homepage (URL)
 description | Short textual description of the resource
 resourceType | Basic resource type (see below)
 interfaceType | Resource interface type (see below)
-topic | General domain the resource serves or other general category for it: EDAM Topic term(s)
+topic | General domain the resource serves or other general category for it: EDAM** Topic term(s)
 functionName | Name(s) of the resource function(s): EDAM Operation term(s)
 input->dataType | Type of input data (if any): EDAM Data term(s)
 output->dataType | Type of ouput data (if any): EDAM Data term(s)
 contactEmail* | Email address of contact
 contactURL* | URL of contact
 
-(* one of contactEmail or contactURL must be specified)
+*one of contactEmail or contactURL must be specified
 
+**EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
+
+  
 
 ## Resource types (valid values of resourceType)
 type | Description
