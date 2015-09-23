@@ -17,6 +17,10 @@ Description of changes are grouped as follows:
 
 
 ## Changed
+**safe changes:**
+* 'name' element 'maxLen' facet restriction increased to 200 characters
+* '+' added to 'name' simpleType pattern restriction, which is now [\p{Zs}A-Za-z0-9+\.,\-_:;]* 
+
 **potentially breaking change:**
 
 * 'maturity' element enum values changed to:
@@ -66,8 +70,7 @@ Description of changes are grouped as follows:
    * "API" - Application programmers interface to a programming library.
    " "QL" - Query language interface to a database, e.g. SQL, SPARQL etc.
 
-* 'name' element 'maxLen' facet restriction increased to 200 characters
-* '+' added to 'name' simpleType pattern restriction, which is now [\p{Zs}A-Za-z0-9+\.,\-_:;]* 
+
 
 ## Deprecated
 * Use of the 'tag' element is deprecated and will be removed in a future version.
