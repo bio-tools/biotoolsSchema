@@ -9,19 +9,7 @@ biotoolsXSD is used by the Tools & Data Services Registry (https://elixir-regist
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
 
 # Applications 
-biotoolsXSD is applicable to diverse bioinformatics software and interface types, including:
-* **Databases** including repositories, datasets, registries etc.
-* **Tools**	including downloadable pacakages which you install, configure and run yourself
-* **Services** available for immediate use, e.g. on the Web
-* **Workflows** definitions that may involve multiple databases, tools and services
-* **Platforms** including suites, workbenches, workflow systems, frameworks etc.	
-* **Containers** which provide data and services in a portable envionment, e.g. VMs and Docker. 
-* **Libraries** of code for building tools, including widgets, plug-ins, toolkits etc.	
-* Command line interfaces
-* Web User interfaces
-* Desktop GUIs
-* SOAP Web Services
-* HTTP Web Services including simple URL, RESTful APIs etc.
+biotoolsXSD is applicable to diverse bioinformatics software and interface types (see 'Documentation and website' below.)
 
 
 
@@ -38,8 +26,8 @@ Attribute | Description
 name | Canonical resource name
 homepage | Resource homepage (URL)
 description | Short textual description of the resource
-resourceType | Basic resource type: "Dataset", "Database",  "Framework", "Library", "Suite", "Widget", "virtual machine", "Tool", "Tool (query and retrieval)", "Tool (analysis)", "Tool (deposition)", "Tool (visualiser)", "Tool (utility)" or "Other"
-interfaceType | Resource interface type: "Command-line", "Desktop GUI", "SOAP WS", "REST API", "Web UI", "URL", "API", "SQL" or "SPARQL"
+resourceType | Basic resource type (see below)
+interfaceType | Resource interface type (see below)
 topic | General domain the resource serves or other general category for it: EDAM Topic term(s)
 functionName | Name(s) of the resource function(s): EDAM Operation term(s)
 input->dataType | Type of input data (if any): EDAM Data term(s)
@@ -49,6 +37,28 @@ contactURL* | URL of contact
 
 (* one of contactEmail or contactURL must be specified)
 
+
+## Resource types (valid values of resourceType)
+type | Description
+--------- | -----------
+Database | A collection of data, datasets, a registry etc.
+Tool | Software which you can download, install, configure and run yourself.
+Service | Software provided as a service and available for immediate use, e.g. on the Web.
+Workflow | A definition of a collection of tools, services etc. for running in a workflow system.
+Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc.
+Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker.
+Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc.
+
+## Interface types (valid values of interfaceType)
+type | Description
+--------- | -----------
+Command line | Text-based interface to a tool or service.
+Web UI | Graphical user interface available on the Web.
+Desktop GUI | Graphical user interface that runs on your own machine.
+SOAP WS | Programmatic access provided via SOAP and WSDL file.
+HTTP WS | Access provided via HTTP, including simple URLs, RESTful APIs etc.
+API | Application programmers interface to a programming library.
+QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
 # People
