@@ -517,6 +517,7 @@
 							<xs:enumeration value="Fortran"/>
 							<xs:enumeration value="Groovy"/>
 							<xs:enumeration value="Haskell"/>
+							<xs:enumeration value="Icarus"/>
 							<xs:enumeration value="Java"/>
 							<xs:enumeration value="Javascript"/>
 							<xs:enumeration value="LabVIEW"/>
@@ -677,12 +678,12 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="publicationsPrimaryID" type="CitationID">
+							<xs:element name="publicationsPrimaryID" type="CitationID" default="None">
 								<xs:annotation>
 									<xs:documentation>PMCID, PMID or DOI of the primary publication</xs:documentation>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="publicationsOtherID" type="CitationID" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="publicationsOtherID" type="CitationID" default="None" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>PMCID, PMID or DOI of other relevant publications</xs:documentation>
 								</xs:annotation>
@@ -752,7 +753,7 @@
 			</xs:sequence>
 			<xs:attribute name="id" type="xs:anyURI" use="optional" default="" form="unqualified">
 				<xs:annotation>
-					<xs:documentation>Unique ID of the resource (URI)</xs:documentation>
+					<xs:documentation>Unique ID of the resource assigned by ELIXIR Registry  (URI)</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>

@@ -13,7 +13,10 @@ Description of changes are grouped as follows:
 
 ## Added
 * "Artistic License 2.0" added to 'license' enum
+* "Icarus" added to 'language' enum
 * 'id' attribute added to 'resource' element.  This is the unique ID (URI) of the resource.
+* Default value of "None" added to publicationsPrimaryID and publicationsOtherID
+
 
 
 ## Changed
