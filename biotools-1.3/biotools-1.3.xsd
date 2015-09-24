@@ -408,7 +408,7 @@
 				</xs:element>
 				<xs:element name="elixirInfo" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Information specific to ELIXIR services</xs:documentation>
+						<xs:documentation>Information specific to ELIXIR services - this is assigned by ELIXIR Hub.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:all>
