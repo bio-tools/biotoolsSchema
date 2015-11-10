@@ -77,7 +77,7 @@ QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 ## Contributors
 Thanks to the many people who have contributed - if you're not listed below, please let us know!
 * Chris Morris (STFC, UK)
-* Frederik Coppens (ELIXIR-CH)
+* Frederik Coppens (ELIXIR-BE)
 * Heinz Stockinger (ELIXIR-CH)
 * Helen Parkinson (EMBL-EBI, UK)
 * Julie McMurry (EMBL-EBI, UK)
