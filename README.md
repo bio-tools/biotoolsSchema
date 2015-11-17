@@ -83,6 +83,6 @@ Thanks to the many people who have contributed - if you're not listed below, ple
 * Helen Parkinson (EMBL-EBI, UK)
 * Julie McMurry (EMBL-EBI, UK)
 * Rodrigo Lopez (EMBL-EBI)
-* Veit Schw‰mmle (SDU-BMB, DK)
+* Veit Schw√§mmle (SDU-BMB, DK)
 * Delegates of the many BioMedBridges and ELIXIR workshops 
 
