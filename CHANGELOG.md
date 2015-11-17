@@ -8,6 +8,23 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 
+# October 17th, 2015  biotoolsXSD-1.4.xsd released
+## Added
+* New 'docs->docsDownloadSource' optional element : "Source code downloads page (URL)"
+* New 'docs->docsDownloadBinaries' optional element : "Software binaries downloads page (URL)"
+* New 'docs->docsGithub optional' element : "Github page (URL)"
+* "Maintainer" added to 'contactRole' enum
+* "Other" added to 'resourceType" enum
+
+## Changed
+* 'publications' is now optional
+* 'functionHandle' element 'maxLen' facet increased to 300 (via 'maxLen' facet on 'name' simpleType; also set to 300)
+* Parentheses added to 'pattern' restriction on 'name' element, which is now  [\p{Zs}A-Za-z0-9+\.,\-_:;()]*
+
+## Misc
+* docsDownload purpose changed from "Software or data downloads page (URL)" to "General downloads page (URL)"
+
+
 
 # September 22nd, 2015  biotoolsXSD-1.3.xsd released
 
