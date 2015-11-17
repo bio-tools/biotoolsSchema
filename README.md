@@ -51,6 +51,7 @@ Workflow | A definition of a collection of tools, services etc. for running in a
 Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc.
 Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker.
 Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc.
+Other | Other type of resource not listed above.
 
 ## Interface types (valid values of interfaceType)
 type | Description
