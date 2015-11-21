@@ -21,23 +21,21 @@ https://bio.tools/schema
 
 
 ## Mandatory attributes
-Attribute | Description
+Attribute | Description | Format
 --------- | -----------
-name | Canonical resource name
-homepage | Resource homepage (URL)
-description | Short textual description of the resource
-resourceType | Basic resource type (see below)
-interfaceType | Resource interface type (see below)
-topic | General domain the resource serves or other general category for it: EDAM** Topic term(s)
-functionName | Name(s) of the resource function(s): EDAM Operation term(s)
-input->dataType | Type of input data (if any): EDAM Data term(s)
-output->dataType | Type of ouput data (if any): EDAM Data term(s)
-contactEmail* | Email address of contact
-contactURL* | URL of contact
+name (1 only) | Canonical resource name | Text
+homepage (1 only) | Resource homepage | URL
+description (1 only) | Short textual description of the resource | Text
+resourceType (1 or more) | Basic resource type | enum (see below)
+interfaceType (1 or more) | Resource interface type | enum (see below)
+topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | URI of [EDAM Topic](http://edamontology.org/topic_0003) concept(s)* 
+functionName (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s)
+input->dataType (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s)
+output->dataType (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s)
+contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email or URL address of contact**
 
-*one of contactEmail or contactURL must be specified
-
-**EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
+*EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
+**one of contactEmail or contactURL must be specified
 
   
 
