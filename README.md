@@ -22,7 +22,7 @@ https://bio.tools/schema
 
 ## Mandatory attributes
 Attribute | Description | Format
---------- | -----------
+--------- | ----------- | -----------
 name (1 only) | Canonical resource name | Text
 homepage (1 only) | Resource homepage | URL
 description (1 only) | Short textual description of the resource | Text
