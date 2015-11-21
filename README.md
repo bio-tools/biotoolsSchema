@@ -35,6 +35,7 @@ output->dataType (0 or more) | Type(s) of data: primary outputs (if any), e.g. "
 contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email or URL address of contact**
 
 *EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
+
 **one of contactEmail or contactURL must be specified
 
   
