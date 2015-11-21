@@ -32,7 +32,7 @@ topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Prot
 functionName (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s)
 input->dataType (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s)
 output->dataType (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s)
-contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email or URL address of contact**
+contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address or URL of contact**
 
 *EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
 
