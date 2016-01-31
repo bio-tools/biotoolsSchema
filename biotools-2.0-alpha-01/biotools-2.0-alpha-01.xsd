@@ -42,17 +42,6 @@
 					<xs:documentation>Template for a URL fragment, which when appended to the base URL, defines the syntax of a valid URL to call the service.  The value is text with optional markdown, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="replaceable" minOccurs="0" maxOccurs="unbounded">
-				<xs:annotation>
-					<xs:documentation>A query string parameter or a segment of the path in the template URL that is replaced by some value when the service is invoked.</xs:documentation>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:all>
-						<xs:element name="field"/>
-						<xs:element name="EDAMdata" type="EDAMdataType"/>
-					</xs:all>
-				</xs:complexType>
-			</xs:element>
 			<xs:choice>
 				<xs:sequence>
 					<xs:element name="endpointOutput" type="Data"/>
@@ -68,6 +57,17 @@
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
+			<xs:element name="replaceable" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A query string parameter or a segment of the path in the template URL that is replaced by some value when the service is invoked.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="field"/>
+						<xs:element name="EDAMdata" type="EDAMdataType"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="resources">
@@ -156,6 +156,11 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="function" type="toolFunction" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Function(s) that the resource performs.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="versionInfo" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Version information about a tool.</xs:documentation>
@@ -189,11 +194,6 @@
 							</xs:element>
 						</xs:all>
 					</xs:complexType>
-				</xs:element>
-				<xs:element name="function" type="toolFunction" maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>Function(s) that the resource performs.</xs:documentation>
-					</xs:annotation>
 				</xs:element>
 				<xs:element name="annotations">
 					<xs:annotation>
