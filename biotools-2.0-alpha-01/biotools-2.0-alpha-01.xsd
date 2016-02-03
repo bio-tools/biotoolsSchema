@@ -86,8 +86,15 @@
 	</xs:element>
 	<xs:complexType name="link">
 		<xs:all>
-			<xs:element name="url" type="URL"/>
+			<xs:element name="url" type="URL">
+				<xs:annotation>
+					<xs:documentation>A link of some relevance to the resource (URL).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="type">
+				<xs:annotation>
+					<xs:documentation>The type of information that is obtained when the link is resolved.  One of "API specification", "API documentation", "Service mirror URL", "Collection", "Social media", "Repository", "Downloads (binaries)", "Downloads (Docker image)", "Downloads (source code)", "Downloads (general)", "Terms of use", "Citation instructions" or "Documentation (general)".: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="Name">
 						<xs:enumeration value="API specification"/>
@@ -161,39 +168,20 @@
 						<xs:documentation>Function(s) that the resource performs.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="versionInfo" minOccurs="0">
+				<xs:element name="version" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Version information about a tool.</xs:documentation>
+						<xs:documentation>Version (typically a version number) of the tool assigned by the developer or maintainer of the resource (free text).</xs:documentation>
+						<xs:appinfo>
+							<altova:exampleValues>
+								<altova:example value="1.1"/>
+							</altova:exampleValues>
+						</xs:appinfo>
 					</xs:annotation>
-					<xs:complexType>
-						<xs:all>
-							<xs:element name="version">
-								<xs:annotation>
-									<xs:documentation>Version (typically a version number) of the tool assigned by the developer or maintainer of the resource (free text).</xs:documentation>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="1.1"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:whiteSpace value="collapse"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="isNewVersionOf" type="biotoolsURL" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Unique ID of an tool in the ELIXIR Tools and Data Services Registry which this tool is a new version of.  The ID must be a URL in the bio.tools namespace: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							<xs:element name="isOldVersionOf" type="biotoolsURL" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Unique ID of an tool in the ELIXIR Tools and Data Services Registry which this tool is an old version of.  The ID must be a URL in the bio.tools namespace: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
-								</xs:annotation>
-							</xs:element>
-						</xs:all>
-					</xs:complexType>
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:whiteSpace value="collapse"/>
+						</xs:restriction>
+					</xs:simpleType>
 				</xs:element>
 				<xs:element name="annotations">
 					<xs:annotation>
@@ -567,47 +555,27 @@
 						</xs:complexContent>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="interfaceType" maxOccurs="unbounded">
+				<xs:element name="entryType" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>A type of interface via which the tool may be used: one of "Command line", "Web UI" or "Desktop GUI".  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
-						<xs:appinfo>
-							<altova:exampleValues>
-								<altova:example value="Command line"/>
-							</altova:exampleValues>
-						</xs:appinfo>
+						<xs:documentation>A term which best desribes the type of resource.  One of "Command-line tool", "Web application", "Desktop application", "Container", "Workflow", "Platform", "Library", "SOAP WS" or "REST API".  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="Name">
-							<xs:enumeration value="Command line"/>
-							<xs:enumeration value="Web UI"/>
-							<xs:enumeration value="Desktop GUI"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="entryType" maxOccurs="unbounded">
-					<xs:simpleType>
-						<xs:restriction base="Name">
+							<xs:enumeration value="Command-line tool"/>
+							<xs:enumeration value="Web application"/>
+							<xs:enumeration value="Desktop application"/>
+							<xs:enumeration value="Container"/>
+							<xs:enumeration value="Workflow"/>
+							<xs:enumeration value="Platform"/>
+							<xs:enumeration value="Library"/>
 							<xs:enumeration value="SOAP WS"/>
 							<xs:enumeration value="REST API"/>
-							<xs:enumeration value="Web application"/>
-							<xs:enumeration value="Command-line tool"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="serviceType" maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>A tag which best desribes the type of service.  One of "REST/URL-based" or "SOAP+WSDL.  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
-					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="Name">
-							<xs:enumeration value="REST/URL-based"/>
-							<xs:enumeration value="SOAP+WSDL"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="commandLine" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Details of the command-line interface to a tool, if appropriate, suitable for formatting into a Unix man page.</xs:documentation>
+						<xs:documentation>Details of the command-line interface to a tool, if appropriate.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
@@ -616,7 +584,7 @@
 									<xs:documentation>A summary of the syntax for invoking a tool on the command-line.  The value is text with optional markdown, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="commandLineDescription">
+							<xs:element name="commandLineDescription" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>A textual summary of how a tool is invoked on the command-line.  The value is text with optional markdown, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
 								</xs:annotation>
@@ -651,8 +619,16 @@
 								</xs:annotation>
 								<xs:complexType>
 									<xs:all>
-										<xs:element name="field"/>
-										<xs:element name="EDAMdata" type="EDAMdataType"/>
+										<xs:element name="field">
+											<xs:annotation>
+												<xs:documentation>The name of the field that is to be replaced.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="EDAMdata" type="EDAMdataType">
+											<xs:annotation>
+												<xs:documentation>The type of data of the replaceable field.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
 									</xs:all>
 								</xs:complexType>
 							</xs:element>
@@ -665,6 +641,16 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="isNewVersionOf" type="biotoolsURL" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Unique ID of an tool in the ELIXIR Tools and Data Services Registry which this tool is a new version of.  The ID must be a URL in the bio.tools namespace: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="isOldVersionOf" type="biotoolsURL" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Unique ID of an tool in the ELIXIR Tools and Data Services Registry which this tool is an old version of.  The ID must be a URL in the bio.tools namespace: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:element name="uses" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Unique ID of a resourec in the ELIXIR Tools and Data Services Registry which this resource uses.  For example, if a service provides an interface to some existing tool, the ID of the tool should be given here.  The ID must be a URL in the bio.tools namespace: see github.com/bio-tools/biotoolsxsd.</xs:documentation>
@@ -892,23 +878,27 @@
 				<xs:choice>
 					<xs:element ref="uniqueID">
 						<xs:annotation>
-							<xs:documentation>ORCID unique identifier of a person.</xs:documentation>
+							<xs:documentation>Unique identifier of an entity that should be credited, e.g. an ORCID of a person.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="URL"/>
+					<xs:element name="URL">
+						<xs:annotation>
+							<xs:documentation>Link for an entity that should be credited, e.g. homepage of an institute (URL).</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:choice>
 			</xs:sequence>
 			<xs:element name="type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Role of person being credited: "Developer", "Maintainer" or "Other".  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
+					<xs:documentation>Type of entity that is being credited, one of "Name of person", "Name of person (developer)", "Name of person (provider)", "Name of institute" or "Grant number".  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="Name">
 						<xs:enumeration value="Name of person"/>
 						<xs:enumeration value="Name of person (developer)"/>
 						<xs:enumeration value="Name of person (provider)"/>
-						<xs:enumeration value="Grant number"/>
 						<xs:enumeration value="Name of institute"/>
+						<xs:enumeration value="Grant number"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -935,11 +925,14 @@
 				<xs:element ref="DOI"/>
 			</xs:choice>
 			<xs:element name="type" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The type of publication.  One of "Primary publication", "Benchmarking study" or "Other relevant publication".  See github.com/bio-tools/biotoolsxsd.</xs:documentation>
+				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="Name">
-						<xs:enumeration value="Other relevant publication"/>
-						<xs:enumeration value="Benchmarking study"/>
 						<xs:enumeration value="Primary publication"/>
+						<xs:enumeration value="Benchmarking study"/>
+						<xs:enumeration value="Other relevant publication"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
