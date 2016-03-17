@@ -66,7 +66,7 @@ QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 # People
 
-## Developers
+## Main authors
 * Jon Ison (CBS-DTU, DK) *- lead developer*
 * Kristoffer Rapacki (CBS-DTU, DK)
 * Piotr Chmura (CBS-DTU, DK)
