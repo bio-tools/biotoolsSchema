@@ -496,6 +496,7 @@
 										<xs:enumeration value="Ada"/>
 										<xs:enumeration value="AppleScript"/>
 										<xs:enumeration value="Assembly language"/>
+										<xs:enumeration value="AWK"/>
 										<xs:enumeration value="Bash"/>
 										<xs:enumeration value="C"/>
 										<xs:enumeration value="C#"/>
@@ -513,18 +514,20 @@
 										<xs:enumeration value="Icarus"/>
 										<xs:enumeration value="Java"/>
 										<xs:enumeration value="Javascript"/>
+										<xs:enumeration value="JSP"/>
 										<xs:enumeration value="LabVIEW"/>
 										<xs:enumeration value="Lisp"/>
 										<xs:enumeration value="Lua"/>
 										<xs:enumeration value="Maple"/>
 										<xs:enumeration value="Mathematica"/>
-										<xs:enumeration value="MATLAB language"/>
+										<xs:enumeration value="MATLAB"/>
 										<xs:enumeration value="MLXTRAN"/>
 										<xs:enumeration value="NMTRAN"/>
 										<xs:enumeration value="Pascal"/>
 										<xs:enumeration value="Perl"/>
 										<xs:enumeration value="PHP"/>
 										<xs:enumeration value="Prolog"/>
+										<xs:enumeration value="PyMOL"/>
 										<xs:enumeration value="Python"/>
 										<xs:enumeration value="R"/>
 										<xs:enumeration value="Racket"/>
@@ -553,6 +556,9 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
+										<xs:enumeration value="Common Development and Distribution License (CDDL-1.0)"/>
+										<xs:enumeration value="Proprietary"/>
+										<xs:enumeration value="Other"/>
 										<xs:enumeration value="Apache License 2.0"/>
 										<xs:enumeration value="Artistic License 2.0"/>
 										<xs:enumeration value="MIT License"/>
@@ -600,7 +606,7 @@
 							</xs:element>
 							<xs:element name="status" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Miscellaneous tag describing the status of the software.</xs:documentation>
+									<xs:documentation>Label describing miscellaneous status of the software.</xs:documentation>
 									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Tag describing the software status.</uiTip>
@@ -1183,7 +1189,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 							</xs:element>
 							<xs:element name="type" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Role of contact.</xs:documentation>
+									<xs:documentation>Type or role of contact.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Role of contact.</uiTip>
 									</xs:appinfo>
@@ -1231,7 +1237,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="gridId" type="xs:token">
+									<xs:element name="gridId">
 										<xs:annotation>
 											<xs:appinfo>
 												<uiTip>GRID ID of organisation.</uiTip>
@@ -1244,6 +1250,11 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:token">
+												<xs:pattern value="grid.[0-9]{4,}.[a-f0-9]{1,2}"/>
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:choice>
 								<xs:choice>
