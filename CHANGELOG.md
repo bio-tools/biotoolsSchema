@@ -7,6 +7,76 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# August 12, 2016  biotoolsXSD-2.0-beta01.xsd released
+A complete revision of the schema.  Too many changes to list, therefore the highlights only are summarised below.  For more information please read the schema documentation.
+
+## Added : new or restructured element groupings (see schema docs for details)
+1. 'summary': "Basic information about the software."
+2. 'function': "Details of the function(s) that this software provides, expressed in terms from the EDAM ontology."
+3. 'labels': "Miscellaneous scientific, technical and administrative details of the software, expressed in terms from controlled vocabularies."
+4. 'relation': "Details of a relationship this software shares with other software registered in bio.tools."
+5. 'commandLineSpec': "Details of the command-line interface to a tool, if appropriate."
+6. 'apiSpec': "Details of the API to a service, if appropriate, including service endpoints."
+7. 'image': "Details for a virtual machine image or container for the software."
+8. 'download': "Link to a miscellaneous download for the software, e.g. source code."  A controlled vocabulary for download types is defined.
+9. 'documentation': "A link to documentation about the software including training materials."  A controlled vocabulary for documentation types is defined.
+10. 'publication': "A publications about the software.".  A controlled vocabulary for publication types is defined.
+11. 'contact': "Details of a contact for the software, e.g. developer or helpdesk."  A controlled vocabulary for contact types/roles is defined.
+12. 'credit': "An individual or organisation that should be credited for the software."
+
+## Added : new elements
+1. 'biotoolsID': "Unique ID that is assigned upon registration of the software in bio.tools."
+2. 'doi': "Canonical Digital Object Identifier of the software assigned by the software developer or service provider."
+3. 'shortDescription': "Short and concise textual description of the software function."
+4. 'repository': "Repository where source code, data and other files may be downloaded."
+5. 'socialMedia': "A website used by the software community including social networking sites, discussion and support fora, WIKIs etc."
+6. 'function->comment': " Concise textual description of the function(s), if this is not already obvious from the resource description."
+7. 'goTermID': "Gene function including molecular function, cellular component and biological process.  Miscellaneous ontology annotation. The ID of Gene Ontology (GO) concept(s) are specified."
+8. 'soTermID': Features which can be located on a biological sequence. The ID of Sequence Ontology (SO) concept(s) are specified.
+9. 'taxId': NCBI taxonomy ID of taxonomic group the software (particularly database portals) caters for.
+10. 'status': Label describing miscellaneous status of the software."  A controlled vocabulary is defined.
+11. 'credit->orcidId' : "Unique identifier (ORCID iD) of a person that is credited."
+12. 'credit->gridId' : "Unique identifier (GRID ID) of an organisation that is credited."
+
+## Added : new enum values
+1. New values to <license> enum:
+"Other"
+"Proprietary"
+"Common Development and Distribution License (CDDL-1.0)"
+
+2. New values to <language> enum:
+"AWK"
+"MATLAB"
+"JSP"
+"PyMOL"
+
+## Changed : element name changes
+1. 'resources' -> 'tools'
+2. 'resource' -> 'tool'
+3. 'functionName' -> 'operation'
+4. 'resourceType' -> 'toolType'
+5. 'platform' -> 'operatingSystem'
+
+## Changed : other
+1. 'operation', 'data', 'format' and 'topic' elements now include 'uri' and 'term' elements.
+2. 'collection' : now restricted to accept a bio.tools ID of a software collection, rather than free-text.
+
+## Removed
+1. 'publications' element group replaced by 'publication' with new structure.
+2. 'uses' element group replaced by 'relation'.
+3. 'interface' element group removed, now handled by 'download' and 'documentation'.  Note that 'interfaceType' is removed completely (now subsumed in 'toolType').
+4. 'elixirInfo' element group, 'maturity' and 'cost' removed, now handled by 'status'.
+5. 'docs' element group replaced by 'documentation'.
+6. 'credits' element group replaced by 'credit'.
+7. 'canonicalID' replaced by 'doi'.
+8. 'accessibility' now handled via 'status'.
+9. 'tag' removed: annotations are now restricted to controlled vocabulary terms defined in 'labels'.
+10. 'functionHandle' and 'dataHandle' removed, now handed by 'commandLineSpec'.
+11. 'functionDescription' and 'dataDescription' removed, now handled by 'function->comment'.
+12. 'sourceRegistry' removed, now handled by 'collection'.
+
+
+
 
 # October 17th, 2015  biotoolsXSD-1.4.xsd released
 ## Added
