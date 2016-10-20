@@ -41,6 +41,8 @@ contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list |
   
 
 ## Resource types (valid values of resourceType)
+This table applies to ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) : there are significant changes in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)).
+
 type | Description
 --------- | -----------
 Database | A collection of data, datasets, a registry etc.
@@ -53,6 +55,8 @@ Library | A package of code for building/extending tools, including widgets, plu
 Other | Other type of resource not listed above.
 
 ## Interface types (valid values of interfaceType)
+This table applies to ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) : there are significant changes in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)).
+
 type | Description
 --------- | -----------
 Command line | Text-based interface to a tool or service.
