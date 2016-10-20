@@ -19,7 +19,7 @@ https://bio.tools/schema
 
 
 ## Mandatory attributes
-Attributes in the table are defined as mandatory in the current stable schema (1.4) : there are some changes in the candidate stable schema (2.0_beta).
+Attributes in the table are defined as mandatory in the current stable schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) : there are some changes in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)).
 
 Attribute | Description | Format
 --------- | ----------- | -----------
