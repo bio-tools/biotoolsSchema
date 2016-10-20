@@ -19,6 +19,8 @@ https://bio.tools/schema
 
 
 ## Mandatory attributes
+Attributes in the table are defined as mandatory in the current stable schema (1.4) : there are some changes in the candidate stable schema (2.0_beta).
+
 Attribute | Description | Format
 --------- | ----------- | -----------
 name (1 only) | Canonical resource name | Text
