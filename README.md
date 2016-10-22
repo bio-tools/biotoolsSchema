@@ -1,7 +1,7 @@
 # What is biotoolsXSD?
 **biotoolsXSD** is a formalised XML schema (XSD) which defines a description model for bioinformatics software.  It can be used to describe bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).   This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions, tools available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.  
 
-biotoolsXSD defines 60 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 10 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [Tools & Data Services Registry](https://bio.tools).
+biotoolsXSD defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 10 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [Tools & Data Services Registry](https://bio.tools).
 
 # Motivation
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
@@ -19,7 +19,7 @@ https://bio.tools/schema
 
 
 ## Mandatory attributes
-Attributes in the table are defined as mandatory in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)) as indicated by "Version" column
+Attributes in the table are mandatory (if available) for registrations in bio.tools, for the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)) as indicated by "Version" column
 
 Attribute | Description | Format | Version
 --------- | ----------- | ------ | -------
@@ -34,6 +34,7 @@ functionName (1 or more) | The basic resource function(s), e.g. "Multiple sequen
 input->dataType (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | 1.4, 2.0-beta-02
 output->dataType (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | 1.4, 2.0-beta-02
 contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address or URL of contact** | 1.4, 2.0-beta-02
+publication (0 or more) | Publications about the software. | PMID, PMCID or DOI | 2.0-beta-02
 
 *EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
 
