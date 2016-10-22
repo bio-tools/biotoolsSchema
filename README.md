@@ -55,10 +55,9 @@ Library | A package of code for building/extending tools, including widgets, plu
 Other | Other type of resource not listed above.
 
 ## Interface types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4))
-This table applies to ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) : there are significant changes in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)).
 
 type | Description
---------- | -----------
+---- | -----------
 Command line | Text-based interface to a tool or service.
 Web UI | Graphical user interface available on the Web.
 Desktop GUI | Graphical user interface that runs on your own machine.
@@ -68,7 +67,7 @@ API | Application programmers interface to a programming library.
 QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
-## Resource types (valid values of resourceType in in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01))
+## Tool types (valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01))
 
 type | Description 
 ---- | ----------- 
