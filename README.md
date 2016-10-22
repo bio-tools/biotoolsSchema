@@ -7,7 +7,7 @@ biotoolsXSD defines 50 important scientific, technical and administrative attrib
 Bioinformaticians routinely use a large and diverse set of tools and data, and demand powerful and convenient means to organise, find, understand, compare, select, use and connect the available resources. These tasks rely on consistent, machine-understandable resource descriptions. The need - filled by biotoolsXSD - is for an information model that puts the description of a broad range of resources  on a consistent syntactic basis.
 
 # Applications 
-biotoolsXSD is applicable to diverse bioinformatics software and interface types (see 'Documentation and website' below.)
+biotoolsXSD is applicable to diverse bioinformatics software and interface types (see below.)
 
 
 
