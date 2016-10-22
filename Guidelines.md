@@ -1,5 +1,5 @@
 # Usage Guidelines
-This is a **WORK IN PROGRESS** but will provide guidelines on the usage of biotoolsXSD for annotating bioinformatics software resources, particularly for registration in the [bio.tools](https://bio.tools) registry. 
+This is a **WORK IN PROGRESS** but will provide guidelines on the usage of biotoolsSchema for annotating bioinformatics software resources, particularly for registration in the [bio.tools](https://bio.tools) registry. 
 
 **IMPORTANT** these are very rough notes and describe in places future plans.
 
@@ -40,8 +40,8 @@ And maybe
 * Workflow uses Service
 * Workflow uses Database
 
-# biotoolsXSD element-specific guidelines
-Below are guidelines for different elements (fields of information) defined by the biotoolsXSD schema.
+# biotoolsSchema element-specific guidelines
+Below are guidelines for different elements (fields of information) defined by the biotoolsSchema XSD schema.
 
 ## <id>
 * Describe the ID URL pattern used by bio.tools:
