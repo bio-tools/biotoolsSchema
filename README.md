@@ -16,6 +16,7 @@ biotoolsXSD is applicable to diverse bioinformatics software and interface types
 Full user documentation of biotoolsXSD is available at 
 
 https://bio.tools/schema  (version 1.4)
+
 [GitHub](https://github.com/bio-tools/biotoolsxsd/blob/master/biotools-2.0-beta-02/docs/biotools-2.0-beta-02.html) (version 2.0-beta-02)
 
 
