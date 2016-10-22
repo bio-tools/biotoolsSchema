@@ -44,7 +44,6 @@ contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list |
 
 type | Description 
 ---- | ----------- 
-
 Database | A collection of data, datasets, a registry etc. | 1.4, 2.0-beta-02
 Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0-beta-02
 Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0-beta-02
@@ -71,7 +70,6 @@ QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 type | Description 
 ---- | ----------- 
-
 Command-line tool | A tool with a text-based (command-line) interface.
 Web application | A tool with a graphical user interface that runs in your Web browser.
 Desktop application | A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC or mobile device.
