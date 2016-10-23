@@ -355,7 +355,7 @@
 							<xs:element name="toolType" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
-									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described. For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described. For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of tool.  A tool may have more than one type reflecting its different facets.</uiTip>
 										<biotoolsUsage>Mandatory</biotoolsUsage>
@@ -501,7 +501,7 @@
 										<uiTip>Operating system supported by a downloadable software package.</uiTip>
 										<biotoolsUsage>Recommended</biotoolsUsage>
 									</xs:appinfo>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
@@ -518,7 +518,7 @@
 										<uiTip>Source code language.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
@@ -585,7 +585,7 @@
 										<uiTip>Software or data usage license.</uiTip>
 										<biotoolsUsage>Recommended</biotoolsUsage>
 									</xs:appinfo>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
@@ -640,7 +640,7 @@
 							<xs:element name="status" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Label describing miscellaneous status of the software.</xs:documentation>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Tag describing the software status.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -694,7 +694,7 @@
 							<xs:element name="type">
 								<xs:annotation>
 									<xs:documentation>Type of relation between this and another registered software.</xs:documentation>
-									<xs:documentation>Certain relations may only be defined between certain types of tool. For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>Certain relations may only be defined between certain types of tool. For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of relation between this and another registered software.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -786,7 +786,7 @@
 													<uiTip>Template for a URL fragment, which when appended to the base URL, defines the syntax of a valid resolvable URL.  The template can include parameters that must be substituted before the URL is resolved.</uiTip>
 													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 												</xs:appinfo>
-												<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
+												<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
 												<xs:appinfo>
 													<altova:exampleValues>
 														<altova:example value="/tool/{toolID}"/>
@@ -836,7 +836,7 @@
 												<xs:element name="summary" type="textType" minOccurs="0">
 													<xs:annotation>
 														<xs:documentation>A textual summary of a service endpoint.  </xs:documentation>
-														<xs:documentation>The value is text with optional markdown, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
+														<xs:documentation>The value is text with optional markdown, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
 														<xs:appinfo>
 															<uiTip>Summary of service endpoint.</uiTip>
 															<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
@@ -863,7 +863,7 @@
 																<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 															</xs:appinfo>
 															<xs:documentation>A fragment from the URL template corresponding to a URL parameter, which is replaced by some value when the service is called.</xs:documentation>
-															<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsxsd.</xs:documentation>
+															<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
 															<xs:appinfo>
 																<altova:exampleValues>
 																	<altova:example value="{toolID}"/>
@@ -952,7 +952,7 @@
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 									<xs:documentation>The container format indicates whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine.</xs:documentation>
-									<xs:documentation>For valid values see github.com/bio-tools/biotoolsxsd.
+									<xs:documentation>For valid values see github.com/bio-tools/biotoolsschema.
 A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
@@ -997,7 +997,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 												<uiTip>Download type.</uiTip>
 												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 											</xs:appinfo>
-											<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+											<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="enumType">
@@ -1060,7 +1060,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 												<uiTip>Documentation type.</uiTip>
 												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 											</xs:appinfo>
-											<xs:appinfo>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:appinfo>
+											<xs:appinfo>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="enumType">
@@ -1128,7 +1128,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 										<uiTip>Type of publication.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsxsd.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">

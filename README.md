@@ -17,11 +17,11 @@ Full user documentation of biotoolsSchema is available at
 
 https://bio.tools/schema  (version 1.4)
 
-[GitHub](https://github.com/bio-tools/biotoolsxsd/blob/master/biotools-2.0-beta-02/docs/biotools-2.0-beta-02.html) (version 2.0-beta-02)
+[GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0-beta-02/docs/biotools-2.0-beta-02.html) (version 2.0-beta-02)
 
 
 ## Mandatory attributes
-Attributes in the table are mandatory (if available) for registrations in bio.tools, for the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01)) as indicated by "Version" column
+Attributes in the table are mandatory (if available) for registrations in bio.tools, for the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-01)) as indicated by "Version" column
 
 Attribute | Description | Format | Version
 --------- | ----------- | ------ | -------
@@ -43,7 +43,7 @@ publication (0 or more) | Publications about the software | PMID, PMCID or DOI |
 **one of contactEmail or contactURL must be specified
 
   
-## Resource types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4))
+## Resource types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4))
 
 type | Description 
 ---- | ----------- 
@@ -56,7 +56,7 @@ Container | A collection of data, tools, services etc. in a portable environment
 Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0-beta-02
 Other | Other type of resource not listed above.
 
-## Interface types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-1.4))
+## Interface types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4))
 
 type | Description
 ---- | -----------
@@ -69,7 +69,7 @@ API | Application programmers interface to a programming library.
 QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
-## Tool types (valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsxsd/tree/master/biotools-2.0-beta-01))
+## Tool types (valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-01](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-01))
 
 type | Description 
 ---- | ----------- 
