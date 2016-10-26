@@ -40,7 +40,6 @@ import javax.xml.bind.annotation.XmlType;
                                  "functions",
                                  "labels",
                                  "relations",
-                                 "commandLineSpec",
                                  "apiSpec",
                                  "images",
                                  "downloads",
@@ -55,7 +54,6 @@ public class Tool {
     private List<Function> functions;
     private Labels labels;
     private List<Relation> relations;
-    private CommandLineSpec commandLineSpec;
     private ApiSpec apiSpec;
     private List<Image> images;
     private List<Download> downloads;
@@ -97,14 +95,6 @@ public class Tool {
             relations = new ArrayList<>();
         }
         return relations;
-    }
-
-    public CommandLineSpec getCommandLineSpec() {
-        return commandLineSpec;
-    }
-
-    public void setCommandLineSpec(CommandLineSpec commandLineSpec) {
-        this.commandLineSpec = commandLineSpec;
     }
 
     public ApiSpec getApiSpec() {

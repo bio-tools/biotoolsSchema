@@ -25,6 +25,7 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -44,7 +45,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Credit {
 
     private Object name;
-    private Object url;
+    private String url;
     private String gridId;
     private String orcidId;
     private EntityType entity;
@@ -59,11 +60,12 @@ public class Credit {
         this.name = value;
     }
 
-    public Object getUrl() {
+    @XmlSchemaType(name = "anyURI")
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(Object url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 

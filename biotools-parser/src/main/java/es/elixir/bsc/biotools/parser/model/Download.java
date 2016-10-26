@@ -30,8 +30,10 @@ package es.elixir.bsc.biotools.parser.model;
  * @author Dmitry Repchevsky
  */
 
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(name = "")
-public class Download extends LinkType {
+@XmlSeeAlso(DownloadType.class)
+public class Download extends LinkType<DownloadType> {
 }

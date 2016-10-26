@@ -35,9 +35,9 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum RoleType {
-    @XmlEnumValue("Lead developer") LEAD_DEVELOPER,
     @XmlEnumValue("Developer") DEVELOPER,
     @XmlEnumValue("Maintainer") MAINTAINER,
     @XmlEnumValue("Provider") PROVIDER,
-    @XmlEnumValue("Contributor") CONTRIBUTOR;
+    @XmlEnumValue("Contributor") CONTRIBUTOR,
+    @XmlEnumValue("Documentor") DOCUMENTOR;
 }

@@ -44,5 +44,7 @@ public enum SoftwareRelationType {
     @XmlEnumValue("extends") EXTENDS,
     @XmlEnumValue("extendedBy") EXTENDED_BY,
     @XmlEnumValue("includes") INCLUDES,
-    @XmlEnumValue("includedIn") INCLUDED_IN;
+    @XmlEnumValue("includedIn") INCLUDED_IN,
+    @XmlEnumValue("isPluginFor") PLUGIN_FOR,
+    @XmlEnumValue("hasPlugin") HAS_PLUGIN;
 }

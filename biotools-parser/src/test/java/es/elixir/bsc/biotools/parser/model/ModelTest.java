@@ -25,14 +25,21 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import javax.xml.transform.Result;
+import javax.xml.transform.stream.StreamResult;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -49,7 +56,7 @@ public class ModelTest {
             JAXBContext ctx = JAXBContext.newInstance(Tools.class);
             Unmarshaller u = ctx.createUnmarshaller();
             
-            InputStream in = ModelTest.class.getClassLoader().getResourceAsStream("biotools-2.0-beta01.xml");
+            InputStream in = ModelTest.class.getClassLoader().getResourceAsStream("biotools-2.0-beta02.xml");
             Assert.assertNotNull(in);
             
             XMLInputFactory f = XMLInputFactory.newFactory();
@@ -59,6 +66,26 @@ public class ModelTest {
             JAXBElement<Tools> el = u.unmarshal(reader, Tools.class);
         } catch (JAXBException | XMLStreamException ex ) {
             Assert.fail(ex.getMessage());
+        }
+    }
+    
+    @Test
+    public void test02() {
+        try {
+            JAXBContext ctx = JAXBContext.newInstance(Tools.class);
+            ctx.generateSchema(new SchemaOutputResolver() {
+                @Override
+                public Result createOutput(String namespaceUri, String suggestedFileName) throws IOException {
+                    Result result = new StreamResult(new ByteArrayOutputStream());
+                    result.setSystemId(namespaceUri);
+                    return result;
+                }
+            });
+
+        } catch (JAXBException ex ) {
+            Assert.fail(ex.getMessage());
+        } catch (IOException ex) {
+            Logger.getLogger(ModelTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

@@ -7,6 +7,8 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# October 22, 2016 biotoolsXSD is officially renamed to biotoolsXSD
+
 # August 12, 2016  biotoolsXSD-2.0-beta01.xsd released
 A complete revision of the schema.  Too many changes to list, therefore the highlights only are summarised below.  For more information please read the schema documentation.
 

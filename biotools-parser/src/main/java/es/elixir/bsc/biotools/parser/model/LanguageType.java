@@ -46,6 +46,7 @@ public enum LanguageType {
     @XmlEnumValue("C++") CPP,
     @XmlEnumValue("COBOL") COBOL,
     @XmlEnumValue("ColdFusion") COLD_FUSION,
+    @XmlEnumValue("CWL") CWL,
     @XmlEnumValue("D") D,
     @XmlEnumValue("Delphi") DELPHI,
     @XmlEnumValue("Dylan") DYLAN,
@@ -85,5 +86,6 @@ public enum LanguageType {
     @XmlEnumValue("Turing") TURING,
     @XmlEnumValue("VHDL") VHDL,
     @XmlEnumValue("Verilog") VERILOG,
-    @XmlEnumValue("Visual Basic") VISUAL_BASIC;
+    @XmlEnumValue("Visual Basic") VISUAL_BASIC,
+    @XmlEnumValue("Other") OTHER;
 }

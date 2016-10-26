@@ -25,6 +25,7 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -33,5 +34,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 
 @XmlType(name = "")
-public class Documentation extends LinkType {
+@XmlSeeAlso(DocumentationType.class)
+public class Documentation extends LinkType<DocumentationType> {
 }

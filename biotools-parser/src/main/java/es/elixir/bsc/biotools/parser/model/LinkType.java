@@ -26,6 +26,7 @@
 package es.elixir.bsc.biotools.parser.model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -39,10 +40,10 @@ import javax.xml.bind.annotation.XmlType;
     Download.class,
     Documentation.class
 })
-public class LinkType {
+public class LinkType<T> {
 
     protected UrlType url;
-    protected EnumType type;
+    protected T type;
     protected Object comment;
 
     @XmlElement(required = true)
@@ -55,11 +56,12 @@ public class LinkType {
     }
 
     @XmlElement(required = true)
-    public EnumType getType() {
+    @XmlSchemaType(name = "EnumType")
+    public T getType() {
         return type;
     }
 
-    public void setType(EnumType type) {
+    public void setType(T type) {
         this.type = type;
     }
 

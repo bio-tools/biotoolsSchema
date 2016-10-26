@@ -35,8 +35,9 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum LicenseStatusType {
+    @XmlEnumValue("Emerging") EMERGING,
     @XmlEnumValue("Mature") MATURE,
-    @XmlEnumValue("Obsolete") OBSOLETE,
+    @XmlEnumValue("Legacy") LEGACY,
     @XmlEnumValue("Free of charge") FREE_OF_CHARGE,
     @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS,
     @XmlEnumValue("Commercial") COMMERCIAL,

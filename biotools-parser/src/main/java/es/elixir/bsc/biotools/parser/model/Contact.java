@@ -28,6 +28,7 @@ package es.elixir.bsc.biotools.parser.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -45,7 +46,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Contact {
 
     private String email;
-    private Object url;
+    private String url;
     private NameType name;
     private String tel;
     private List<ContactType> types;
@@ -59,11 +60,12 @@ public class Contact {
         this.email = email;
     }
 
-    public Object getUrl() {
+    @XmlSchemaType(name = "anyURI")
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(Object url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
