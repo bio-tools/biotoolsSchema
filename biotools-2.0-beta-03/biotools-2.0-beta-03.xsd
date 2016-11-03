@@ -143,7 +143,6 @@
 									<xs:appinfo>
 										<altova:exampleValues>
 											<altova:example value="Software description, e.g. a few sentences adapted from the software publication abstract or homepage."/>
-											<altova:example value="QualitySNPng is a software tool for the detection and interactive visualization of single-nucleotide polymorphisms (SNPs). It uses a haplotype-based strategy to identify reliable SNPs; it is optimized for the analysis of current RNA-seq data; but it can also be used on genomic DNA sequences derived from next-generation sequencing experiments."/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
@@ -335,6 +334,56 @@
 									<xs:appinfo>
 										<uiTip>Type of tool.  A tool may have more than one type reflecting its different facets.</uiTip>
 										<biotoolsUsage>Mandatory</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Command-line tool</term>
+												<uiTip>A tool with a text-based (command-line) interface.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Web application</term>
+												<uiTip>A tool with a graphical user interface that runs in your Web browser.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Desktop application</term>
+												<uiTip>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC or mobile device.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Script</term>
+												<uiTip>A tool written for some run-time environment (e.g. other applications or an OS shell) that automates the execution of tasks. Often a small program written in a general-purpose languages (e.g. Perl, Python) or some domain-specific languages (e.g. sed).</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Suite</term>
+												<uiTip>A collection of tools which are bundled together into a convenient toolkit.  Such tools typically share related functionality, a common user interface and can exchange data conveniently.  This includes collections of stand-alone command-line tools, or Web applications within a common portal.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Workbench</term>
+												<uiTip>An application or suite with a graphical user interface, providing an integrated environment for data analysis which includes or may be extended with any number of functions or tools.  Includes workflow systems, platforms, frameworks etc.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Database portal</term>
+												<uiTip>A Web application, suite or workbench providing a portal to a biological database.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Workflow</term>
+												<uiTip>A set of tools which have been composed together into a pipeline of some sort.  Such tools are (typically) standalone, but are composed for convenience, for instance for batch execution via some workflow engine or script.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Plug-in</term>
+												<uiTip>A software component encapsulating a set of related functions, which are not standalone, i.e. depend upon other software for its use, e.g. a Javascript widget, or a plug-in, extension add-on etc. that extends the function of some existing tool.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Library</term>
+												<uiTip>A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Web API</term>
+												<uiTip>An application programming interface (API) consisting of endpoints to a request-response message system accessible via HTTP.  Includes everything from simple data-access URLs to RESTful APIs.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Web service</term>
+												<uiTip>An API described in a machine readable form (typically WSDL) providing programmatic access via SOAP over HTTP.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -564,7 +613,27 @@
 										<uiTip>Software or data usage license.</uiTip>
 										<biotoolsUsage>Recommended</biotoolsUsage>
 									</xs:appinfo>
-									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
+									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.  Based on the specified license a label (e.g. "Open-source") is attached to the tool.</xs:documentation>
+									<xs:appinfo>
+										<enum>
+											<enumItem>
+												<term>Open-source</term>
+												<uiTip>Software is made available under a license approved by the Open Source Initiative (OSI). The software is distributed in a way that satisfies the 10 criteria of the Open Source Definition maintained by OSI (see https://opensource.org/docs/osd). The source code is available to others.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Free software</term>
+												<uiTip>Free as in “freedom” not necessarily free of charge.  Software is made available under a license approved by the Free Software Foundation (FSF). The software satisfies the criteria of the Free Software Definition maintained by FSF (see http://www.gnu.org/philosophy/free-sw.html). The source code is available to others.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Free and open source</term>
+												<uiTip>Software is made available under a license approved by both the Open Source Initiative (OSI) and the Free Software Foundation (FSF), and satisfies the criteria of the OSI Open Source Definition maintained (https://opensource.org/docs/osd) and the FSF Free Software Definition (http://www.gnu.org/philosophy/free-sw.html).  Such software ensures users have the freedom to run, copy, distribute, study, change and improve the software.  The source code is available to others.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Copyleft</term>
+												<uiTip>Software is made available under a license designated as “copyleft” by the Free Software Foundation (FSF).  The license ensures such software is free and that all modified and extended versions of the program are free as well. Free as in “freedom” not necessarily free of charge, as per the Free Software Definition maintained by FSF (see http://www.gnu.org/philosophy/free-sw.html).</uiTip>
+											</enumItem>
+										</enum>
+									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
@@ -623,6 +692,52 @@
 									<xs:appinfo>
 										<uiTip>Tag describing the software status.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Emerging</term>
+												<uiTip>Nascent or early release software that may not yet be fully featured or stable.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Mature</term>
+												<uiTip>Software that is generally considered to fulfill several of the following: secure, reliable, actively maintained, fully featured, proven in production environments, has an active community, and is described or cited in the scientific literature.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Legacy</term>
+												<uiTip>Software which is no longer in common use, deprecated by the provider, superseded by other software, replaced by a newer version, is obsolete etc.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Free of charge</term>
+												<uiTip>Software which available for use by all, with full functionality, at no monetary cost to the user.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Free of charge (with restrictions)</term>
+												<uiTip>Software which is available for use at no monetary cost to the user, but possibly with limited functionality, usage restrictions, or other limitations.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Commercial</term>
+												<uiTip>Software which you have to pay to access.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Proprietary</term>
+												<uiTip>Software for which the software's publisher or another person retains intellectual property rights—usually copyright of the source code, but sometimes patent rights.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Freeware</term>
+												<uiTip>Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ELIXIR Service</term>
+												<uiTip>The software is an official ELIXIR service including Node-funded Services (i.e. services included in the Service Delivery Plan of an ELIXIR Node) and Commissioned Services (services commissioned by ELIXIR Hub and carried out by ELIXIR nodes).</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Open access</term>
+												<uiTip>An online service which is available for use to all, but possibly requiring user accounts / authentication.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Restricted access</term>
+												<uiTip>An online service which is available for use to a restricted audience, e.g. members of a specific institute.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -677,6 +792,32 @@
 									<xs:appinfo>
 										<uiTip>Type of relation between this and another registered software.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>isNewVersionOf / hasNewVersion</term>
+												<uiTip>The software is a new version of an existing software, typically providing new or improved functionality.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>isInterfaceTo / hasInterface</term>
+												<uiTip>The software provides a user interface to some other software without changing or extending its basic functionality.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>uses / usedBy</term>
+												<uiTip>The software uses the functions of some other software under the hood,e.g. invoking a command-line tool or calling a Web API, Web service or SPARQL endpoint to perform its function.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>extends / extendedBy</term>
+												<uiTip>The software extends, restricts or improves (somehow) the functionality or performance of another software.  Includes adaptation and reimplementation of existing tools.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>includes / includedIn</term>
+												<uiTip>A workbench, toolkit or workflow includes some other, independently available, software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>isPluginFor / hasPlugin</term>
+												<uiTip>The software is is a plug-in that extends the function of some other software.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -910,6 +1051,32 @@
 											<xs:appinfo>
 												<uiTip>Link type.</uiTip>
 												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												<enum>
+													<enumItem>
+														<term>Mirror</term>
+														<uiTip>Mirror of an (identical) online service.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Repository</term>
+														<uiTip>Repository where source code, data and other files may be downloaded.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Social media</term>
+														<uiTip>A website used by the software community including social networking sites, discussion and support fora, WIKIs etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Mailing list</term>
+														<uiTip>Mailing list for the software announcements, discussions, support etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Issue tracker</term>
+														<uiTip>Tracker for software issues, bug reports, feature requests etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Helpdesk</term>
+														<uiTip>Helpdesk providing support in using the software.</uiTip>
+													</enumItem>
+												</enum>
 											</xs:appinfo>
 											<xs:appinfo>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:appinfo>
 										</xs:annotation>
@@ -966,6 +1133,72 @@
 									<xs:appinfo>
 										<uiTip>Download type.</uiTip>
 										<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Biological data</term>
+												<uiTip>Biological data, or a web page on a database portal where such data may be downloaded. </uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Binaries</term>
+												<uiTip>Binaries for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Binary package</term>
+												<uiTip>Binary package for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Command-line specification</term>
+												<uiTip>File providing a command line specification for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Container file</term>
+												<uiTip>Container file including the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>CWL file</term>
+												<uiTip>Common Workflow Language (CWL) file for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Icon</term>
+												<uiTip>Icon of the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Screenshot</term>
+												<uiTip>Screenshot of the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Source code</term>
+												<uiTip>Software source code.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Source package</term>
+												<uiTip>Source package (of various types) for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Tool wrapper (galaxy)</term>
+												<uiTip>Galaxy tool configuration file (wrapper) for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Tool wrapper (taverna)</term>
+												<uiTip>Taverna configuration file for the software.  </uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Tool wrapper (other)</term>
+												<uiTip>Workbench configuration file (other than taverna, galaxy or CWL wrapper) for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Test data</term>
+												<uiTip>Data for testing the software is working correctly.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Test script</term>
+												<uiTip>Script used for testing testing whether the software is working correctly.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>VM image</term>
+												<uiTip>Virtual machine (VM) image for the software.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
@@ -1004,6 +1237,44 @@
 									<xs:appinfo>
 										<uiTip>Virtual machine image disk format.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>aki</term>
+												<uiTip>An Amazon kernel image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ami</term>
+												<uiTip>An Amazon machine image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ari</term>
+												<uiTip>An Amazon ramdisk image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>iso</term>
+												<uiTip>An archive format for the data contents of an optical disc, such as CD-ROM</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>qcow2</term>
+												<uiTip>Supported by the QEMU emulator that can expand dynamically and supports Copy on Write</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>raw</term>
+												<uiTip>An unstructured disk image format; if you have a file without an extension it is possibly a raw format</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>vdi</term>
+												<uiTip>Supported by VirtualBox virtual machine monitor and the QEMU emulator</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>vhd</term>
+												<uiTip>The VHD disk format, a common disk format used by virtual machine monitors from VMware, Xen, Microsoft, VirtualBox, and others</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>vmdk</term>
+												<uiTip>Common disk format supported by many common virtual machine monitors</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 									<xs:documentation>The disk format of a virtual machine image is the format of the underlying disk image. Virtual appliance vendors have different formats for laying out the information contained in a virtual machine disk image. </xs:documentation>
 								</xs:annotation>
@@ -1026,6 +1297,40 @@
 									<xs:appinfo>
 										<uiTip>Virtual machine container format. A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>aki</term>
+												<uiTip>An Amazon kernel image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ami</term>
+												<uiTip>An Amazon machine image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ari</term>
+												<uiTip>An Amazon ramdisk image</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>bare</term>
+												<uiTip>The image does not have a container or metadata envelope</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>docker</term>
+												<uiTip>A docker container format</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>ovf</term>
+												<uiTip>The OVF container format</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>rkt</term>
+												<uiTip>rocket container images</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>singularity </term>
+												<uiTip>singularity container format</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 									<xs:documentation>The container format indicates whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine.</xs:documentation>
 									<xs:documentation>For valid values see github.com/bio-tools/biotoolsschema.
@@ -1044,7 +1349,7 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="cmd" minOccurs="0">
+							<xs:element name="cmd" type="textType" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>A useful command pertinent to the download, e.g. for getting or installing a tool.</xs:documentation>
 									<xs:appinfo>
@@ -1083,6 +1388,52 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 											<xs:appinfo>
 												<uiTip>Documentation type.</uiTip>
 												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												<enum>
+													<enumItem>
+														<term>General</term>
+														<uiTip>General documentation.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>API specification (OpenAPI)</term>
+														<uiTip>Machine-readable API specification in OpenAPI format.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>API specification (WSDL)</term>
+														<uiTip>Machine-readable API specification in WSDL file.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>API specification (RAML)</term>
+														<uiTip>Machine-readable API specification in RAML format.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>API specification (other)</term>
+														<uiTip>Machine-readable API specification in some format other than OpenAPI, WSDL or RAML.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>API documentation</term>
+														<uiTip>Human-readable API documentation.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Terms of use</term>
+														<uiTip>Rules that one must agree to abide by in order to use a service.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Citation instructions</term>
+														<uiTip>Information on how to correctly cite use of the software.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Manual </term>
+														<uiTip>Information on how to use the software.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Training material</term>
+														<uiTip>Online training material such as text on a Web page, a presentation, video, tutorial etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Other</term>
+														<uiTip>Some other type of documentation not listed in biotoolsSchema.</uiTip>
+													</enumItem>
+												</enum>
 											</xs:appinfo>
 											<xs:appinfo>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:appinfo>
 										</xs:annotation>
@@ -1151,6 +1502,24 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 									<xs:appinfo>
 										<uiTip>Type of publication.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Primary</term>
+												<uiTip>The principal publication about the software itself; the article to cite when acknowledging use of the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Benchmark</term>
+												<uiTip>A publication which assessed the performance of the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Review</term>
+												<uiTip>A publication where the software was reviewed.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Other</term>
+												<uiTip>A publication about the software but not the primary publication or a benchmark study.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 									<xs:documentation>For an explanation of valid values see github.com/bio-tools/biotoolsschema.</xs:documentation>
 								</xs:annotation>
@@ -1273,6 +1642,32 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 									<xs:appinfo>
 										<uiTip>Type of entity that is credited.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Person</term>
+												<uiTip>Credit of an individual.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Project</term>
+												<uiTip>Credit of a community software project not formally associated with any single institute.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Division</term>
+												<uiTip>Credit of or a formal part of an institutional organisation, e.g. a department, research group, team, etc</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Institute</term>
+												<uiTip>Credit of an organisation such as a university, hospital, research institute, service center, unit etc.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Consortium</term>
+												<uiTip>Credit of an association of two or more institutes or other legal entities which have joined forces for some common purpose.  Includes Research Infrastructures (RIs) such as ELIXIR, parts of an RI such as an ELIXIR node etc. </uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Funding agency</term>
+												<uiTip>Credit of a legal entity providing funding for development of the software or provision of an online service.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1291,6 +1686,32 @@ A value of ‘bare’ should be specified if there is no container or metadata e
 									<xs:appinfo>
 										<uiTip>Role performed by credited entity.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Developer</term>
+												<uiTip>Author of the original software source code.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Maintainer</term>
+												<uiTip>Maintainer of a mature software providing packaging, patching, distribution etc.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Provider</term>
+												<uiTip>Institutional provider of an online service.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Documentor</term>
+												<uiTip>Author of software documentation including making edits to a bio.tools entry.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Contributor</term>
+												<uiTip>Some other role in software production or service delivery including design, deployment, system administration, evaluation, testing, documentation, training, user support etc.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Support</term>
+												<uiTip>Provider of support in using the software.</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 									<xs:documentation>Role performed by credited entity.</xs:documentation>
 								</xs:annotation>
