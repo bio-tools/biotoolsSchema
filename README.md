@@ -43,7 +43,8 @@ publication (0 or more) | Publications about the software | PMID, PMCID or DOI |
 **one of contactEmail or contactURL must be specified
 
   
-## Resource types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4))
+## Resource types (v1.4)
+Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)
 
 type | Description 
 ---- | ----------- 
@@ -56,7 +57,8 @@ Container | A collection of data, tools, services etc. in a portable environment
 Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0-beta-03
 Other | Other type of resource not listed above.
 
-## Interface types (valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4))
+## Interface types (v1.4)
+Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)
 
 type | Description
 ---- | -----------
@@ -69,7 +71,8 @@ API | Application programmers interface to a programming library.
 QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
-## Tool types (valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-03](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-03))
+## Tool types (v2.0beta03)
+Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-03](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-03).
 
 type | Description 
 ---- | ----------- 
