@@ -1,4 +1,4 @@
-# Changelog for biotoolsXSD
+# Changelog for biotoolsSchema
 Description of changes are grouped as follows:
 * **Added:** new features
 * **Changed:** changes to existing functionality
