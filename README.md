@@ -20,23 +20,24 @@ https://bio.tools/schema  (version 1.4)
 [GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0-beta-04/docs/biotools-2.0-beta-04.html) (version 2.0-beta-04)
 
 
-## Mandatory attributes
-Attributes in the table are mandatory (if available) for registrations in bio.tools, for the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-03](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-03)) as indicated by "Version" column
+## Information requirements
+https://bio.tools will include a "staging area" for "beta entries" with less rich annotation.  The minimum information requirement for "beta" and "standard" is given in the respective columns.  Attributes are defined as mandatory in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04)) as indicated by "Version" column
 
-Attribute | Description | Format | Version | element
---------- | ----------- | ------ | ------- | -------
-name (1 only) | Canonical resource name | Text | 1.4, 2.0-beta-03 | `name`, `name`
-homepage (1 only) | Resource homepage | URL | 1.4, 2.0-beta-03 | `homepage`, `homepage`
-description (1 only) | Short textual description of the resource | Text | 1.4, 2.0-beta-03 | `description`, `description`
-tool type | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | 2.0-beta-03 | `toolType`
-resource type (1 or more) | Basic resource type | enum (see below) | 1.4 | `resourceType`
-interface type (1 or more) | Resource interface type | enum (see below) | 1.4 | `interfaceType`
-topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0003) concept(s)* | 1.4, 2.0-beta-03 | `topic`
-function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | 1.4, 2.0-beta-03 | `function->functionName`, `function->operation`
-input data (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | 1.4, 2.0-beta-03 | `function->input->dataType`, `function->input->data`
-output data (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | 1.4, 2.0-beta-03 | `function->output->dataType`, `function->output->data`
-contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address or URL of contact** | 1.4, 2.0-beta-03 | `contact`, `link` and / or `credit`
-publication (0 or more) | Publications about the software | PMID, PMCID or DOI | 2.0-beta-03 | `publication`, `publication`
+Attribute | Description | Format | beta | standard | Version | element
+--------- | ----------- | ------ | -----| -------- | ------- | -------
+name (1 only) | Canonical resource name | Text | y | y | 1.4, 2.0-beta-04 | `name`, `name`
+toolID (1 only) | Unique tool ID | Text | y | y | 2.0-beta-04 | `toolID`
+homepage (1 only) | Resource homepage | URL | y | y | 1.4, 2.0-beta-04 | `homepage`, `homepage`
+description (1 only) | Short textual description of the resource | Text | y | y | 1.4, 2.0-beta-04 | `description`, `description`
+tool type | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | 2.0-beta-04 | `toolType`
+resource type (1 or more) | Basic resource type | enum (see below) | y | y | 1.4 | `resourceType`
+interface type (1 or more) | Resource interface type | enum (see below) | y | y | 1.4 | `interfaceType`
+topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | 1.4, 2.0-beta-04 | `topic`
+function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | y | y | 1.4, 2.0-beta-04 | `function->functionName`, `function->operation`
+input data (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | y | y | 1.4, 2.0-beta-04 | `function->input->dataType`, `function->input->data`
+output data (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | y | y | 1.4, 2.0-beta-04 | `function->output->dataType`, `function->output->data`
+contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address and / or URL of contact** | y | y | 1.4, 2.0-beta-04 | `contact`, `contact`
+publication (0 or more) | Publications about the software | PMID, PMCID or DOI | y | y | 2.0-beta-04 | `publication`, `publication`
 
 *EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
 
@@ -48,13 +49,14 @@ Valid values of resourceType in in the current production schema ([biotools-1.4]
 
 type | Description 
 ---- | ----------- 
-Database | A collection of data, datasets, a registry etc. | 1.4, 2.0-beta-03
-Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0-beta-03
-Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0-beta-03
-Workflow | A definition of a collection of tools, services etc. for running in a workflow system. | 1.4, 2.0-beta-03
-Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc. | 1.4, 2.0-beta-03
-Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker. | 1.4, 2.0-beta-03
-Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0-beta-03
+Database | A collection of data, datasets, a registry etc. | 1.4, 2.0-beta-04
+Ontology | A collection of information about concepts, including terms, synonyms, descriptions etc. | 2.0-beta-04
+Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0-beta-04
+Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0-beta-04
+Workflow | A definition of a collection of tools, services etc. for running in a workflow system. | 1.4, 2.0-beta-04
+Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc. | 1.4, 2.0-beta-04
+Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker. | 1.4, 2.0-beta-04
+Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0-beta-04
 Other | Other type of resource not listed above.
 
 ## Interface types (v1.4)
@@ -71,8 +73,8 @@ API | Application programmers interface to a programming library.
 QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
-## Tool types (v2.0beta03)
-Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-03](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-03).
+## Tool types (v2.0beta04)
+Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04).
 
 type | Description 
 ---- | ----------- 

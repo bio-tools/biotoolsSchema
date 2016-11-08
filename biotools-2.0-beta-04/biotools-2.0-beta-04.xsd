@@ -91,47 +91,49 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="version" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Version (typically a version number) of the software assigned by the software developer or service provider.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Software version number.</uiTip>
-										<biotoolsUsage>Mandatory</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="versionNumber"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:whiteSpace value="collapse"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="versionId" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</xs:documentation>
-									<xs:documentation>The ID is a URL-safe derivative of (often identifical to) the tool version restricted to 6 characters maximium.  Replace disallowed characters (including those which would have to be escaped in a URL) with a ‘_’.  See http://biotools.readthedocs.io/.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</uiTip>
-										<biotoolsUsage>Mandatory</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="1_0_0"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:anyURI">
-										<xs:maxLength value="12"/>
-										<xs:minLength value="1"/>
-										<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
+							<xs:sequence minOccurs="0">
+								<xs:element name="version">
+									<xs:annotation>
+										<xs:documentation>Version (typically a version number) of the software assigned by the software developer or service provider.</xs:documentation>
+										<xs:appinfo>
+											<uiTip>Software version number.</uiTip>
+											<biotoolsUsage>Mandatory</biotoolsUsage>
+										</xs:appinfo>
+										<xs:appinfo>
+											<altova:exampleValues>
+												<altova:example value="versionNumber"/>
+											</altova:exampleValues>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:token">
+											<xs:whiteSpace value="collapse"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="versionId">
+									<xs:annotation>
+										<xs:documentation>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</xs:documentation>
+										<xs:documentation>The ID is a URL-safe derivative of (often identifical to) the tool version restricted to 6 characters maximium.  Replace disallowed characters (including those which would have to be escaped in a URL) with a ‘_’.  See http://biotools.readthedocs.io/.</xs:documentation>
+										<xs:appinfo>
+											<uiTip>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</uiTip>
+											<biotoolsUsage>Mandatory</biotoolsUsage>
+										</xs:appinfo>
+										<xs:appinfo>
+											<altova:exampleValues>
+												<altova:example value="1_0_0"/>
+											</altova:exampleValues>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:anyURI">
+											<xs:maxLength value="12"/>
+											<xs:minLength value="1"/>
+											<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+							</xs:sequence>
 							<xs:element name="doi" type="doiType" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Canonical Digital Object Identifier of the software assigned by the software developer or service provider.</xs:documentation>
@@ -193,6 +195,52 @@
 										<biotoolsUsage>Mandatory</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
+							</xs:element>
+							<xs:element name="contact" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Primary points of contact, e.g. person, helpdesk or mailing list.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Primary points of contact, e.g. person, helpdesk or mailing list.</uiTip>
+										<biotoolsUsage>Recommended</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:choice>
+										<xs:sequence>
+											<xs:element name="email">
+												<xs:annotation>
+													<xs:documentation>Email address of the primary contact.</xs:documentation>
+													<xs:appinfo>
+														<uiTip>Email address of the primary contact.</uiTip>
+														<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+													</xs:appinfo>
+													<xs:appinfo>
+														<altova:exampleValues>
+															<altova:example value="joebloggst@elixir-dk.org"/>
+														</altova:exampleValues>
+													</xs:appinfo>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:token">
+														<xs:whiteSpace value="collapse"/>
+														<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+														<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="url" type="xs:anyURI" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>URL of the primary contact.</xs:documentation>
+													<xs:appinfo>
+														<uiTip>URL of the primary contact.</uiTip>
+														<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+													</xs:appinfo>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+										<xs:element name="url" type="xs:anyURI"/>
+									</xs:choice>
+								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -430,6 +478,7 @@
 										<xs:enumeration value="Suite"/>
 										<xs:enumeration value="Workbench"/>
 										<xs:enumeration value="Database portal"/>
+										<xs:enumeration value="Ontology"/>
 										<xs:enumeration value="Workflow"/>
 										<xs:enumeration value="Plug-in"/>
 										<xs:enumeration value="Library"/>
