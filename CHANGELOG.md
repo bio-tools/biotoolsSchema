@@ -8,13 +8,13 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 # November 8, 2016 biotoolsSchema-2.0-beta04.xsd released
-Sorry, no bandwidth to provide summary of changes : please see the XSD.
+Sorry, no bandwidth to provide summary of changes : please see the schema documentation.
 
 # November 3, 2016 biotoolsSchema-2.0-beta03.xsd released
-Sorry, no bandwidth to provide summary of changes : please see the XSD.
+Sorry, no bandwidth to provide summary of changes : please see the schema documentation.
 
-# October 22, 2016 biotoolsXSD officially renamed to biotoolsSchema, biotoolsXSD-2.0-beta02.xsd released
-Sorry, no bandwidth to provide summary of changes : please see the XSD.
+# October 22, 2016 biotoolsXSD officially renamed to biotoolsSchema, biotoolsSchema-2.0-beta02.xsd released
+Sorry, no bandwidth to provide summary of changes : please see the schema documentation.
 
 # August 12, 2016  biotoolsXSD-2.0-beta01.xsd released
 A complete revision of the schema.  Too many changes to list, therefore the highlights only are summarised below.  For more information please read the schema documentation.
