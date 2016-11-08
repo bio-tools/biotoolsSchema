@@ -16,9 +16,6 @@ Sorry, no bandwidth to provide summary of changes : please see the XSD.
 # October 22, 2016 biotoolsXSD officially renamed to biotoolsSchema, biotoolsXSD-2.0-beta02.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the XSD.
 
-# October 22, 2016 biotoolsXSD officially renamed to biotoolsSchema, biotoolsXSD-2.0-beta02.xsd released
-Sorry, no bandwidth to provide summary of changes : please see the XSD.
-
 # August 12, 2016  biotoolsXSD-2.0-beta01.xsd released
 A complete revision of the schema.  Too many changes to list, therefore the highlights only are summarised below.  For more information please read the schema documentation.
 
