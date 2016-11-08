@@ -50,7 +50,6 @@ Valid values of resourceType in in the current production schema ([biotools-1.4]
 type | Description 
 ---- | ----------- 
 Database | A collection of data, datasets, a registry etc. | 1.4, 2.0-beta-04
-Ontology | A collection of information about concepts, including terms, synonyms, descriptions etc. | 2.0-beta-04
 Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0-beta-04
 Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0-beta-04
 Workflow | A definition of a collection of tools, services etc. for running in a workflow system. | 1.4, 2.0-beta-04
@@ -85,6 +84,7 @@ Script | A tool written for some run-time environment (e.g. other applications o
 Suite | A collection of tools which are bundled together into a convenient toolkit.  Such tools typically share related functionality, a common user interface and can exchange data conveniently.  This includes collections of stand-alone command-line tools, or Web applications within a common portal.
 Workbench | An application or suite with a graphical user interface, providing an integrated environment for data analysis which includes or may be extended with any number of functions or tools.  Includes workflow systems, platforms, frameworks etc.
 Database portal | A Web application, suite or workbench providing a portal to a biological database.
+Ontology | A collection of information about concepts, including terms, synonyms, descriptions etc. | 2.0-beta-04
 Workflow | A set of tools which have been composed together into a pipeline of some sort.  Such tools are (typically) standalone, but are composed for convenience, for instance for batch execution via some workflow engine or script.
 Plug-in | A software component encapsulating a set of related functions, which are not standalone, i.e. depend upon other software for its use, e.g. a Javascript widget, or a plug-in, extension add-on etc. that extends the function of some existing tool.
 Library | A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.
