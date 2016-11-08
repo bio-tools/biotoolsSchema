@@ -7,10 +7,10 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
-# November 8, 2016 biotoolsXSD-2.0-beta04.xsd released
+# November 8, 2016 biotoolsSchema-2.0-beta04.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the XSD.
 
-# November 3, 2016 biotoolsXSD-2.0-beta03.xsd released
+# November 3, 2016 biotoolsSchema-2.0-beta03.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the XSD.
 
 # October 22, 2016 biotoolsXSD officially renamed to biotoolsSchema, biotoolsXSD-2.0-beta02.xsd released
