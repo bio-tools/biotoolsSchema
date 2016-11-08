@@ -17,7 +17,7 @@ Full user documentation of biotoolsSchema is available at
 
 https://bio.tools/schema  (version 1.4)
 
-[GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0-beta-03/docs/biotools-2.0-beta-03.html) (version 2.0-beta-03)
+[GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0-beta-04/docs/biotools-2.0-beta-04.html) (version 2.0-beta-04)
 
 
 ## Mandatory attributes
