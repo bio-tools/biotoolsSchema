@@ -45,7 +45,7 @@ publication (0 or more) | Publications about the software | PMID, PMCID or DOI |
 
   
 ## Resource types (v1.4)
-Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)
+Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)).
 
 type | Description 
 ---- | ----------- 
@@ -59,7 +59,7 @@ Library | A package of code for building/extending tools, including widgets, plu
 Other | Other type of resource not listed above.
 
 ## Interface types (v1.4)
-Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)
+Valid values of resourceType in in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)).
 
 type | Description
 ---- | -----------
@@ -73,7 +73,7 @@ QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
 ## Tool types (v2.0beta04)
-Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04).
+Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04)).
 
 type | Description 
 ---- | ----------- 
