@@ -14,7 +14,7 @@
 			</operation>
 		</function>
 		<labels>
-			<toolType>Desktop application</toolType>
+			<toolType>Web API</toolType>
 			<topic>
 				<uri>http://edamontology.org/topic_0121</uri>
 			</topic>

@@ -151,8 +151,8 @@
 			<comment>Concise textual description of the function(s), if this is not already obvious from the resource description.</comment>
 		</function>
 		<labels>
-			<toolType>Web application</toolType>
-			<toolType>Command-line tool</toolType>
+			<toolType>Workbench</toolType>
+			<toolType>Plug-in</toolType>
 			<topic>
 				<uri>http://edamontology.org/topic_0121</uri>
 				<term>Proteomics</term>
@@ -162,30 +162,30 @@
 				<term>Proteomics</term>
 			</topic>
 			<goTermID>0005125</goTermID>
-			<goTermID>GO:0005125</goTermID>
-			<soTermID>SO:0000307</soTermID>
-			<soTermID>SO:0000307</soTermID>
+			<goTermID>0005125</goTermID>
+			<soTermID>0000307</soTermID>
+			<soTermID>0000307</soTermID>
 			<taxId>9606</taxId>
 			<taxId>9606</taxId>
-			<operatingSystem>Linux</operatingSystem>
-			<operatingSystem>Linux</operatingSystem>
-			<language>Smalltalk</language>
-			<language>LabVIEW</language>
-			<license>Creative Commons Attribution Share Alike</license>
-			<collection>https://bio.tools/c/collectionName</collection>
-			<collection>https://bio.tools/c/collectionName</collection>
+			<operatingSystem>Mac</operatingSystem>
+			<operatingSystem>Mac</operatingSystem>
+			<language>NMTRAN</language>
+			<language>R</language>
+			<license>PHP License 3.0</license>
+			<collection>https://bio.tools/collection/collectionName</collection>
+			<collection>https://bio.tools/collection/collectionName</collection>
 			<maturity>Emerging</maturity>
-			<cost>Free of charge</cost>
+			<cost>Commercial</cost>
+			<accessibility>Freeware</accessibility>
 			<accessibility>Open access</accessibility>
-			<accessibility>Proprietary</accessibility>
 		</labels>
 		<relation>
-			<biotoolsId>https://bio.tools/tool/toolName/version/versionNumber</biotoolsId>
-			<type>includes</type>
+			<biotoolsId>https://bio.tools/tool/toolName</biotoolsId>
+			<type>hasPlugin</type>
 		</relation>
 		<relation>
-			<biotoolsId>https://bio.tools/t/toolName/v/versionNumber</biotoolsId>
-			<type>isPluginFor</type>
+			<biotoolsId>https://bio.tools/t/toolName</biotoolsId>
+			<type>hasNewVersion</type>
 		</relation>
 		<apiSpec>
 			<baseURL>https://bio.tools</baseURL>
@@ -262,59 +262,59 @@
 		</apiSpec>
 		<link>
 			<url>http://someURL.org</url>
-			<type>Social media</type>
+			<type>Issue tracker</type>
 			<comment>text</comment>
 		</link>
 		<link>
 			<url>http://someURL.org</url>
-			<type>Social media</type>
+			<type>Issue tracker</type>
 			<comment>text</comment>
 		</link>
 		<download>
 			<url>http://someURL.org</url>
-			<type>Screenshot</type>
+			<type>CWL file</type>
 			<comment>a</comment>
-			<diskFormat>vhd</diskFormat>
-			<containerFormat>ami</containerFormat>
+			<diskFormat>ari</diskFormat>
+			<containerFormat>bare</containerFormat>
 			<cmd>a</cmd>
 		</download>
 		<download>
 			<url>http://someURL.org</url>
-			<type>Binaries</type>
+			<type>Source code</type>
 			<comment>a</comment>
-			<diskFormat>ami</diskFormat>
-			<containerFormat>ari</containerFormat>
+			<diskFormat>qcow2</diskFormat>
+			<containerFormat>ovf</containerFormat>
 			<cmd>a</cmd>
 		</download>
 		<documentation>
 			<url>http://someURL.org</url>
-			<type>API documentation</type>
+			<type>General</type>
 			<comment>a</comment>
 		</documentation>
 		<documentation>
 			<url>http://someURL.org</url>
-			<type>API specification</type>
+			<type>Citation instructions</type>
 			<comment>a</comment>
 		</documentation>
 		<publication>
 			<doi>doi:10.1093/nar/gkv1116</doi>
-			<pmid>PMID:26538599</pmid>
+			<pmid>26538599</pmid>
 			<pmcid>PMC4702812</pmcid>
-			<type>Benchmark</type>
+			<type>Other</type>
 		</publication>
 		<publication>
 			<doi>doi:10.1093/nar/gkv1116</doi>
 			<pmid>26538599</pmid>
 			<pmcid>PMC4702812</pmcid>
-			<type>Benchmark</type>
+			<type>Other</type>
 		</publication>
 		<credit>
 			<name>Person or institute name</name>
 			<email>joebloggst@elixir-dk.org</email>
 			<url>http://www.altova.com/</url>
 			<orcidId>http://orcid.org/0000-0002-1825-0097</orcidId>
-			<typeEntity>Division</typeEntity>
-			<typeRole>Maintainer</typeRole>
+			<typeEntity>Person</typeEntity>
+			<typeRole>Support</typeRole>
 			<comment>a</comment>
 		</credit>
 		<credit>
@@ -322,8 +322,8 @@
 			<email>joebloggst@elixir-dk.org</email>
 			<url>http://www.altova.com/</url>
 			<orcidId>http://orcid.org/0000-0002-1825-0097</orcidId>
-			<typeEntity>Division</typeEntity>
-			<typeRole>Developer</typeRole>
+			<typeEntity>Person</typeEntity>
+			<typeRole>Contributor</typeRole>
 			<comment>a</comment>
 		</credit>
 		<elixirInfo>
@@ -486,8 +486,8 @@
 			<comment>Concise textual description of the function(s), if this is not already obvious from the resource description.</comment>
 		</function>
 		<labels>
-			<toolType>Database portal</toolType>
-			<toolType>Plug-in</toolType>
+			<toolType>Web API</toolType>
+			<toolType>Script</toolType>
 			<topic>
 				<uri>http://edamontology.org/topic_0121</uri>
 				<term>Proteomics</term>
@@ -497,30 +497,30 @@
 				<term>Proteomics</term>
 			</topic>
 			<goTermID>GO:0005125</goTermID>
-			<goTermID>GO:0005125</goTermID>
+			<goTermID>0005125</goTermID>
 			<soTermID>0000307</soTermID>
-			<soTermID>0000307</soTermID>
+			<soTermID>SO:0000307</soTermID>
 			<taxId>9606</taxId>
 			<taxId>9606</taxId>
-			<operatingSystem>Linux</operatingSystem>
-			<operatingSystem>Linux</operatingSystem>
-			<language>CWL</language>
-			<language>R</language>
-			<license>Mozilla Public License 2.0</license>
-			<collection>https://bio.tools/collection/collectionName</collection>
+			<operatingSystem>Windows</operatingSystem>
+			<operatingSystem>Windows</operatingSystem>
+			<language>Ada</language>
+			<language>COBOL</language>
+			<license>MIT License</license>
 			<collection>https://bio.tools/c/collectionName</collection>
-			<maturity>Mature</maturity>
-			<cost>Free of charge</cost>
-			<accessibility>Restricted access</accessibility>
-			<accessibility>Restricted access</accessibility>
+			<collection>https://bio.tools/collection/collectionName</collection>
+			<maturity>Emerging</maturity>
+			<cost>Free of charge (with restrictions)</cost>
+			<accessibility>Proprietary</accessibility>
+			<accessibility>Open access</accessibility>
 		</labels>
 		<relation>
 			<biotoolsId>https://bio.tools/tool/toolName/version/versionNumber</biotoolsId>
-			<type>uses</type>
+			<type>hasPlugin</type>
 		</relation>
 		<relation>
-			<biotoolsId>https://bio.tools/tool/toolName</biotoolsId>
-			<type>hasNewVersion</type>
+			<biotoolsId>https://bio.tools/t/toolName/v/versionNumber</biotoolsId>
+			<type>hasPlugin</type>
 		</relation>
 		<apiSpec>
 			<baseURL>https://bio.tools</baseURL>
@@ -597,59 +597,59 @@
 		</apiSpec>
 		<link>
 			<url>http://someURL.org</url>
-			<type>Mirror</type>
+			<type>Social media</type>
 			<comment>text</comment>
 		</link>
 		<link>
 			<url>http://someURL.org</url>
-			<type>Repository</type>
+			<type>Helpdesk</type>
 			<comment>text</comment>
 		</link>
 		<download>
 			<url>http://someURL.org</url>
-			<type>Source code</type>
+			<type>Test data</type>
 			<comment>a</comment>
-			<diskFormat>aki</diskFormat>
-			<containerFormat>rkt</containerFormat>
+			<diskFormat>vdi</diskFormat>
+			<containerFormat>ari</containerFormat>
 			<cmd>a</cmd>
 		</download>
 		<download>
 			<url>http://someURL.org</url>
-			<type>Tool wrapper (galaxy)</type>
+			<type>Test data</type>
 			<comment>a</comment>
-			<diskFormat>iso</diskFormat>
-			<containerFormat>docker</containerFormat>
+			<diskFormat>aki</diskFormat>
+			<containerFormat>ami</containerFormat>
 			<cmd>a</cmd>
 		</download>
 		<documentation>
 			<url>http://someURL.org</url>
-			<type>API specification</type>
+			<type>Citation instructions</type>
 			<comment>a</comment>
 		</documentation>
 		<documentation>
 			<url>http://someURL.org</url>
-			<type>Terms of use</type>
+			<type>Citation instructions</type>
 			<comment>a</comment>
 		</documentation>
 		<publication>
 			<doi>doi:10.1093/nar/gkv1116</doi>
-			<pmid>PMID:26538599</pmid>
+			<pmid>26538599</pmid>
 			<pmcid>PMC4702812</pmcid>
-			<type>Primary</type>
+			<type>Other</type>
 		</publication>
 		<publication>
 			<doi>doi:10.1093/nar/gkv1116</doi>
-			<pmid>PMID:26538599</pmid>
+			<pmid>26538599</pmid>
 			<pmcid>PMC4702812</pmcid>
-			<type>Review</type>
+			<type>Benchmark</type>
 		</publication>
 		<credit>
 			<name>Person or institute name</name>
 			<email>joebloggst@elixir-dk.org</email>
 			<url>http://www.altova.com/</url>
 			<orcidId>http://orcid.org/0000-0002-1825-0097</orcidId>
-			<typeEntity>Institute</typeEntity>
-			<typeRole>Documentor</typeRole>
+			<typeEntity>Consortium</typeEntity>
+			<typeRole>Provider</typeRole>
 			<comment>a</comment>
 		</credit>
 		<credit>
@@ -657,8 +657,8 @@
 			<email>joebloggst@elixir-dk.org</email>
 			<url>http://www.altova.com/</url>
 			<orcidId>http://orcid.org/0000-0002-1825-0097</orcidId>
-			<typeEntity>Funding agency</typeEntity>
-			<typeRole>Maintainer</typeRole>
+			<typeEntity>Institute</typeEntity>
+			<typeRole>Contributor</typeRole>
 			<comment>a</comment>
 		</credit>
 		<elixirInfo>
