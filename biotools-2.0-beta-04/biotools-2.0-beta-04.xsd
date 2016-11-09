@@ -16,6 +16,9 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="linkType">
+		<xs:annotation>
+			<xs:documentation>HTML link.</xs:documentation>
+		</xs:annotation>
 		<xs:all>
 			<xs:element name="url" type="urlType">
 				<xs:annotation>
@@ -72,7 +75,7 @@
 							<xs:element name="toolId">
 								<xs:annotation>
 									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</xs:documentation>
-									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximium.  Replace disallowed characters (including those which would have to be escaped in a URL) with a ‘_’.  See http://biotools.readthedocs.io/.</xs:documentation>
+									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximium.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. Reserved characters are now allowed:  ampersand (), dollar ("$"), plus sign ("+"), comma (","), forward slash ("/"), colon (":"), semi-colon (";"), equals ("="), question mark ("?"), 'At' symbol ("@"), pound ("#").  Other characters generally deemed unsafe are not allowed: space (" "), less than and greater than ("&lt; &gt;"), open and close brackets ("[]"), open and close braces ("{}"), pipe ("|"), backslash ("\"), caret ("^") and percent ("%").</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
 										<biotoolsUsage>Mandatory</biotoolsUsage>
@@ -84,10 +87,9 @@
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
-									<xs:restriction base="xs:anyURI">
+									<xs:restriction base="biotoolsIdType">
 										<xs:maxLength value="12"/>
 										<xs:minLength value="1"/>
-										<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -106,7 +108,7 @@
 										</xs:appinfo>
 									</xs:annotation>
 									<xs:simpleType>
-										<xs:restriction base="xs:token">
+										<xs:restriction base="nameType">
 											<xs:whiteSpace value="collapse"/>
 										</xs:restriction>
 									</xs:simpleType>
@@ -114,7 +116,7 @@
 								<xs:element name="versionId">
 									<xs:annotation>
 										<xs:documentation>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</xs:documentation>
-										<xs:documentation>The ID is a URL-safe derivative of (often identifical to) the tool version restricted to 6 characters maximium.  Replace disallowed characters (including those which would have to be escaped in a URL) with a ‘_’.  See http://biotools.readthedocs.io/.</xs:documentation>
+										<xs:documentation>The ID is a URL-safe derivative of (often identical to) the version restricted to 12 characters maximium.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. Reserved characters are now allowed:  ampersand (), dollar ("$"), plus sign ("+"), comma (","), forward slash ("/"), colon (":"), semi-colon (";"), equals ("="), question mark ("?"), 'At' symbol ("@"), pound ("#").  Other characters generally deemed unsafe are not allowed: space (" "), less than and greater than ("&lt; &gt;"), open and close brackets ("[]"), open and close braces ("{}"), pipe ("|"), backslash ("\"), caret ("^") and percent ("%").</xs:documentation>
 										<xs:appinfo>
 											<uiTip>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</uiTip>
 											<biotoolsUsage>Mandatory</biotoolsUsage>
@@ -126,10 +128,9 @@
 										</xs:appinfo>
 									</xs:annotation>
 									<xs:simpleType>
-										<xs:restriction base="xs:anyURI">
+										<xs:restriction base="biotoolsIdType">
 											<xs:maxLength value="12"/>
 											<xs:minLength value="1"/>
-											<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -270,7 +271,7 @@
 															<xs:documentation>URL of an EDAM Operation concept.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Operation URL.</uiTip>
-																<biotoolsUsage>Mandatory</biotoolsUsage>
+																<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 															</xs:appinfo>
 															<xs:documentation>The URL must be in the EDAM Operation namespace, i.e. http://edamontology.org/operation_.</xs:documentation>
 															<xs:appinfo>
@@ -290,7 +291,7 @@
 															<xs:documentation>An EDAM Operation term (preferred label or synonym).</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Operation term (preferred label or synonym).</uiTip>
-																<biotoolsUsage>Optional</biotoolsUsage>
+																<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 															</xs:appinfo>
 															<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 															<xs:appinfo>
@@ -507,7 +508,7 @@
 															<xs:documentation>URL of an EDAM Topic concept.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Topic URL.</uiTip>
-																<biotoolsUsage>Mandatory</biotoolsUsage>
+																<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 															</xs:appinfo>
 															<xs:documentation>The URL must be in the EDAM Topic namespace, i.e. http://edamontology.org/topic_.</xs:documentation>
 															<xs:appinfo>
@@ -528,7 +529,7 @@
 															<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Topic term (preferred label or synonym).</uiTip>
-																<biotoolsUsage>Optional</biotoolsUsage>
+																<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 															</xs:appinfo>
 															<xs:appinfo>
 																<altova:exampleValues>
@@ -881,12 +882,12 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="biotoolsId" type="biotoolsIdType">
+							<xs:element name="biotoolsId" type="biotoolsUrlType">
 								<xs:annotation>
-									<xs:documentation>bio.tools ID of an existing bio.tools entry which this software is related to.</xs:documentation>
+									<xs:documentation>bio.tools ID (URL)  of an existing bio.tools entry which this software is related to.</xs:documentation>
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>bio.tools ID of an existing bio.tools entry which this software is related to.</uiTip>
+										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
@@ -2029,9 +2030,9 @@
 			<xs:pattern value="https?://.+"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="biotoolsIdType">
+	<xs:simpleType name="biotoolsUrlType">
 		<xs:annotation>
-			<xs:documentation>URL in the bio.tools tool namespace (bio.tools/tool/ or bio.tools/t).</xs:documentation>
+			<xs:documentation>URL in the bio.tools tool namespace (bio.tools/tool/{version} or bio.tools/t{v}).</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="https://bio.tools/tool/toolName/version/versionNumber"/>
@@ -2112,7 +2113,7 @@
 								<xs:documentation>An EDAM  Data term (preferred label or synonym).</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Data term (preferred label or synonym).</uiTip>
-									<biotoolsUsage>Optional</biotoolsUsage>
+									<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 								</xs:appinfo>
 								<xs:appinfo>
 									<altova:exampleValues>
@@ -2160,7 +2161,7 @@
 								<xs:documentation>An EDAM Format term.</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Format term (preferred label or synonym)</uiTip>
-									<biotoolsUsage>Optional</biotoolsUsage>
+									<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 								</xs:appinfo>
 								<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 								<xs:appinfo>
@@ -2236,4 +2237,14 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
+	<xs:simpleType name="biotoolsIdType">
+		<xs:annotation>
+			<xs:documentation>bio.tools ID, either a toolID or versionID.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="12"/>
+			<xs:pattern value="[A-Za-z0-9_\- _ ~.]+"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
