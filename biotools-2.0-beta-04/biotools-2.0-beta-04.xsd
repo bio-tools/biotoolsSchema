@@ -20,7 +20,7 @@
 			<xs:documentation>HTML link.</xs:documentation>
 		</xs:annotation>
 		<xs:all>
-			<xs:element name="url" type="urlType">
+			<xs:element name="url" type="urlftpType">
 				<xs:annotation>
 					<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
 				</xs:annotation>
@@ -196,52 +196,6 @@
 										<biotoolsUsage>Mandatory</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
-							</xs:element>
-							<xs:element name="contact" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Primary points of contact, e.g. person, helpdesk or mailing list.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Primary points of contact, e.g. person, helpdesk or mailing list.</uiTip>
-										<biotoolsUsage>Recommended</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:choice>
-										<xs:sequence>
-											<xs:element name="email">
-												<xs:annotation>
-													<xs:documentation>Email address of the primary contact.</xs:documentation>
-													<xs:appinfo>
-														<uiTip>Email address of the primary contact.</uiTip>
-														<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-													</xs:appinfo>
-													<xs:appinfo>
-														<altova:exampleValues>
-															<altova:example value="joebloggst@elixir-dk.org"/>
-														</altova:exampleValues>
-													</xs:appinfo>
-												</xs:annotation>
-												<xs:simpleType>
-													<xs:restriction base="xs:token">
-														<xs:whiteSpace value="collapse"/>
-														<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-														<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
-											<xs:element name="url" type="xs:anyURI" minOccurs="0">
-												<xs:annotation>
-													<xs:documentation>URL of the primary contact.</xs:documentation>
-													<xs:appinfo>
-														<uiTip>URL of the primary contact.</uiTip>
-														<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-													</xs:appinfo>
-												</xs:annotation>
-											</xs:element>
-										</xs:sequence>
-										<xs:element name="url" type="xs:anyURI"/>
-									</xs:choice>
-								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -1143,7 +1097,7 @@
 						<xs:complexContent>
 							<xs:restriction base="linkType">
 								<xs:all>
-									<xs:element name="url" type="urlType">
+									<xs:element name="url" type="urlftpType">
 										<xs:annotation>
 											<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
 											<xs:appinfo>
@@ -1194,6 +1148,7 @@
 												<xs:enumeration value="Mailing llist"/>
 												<xs:enumeration value="Issue tracker"/>
 												<xs:enumeration value="Helpdesk"/>
+												<xs:enumeration value="Registry"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
@@ -1224,7 +1179,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:all>
-							<xs:element name="url" type="urlType">
+							<xs:element name="url" type="urlftpType">
 								<xs:annotation>
 									<xs:documentation>Link to download (or repo providing a download) for the tool.</xs:documentation>
 									<xs:appinfo>
@@ -1267,6 +1222,10 @@
 											<enumItem>
 												<term>Icon</term>
 												<uiTip>Icon of the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Ontology</term>
+												<uiTip>A file containing an ontology, controlled vocabulary, terminology etc.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Screenshot</term>
@@ -1316,6 +1275,7 @@
 										<xs:enumeration value="Container file"/>
 										<xs:enumeration value="CWL file"/>
 										<xs:enumeration value="Icon"/>
+										<xs:enumeration value="Ontology"/>
 										<xs:enumeration value="Screenshot"/>
 										<xs:enumeration value="Source code"/>
 										<xs:enumeration value="Source package"/>
@@ -1477,7 +1437,7 @@
 						<xs:complexContent>
 							<xs:restriction base="linkType">
 								<xs:all>
-									<xs:element name="url" type="urlType">
+									<xs:element name="url" type="urlftpType">
 										<xs:annotation>
 											<xs:documentation>Link to documentation on the web for the tool.</xs:documentation>
 											<xs:appinfo>
@@ -1633,6 +1593,77 @@
 										<xs:enumeration value="Review"/>
 									</xs:restriction>
 								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="contact" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Primary points of contact, e.g. person, helpdesk or mailing list.</xs:documentation>
+						<xs:appinfo>
+							<uiTip>Primary points of contact, e.g. person, helpdesk or mailing list.</uiTip>
+							<biotoolsUsage>Recommended</biotoolsUsage>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element name="email">
+										<xs:annotation>
+											<xs:documentation>Email address of the primary contact.</xs:documentation>
+											<xs:appinfo>
+												<uiTip>Email address of the primary contact.</uiTip>
+												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+											</xs:appinfo>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="joebloggst@elixir-dk.org"/>
+												</altova:exampleValues>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:token">
+												<xs:whiteSpace value="collapse"/>
+												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="url" type="xs:anyURI" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>URL of the primary contact.</xs:documentation>
+											<xs:appinfo>
+												<uiTip>URL of the primary contact.</uiTip>
+												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+											</xs:appinfo>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+								<xs:element name="url" type="xs:anyURI"/>
+							</xs:choice>
+							<xs:element name="name" type="nameType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Name of the primary contact.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Name of the primary contact.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="Joe Bloggs"/>
+										</altova:exampleValues>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="tel" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Telephone number of primary contact.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Telephone number of the primary contact.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
