@@ -1118,6 +1118,10 @@
 												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
 												<enum>
 													<enumItem>
+														<term>Browser</term>
+														<uiTip>A website for browsing data.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Mirror</term>
 														<uiTip>Mirror of an (identical) online service.</uiTip>
 													</enumItem>
@@ -1150,10 +1154,11 @@
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="enumType">
+												<xs:enumeration value="Browser"/>
 												<xs:enumeration value="Social media"/>
 												<xs:enumeration value="Repository"/>
 												<xs:enumeration value="Mirror"/>
-												<xs:enumeration value="Mailing llist"/>
+												<xs:enumeration value="Mailing list"/>
 												<xs:enumeration value="Issue tracker"/>
 												<xs:enumeration value="Helpdesk"/>
 												<xs:enumeration value="Registry"/>
@@ -1605,7 +1610,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="contact" minOccurs="0">
+				<xs:element name="contact" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Primary points of contact, e.g. person, helpdesk or mailing list.</xs:documentation>
 						<xs:appinfo>
