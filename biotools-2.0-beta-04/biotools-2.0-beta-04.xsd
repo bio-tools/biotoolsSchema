@@ -72,7 +72,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="toolId">
+							<xs:element name="toolID">
 								<xs:annotation>
 									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</xs:documentation>
 									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximium.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed.  All other characters are not, including reserved characters:  ampersand (), dollar ("$"), plus sign ("+"), comma (","), forward slash ("/"), colon (":"), semi-colon (";"), equals ("="), question mark ("?"), 'At' symbol ("@"), pound ("#").  And other characters generally deemed unsafe: space (" "), less than and greater than ("&lt; &gt;"), open and close brackets ("[]"), open and close braces ("{}"), pipe ("|"), backslash ("\"), caret ("^") and percent ("%").  Spaces can be preserved as underscore ("_").</xs:documentation>
@@ -113,7 +113,7 @@
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
-								<xs:element name="versionId">
+								<xs:element name="versionID">
 									<xs:annotation>
 										<xs:documentation>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</xs:documentation>
 										<xs:documentation>The ID is a URL-safe derivative of (often identical to) the version restricted to 12 characters maximium.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters are not, including reserved characters:  ampersand (), dollar ("$"), plus sign ("+"), comma (","), forward slash ("/"), colon (":"), semi-colon (";"), equals ("="), question mark ("?"), 'At' symbol ("@"), pound ("#").  And other characters generally deemed unsafe: space (" "), less than and greater than ("&lt; &gt;"), open and close brackets ("[]"), open and close braces ("{}"), pipe ("|"), backslash ("\"), caret ("^") and percent ("%"). Spaces can be preserved as underscore ("_").</xs:documentation>
@@ -365,7 +365,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="toolType" maxOccurs="unbounded">
+							<xs:element name="toolType" minOccurs="1" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
 									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
@@ -400,6 +400,10 @@
 											<enumItem>
 												<term>Database portal</term>
 												<uiTip>A Web application, suite or workbench providing a portal to a biological database.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Ontology</term>
+												<uiTip>A collection of information about concepts, including terms, synonyms, descriptions etc.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Workflow</term>
@@ -541,7 +545,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="taxId" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="taxID" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>NCBI taxonomy ID of taxonomic group the software (particularly database portals) caters for.</xs:documentation>
 									<xs:documentation>The Taxonomy ID (TaxID or taxon number), e.g. “9606” is a stable unique identifier for each taxonomic group in the NCBI Taxonomy Browser. The TaxID is seen in the GenBank records under feature source.</xs:documentation>
@@ -722,12 +726,12 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="collection" type="biotoolsCollectionIdType" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="collectionID" type="biotoolsCollectionIdType" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>bio.tools ID of a software collection that the software has been assigned.   </xs:documentation>
-									<xs:documentation>The ID is a URL in the bio.tools namespace and is assigned upon creation of the collection in bio.tools: see http://biotools.readthedocs.io/.  Collections may be created for some other registry, catalogue, WIKI etc. where this tool is described, or for any arbitrary purpose.</xs:documentation>
+									<xs:documentation>Unique ID of a collection that the software has been assigned to.</xs:documentation>
+									<xs:documentation>The ID is a URL-safe name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. See http://biotools.readthedocs.io/.  Collections may be created for some other registry, catalogue, WIKI etc. where this tool is described, or for any arbitrary purpose.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>bio.tools ID of a software collection that the software has been assigned.</uiTip>
+										<uiTip>Unique ID of a collection that the software has been assigned to.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
@@ -1116,6 +1120,10 @@
 													<enumItem>
 														<term>Mirror</term>
 														<uiTip>Mirror of an (identical) online service.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Registry</term>
+														<uiTip>Some registry, catalogue etc. other than bio.tools.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Repository</term>
@@ -2079,16 +2087,15 @@
 	</xs:simpleType>
 	<xs:simpleType name="biotoolsCollectionIdType">
 		<xs:annotation>
-			<xs:documentation>URL in the bio.tools collection namespace (bio.tools/collection or bio.tools/c).</xs:documentation>
+			<xs:documentation>Name of a software collection that the software has been assigned to.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="https://bio.tools/collection/collectionName"/>
-					<altova:example value="https://bio.tools/c/collectionName"/>
+					<altova:example value="collectionName"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://bio.tools/(collection|c)/[A-Za-z0-9_\- _ ~]+"/>
+			<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ontologyConcept">
