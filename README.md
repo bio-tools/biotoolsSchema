@@ -29,7 +29,7 @@ name (1 only) | Canonical resource name | Text | y | y | 1.4, 2.0-beta-04 | `nam
 toolID (1 only) | Unique tool ID | Text | y | y | 2.0-beta-04 | `toolID`
 homepage (1 only) | Resource homepage | URL | y | y | 1.4, 2.0-beta-04 | `homepage`, `homepage`
 description (1 only) | Short textual description of the resource | Text | y | y | 1.4, 2.0-beta-04 | `description`, `description`
-tool type | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | 2.0-beta-04 | `toolType`
+tool type (1 or more) | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | 2.0-beta-04 | `toolType`
 resource type (1 or more) | Basic resource type | enum (see below) | - | - | 1.4 | `resourceType`
 interface type (1 or more) | Resource interface type | enum (see below) | - | - | 1.4 | `interfaceType`
 topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | 1.4, 2.0-beta-04 | `topic`
