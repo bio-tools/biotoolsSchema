@@ -30,7 +30,7 @@ publication (0 or more) | Publications about the software | PMID, PMCID or DOI |
 
   
 ## Tool types 
-Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/).
+Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/)).
 
 type | Description 
 ---- | ----------- 
