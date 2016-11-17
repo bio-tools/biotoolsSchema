@@ -17,23 +17,23 @@ Full user documentation of biotoolsSchema is available at
 
 https://bio.tools/schema  (version 1.4)
 
-[GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0-beta-04/docs/biotools-2.0-beta-04.html) (version 2.0-beta-04)
+[GitHub](https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0.0/docs/biotools-2.0.0.html) (version 2.0.0)
 
 
 ## Information requirements
-https://bio.tools will include a "staging area" for "beta entries" with less rich annotation.  The minimum information requirement for "beta" and "standard" is given in the respective columns.  Attributes are defined as mandatory in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04)) as indicated by "Version" column
+https://bio.tools will include a "staging area" for "beta entries" with less rich annotation.  The minimum information requirement for "beta" and "standard" is given in the respective columns.  Attributes are defined as mandatory in the current production schema ([biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4)) or candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0.0)) as indicated by "Version" column
 
 Attribute | Description | Format | beta | standard | Version | element
 --------- | ----------- | ------ | -----| -------- | ------- | -------
-name (1 only) | Canonical resource name | Text | y | y | 1.4, 2.0-beta-04 | `name`, `name`
-toolID (1 only) | Unique tool ID | Text | y | y | 2.0-beta-04 | `toolID`
-homepage (1 only) | Resource homepage | URL | y | y | 1.4, 2.0-beta-04 | `homepage`, `homepage`
-description (1 only) | Short textual description of the resource | Text | y | y | 1.4, 2.0-beta-04 | `description`, `description`
-tool type (1 or more) | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | 2.0-beta-04 | `toolType`
+name (1 only) | Canonical resource name | Text | y | y | 1.4, 2.0.0 | `name`, `name`
+toolID (1 only) | Unique tool ID | Text | y | y | 2.0.0 | `toolID`
+homepage (1 only) | Resource homepage | URL | y | y | 1.4, 2.0.0 | `homepage`, `homepage`
+description (1 only) | Short textual description of the resource | Text | y | y | 1.4, 2.0.0 | `description`, `description`
+tool type (1 or more) | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | 2.0.0 | `toolType`
 resource type (1 or more) | Basic resource type | enum (see below) | - | - | 1.4 | `resourceType`
 interface type (1 or more) | Resource interface type | enum (see below) | - | - | 1.4 | `interfaceType`
-topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | 1.4, 2.0-beta-04 | `topic`
-function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | y | y | 1.4, 2.0-beta-04 | `function->functionName`, `function->operation`
+topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | 1.4, 2.0.0 | `topic`
+function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | y | y | 1.4, 2.0.0 | `function->functionName`, `function->operation`
 input data (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y | - | `function->input->dataType`, `function->input->data`
 output data (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y | - | `function->output->dataType`, `function->output->data`
 contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address and / or URL of contact** | - | y | 1.4 | `contact`, `contact`
@@ -49,13 +49,13 @@ Valid values of resourceType in in the current production schema ([biotools-1.4]
 
 type | Description 
 ---- | ----------- 
-Database | A collection of data, datasets, a registry etc. | 1.4, 2.0-beta-04
-Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0-beta-04
-Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0-beta-04
-Workflow | A definition of a collection of tools, services etc. for running in a workflow system. | 1.4, 2.0-beta-04
-Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc. | 1.4, 2.0-beta-04
-Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker. | 1.4, 2.0-beta-04
-Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0-beta-04
+Database | A collection of data, datasets, a registry etc. | 1.4, 2.0.0
+Tool | Software which you can download, install, configure and run yourself. | 1.4, 2.0.0
+Service | Software provided as a service and available for immediate use, e.g. on the Web. | 1.4, 2.0.0
+Workflow | A definition of a collection of tools, services etc. for running in a workflow system. | 1.4, 2.0.0
+Platform | An integrated environment, including suites, workbenches, workflow systems, frameworks etc. | 1.4, 2.0.0
+Container | A collection of data, tools, services etc. in a portable environment, e.g. VMs, Docker. | 1.4, 2.0.0
+Library | A package of code for building/extending tools, including widgets, plug-ins, toolkits etc. | 1.4, 2.0.0
 Other | Other type of resource not listed above.
 
 ## Interface types (v1.4)
@@ -73,7 +73,7 @@ QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
 ## Tool types (v2.0beta04)
-Valid values of toolType in in the candidate stable schema ([biotools-2.0-beta-04](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0-beta-04)).
+Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0.0)).
 
 type | Description 
 ---- | ----------- 
@@ -84,7 +84,7 @@ Script | A tool written for some run-time environment (e.g. other applications o
 Suite | A collection of tools which are bundled together into a convenient toolkit.  Such tools typically share related functionality, a common user interface and can exchange data conveniently.  This includes collections of stand-alone command-line tools, or Web applications within a common portal.
 Workbench | An application or suite with a graphical user interface, providing an integrated environment for data analysis which includes or may be extended with any number of functions or tools.  Includes workflow systems, platforms, frameworks etc.
 Database portal | A Web application, suite or workbench providing a portal to a biological database.
-Ontology | A collection of information about concepts, including terms, synonyms, descriptions etc. | 2.0-beta-04
+Ontology | A collection of information about concepts, including terms, synonyms, descriptions etc. | 2.0.0
 Workflow | A set of tools which have been composed together into a pipeline of some sort.  Such tools are (typically) standalone, but are composed for convenience, for instance for batch execution via some workflow engine or script.
 Plug-in | A software component encapsulating a set of related functions, which are not standalone, i.e. depend upon other software for its use, e.g. a Javascript widget, or a plug-in, extension add-on etc. that extends the function of some existing tool.
 Library | A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.
