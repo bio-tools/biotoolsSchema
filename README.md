@@ -14,17 +14,17 @@ https://bio.tools specifies an information requirement for "standard" and "beta"
 
 Attribute | Description | Format | beta | standard | element
 --------- | ----------- | ------ | -----| -------- | -------
-name (1 only) | Canonical resource name | Text | y | y | `name`, `name`
-toolID (1 only) | Unique tool ID | Text | y | y | `toolID`
-homepage (1 only) | Resource homepage | URL | y | y | `homepage`, `homepage`
-description (1 only) | Short textual description of the resource | Text | y | y | `description`, `description`
-tool type (1 or more) | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | `toolType`
-topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | `topic`
-function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | y | y | `function->functionName`, `function->operation`
-input data (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y | `function->input->dataType`, `function->input->data`
-output data (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y | `function->output->dataType`, `function->output->data`
-contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address and / or URL of contact** | - | y | `contact`, `contact`
-publication (0 or more) | Publications about the software | PMID, PMCID or DOI | - | y | `publication`, `publication`
+name (1 only) | Canonical resource name | Text | y | y | `<name>`
+toolID (1 only) | Unique tool ID | Text | y | y | `<toolID>`
+homepage (1 only) | Resource homepage | URL | y | y | `<homepage>`
+description (1 only) | Short textual description of the resource | Text | y | y | `<description>`
+tool type (1 or more) | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | `<toolType>`
+topic (1 or more) | General scientific domain(s) the resource serves, e.g. "Proteomics" | Term and / or URI of [EDAM Topic](http://edamontology.org/topic_0004) concept(s)* | y | y | `<topic>`
+function (1 or more) | The basic resource function(s), e.g. "Multiple sequence alignment" | Term and / or URI of [EDAM Operation](http://edamontology.org/operation_0004) concept(s) | y | y | `<function><operation>`
+input data (0 or more) | Type(s) of data: primary inputs (if any), e.g. "Protein sequences" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y |  `<function><input><data>`
+output data (0 or more) | Type(s) of data: primary outputs (if any), e.g. "Protein sequence alignment" | Term and / or URI of [EDAM Data](http://edamontology.org/data_0006) concept(s) | - | y | `<function><output><data>`
+contact (1 or more) | Primary contact, e.g. a person, helpdesk or mailing list | Email address and / or URL of contact** | - | y | `<contact>`
+publication (0 or more) | Publications about the software | PMID, PMCID or DOI | - | y | `<publication>`
 
 *EDAM is a simple ontology of well established, familiar concepts that are prevalent within bioinformatics, including types of data and data identifiers, data formats, operations and topics. EDAM provides a set of terms with synonyms and definitions - organised into an intuitive hierarchy for convenient use.  You can read find [EDAM on GitHub](https://github.com/edamontology/edamontology).
 
