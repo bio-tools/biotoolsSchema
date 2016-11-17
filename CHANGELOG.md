@@ -7,6 +7,9 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# November 17, 2016 biotoolsSchema-2.0.0.xsd released
+Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
+	
 # November 8, 2016 biotoolsSchema-2.0-beta04.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.
 
