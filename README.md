@@ -72,7 +72,7 @@ API | Application programmers interface to a programming library.
 QL | Query language interface to a database, e.g. SQL, SPARQL etc.
 
 
-## Tool types (v2.0beta04)
+## Tool types (v2.0.0)
 Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0.0)).
 
 type | Description 
