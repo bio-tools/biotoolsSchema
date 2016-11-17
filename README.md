@@ -10,7 +10,7 @@ Comprehensive documentation is available:
 
 
 # Information requirements
-Attributes defined as mandatory in the schema version used by bio.tools [biotools-1.4](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-1.4) and the latest stable version [biotools-2.0.0](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0.0) are indicated by "Version" column.  https://bio.tools specifies an information requirement for "standard" and "beta" (less well annotated) entries, as indicated in the respective columns.
+https://bio.tools specifies an information requirement for "standard" and "beta" (less well annotated) entries, as indicated in the respective columns.  Attributes defined as mandatory in the latest stable version [biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/) are those in the "beta" column.
 
 Attribute | Description | Format | beta | standard | element
 --------- | ----------- | ------ | -----| -------- | -------
@@ -31,8 +31,8 @@ publication (0 or more) | Publications about the software | PMID, PMCID or DOI |
 **one of contactEmail or contactURL must be specified
 
   
-## Tool types (v2.0.0)
-Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsschema/tree/master/biotools-2.0.0)).
+## Tool types 
+Valid values of toolType in in the candidate stable schema ([biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/).
 
 type | Description 
 ---- | ----------- 
