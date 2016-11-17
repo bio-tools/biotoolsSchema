@@ -6,7 +6,7 @@ biotoolsSchema defines 50 important scientific, technical and administrative att
 Comprehensive documentation is available:
 * http://biotoolsschemadocs.readthedocs.io/en/latest/
 * https://bio.tools/schema  (version 1.4, currently in production in bio.tools)
-* https://github.com/bio-tools/biotoolsschema/blob/master/biotools-2.0.0/docs/biotools-2.0.0.html (version 2.0.0, latest stable version)
+* https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/docs/biotools-2.0.0.html (version 2.0.0, latest stable version)
 
 
 # Information requirements
