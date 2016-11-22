@@ -2277,7 +2277,6 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
-										<xs:enumeration value="UK"/>
 										<xs:enumeration value="Belgium"/>
 										<xs:enumeration value="Czech Republic"/>
 										<xs:enumeration value="Denmark"/>
