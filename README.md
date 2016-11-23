@@ -4,7 +4,7 @@
 biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 7 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [Tools & Data Services Registry](https://bio.tools).
 
 Comprehensive documentation is available:
-* http://biotoolsschemadocs.readthedocs.io/en/latest/
+* http://biotoolsschema.readthedocs.io/en/latest/
 * https://bio.tools/schema  (version 1.4, currently in production in bio.tools)
 * https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/docs/biotools-2.0.0.html (version 2.0.0, latest stable version)
 
