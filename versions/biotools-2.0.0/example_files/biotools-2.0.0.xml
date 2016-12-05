@@ -167,7 +167,7 @@
 			<operatingSystem>Linux</operatingSystem>
 			<language>Javascript</language>
 			<language>Other</language>
-			<license>Apple Public Source License 2.0</license>
+			<license>CC-BY-1.0</license>
 			<collectionID>collectionName</collectionID>
 			<collectionID>collectionName</collectionID>
 			<maturity>Mature</maturity>
@@ -510,7 +510,7 @@
 			<operatingSystem>Mac</operatingSystem>
 			<language>Java</language>
 			<language>Bash</language>
-			<license>Other</license>
+			<license>CC-BY-1.0</license>
 			<collectionID>collectionName</collectionID>
 			<collectionID>collectionName</collectionID>
 			<maturity>Mature</maturity>
