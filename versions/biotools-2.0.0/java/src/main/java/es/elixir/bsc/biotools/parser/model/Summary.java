@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlType(name = "", propOrder = {"name",
                                  "version",
-                                 "biotoolsId",
+                                 "toolID",
                                  "doi",
                                  "shortDescription",
                                  "description",
@@ -51,7 +51,7 @@ public class Summary {
 
     private NameType name;
     private String version;
-    private BiotoolsIdType biotoolsId;
+    private BiotoolsIdType toolID;
     private DoiType doi;
     private String shortDescription;
     private TextType description;
@@ -79,12 +79,12 @@ public class Summary {
     }
 
     @XmlElement(required = true)
-    public BiotoolsIdType getBiotoolsId() {
-        return biotoolsId;
+    public BiotoolsIdType getToolID() {
+        return toolID;
     }
 
-    public void setBiotoolsId(BiotoolsIdType biotoolsId) {
-        this.biotoolsId = biotoolsId;
+    public void setToolID(BiotoolsIdType toolID) {
+        this.toolID = toolID;
     }
 
     @XmlElement(required = true)
