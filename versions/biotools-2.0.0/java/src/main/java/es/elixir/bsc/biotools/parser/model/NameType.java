@@ -38,6 +38,12 @@ public class NameType {
 
     private String value;
 
+    public NameType() {}
+    
+    public NameType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     public String getValue() {
         return value;

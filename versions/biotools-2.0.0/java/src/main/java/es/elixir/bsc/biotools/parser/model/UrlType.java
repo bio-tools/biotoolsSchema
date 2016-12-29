@@ -38,6 +38,12 @@ public class UrlType {
 
     private String value;
 
+    public UrlType() {}
+    
+    public UrlType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     public String getValue() {
         return value;
