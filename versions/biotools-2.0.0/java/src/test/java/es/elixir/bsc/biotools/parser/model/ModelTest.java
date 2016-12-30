@@ -76,7 +76,8 @@ public class ModelTest {
             ctx.generateSchema(new SchemaOutputResolver() {
                 @Override
                 public Result createOutput(String namespaceUri, String suggestedFileName) throws IOException {
-                    Result result = new StreamResult(new ByteArrayOutputStream());
+                    //Result result = new StreamResult(new ByteArrayOutputStream());
+                    Result result = new StreamResult(System.out);
                     result.setSystemId(namespaceUri);
                     return result;
                 }

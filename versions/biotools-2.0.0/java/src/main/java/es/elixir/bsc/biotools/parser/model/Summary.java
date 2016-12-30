@@ -28,6 +28,7 @@ package es.elixir.bsc.biotools.parser.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -49,23 +50,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
                                  "socialMedias"})
 public class Summary {
 
-    private NameType name;
+    private String name;
     private String version;
-    private BiotoolsIdType toolID;
-    private DoiType doi;
+    private String toolID;
+    private String doi;
     private String shortDescription;
-    private TextType description;
-    private UrlType homepage;
-    private List<UrlType> mirrors;
-    protected List<UrlFtpType> repositories;
-    protected List<UrlType> socialMedias;
+    private String description;
+    private String homepage;
+    private List<String> mirrors;
+    protected List<String> repositories;
+    protected List<String> socialMedias;
 
     @XmlElement(required = true)
-    public NameType getName() {
+    @XmlSchemaType(name = "nameType", namespace = "http://bio.tools")
+    public String getName() {
         return name;
     }
 
-    public void setName(NameType name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -79,20 +81,22 @@ public class Summary {
     }
 
     @XmlElement(required = true)
-    public BiotoolsIdType getToolID() {
+    @XmlSchemaType(name = "biotoolsIdType", namespace = "http://bio.tools")
+    public String getToolID() {
         return toolID;
     }
 
-    public void setToolID(BiotoolsIdType toolID) {
+    public void setToolID(String toolID) {
         this.toolID = toolID;
     }
 
     @XmlElement(required = true)
-    public DoiType getDoi() {
+    @XmlSchemaType(name = "doiType", namespace = "http://bio.tools")
+    public String getDoi() {
         return doi;
     }
 
-    public void setDoi(DoiType doi) {
+    public void setDoi(String doi) {
         this.doi = doi;
     }
 
@@ -104,25 +108,28 @@ public class Summary {
         this.shortDescription = shortDescription;
     }
 
-    public TextType getDescription() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(TextType description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
     @XmlElement(required = true)
-    public UrlType getHomepage() {
+    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
+    public String getHomepage() {
         return homepage;
     }
 
-    public void setHomepage(UrlType homepage) {
+    public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
 
     @XmlElement(name = "mirror")
-    public List<UrlType> getMirrors() {
+    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
+    public List<String> getMirrors() {
         if (mirrors == null) {
             mirrors = new ArrayList<>();
         }
@@ -130,7 +137,8 @@ public class Summary {
     }
 
     @XmlElement(name = "repository")
-    public List<UrlFtpType> getRepositories() {
+    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.tools")
+    public List<String> getRepositories() {
         if (repositories == null) {
             repositories = new ArrayList<>();
         }
@@ -138,7 +146,8 @@ public class Summary {
     }
 
     @XmlElement(name = "socialMedia")
-    public List<UrlType> getSocialMedias() {
+    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
+    public List<String> getSocialMedias() {
         if (socialMedias == null) {
             socialMedias = new ArrayList<>();
         }

@@ -47,7 +47,7 @@ public class Contact {
 
     private String email;
     private String url;
-    private NameType name;
+    private String name;
     private String tel;
     private List<ContactType> types;
 
@@ -69,11 +69,12 @@ public class Contact {
         this.url = url;
     }
 
-    public NameType getName() {
+    @XmlSchemaType(name = "nameType", namespace = "http://bio.tools")
+    public String getName() {
         return name;
     }
 
-    public void setName(NameType name) {
+    public void setName(String name) {
         this.name = name;
     }
 

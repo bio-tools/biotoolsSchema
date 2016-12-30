@@ -28,6 +28,7 @@ package es.elixir.bsc.biotools.parser.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -44,7 +45,7 @@ public class Function {
     private List<Operation> operations;
     protected List<Input> inputs;
     protected List<Output> outputs;
-    protected TextType comment;
+    protected String comment;
 
     @XmlElement(name = "operation", required = true)
     public List<Operation> getOperations() {
@@ -70,11 +71,12 @@ public class Function {
         return outputs;
     }
 
-    public TextType getComment() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(TextType comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 }
