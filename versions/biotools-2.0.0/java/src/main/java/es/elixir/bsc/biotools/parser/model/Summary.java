@@ -109,6 +109,7 @@ public class Summary {
     }
 
     @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getDescription() {
         return description;
     }

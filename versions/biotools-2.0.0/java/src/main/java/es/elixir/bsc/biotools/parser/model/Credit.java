@@ -52,7 +52,7 @@ public class Credit {
     private String gridId;
     private EntityType typeEntity;
     private RoleType typeRole;
-    private TextType comment;
+    private String comment;
 
     public NameType getName() {
         return name;
@@ -113,11 +113,13 @@ public class Credit {
         this.typeRole = typeRole;
     }
 
-    public TextType getComment() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(TextType comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 }

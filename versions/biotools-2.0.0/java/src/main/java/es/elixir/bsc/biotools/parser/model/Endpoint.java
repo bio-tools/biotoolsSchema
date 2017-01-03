@@ -48,7 +48,7 @@ public class Endpoint {
     private HttpMethodType httpMethod;
     private String urlTemplate;
     private Output output;
-    private TextType summary;
+    private String summary;
     private List<Parameter> parameters;
 
     @XmlElement(required = true)
@@ -79,11 +79,13 @@ public class Endpoint {
         this.output = output;
     }
 
-    public TextType getSummary() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getSummary() {
         return summary;
     }
 
-    public void setSummary(TextType summary) {
+    public void setSummary(String summary) {
         this.summary = summary;
     }
 

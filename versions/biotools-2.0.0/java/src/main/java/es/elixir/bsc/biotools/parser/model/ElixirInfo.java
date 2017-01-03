@@ -27,7 +27,10 @@ package es.elixir.bsc.biotools.parser.model;
 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Information for ELIXIR internal purposes, maintained by ELIXIR Hub.
@@ -50,7 +53,7 @@ public class ElixirInfo {
     private boolean isCoreDataResource;
     private ElixirPlatform platform;
     private ElixirNode node;
-    private TextType comment;
+    private String comment;
 
     public Date getLastReviewExternalSab() {
         return lastReviewExternalSab;
@@ -101,11 +104,13 @@ public class ElixirInfo {
         this.node = node;
     }
 
-    public TextType getComment() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(TextType comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 }

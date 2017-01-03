@@ -28,6 +28,7 @@ package es.elixir.bsc.biotools.parser.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -39,15 +40,16 @@ import javax.xml.bind.annotation.XmlType;
                                  "endpoints"})
 public class ApiSpec {
 
-    private UrlType baseURL;
+    private String baseURL;
     private List<Endpoint> endpoints;
 
     @XmlElement(required = true)
-    public UrlType getBaseURL() {
+    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
+    public String getBaseURL() {
         return baseURL;
     }
 
-    public void setBaseURL(UrlType baseURL) {
+    public void setBaseURL(String baseURL) {
         this.baseURL = baseURL;
     }
 

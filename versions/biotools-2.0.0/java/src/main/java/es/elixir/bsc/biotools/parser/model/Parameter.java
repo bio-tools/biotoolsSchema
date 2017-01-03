@@ -43,7 +43,7 @@ public class Parameter {
 
     private String urlTemplateFragment;
     private EDAMdata data;
-    private TextType comment;
+    private String comment;
 
     @XmlElement(required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
@@ -64,11 +64,13 @@ public class Parameter {
         this.data = data;
     }
 
-    public TextType getComment() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(TextType comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 }

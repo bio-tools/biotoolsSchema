@@ -31,7 +31,10 @@ package es.elixir.bsc.biotools.parser.model;
  */
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlType(name = "", propOrder = {"urlFtpType",
                                  "downloadType",
@@ -41,19 +44,20 @@ import javax.xml.bind.annotation.XmlType;
                                  "CMD"})
 public class Download {
     
-    private UrlFtpType url;
+    private String url;
     private DownloadType type;
-    private TextType comment;
+    private String comment;
     private DiskFormatType diskFormat;
     private ContainerFormatType containerFormat;
-    private TextType cmd;
+    private String cmd;
     
     @XmlElement(name = "url")
-    public UrlFtpType getUrlFtpType() {
+    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.tools")
+    public String getUrlFtpType() {
         return url;
     }
     
-    public void setUrlFtpType(UrlFtpType url) {
+    public void setUrlFtpType(String url) {
         this.url = url;
     }
     
@@ -66,11 +70,13 @@ public class Download {
         this.type = type;
     }
     
-    public TextType getComment() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getComment() {
         return comment;
     }
     
-    public void setComment(TextType comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
     
@@ -91,11 +97,13 @@ public class Download {
     }
     
     @XmlElement(name = "cmd")
-    public TextType getCMD() {
+    @XmlSchemaType(name = "textType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getCMD() {
         return cmd;
     }
     
-    public void setCMD(TextType cmd) {
+    public void setCMD(String cmd) {
         this.cmd = cmd;
     }
 }

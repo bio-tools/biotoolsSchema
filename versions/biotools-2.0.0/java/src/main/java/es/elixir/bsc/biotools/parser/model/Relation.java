@@ -26,6 +26,7 @@
 package es.elixir.bsc.biotools.parser.model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -37,15 +38,16 @@ import javax.xml.bind.annotation.XmlType;
                                  "type"})
 public class Relation {
 
-    private BiotoolsIdType biotoolsId;
+    private String biotoolsId;
     private SoftwareRelationType type;
 
     @XmlElement(required = true)
-    public BiotoolsIdType getBiotoolsId() {
+    @XmlSchemaType(name = "biotoolsIdType", namespace = "http://bio.tools")
+    public String getBiotoolsId() {
         return biotoolsId;
     }
 
-    public void setBiotoolsId(BiotoolsIdType biotoolsId) {
+    public void setBiotoolsId(String biotoolsId) {
         this.biotoolsId = biotoolsId;
     }
 

@@ -40,6 +40,12 @@ public class EnumType {
 
     private String value;
     
+    public EnumType() {}
+    
+    public EnumType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getValue() {

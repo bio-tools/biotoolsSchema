@@ -42,16 +42,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class LinkType<T> {
 
-    protected UrlFtpType url;
+    protected String url;
     protected T type;
     protected Object comment;
 
     @XmlElement(required = true)
-    public UrlFtpType getUrl() {
+    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.tools")
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(UrlFtpType url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 

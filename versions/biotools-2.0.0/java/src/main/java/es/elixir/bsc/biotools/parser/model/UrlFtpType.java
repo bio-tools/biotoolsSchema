@@ -38,6 +38,12 @@ public class UrlFtpType {
 
     private String value;
 
+    public UrlFtpType() {}
+    
+    public UrlFtpType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     public String getValue() {
         return value;

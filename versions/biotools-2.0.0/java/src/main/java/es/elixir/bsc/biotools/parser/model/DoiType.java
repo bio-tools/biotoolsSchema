@@ -40,6 +40,12 @@ public class DoiType {
 
     private String value;
 
+    public DoiType() {}
+    
+    public DoiType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getValue() {

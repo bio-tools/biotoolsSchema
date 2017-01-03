@@ -28,6 +28,7 @@ package es.elixir.bsc.biotools.parser.model;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -58,7 +59,7 @@ public class Labels {
     private List<LanguageType> languages;
     private LicenseType license;
     private List<LicenseStatusType> statuses;
-    private List<BiotoolsCollectionIdType> collections;
+    private List<String> collections;
 
     @XmlElement(name = "toolType", required = true)
     public List<ToolType> getToolTypes() {
@@ -136,7 +137,8 @@ public class Labels {
     }
 
     @XmlElement(name = "collection")
-    public List<BiotoolsCollectionIdType> getCollections() {
+    @XmlSchemaType(name = "biotoolsCollectionIdType", namespace = "http://bio.tools")
+    public List<String> getCollections() {
         if (collections == null) {
             collections = new ArrayList<>();
         }

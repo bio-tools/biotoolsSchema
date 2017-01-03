@@ -40,6 +40,12 @@ public class BiotoolsCollectionIdType {
 
     private String value;
 
+    public BiotoolsCollectionIdType() {}
+    
+    public BiotoolsCollectionIdType(String value) {
+        this.value = value;
+    }
+    
     @XmlValue
     public String getValue() {
         return value;

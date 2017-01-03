@@ -25,6 +25,7 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -35,16 +36,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
                                  "type"})
 public class Publication {
 
-    private DoiType doi;
+    private String doi;
     private String pmid;
     private String pmcid;
     private PublicationType type;
 
-    public DoiType getDoi() {
+    @XmlSchemaType(name = "doiType", namespace = "http://bio.tools")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    public String getDoi() {
         return doi;
     }
 
-    public void setDoi(DoiType doi) {
+    public void setDoi(String doi) {
         this.doi = doi;
     }
 
