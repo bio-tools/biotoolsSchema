@@ -44,10 +44,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
                                  "doi",
                                  "shortDescription",
                                  "description",
-                                 "homepage",
-                                 "mirrors",
-                                 "repositories",
-                                 "socialMedias"})
+                                 "homepage"})
 public class Summary {
 
     private String name;
@@ -126,32 +123,5 @@ public class Summary {
 
     public void setHomepage(String homepage) {
         this.homepage = homepage;
-    }
-
-    @XmlElement(name = "mirror")
-    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
-    public List<String> getMirrors() {
-        if (mirrors == null) {
-            mirrors = new ArrayList<>();
-        }
-        return mirrors;
-    }
-
-    @XmlElement(name = "repository")
-    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.tools")
-    public List<String> getRepositories() {
-        if (repositories == null) {
-            repositories = new ArrayList<>();
-        }
-        return repositories;
-    }
-
-    @XmlElement(name = "socialMedia")
-    @XmlSchemaType(name = "urlType", namespace = "http://bio.tools")
-    public List<String> getSocialMedias() {
-        if (socialMedias == null) {
-            socialMedias = new ArrayList<>();
-        }
-        return socialMedias;
     }
 }
