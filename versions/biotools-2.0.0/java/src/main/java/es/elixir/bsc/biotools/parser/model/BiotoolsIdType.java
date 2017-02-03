@@ -25,6 +25,7 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
@@ -47,6 +48,7 @@ public class BiotoolsIdType {
     }
     
     @XmlValue
+    @XmlSchemaType(name = "anyURI")
     public String getValue() {
         return value;
     }

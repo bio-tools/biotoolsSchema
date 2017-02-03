@@ -36,16 +36,17 @@ import javax.xml.bind.annotation.XmlEnumValue;
 @XmlEnum(EnumType.class)
 public enum ToolType {
     @XmlEnumValue("Command-line tool") COMMAND_LINE,
-    @XmlEnumValue("Web application") WEB_APPLICATION,
-    @XmlEnumValue("Desktop application") DESCTOP_APPLICATION,
-    @XmlEnumValue("Script") SCRIPT,
-    @XmlEnumValue("Suite") SUITE,
-    @XmlEnumValue("Workbench") WORKBENCH,
     @XmlEnumValue("Database portal") DATABASE_PORTAL,
-    @XmlEnumValue("Workflow") WORKFLOW,
-    @XmlEnumValue("Plug-in") PLUGIN,
+    @XmlEnumValue("Desktop application") DESCTOP_APPLICATION,
     @XmlEnumValue("Library") LIBRARY,
+    @XmlEnumValue("Ontology") ONTOLOGY,
+    @XmlEnumValue("Plug-in") PLUGIN,
+    @XmlEnumValue("Script") SCRIPT,
+    @XmlEnumValue("SPARQL endpoint") SPARQL_ENDPOINT,
+    @XmlEnumValue("Suite") SUITE,
+    @XmlEnumValue("Web application") WEB_APPLICATION,
     @XmlEnumValue("Web API") WEB_API,
     @XmlEnumValue("Web service") WEB_SERVICE,
-    @XmlEnumValue("SPARQL endpoint") SPARQL_ENDPOINT;    
+    @XmlEnumValue("Workbench") WORKBENCH,
+    @XmlEnumValue("Workflow") WORKFLOW;
 }
