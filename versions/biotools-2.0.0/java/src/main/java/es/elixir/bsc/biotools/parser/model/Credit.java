@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
                                  "comment"})
 public class Credit {
 
-    private NameType name;
+    private String name;
     private String email;
     private String url;
     private String orcidId;
@@ -54,11 +54,12 @@ public class Credit {
     private RoleType typeRole;
     private String comment;
 
-    public NameType getName() {
+    @XmlSchemaType(name = "nameType", namespace = "http://bio.tools")
+    public String getName() {
         return name;
     }
 
-    public void setName(NameType name) {
+    public void setName(String name) {
         this.name = name;
     }
 

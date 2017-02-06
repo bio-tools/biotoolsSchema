@@ -46,8 +46,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
                                  "operatingSystems",
                                  "languages",
                                  "license",
-                                 "statuses",
-                                 "collections"})
+                                 "collectionIDs",
+                                 "maturity",
+                                 "cost",
+                                 "accessibility",
+                                 "statuses"})
 public class Labels {
 
     private List<ToolType> toolTypes;
@@ -58,8 +61,11 @@ public class Labels {
     private List<OperatingSystemType> operatingSystems;
     private List<LanguageType> languages;
     private LicenseType license;
+    private List<String> collectionIDs;
+    private MaturityType maturity;
+    private CostType cost;
+    private List<AccessibilityType> accessibility;
     private List<LicenseStatusType> statuses;
-    private List<String> collections;
 
     @XmlElement(name = "toolType", required = true)
     public List<ToolType> getToolTypes() {
@@ -128,20 +134,46 @@ public class Labels {
         this.license = license;
     }
 
+    @XmlElement(name = "collectionID")
+    @XmlSchemaType(name = "biotoolsCollectionIdType", namespace = "http://bio.tools")
+    public List<String> getCollectionIDs() {
+        if (collectionIDs == null) {
+            collectionIDs = new ArrayList<>();
+        }
+        return collectionIDs;
+    }
+
+    @XmlElement(name = "maturity")
+    public MaturityType getMaturity() {
+        return maturity;
+    }
+    
+    public void setMaturity(MaturityType maturity) {
+        this.maturity = maturity;
+    }
+    
+    @XmlElement(name = "cost")
+    public CostType getCost() {
+        return cost;
+    }
+    
+    public void setCost(CostType cost) {
+        this.cost = cost;
+    }
+    
+    @XmlElement(name = "accessibility")
+    public List<AccessibilityType> getAccessibility() {
+        if (accessibility == null) {
+            accessibility = new ArrayList<>();
+        }
+        return accessibility;
+    }
+    
     @XmlElement(name = "status")
     public List<LicenseStatusType> getStatuses() {
         if (statuses == null) {
             statuses = new ArrayList<>();
         }
         return statuses;
-    }
-
-    @XmlElement(name = "collection")
-    @XmlSchemaType(name = "biotoolsCollectionIdType", namespace = "http://bio.tools")
-    public List<String> getCollections() {
-        if (collections == null) {
-            collections = new ArrayList<>();
-        }
-        return collections;
     }
 }

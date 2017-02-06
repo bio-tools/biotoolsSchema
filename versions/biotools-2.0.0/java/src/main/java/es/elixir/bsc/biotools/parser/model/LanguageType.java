@@ -84,8 +84,8 @@ public enum LanguageType {
     @XmlEnumValue("Smalltalk") SMALLTALK,
     @XmlEnumValue("SQL") SQL,
     @XmlEnumValue("Turing") TURING,
-    @XmlEnumValue("VHDL") VHDL,
     @XmlEnumValue("Verilog") VERILOG,
+    @XmlEnumValue("VHDL") VHDL,
     @XmlEnumValue("Visual Basic") VISUAL_BASIC,
     @XmlEnumValue("Other") OTHER;
 }

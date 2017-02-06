@@ -41,15 +41,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "", propOrder = {"email",
                                  "url",
                                  "name",
-                                 "tel",
-                                 "types"})
+                                 "tel"})
 public class Contact {
 
     private String email;
     private String url;
     private String name;
     private String tel;
-    private List<ContactType> types;
 
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getEmail() {
@@ -84,13 +82,5 @@ public class Contact {
 
     public void setTel(String tel) {
         this.tel = tel;
-    }
-
-    @XmlElement(name = "type")
-    public List<ContactType> getTypes() {
-        if (types == null) {
-            types = new ArrayList<>();
-        }
-        return types;
     }
 }

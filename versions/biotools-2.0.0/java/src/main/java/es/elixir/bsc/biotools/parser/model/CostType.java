@@ -1,6 +1,6 @@
 /**
  * *****************************************************************************
- * Copyright (C) 2016 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
+ * Copyright (C) 2017 ELIXIR ES, Spanish National Bioinformatics Institute (INB)
  * and Barcelona Supercomputing Center (BSC)
  *
  * Modifications to the initial code base are copyright of their respective
@@ -25,35 +25,16 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
 
 /**
- * 
  * @author Dmitry Repchevsky
  */
 
-@XmlType(name = "biotoolsCollectionIdType", propOrder = {
-    "value"
-})
-public class BiotoolsCollectionIdType {
-
-    private String value;
-
-    public BiotoolsCollectionIdType() {}
-    
-    public BiotoolsCollectionIdType(String value) {
-        this.value = value;
-    }
-    
-    @XmlValue
-    @XmlSchemaType(name = "anyURI")
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
+@XmlEnum(EnumType.class)
+public enum CostType {
+    @XmlEnumValue("Free of charge") FREE_OF_CHARGE,
+    @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS,
+    @XmlEnumValue("Commercial") COMMERCIAL;
 }
