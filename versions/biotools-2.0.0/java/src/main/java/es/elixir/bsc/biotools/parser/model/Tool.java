@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -64,6 +65,16 @@ public class Tool {
     private List<Credit> credits;
     private ElixirInfo elixirInfo;
 
+    @XmlTransient
+    public String getId() {
+        if (summary == null) {
+            return null;
+        }
+        final String toolID = summary.getToolID();
+        final String version = summary.getVersion();
+        return "bio.tools:" + (version == null ? toolID : toolID + ":" + version);
+    }
+    
     @XmlElement(required = true)
     public Summary getSummary() {
         return summary;
