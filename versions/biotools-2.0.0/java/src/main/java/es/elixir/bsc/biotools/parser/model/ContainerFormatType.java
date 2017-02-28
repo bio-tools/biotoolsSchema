@@ -35,12 +35,32 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum ContainerFormatType {
-    @XmlEnumValue("aki") AKI,
-    @XmlEnumValue("ami") AMI,
-    @XmlEnumValue("ari") ARI,
-    @XmlEnumValue("bare") BARE,
-    @XmlEnumValue("docker") DOCKER,
-    @XmlEnumValue("ovf") OVF,
-    @XmlEnumValue("rkt") RKT,
-    @XmlEnumValue("singularity") SINGULARITY;
+    @XmlEnumValue("aki") AKI("aki"),
+    @XmlEnumValue("ami") AMI("ami"),
+    @XmlEnumValue("ari") ARI("ari"),
+    @XmlEnumValue("bare") BARE("bare"),
+    @XmlEnumValue("docker") DOCKER("docker"),
+    @XmlEnumValue("ovf") OVF("ovf"),
+    @XmlEnumValue("rkt") RKT("rkt"),
+    @XmlEnumValue("singularity") SINGULARITY("singularity");
+    
+    private final String value;
+    
+    private ContainerFormatType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ContainerFormatType fromValue(String value) {
+        for (ContainerFormatType type: ContainerFormatType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

@@ -36,9 +36,29 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum ElixirPlatform {
-    @XmlEnumValue("Data") DATA,
-    @XmlEnumValue("Tools") TOOLS,
-    @XmlEnumValue("Compute") COMPUTE,
-    @XmlEnumValue("Interoperability") INTEROPERABILITY,
-    @XmlEnumValue("Training") TRAINING;
+    @XmlEnumValue("Data") DATA("Data"),
+    @XmlEnumValue("Tools") TOOLS("Tools"),
+    @XmlEnumValue("Compute") COMPUTE("Compute"),
+    @XmlEnumValue("Interoperability") INTEROPERABILITY("Interoperability"),
+    @XmlEnumValue("Training") TRAINING("Training");
+    
+    private final String value;
+    
+    private ElixirPlatform(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ElixirPlatform fromValue(String value) {
+        for (ElixirPlatform type: ElixirPlatform.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

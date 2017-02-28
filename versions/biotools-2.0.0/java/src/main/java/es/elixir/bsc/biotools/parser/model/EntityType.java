@@ -35,10 +35,30 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum EntityType {
-    @XmlEnumValue("Person") PERSON,
-    @XmlEnumValue("Project") PROJECT,
-    @XmlEnumValue("Division") DIVISION,
-    @XmlEnumValue("Institute") INSTITUTE,
-    @XmlEnumValue("Consortium") CONSORTIUM,
-    @XmlEnumValue("Funding agency") FUNDING_AGENCY;
+    @XmlEnumValue("Person") PERSON("Person"),
+    @XmlEnumValue("Project") PROJECT("Project"),
+    @XmlEnumValue("Division") DIVISION("Division"),
+    @XmlEnumValue("Institute") INSTITUTE("Institute"),
+    @XmlEnumValue("Consortium") CONSORTIUM("Consortium"),
+    @XmlEnumValue("Funding agency") FUNDING_AGENCY("Funding agency");
+    
+    private final String value;
+    
+    private EntityType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static EntityType fromValue(String value) {
+        for (EntityType type: EntityType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

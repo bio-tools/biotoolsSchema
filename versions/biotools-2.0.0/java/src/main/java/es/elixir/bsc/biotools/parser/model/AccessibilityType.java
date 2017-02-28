@@ -34,8 +34,28 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum AccessibilityType {
-    @XmlEnumValue("Open access") OPEN_ACCESS,
-    @XmlEnumValue("Restricted access") RESTRICTED_ACCESS,
-    @XmlEnumValue("Proprietary") PROPRIETARY,
-    @XmlEnumValue("Freeware") FREEWARE;
+    @XmlEnumValue("Open access") OPEN_ACCESS("Open access"),
+    @XmlEnumValue("Restricted access") RESTRICTED_ACCESS("Restricted access"),
+    @XmlEnumValue("Proprietary") PROPRIETARY("Proprietary"),
+    @XmlEnumValue("Freeware") FREEWARE("Freeware");
+    
+    private final String value;
+    
+    private AccessibilityType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static AccessibilityType fromValue(String value) {
+        for (AccessibilityType type: AccessibilityType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

@@ -35,10 +35,30 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum RoleType {
-    @XmlEnumValue("Developer") DEVELOPER,
-    @XmlEnumValue("Maintainer") MAINTAINER,
-    @XmlEnumValue("Provider") PROVIDER,
-    @XmlEnumValue("Contributor") CONTRIBUTOR,
-    @XmlEnumValue("Documentor") DOCUMENTOR,
-    @XmlEnumValue("Support") SUPPORT;
+    @XmlEnumValue("Developer") DEVELOPER("Developer"),
+    @XmlEnumValue("Maintainer") MAINTAINER("Maintainer"),
+    @XmlEnumValue("Provider") PROVIDER("Provider"),
+    @XmlEnumValue("Contributor") CONTRIBUTOR("Contributor"),
+    @XmlEnumValue("Documentor") DOCUMENTOR("Documentor"),
+    @XmlEnumValue("Support") SUPPORT("Support");
+    
+    private final String value;
+    
+    private RoleType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static RoleType fromValue(String value) {
+        for (RoleType type: RoleType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

@@ -35,16 +35,36 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum SoftwareRelationType {
-    @XmlEnumValue("isNewVersionOf") NEW_VERSION_OF,
-    @XmlEnumValue("hasNewVersion") HAS_NEW_VERSION,
-    @XmlEnumValue("isInterfaceTo") INTERFACE_TO,
-    @XmlEnumValue("hasInterface") HAS_INTERFACE,
-    @XmlEnumValue("uses") USES,
-    @XmlEnumValue("usedBy") USED_BY,
-    @XmlEnumValue("extends") EXTENDS,
-    @XmlEnumValue("extendedBy") EXTENDED_BY,
-    @XmlEnumValue("includes") INCLUDES,
-    @XmlEnumValue("includedIn") INCLUDED_IN,
-    @XmlEnumValue("isPluginFor") PLUGIN_FOR,
-    @XmlEnumValue("hasPlugin") HAS_PLUGIN;
+    @XmlEnumValue("isNewVersionOf") NEW_VERSION_OF("isNewVersionOf"),
+    @XmlEnumValue("hasNewVersion") HAS_NEW_VERSION("hasNewVersion"),
+    @XmlEnumValue("isInterfaceTo") INTERFACE_TO("isInterfaceTo"),
+    @XmlEnumValue("hasInterface") HAS_INTERFACE("hasInterface"),
+    @XmlEnumValue("uses") USES("uses"),
+    @XmlEnumValue("usedBy") USED_BY("usedBy"),
+    @XmlEnumValue("extends") EXTENDS("extends"),
+    @XmlEnumValue("extendedBy") EXTENDED_BY("extendedBy"),
+    @XmlEnumValue("includes") INCLUDES("includes"),
+    @XmlEnumValue("includedIn") INCLUDED_IN("includedIn"),
+    @XmlEnumValue("isPluginFor") PLUGIN_FOR("isPluginFor"),
+    @XmlEnumValue("hasPlugin") HAS_PLUGIN("hasPlugin");
+    
+    private final String value;
+    
+    private SoftwareRelationType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static SoftwareRelationType fromValue(String value) {
+        for (SoftwareRelationType type: SoftwareRelationType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

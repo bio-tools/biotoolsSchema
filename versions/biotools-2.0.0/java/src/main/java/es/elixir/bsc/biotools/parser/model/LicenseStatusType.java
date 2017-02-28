@@ -35,15 +35,35 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum LicenseStatusType {
-    @XmlEnumValue("Emerging") EMERGING,
-    @XmlEnumValue("Mature") MATURE,
-    @XmlEnumValue("Legacy") LEGACY,
-    @XmlEnumValue("Free of charge") FREE_OF_CHARGE,
-    @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS,
-    @XmlEnumValue("Commercial") COMMERCIAL,
-    @XmlEnumValue("Proprietary") PROPRIETARY,
-    @XmlEnumValue("Freeware") FREEWARE,
-    @XmlEnumValue("ELIXIR Service") ELIXIR_SERVICE,
-    @XmlEnumValue("Open access") OPEN_ACCESS,
-    @XmlEnumValue("Restricted access") RESTRICTED_ACCESS;
+    @XmlEnumValue("Emerging") EMERGING("Emerging"),
+    @XmlEnumValue("Mature") MATURE("Mature"),
+    @XmlEnumValue("Legacy") LEGACY("Legacy"),
+    @XmlEnumValue("Free of charge") FREE_OF_CHARGE("Free of charge"),
+    @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS("Free of charge (with restrictions)"),
+    @XmlEnumValue("Commercial") COMMERCIAL("Commercial"),
+    @XmlEnumValue("Proprietary") PROPRIETARY("Proprietary"),
+    @XmlEnumValue("Freeware") FREEWARE("Freeware"),
+    @XmlEnumValue("ELIXIR Service") ELIXIR_SERVICE("ELIXIR Service"),
+    @XmlEnumValue("Open access") OPEN_ACCESS("Open access"),
+    @XmlEnumValue("Restricted access") RESTRICTED_ACCESS("Restricted access");
+    
+    private final String value;
+    
+    private LicenseStatusType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static LicenseStatusType fromValue(String value) {
+        for (LicenseStatusType type: LicenseStatusType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

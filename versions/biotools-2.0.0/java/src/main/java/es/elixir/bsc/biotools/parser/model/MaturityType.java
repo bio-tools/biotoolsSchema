@@ -34,7 +34,27 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum MaturityType {
-    @XmlEnumValue("Emerging") EMERGING,
-    @XmlEnumValue("Mature") MATURE,
-    @XmlEnumValue("Legacy") LEGACY;
+    @XmlEnumValue("Emerging") EMERGING("Emerging"),
+    @XmlEnumValue("Mature") MATURE("Mature"),
+    @XmlEnumValue("Legacy") LEGACY("Legacy");
+    
+    private final String value;
+    
+    private MaturityType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static MaturityType fromValue(String value) {
+        for (MaturityType type: MaturityType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

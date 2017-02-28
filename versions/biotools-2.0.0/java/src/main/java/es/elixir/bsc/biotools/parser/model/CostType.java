@@ -34,7 +34,27 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum CostType {
-    @XmlEnumValue("Free of charge") FREE_OF_CHARGE,
-    @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS,
-    @XmlEnumValue("Commercial") COMMERCIAL;
+    @XmlEnumValue("Free of charge") FREE_OF_CHARGE("Free of charge"),
+    @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS("Free of charge (with restrictions)"),
+    @XmlEnumValue("Commercial") COMMERCIAL("Commercial");
+    
+    private final String value;
+    
+    private CostType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static CostType fromValue(String value) {
+        for (CostType type: CostType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

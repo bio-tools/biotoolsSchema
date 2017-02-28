@@ -35,8 +35,28 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum PublicationType {
-    @XmlEnumValue("Primary") PRIMARY,
-    @XmlEnumValue("Benchmark") BENCHMARK,
-    @XmlEnumValue("Review") REVIEW,
-    @XmlEnumValue("Other") OTHER;
+    @XmlEnumValue("Primary") PRIMARY("Primary"),
+    @XmlEnumValue("Benchmark") BENCHMARK("Benchmark"),
+    @XmlEnumValue("Review") REVIEW("Review"),
+    @XmlEnumValue("Other") OTHER("Other");
+    
+    private final String value;
+    
+    private PublicationType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static PublicationType fromValue(String value) {
+        for (PublicationType type: PublicationType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

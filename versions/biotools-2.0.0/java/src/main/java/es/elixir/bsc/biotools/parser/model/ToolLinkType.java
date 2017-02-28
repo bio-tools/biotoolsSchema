@@ -10,12 +10,32 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum ToolLinkType {
-    @XmlEnumValue("Browser") BROWSER,
-    @XmlEnumValue("Helpdesk") HELPDESK,
-    @XmlEnumValue("Issue tracker") ISSUE_TRACKER,
-    @XmlEnumValue("Mailing list") MAILING_LIST,
-    @XmlEnumValue("Mirror") MIRROR,
-    @XmlEnumValue("Registry") REGISTRY,
-    @XmlEnumValue("Repository") REPOSITORY,
-    @XmlEnumValue("Social media") SOCIAL_MEDIA;
+    @XmlEnumValue("Browser") BROWSER("Browser"),
+    @XmlEnumValue("Helpdesk") HELPDESK("Helpdesk"),
+    @XmlEnumValue("Issue tracker") ISSUE_TRACKER("Issue tracker"),
+    @XmlEnumValue("Mailing list") MAILING_LIST("Mailing list"),
+    @XmlEnumValue("Mirror") MIRROR("Mirror"),
+    @XmlEnumValue("Registry") REGISTRY("Registry"),
+    @XmlEnumValue("Repository") REPOSITORY("Repository"),
+    @XmlEnumValue("Social media") SOCIAL_MEDIA("Social media");
+    
+    private final String value;
+    
+    private ToolLinkType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ToolLinkType fromValue(String value) {
+        for (ToolLinkType type: ToolLinkType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

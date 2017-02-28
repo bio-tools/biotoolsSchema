@@ -35,7 +35,27 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum OperatingSystemType {
-    @XmlEnumValue("Linux") LINUX,
-    @XmlEnumValue("Windows") WINDOWS,
-    @XmlEnumValue("Mac") MAC;
+    @XmlEnumValue("Linux") LINUX("Linux") ,
+    @XmlEnumValue("Windows") WINDOWS("Windows"),
+    @XmlEnumValue("Mac") MAC("Mac");
+    
+    private final String value;
+    
+    private OperatingSystemType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static OperatingSystemType fromValue(String value) {
+        for (OperatingSystemType type: OperatingSystemType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

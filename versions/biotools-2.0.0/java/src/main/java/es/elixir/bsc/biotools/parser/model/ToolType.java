@@ -35,18 +35,38 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum ToolType {
-    @XmlEnumValue("Command-line tool") COMMAND_LINE,
-    @XmlEnumValue("Database portal") DATABASE_PORTAL,
-    @XmlEnumValue("Desktop application") DESCTOP_APPLICATION,
-    @XmlEnumValue("Library") LIBRARY,
-    @XmlEnumValue("Ontology") ONTOLOGY,
-    @XmlEnumValue("Plug-in") PLUGIN,
-    @XmlEnumValue("Script") SCRIPT,
-    @XmlEnumValue("SPARQL endpoint") SPARQL_ENDPOINT,
-    @XmlEnumValue("Suite") SUITE,
-    @XmlEnumValue("Web application") WEB_APPLICATION,
-    @XmlEnumValue("Web API") WEB_API,
-    @XmlEnumValue("Web service") WEB_SERVICE,
-    @XmlEnumValue("Workbench") WORKBENCH,
-    @XmlEnumValue("Workflow") WORKFLOW;
+    @XmlEnumValue("Command-line tool") COMMAND_LINE("Command-line tool"),
+    @XmlEnumValue("Database portal") DATABASE_PORTAL("Database portal"),
+    @XmlEnumValue("Desktop application") DESCTOP_APPLICATION("Desktop application"),
+    @XmlEnumValue("Library") LIBRARY("Library"),
+    @XmlEnumValue("Ontology") ONTOLOGY("Ontology"),
+    @XmlEnumValue("Plug-in") PLUGIN("Plug-in"),
+    @XmlEnumValue("Script") SCRIPT("Script"),
+    @XmlEnumValue("SPARQL endpoint") SPARQL_ENDPOINT("SPARQL endpoint"),
+    @XmlEnumValue("Suite") SUITE("Suite"),
+    @XmlEnumValue("Web application") WEB_APPLICATION("Web application"),
+    @XmlEnumValue("Web API") WEB_API("Web API"),
+    @XmlEnumValue("Web service") WEB_SERVICE("Web service"),
+    @XmlEnumValue("Workbench") WORKBENCH("Workbench"),
+    @XmlEnumValue("Workflow") WORKFLOW("Workflow");
+    
+    private final String value;
+    
+    private ToolType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ToolType fromValue(String value) {
+        for (ToolType type: ToolType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

@@ -36,25 +36,45 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum ElixirNode {
-    @XmlEnumValue("Belgium") BELGIUM,
-    @XmlEnumValue("Czech Republic") CZHECH_REPUBLIC,
-    @XmlEnumValue("Denmark") DENMARK,
-    @XmlEnumValue("EMBL") EMBL,
-    @XmlEnumValue("Estonia") ESTONIA,
-    @XmlEnumValue("Finland") FINLAND,
-    @XmlEnumValue("France") FRANCE,
-    @XmlEnumValue("Germany") GERMANY,
-    @XmlEnumValue("Greece") GREECE,
-    @XmlEnumValue("Netherlands") NETHERLANDS,
-    @XmlEnumValue("Norway") NORWAY,
-    @XmlEnumValue("Ireland") IRELAND,
-    @XmlEnumValue("Israel") ISRAEL,
-    @XmlEnumValue("Italy") ITALY,
-    @XmlEnumValue("Luxembourg") LUXEMBURG,
-    @XmlEnumValue("Portugal") PORTUGAL,
-    @XmlEnumValue("Slovenia") SLOVENIA,
-    @XmlEnumValue("Spain") SPAIN,
-    @XmlEnumValue("Sweden") SWEDEN,
-    @XmlEnumValue("Switzerland") SWITZERLAND,
-    @XmlEnumValue("UK") UK;
+    @XmlEnumValue("Belgium") BELGIUM("Belgium"),
+    @XmlEnumValue("Czech Republic") CZHECH_REPUBLIC("Czech Republic"),
+    @XmlEnumValue("Denmark") DENMARK("Denmark"),
+    @XmlEnumValue("EMBL") EMBL("EMBL"),
+    @XmlEnumValue("Estonia") ESTONIA("Estonia"),
+    @XmlEnumValue("Finland") FINLAND("Finland"),
+    @XmlEnumValue("France") FRANCE("France"),
+    @XmlEnumValue("Germany") GERMANY("Germany"),
+    @XmlEnumValue("Greece") GREECE("Greece"),
+    @XmlEnumValue("Netherlands") NETHERLANDS("Netherlands"),
+    @XmlEnumValue("Norway") NORWAY("Norway"),
+    @XmlEnumValue("Ireland") IRELAND("Ireland"),
+    @XmlEnumValue("Israel") ISRAEL("Israel"),
+    @XmlEnumValue("Italy") ITALY("Italy"),
+    @XmlEnumValue("Luxembourg") LUXEMBURG("Luxembourg"),
+    @XmlEnumValue("Portugal") PORTUGAL("Portugal"),
+    @XmlEnumValue("Slovenia") SLOVENIA("Slovenia"),
+    @XmlEnumValue("Spain") SPAIN("Spain"),
+    @XmlEnumValue("Sweden") SWEDEN("Sweden"),
+    @XmlEnumValue("Switzerland") SWITZERLAND("Switzerland"),
+    @XmlEnumValue("UK") UK("UK");
+    
+    private final String value;
+    
+    private ElixirNode(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ElixirNode fromValue(String value) {
+        for (ElixirNode type: ElixirNode.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

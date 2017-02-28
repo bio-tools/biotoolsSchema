@@ -35,12 +35,32 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum HttpMethodType {
-    @XmlEnumValue("OPTIONS") OPTIONS,
-    @XmlEnumValue("GET") GET,
-    @XmlEnumValue("HEAD") HEAD,
-    @XmlEnumValue("POST") POST,
-    @XmlEnumValue("PUT") PUT,
-    @XmlEnumValue("DELETE") DELETE,
-    @XmlEnumValue("TRACE") TRACE,
-    @XmlEnumValue("CONNECT") CONNECT,
+    @XmlEnumValue("OPTIONS") OPTIONS("OPTIONS"),
+    @XmlEnumValue("GET") GET("GET"),
+    @XmlEnumValue("HEAD") HEAD("HEAD"),
+    @XmlEnumValue("POST") POST("POST"),
+    @XmlEnumValue("PUT") PUT("PUT"),
+    @XmlEnumValue("DELETE") DELETE("DELETE"),
+    @XmlEnumValue("TRACE") TRACE("TRACE"),
+    @XmlEnumValue("CONNECT") CONNECT("CONNECT");
+    
+    private final String value;
+    
+    private HttpMethodType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static HttpMethodType fromValue(String value) {
+        for (HttpMethodType type: HttpMethodType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

@@ -35,13 +35,33 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum DiskFormatType {
-    @XmlEnumValue("aki") AKI,
-    @XmlEnumValue("ami") AMI,
-    @XmlEnumValue("ari") ARI,
-    @XmlEnumValue("iso") ISO,
-    @XmlEnumValue("qcow2") QCOW2,
-    @XmlEnumValue("raw") RAW,
-    @XmlEnumValue("vdi") VDI,
-    @XmlEnumValue("vhd") VHD,
-    @XmlEnumValue("vmdk") VMDK;
+    @XmlEnumValue("aki") AKI("aki"),
+    @XmlEnumValue("ami") AMI("ami"),
+    @XmlEnumValue("ari") ARI("ari"),
+    @XmlEnumValue("iso") ISO("iso"),
+    @XmlEnumValue("qcow2") QCOW2("qcow2"),
+    @XmlEnumValue("raw") RAW("raw"),
+    @XmlEnumValue("vdi") VDI("vdi"),
+    @XmlEnumValue("vhd") VHD("vhd"),
+    @XmlEnumValue("vmdk") VMDK("vmdk");
+    
+    private final String value;
+    
+    private DiskFormatType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static DiskFormatType fromValue(String value) {
+        for (DiskFormatType type: DiskFormatType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

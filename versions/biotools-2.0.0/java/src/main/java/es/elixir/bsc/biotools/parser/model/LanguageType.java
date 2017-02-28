@@ -35,57 +35,77 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum LanguageType {
-    @XmlEnumValue("ActionScript") ACTION_SCRIPT,
-    @XmlEnumValue("Ada") ADA,
-    @XmlEnumValue("AppleScript") APPLE_SCRIPT,
-    @XmlEnumValue("Assembly language") ASSEMBLY_LANGUAGE,
-    @XmlEnumValue("AWK") AWK,
-    @XmlEnumValue("Bash") BASH,
-    @XmlEnumValue("C") C,
-    @XmlEnumValue("C#") CSharp,
-    @XmlEnumValue("C++") CPP,
-    @XmlEnumValue("COBOL") COBOL,
-    @XmlEnumValue("ColdFusion") COLD_FUSION,
-    @XmlEnumValue("CWL") CWL,
-    @XmlEnumValue("D") D,
-    @XmlEnumValue("Delphi") DELPHI,
-    @XmlEnumValue("Dylan") DYLAN,
-    @XmlEnumValue("Eiffel") EIFFEL,
-    @XmlEnumValue("Forth") FORTH,
-    @XmlEnumValue("Fortran") FORTRAN,
-    @XmlEnumValue("Groovy") GROOVY,
-    @XmlEnumValue("Haskell") HASKELL,
-    @XmlEnumValue("Icarus") ICARUS,
-    @XmlEnumValue("Java") JAVA,
-    @XmlEnumValue("Javascript") JAVASCRIPT,
-    @XmlEnumValue("JSP") JSP,
-    @XmlEnumValue("LabVIEW") LABVIEW,
-    @XmlEnumValue("Lisp") LISP,
-    @XmlEnumValue("Lua") LUA,
-    @XmlEnumValue("Maple") MAPLE,
-    @XmlEnumValue("Mathematica") MATHEMATICA,
-    @XmlEnumValue("MATLAB") MATLAB,
-    @XmlEnumValue("MLXTRAN") MLXTRAN,
-    @XmlEnumValue("NMTRAN") NMTRAN,
-    @XmlEnumValue("Pascal") PASCAL,
-    @XmlEnumValue("Perl") PERL,
-    @XmlEnumValue("PHP") PHP,
-    @XmlEnumValue("Prolog") PROLOG,
-    @XmlEnumValue("PyMOL") PYMOL,
-    @XmlEnumValue("Python") PYTHON,
-    @XmlEnumValue("R") R,
-    @XmlEnumValue("Racket") RACKET,
-    @XmlEnumValue("REXX") REXX,
-    @XmlEnumValue("Ruby") RUBY,
-    @XmlEnumValue("SAS") SAS,
-    @XmlEnumValue("Scala") SCALA,
-    @XmlEnumValue("Scheme") SCHEME,
-    @XmlEnumValue("Shell") SHELL,
-    @XmlEnumValue("Smalltalk") SMALLTALK,
-    @XmlEnumValue("SQL") SQL,
-    @XmlEnumValue("Turing") TURING,
-    @XmlEnumValue("Verilog") VERILOG,
-    @XmlEnumValue("VHDL") VHDL,
-    @XmlEnumValue("Visual Basic") VISUAL_BASIC,
-    @XmlEnumValue("Other") OTHER;
+    @XmlEnumValue("ActionScript") ACTION_SCRIPT("ActionScript"),
+    @XmlEnumValue("Ada") ADA("Ada"),
+    @XmlEnumValue("AppleScript") APPLE_SCRIPT("AppleScript"),
+    @XmlEnumValue("Assembly language") ASSEMBLY_LANGUAGE("Assembly language"),
+    @XmlEnumValue("AWK") AWK("AWK"),
+    @XmlEnumValue("Bash") BASH("Bash"),
+    @XmlEnumValue("C") C("C"),
+    @XmlEnumValue("C#") CSharp("C#"),
+    @XmlEnumValue("C++") CPP("C++"),
+    @XmlEnumValue("COBOL") COBOL("COBOL"),
+    @XmlEnumValue("ColdFusion") COLD_FUSION("ColdFusion"),
+    @XmlEnumValue("CWL") CWL("CWL"),
+    @XmlEnumValue("D") D("D"),
+    @XmlEnumValue("Delphi") DELPHI("Delphi"),
+    @XmlEnumValue("Dylan") DYLAN("Dylan"),
+    @XmlEnumValue("Eiffel") EIFFEL("Eiffel"),
+    @XmlEnumValue("Forth") FORTH("Forth"),
+    @XmlEnumValue("Fortran") FORTRAN("Fortran"),
+    @XmlEnumValue("Groovy") GROOVY("Groovy"),
+    @XmlEnumValue("Haskell") HASKELL("Haskell"),
+    @XmlEnumValue("Icarus") ICARUS("Icarus"),
+    @XmlEnumValue("Java") JAVA("Java"),
+    @XmlEnumValue("Javascript") JAVASCRIPT("Javascript"),
+    @XmlEnumValue("JSP") JSP("JSP"),
+    @XmlEnumValue("LabVIEW") LABVIEW("LabVIEW"),
+    @XmlEnumValue("Lisp") LISP("Lisp"),
+    @XmlEnumValue("Lua") LUA("Lua"),
+    @XmlEnumValue("Maple") MAPLE("Maple"),
+    @XmlEnumValue("Mathematica") MATHEMATICA("Mathematica"),
+    @XmlEnumValue("MATLAB") MATLAB("MATLAB"),
+    @XmlEnumValue("MLXTRAN") MLXTRAN("MLXTRAN"),
+    @XmlEnumValue("NMTRAN") NMTRAN("NMTRAN"),
+    @XmlEnumValue("Pascal") PASCAL("Pascal"),
+    @XmlEnumValue("Perl") PERL("Perl"),
+    @XmlEnumValue("PHP") PHP("PHP"),
+    @XmlEnumValue("Prolog") PROLOG("Prolog"),
+    @XmlEnumValue("PyMOL") PYMOL("PyMOL"),
+    @XmlEnumValue("Python") PYTHON("Python"),
+    @XmlEnumValue("R") R("R"),
+    @XmlEnumValue("Racket") RACKET("Racket"),
+    @XmlEnumValue("REXX") REXX("REXX"),
+    @XmlEnumValue("Ruby") RUBY("Ruby"),
+    @XmlEnumValue("SAS") SAS("SAS"),
+    @XmlEnumValue("Scala") SCALA("Scala"),
+    @XmlEnumValue("Scheme") SCHEME("Scheme"),
+    @XmlEnumValue("Shell") SHELL("Shell"),
+    @XmlEnumValue("Smalltalk") SMALLTALK("Smalltalk"),
+    @XmlEnumValue("SQL") SQL("SQL"),
+    @XmlEnumValue("Turing") TURING("Turing"),
+    @XmlEnumValue("Verilog") VERILOG("Verilog"),
+    @XmlEnumValue("VHDL") VHDL("VHDL"),
+    @XmlEnumValue("Visual Basic") VISUAL_BASIC("Visual Basic"),
+    @XmlEnumValue("Other") OTHER("Other");
+    
+    private final String value;
+    
+    private LanguageType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static LanguageType fromValue(String value) {
+        for (LanguageType type: LanguageType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }

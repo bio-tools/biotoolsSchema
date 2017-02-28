@@ -35,22 +35,42 @@ import javax.xml.bind.annotation.XmlEnumValue;
 
 @XmlEnum(EnumType.class)
 public enum DownloadType {
-    @XmlEnumValue("API specification") API_SPECIFICATION,
-    @XmlEnumValue("Biological data") BIOLOGICAL_DATA,
-    @XmlEnumValue("Binaries") BINARIES,
-    @XmlEnumValue("Binary package") BINARY_PACKAGE,
-    @XmlEnumValue("Command-line specification") COMMANDLINE_SPECIFICATION,
-    @XmlEnumValue("Container file") CONTAINER_FILE,
-    @XmlEnumValue("CWL file") CWL,
-    @XmlEnumValue("Icon") ICON,
-    @XmlEnumValue("Ontology") ONTOLOGY,
-    @XmlEnumValue("Screenshot") SCREENSHOT,
-    @XmlEnumValue("Source code") SOURCE_CODE,
-    @XmlEnumValue("Source package") SOURCE_PACKAGE,
-    @XmlEnumValue("Test data") TEST_DATA,
-    @XmlEnumValue("Test script") TEST_SCRIPT,
-    @XmlEnumValue("Tool wrapper (galaxy)") GALAXY_TOOL_WRAPPER,
-    @XmlEnumValue("Tool wrapper (taverna)") TAVERNA_TOOL_WRAPPER,
-    @XmlEnumValue("Tool wrapper (other)") OTHER_TOOL_WRAPPER,
-    @XmlEnumValue("VM image") VM_IMAGE;
+    @XmlEnumValue("API specification") API_SPECIFICATION("API specification"),
+    @XmlEnumValue("Biological data") BIOLOGICAL_DATA("Biological data"),
+    @XmlEnumValue("Binaries") BINARIES("Binaries"),
+    @XmlEnumValue("Binary package") BINARY_PACKAGE("Binary package"),
+    @XmlEnumValue("Command-line specification") COMMANDLINE_SPECIFICATION("Command-line specification"),
+    @XmlEnumValue("Container file") CONTAINER_FILE("Container file"),
+    @XmlEnumValue("CWL file") CWL("CWL file"),
+    @XmlEnumValue("Icon") ICON("Icon"),
+    @XmlEnumValue("Ontology") ONTOLOGY("Ontology"),
+    @XmlEnumValue("Screenshot") SCREENSHOT("Screenshot"),
+    @XmlEnumValue("Source code") SOURCE_CODE("Source code"),
+    @XmlEnumValue("Source package") SOURCE_PACKAGE("Source package"),
+    @XmlEnumValue("Test data") TEST_DATA("Test data"),
+    @XmlEnumValue("Test script") TEST_SCRIPT("Test script"),
+    @XmlEnumValue("Tool wrapper (galaxy)") GALAXY_TOOL_WRAPPER("Tool wrapper (galaxy)"),
+    @XmlEnumValue("Tool wrapper (taverna)") TAVERNA_TOOL_WRAPPER("Tool wrapper (taverna)"),
+    @XmlEnumValue("Tool wrapper (other)") OTHER_TOOL_WRAPPER("Tool wrapper (other)"),
+    @XmlEnumValue("VM image") VM_IMAGE("VM image");
+    
+    private final String value;
+    
+    private DownloadType(String value) {
+        this.value = value;
+    }
+    
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static DownloadType fromValue(String value) {
+        for (DownloadType type: DownloadType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }
