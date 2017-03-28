@@ -10,9 +10,9 @@ Comprehensive documentation is available:
 
 
 # Information requirements
-https://bio.tools specifies an information requirement for "standard" and "beta" (less well annotated) entries, as indicated in the respective columns.  Attributes defined as mandatory in the latest stable version [biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/) are those in the "beta" column.
+https://bio.tools specifies an information requirement for "standard" and "minimal" (less well annotated) entries, as indicated in the respective columns.  Attributes defined as mandatory in the latest stable version [biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/) are those in the "minimal" column.
 
-Attribute | Description | Format | beta | standard | element
+Attribute | Description | Format | minimal | standard | element
 --------- | ----------- | ------ | -----| -------- | -------
 name (1 only) | Canonical resource name | Text | y | y | `<name>`
 toolID (1 only) | Unique tool ID | Text | y | y | `<toolID>`
