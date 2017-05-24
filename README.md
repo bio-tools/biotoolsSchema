@@ -14,7 +14,7 @@ Comprehensive documentation is available:
 https://bio.tools is proposing an information requirement for "minimal", "silver" and "gold" standard entries, as indicated in the respective columns.  Attributes defined as mandatory in the latest stable version [biotools-2.0.0](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/) are those in the "minimal" column.
 
 Attribute | Description | Format | minimal | silver | gold | element
---------- | ----------- | ------ | -----| -------- | -------
+--------- | ----------- | ------ | ------- | ------ | ---- | -------
 Name | Canonical resource name | Text | y | y | y | `<name>`
 Description | Short textual description of the resource | Text | y | y | y | `<description>`
 Homepage (1 only) | Resource homepage | URL | y | y | y | `<homepage>`
