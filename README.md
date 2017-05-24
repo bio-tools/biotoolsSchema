@@ -16,7 +16,7 @@ https://bio.tools is proposing an information requirement for "minimal", "silver
 Attribute | Description | Format | minimal | silver | gold | element
 --------- | ----------- | ------ | ------- | ------ | ---- | -------
 Name | Canonical resource name | Text | y | y | y | `<name>`
-Description | Short textual description of the resource | Text | y | y | y | `<description>`
+*Description* | Short textual description of the resource | Text | y | y | y | `<description>`
 Homepage (1 only) | Resource homepage | URL | y | y | y | `<homepage>`
 Software type | Type of tool.  A tool may have more than one type reflecting its different facets. | enum (see below) | y | y | y | `<toolType>`
 Unique ID | Unique tool ID | Text | y | y | y | `<toolID>`
