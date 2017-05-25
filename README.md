@@ -3,6 +3,7 @@
 
 biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 7 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [ELIXIR Tools & Data Services Registry](https://bio.tools).
 
+# Doumentation
 Comprehensive documentation is available:
 * http://biotoolsschema.readthedocs.io/en/latest/
 * https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/docs/biotools-2.0.0.html (version 2.0.0, latest stable version)
@@ -11,7 +12,7 @@ Comprehensive documentation is available:
 # Information standard
 biotoolsSchema provides the foundation for an information standard for the desription of tools that is being adopted by bio.tools.  The standard defines the attributes that must be defined for an entry to be labelled as a "minimal", "silver" and "gold" standard quality.  For more information see the [tools information standard](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst#information-requirement).
 
-## Tool types 
+# Tool types 
 See the list of [software types](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst#tool-types) supported by the schema.
 
 
