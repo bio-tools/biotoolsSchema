@@ -43,6 +43,8 @@ public enum LicenseType {
     @XmlEnumValue("AFL-2.0") AFL_2_0("AFL-2.0"),
     @XmlEnumValue("AFL-2.1") AFL_2_1("AFL-2.1"),
     @XmlEnumValue("AFL-3.0") AFL_3_0("AFL-3.0"),
+    @XmlEnumValue("AGPL-1.0") AGPL_1_0("AGPL-1.0"),
+    @XmlEnumValue("AGPL-3.0") AGPL_3_0("AGPL-3.0"),
     @XmlEnumValue("AMDPLPA") AMDPLPA("AMDPLPA"),
     @XmlEnumValue("AML") AML("AML"),
     @XmlEnumValue("AMPAS") AMPAS("AMPAS"),
