@@ -47,12 +47,16 @@ public enum LicenseStatusType {
     @XmlEnumValue("Open access") OPEN_ACCESS("Open access"),
     @XmlEnumValue("Restricted access") RESTRICTED_ACCESS("Restricted access");
     
-    private final String value;
+    public final String value;
     
     private LicenseStatusType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

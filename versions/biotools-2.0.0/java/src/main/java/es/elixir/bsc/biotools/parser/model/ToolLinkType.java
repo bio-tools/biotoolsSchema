@@ -19,12 +19,16 @@ public enum ToolLinkType {
     @XmlEnumValue("Repository") REPOSITORY("Repository"),
     @XmlEnumValue("Social media") SOCIAL_MEDIA("Social media");
     
-    private final String value;
+    public final String value;
     
     private ToolLinkType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

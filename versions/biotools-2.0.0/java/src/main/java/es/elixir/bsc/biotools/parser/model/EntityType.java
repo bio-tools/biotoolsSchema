@@ -42,12 +42,16 @@ public enum EntityType {
     @XmlEnumValue("Consortium") CONSORTIUM("Consortium"),
     @XmlEnumValue("Funding agency") FUNDING_AGENCY("Funding agency");
     
-    private final String value;
+    public final String value;
     
     private EntityType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

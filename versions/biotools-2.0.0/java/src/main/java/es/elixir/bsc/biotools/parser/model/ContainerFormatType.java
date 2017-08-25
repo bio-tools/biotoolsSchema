@@ -44,12 +44,16 @@ public enum ContainerFormatType {
     @XmlEnumValue("rkt") RKT("rkt"),
     @XmlEnumValue("singularity") SINGULARITY("singularity");
     
-    private final String value;
+    public final String value;
     
     private ContainerFormatType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

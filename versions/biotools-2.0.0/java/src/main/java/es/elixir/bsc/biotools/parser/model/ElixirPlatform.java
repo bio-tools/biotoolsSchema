@@ -42,12 +42,16 @@ public enum ElixirPlatform {
     @XmlEnumValue("Interoperability") INTEROPERABILITY("Interoperability"),
     @XmlEnumValue("Training") TRAINING("Training");
     
-    private final String value;
+    public final String value;
     
     private ElixirPlatform(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

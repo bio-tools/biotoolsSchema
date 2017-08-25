@@ -39,12 +39,16 @@ public enum AccessibilityType {
     @XmlEnumValue("Proprietary") PROPRIETARY("Proprietary"),
     @XmlEnumValue("Freeware") FREEWARE("Freeware");
     
-    private final String value;
+    public final String value;
     
     private AccessibilityType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

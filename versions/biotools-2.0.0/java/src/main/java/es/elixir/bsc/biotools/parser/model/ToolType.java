@@ -50,12 +50,16 @@ public enum ToolType {
     @XmlEnumValue("Workbench") WORKBENCH("Workbench"),
     @XmlEnumValue("Workflow") WORKFLOW("Workflow");
     
-    private final String value;
+    public final String value;
     
     private ToolType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

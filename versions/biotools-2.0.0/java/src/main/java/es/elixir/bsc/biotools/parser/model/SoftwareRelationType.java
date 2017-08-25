@@ -48,12 +48,16 @@ public enum SoftwareRelationType {
     @XmlEnumValue("isPluginFor") PLUGIN_FOR("isPluginFor"),
     @XmlEnumValue("hasPlugin") HAS_PLUGIN("hasPlugin");
     
-    private final String value;
+    public final String value;
     
     private SoftwareRelationType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

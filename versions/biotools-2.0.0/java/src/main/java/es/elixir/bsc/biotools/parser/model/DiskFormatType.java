@@ -45,12 +45,16 @@ public enum DiskFormatType {
     @XmlEnumValue("vhd") VHD("vhd"),
     @XmlEnumValue("vmdk") VMDK("vmdk");
     
-    private final String value;
+    public final String value;
     
     private DiskFormatType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

@@ -58,12 +58,16 @@ public enum ElixirNode {
     @XmlEnumValue("Switzerland") SWITZERLAND("Switzerland"),
     @XmlEnumValue("UK") UK("UK");
     
-    private final String value;
+    public final String value;
     
     private ElixirNode(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

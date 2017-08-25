@@ -33,9 +33,33 @@ import javax.xml.bind.annotation.XmlEnumValue;
  */
 
 public enum ContactType {
-    @XmlEnumValue("Developer") DEVELOPER,
-    @XmlEnumValue("Maintainer") MAINTAINER,
-    @XmlEnumValue("Provider") PROVIDER,
-    @XmlEnumValue("Helpdesk") HELPDESK,
-    @XmlEnumValue("Mailing list") MAILING_LIST;
+    @XmlEnumValue("Developer") DEVELOPER("Developer"),
+    @XmlEnumValue("Maintainer") MAINTAINER("Maintainer"),
+    @XmlEnumValue("Provider") PROVIDER("Provider"),
+    @XmlEnumValue("Helpdesk") HELPDESK("Helpdesk"),
+    @XmlEnumValue("Mailing list") MAILING_LIST("Mailing list");
+    
+    public final String value;
+    
+    private ContactType(String value) {
+        this.value = value;
+    }
+    
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+
+    public static ContactType fromValue(String value) {
+        for (ContactType type: ContactType.values()) {
+            if (type.value.equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException(value);
+    }
 }
