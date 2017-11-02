@@ -241,7 +241,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="operation" maxOccurs="unbounded">
+							<xs:element name="operation" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>The basic operation(s) performed by this software function (EDAM Operation).</xs:documentation>
 									<xs:documentation>An EDAM Operation concept URL and / or term are specified, e.g. "Multiple sequence alignment", http://edamontology.org/operation_0492.</xs:documentation>
@@ -396,7 +396,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="labels">
+				<xs:element name="labels" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Miscellaneous scientific, technical and administrative details of the software, expressed in terms from controlled vocabularies.</xs:documentation>
 						<xs:appinfo>
@@ -406,7 +406,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="toolType" minOccurs="1" maxOccurs="unbounded">
+							<xs:element name="toolType" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
 									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
@@ -492,7 +492,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="topic" maxOccurs="unbounded">
+							<xs:element name="topic" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>General scientific domain the software serves or other general category (EDAM Topic).</xs:documentation>
 									<xs:documentation>An EDAM Topic concept URL and / or term are specified, e.g. "Proteomics", http://edamontology.org/topic_0121.</xs:documentation>

@@ -36,7 +36,15 @@ Description of changes are grouped as follows:
 2. 'name' element 'maxlen' facet set to 50.
 3. 'version' element 'maxlen' facet set to 50.
 4. Various elements of type string are now type xs:token:
-        4.1 'shortDescription
+        4.1 'summary->shortDescription'
+	4.2 'contact->tel'
+5. 'contact->tel' 'minlen' facet set to 5 and 'maxlen' facet set to 50
+6. Elements that were mandatory are now optional:
+        6.1 'function->operation' (now 0...many)
+	6.2 'labels->toolType' (now 0...many)
+	6.3 'labels->topic' (now 0...many)
+	6.4 'labels' (now 0...1)
+	
 5. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 	
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
