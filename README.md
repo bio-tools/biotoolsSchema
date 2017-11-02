@@ -3,7 +3,7 @@
 
 biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 7 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [ELIXIR Tools & Data Services Registry](https://bio.tools).
 
-# Doumentation
+# Documentation
 Comprehensive documentation is available:
 * http://biotoolsschema.readthedocs.io/en/latest/ (general docs)
 * https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-2.0.0/docs/biotools-2.0.0.html (technical docs; save the HTML file and open it in your browser)

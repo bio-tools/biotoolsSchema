@@ -43,6 +43,8 @@ public enum LicenseType {
     @XmlEnumValue("AFL-2.0") AFL_2_0("AFL-2.0"),
     @XmlEnumValue("AFL-2.1") AFL_2_1("AFL-2.1"),
     @XmlEnumValue("AFL-3.0") AFL_3_0("AFL-3.0"),
+    @XmlEnumValue("AGPL-1.0") AGPL_1_0("AGPL-1.0"),
+    @XmlEnumValue("AGPL-3.0") AGPL_3_0("AGPL-3.0"),
     @XmlEnumValue("AMDPLPA") AMDPLPA("AMDPLPA"),
     @XmlEnumValue("AML") AML("AML"),
     @XmlEnumValue("AMPAS") AMPAS("AMPAS"),
@@ -358,12 +360,16 @@ public enum LicenseType {
     @XmlEnumValue("Proprietary") PROPRIETARY("Proprietary"),
     @XmlEnumValue("Other") OTHER("Other");
     
-    private final String value;
+    public final String value;
     
     private LicenseType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

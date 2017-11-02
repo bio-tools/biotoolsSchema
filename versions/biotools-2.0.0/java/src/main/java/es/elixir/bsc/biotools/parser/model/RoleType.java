@@ -42,12 +42,16 @@ public enum RoleType {
     @XmlEnumValue("Documentor") DOCUMENTOR("Documentor"),
     @XmlEnumValue("Support") SUPPORT("Support");
     
-    private final String value;
+    public final String value;
     
     private RoleType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

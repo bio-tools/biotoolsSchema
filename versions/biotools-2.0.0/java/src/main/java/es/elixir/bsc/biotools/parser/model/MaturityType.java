@@ -38,12 +38,16 @@ public enum MaturityType {
     @XmlEnumValue("Mature") MATURE("Mature"),
     @XmlEnumValue("Legacy") LEGACY("Legacy");
     
-    private final String value;
+    public final String value;
     
     private MaturityType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

@@ -25,7 +25,6 @@
 
 package es.elixir.bsc.biotools.parser.model;
 
-import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -38,8 +37,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 
 @XmlType(name = "", propOrder = {"name",
-                                 "version",
                                  "toolID",
+                                 "version",
+                                 "versionID",
                                  "doi",
                                  "shortDescription",
                                  "description",
@@ -47,15 +47,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Summary {
 
     private String name;
-    private String version;
     private String toolID;
+    private String version;
+    private String versionID;
     private String doi;
     private String shortDescription;
     private String description;
     private String homepage;
-    private List<String> mirrors;
-    protected List<String> repositories;
-    protected List<String> socialMedias;
 
     @XmlElement(required = true)
     @XmlSchemaType(name = "nameType", namespace = "http://bio.tools")
@@ -65,15 +63,6 @@ public class Summary {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     @XmlElement(required = true)
@@ -86,6 +75,26 @@ public class Summary {
         this.toolID = toolID;
     }
 
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "nameType", namespace = "http://bio.tools")
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlSchemaType(name = "biotoolsIdType", namespace = "http://bio.tools")
+    public String getVersionID() {
+        return versionID;
+    }
+
+    public void setVersionID(String versionID) {
+        this.versionID = versionID;
+    }
+    
     @XmlElement(required = true)
     @XmlSchemaType(name = "doiType", namespace = "http://bio.tools")
     public String getDoi() {

@@ -39,12 +39,16 @@ public enum OperatingSystemType {
     @XmlEnumValue("Windows") WINDOWS("Windows"),
     @XmlEnumValue("Mac") MAC("Mac");
     
-    private final String value;
+    public final String value;
     
     private OperatingSystemType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

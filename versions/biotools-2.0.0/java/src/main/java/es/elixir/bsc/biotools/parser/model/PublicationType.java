@@ -40,12 +40,16 @@ public enum PublicationType {
     @XmlEnumValue("Review") REVIEW("Review"),
     @XmlEnumValue("Other") OTHER("Other");
     
-    private final String value;
+    public final String value;
     
     private PublicationType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

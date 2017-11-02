@@ -38,12 +38,16 @@ public enum CostType {
     @XmlEnumValue("Free of charge (with restrictions)") FREE_OF_CHARGE_WITH_RESTRICTIONS("Free of charge (with restrictions)"),
     @XmlEnumValue("Commercial") COMMERCIAL("Commercial");
     
-    private final String value;
+    public final String value;
     
     private CostType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlEnumValue;
 public enum ToolType {
     @XmlEnumValue("Command-line tool") COMMAND_LINE("Command-line tool"),
     @XmlEnumValue("Database portal") DATABASE_PORTAL("Database portal"),
-    @XmlEnumValue("Desktop application") DESCTOP_APPLICATION("Desktop application"),
+    @XmlEnumValue("Desktop application") DESKTOP_APPLICATION("Desktop application"),
     @XmlEnumValue("Library") LIBRARY("Library"),
     @XmlEnumValue("Ontology") ONTOLOGY("Ontology"),
     @XmlEnumValue("Plug-in") PLUGIN("Plug-in"),
@@ -50,12 +50,16 @@ public enum ToolType {
     @XmlEnumValue("Workbench") WORKBENCH("Workbench"),
     @XmlEnumValue("Workflow") WORKFLOW("Workflow");
     
-    private final String value;
+    public final String value;
     
     private ToolType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

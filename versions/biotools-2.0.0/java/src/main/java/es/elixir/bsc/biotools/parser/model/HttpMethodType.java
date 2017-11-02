@@ -44,12 +44,16 @@ public enum HttpMethodType {
     @XmlEnumValue("TRACE") TRACE("TRACE"),
     @XmlEnumValue("CONNECT") CONNECT("CONNECT");
     
-    private final String value;
+    public final String value;
     
     private HttpMethodType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

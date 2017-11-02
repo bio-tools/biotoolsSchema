@@ -43,12 +43,16 @@ public enum DocumentationType {
     @XmlEnumValue("Training material") TRAINING_MATERIAL("Training material"),
     @XmlEnumValue("Other") OTHER("Other");
     
-    private final String value;
+    public final String value;
     
     private DocumentationType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;

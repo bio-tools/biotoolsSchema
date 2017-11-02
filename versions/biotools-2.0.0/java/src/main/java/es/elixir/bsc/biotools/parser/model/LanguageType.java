@@ -89,12 +89,16 @@ public enum LanguageType {
     @XmlEnumValue("Visual Basic") VISUAL_BASIC("Visual Basic"),
     @XmlEnumValue("Other") OTHER("Other");
     
-    private final String value;
+    public final String value;
     
     private LanguageType(String value) {
         this.value = value;
     }
     
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public String toString() {
         return value;
