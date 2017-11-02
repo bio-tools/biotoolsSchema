@@ -753,6 +753,7 @@
 										<xs:enumeration value="BitTorrent-1.1"/>
 										<xs:enumeration value="Borceux"/>
 										<xs:enumeration value="CATOSL-1.1"/>
+										<xs:enumeration value="CBS License"/>
 										<xs:enumeration value="CC-BY-1.0"/>
 										<xs:enumeration value="CC-BY-2.0"/>
 										<xs:enumeration value="CC-BY-2.5"/>
