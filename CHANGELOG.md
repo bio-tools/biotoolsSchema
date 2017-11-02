@@ -25,12 +25,20 @@ Description of changes are grouped as follows:
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)
+3. 'nameType' simple type removed (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
+	3.1 'summary->name' element (now xs:token)
+	3.2 'summary->version' element (now xs:token)
+	3.3 'contact->name' element (now xs:token)
+	3.4 'credit->name' element (now xs:token)
 	
 ## Changed
 1. 'summary->version' moved to 'identifier->version' (and still optional, i.e. 0 or 1) 
 2. 'name' element 'maxlen' facet set to 50.
-
-
+3. 'version' element 'maxlen' facet set to 50.
+4. Various elements of type string are now type xs:token:
+        4.1 'shortDescription
+5. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
+	
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
 
