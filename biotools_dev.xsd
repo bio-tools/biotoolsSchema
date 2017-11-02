@@ -2342,12 +2342,13 @@
 										<xs:enumeration value="France"/>
 										<xs:enumeration value="Germany"/>
 										<xs:enumeration value="Greece"/>
-										<xs:enumeration value="Netherlands"/>
-										<xs:enumeration value="Norway"/>
+										<xs:enumeration value="Hungary"/>
 										<xs:enumeration value="Ireland"/>
 										<xs:enumeration value="Israel"/>
 										<xs:enumeration value="Italy"/>
 										<xs:enumeration value="Luxembourg"/>
+										<xs:enumeration value="Netherlands"/>
+										<xs:enumeration value="Norway"/>
 										<xs:enumeration value="Portugal"/>
 										<xs:enumeration value="Slovenia"/>
 										<xs:enumeration value="Spain"/>
