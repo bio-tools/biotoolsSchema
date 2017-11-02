@@ -115,7 +115,9 @@
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
-									<xs:restriction base="textType"/>
+									<xs:restriction base="textType">
+										<xs:minLength value="10"/>
+									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="homepage" type="urlType">
