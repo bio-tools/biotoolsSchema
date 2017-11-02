@@ -24,8 +24,11 @@ Description of changes are grouped as follows:
 	
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
-
-## Removed
+2. 'summary->versionID' removed (this no longer supported by bio.tools)
+	
+## Changed
+1. 'summary->version' moved to 'identifier->version' (and still optional, i.e. 0 or 1) 
+2. 'name' element 'maxlen' facet set to 50.
 
 
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
