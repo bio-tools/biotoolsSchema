@@ -76,49 +76,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="toolID">
-								<xs:annotation>
-									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
-									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
-										<biotoolsUsage>Mandatory</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="toolName"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType">
-										<xs:maxLength value="12"/>
-										<xs:minLength value="1"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
 							<xs:sequence minOccurs="0">
-								<xs:element name="version">
-									<xs:annotation>
-										<xs:documentation>Version (typically a version number) of the software assigned by the software developer or service provider.</xs:documentation>
-										<xs:appinfo>
-											<uiTip>Software version number.</uiTip>
-											<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-										</xs:appinfo>
-										<xs:appinfo>
-											<altova:exampleValues>
-												<altova:example value="versionNumber"/>
-											</altova:exampleValues>
-										</xs:appinfo>
-										<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
-									</xs:annotation>
-									<xs:simpleType>
-										<xs:restriction base="nameType">
-											<xs:whiteSpace value="collapse"/>
-											<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
 								<xs:element name="versionID">
 									<xs:annotation>
 										<xs:documentation>Unique ID of a tool version that is assigned upon registration of the software in bio.tools.</xs:documentation>
@@ -141,20 +99,6 @@
 									</xs:simpleType>
 								</xs:element>
 							</xs:sequence>
-							<xs:element name="doi" type="doiType" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Canonical Digital Object Identifier of the software assigned by the software developer or service provider.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Canonical Digital Object Identifier of the software.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="doi:10.1093/nar/gkv1116"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-							</xs:element>
 							<xs:element name="shortDescription" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Short and concise textual description of the software function.</xs:documentation>
@@ -204,6 +148,103 @@
 										<biotoolsUsage>Mandatory</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
+							</xs:element>
+							<xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Unique identifier of the software.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="value">
+											<xs:annotation>
+												<xs:documentation>Value of tool identifier.</xs:documentation>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="signalp"/>
+														<altova:example value="doi:10.1038/nmeth.1701"/>
+														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
+														<altova:example value="RRID:SCR_001156"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:whiteSpace value="collapse"/>
+													<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
+													<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+													<xs:pattern value="RRID:.+"/>
+													<xs:pattern value="cpe:.+"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="type">
+											<xs:annotation>
+												<xs:documentation>Type of tool identifier.</xs:documentation>
+												<xs:documentation>bio.tools toolIDs are a URL-safe derivative of (often identical to) the tool name.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
+												<xs:appinfo>
+													<uiTip>Type of identifier.</uiTip>
+													<biotoolsUsage>Optional</biotoolsUsage>
+													<enum>
+														<enumItem>
+															<term>toolID</term>
+															<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</uiTip>
+														</enumItem>
+														<enumItem>
+															<term>DOI</term>
+															<uiTip>Digital Object Identifier of the software assigned (typically) by the software developer or service provider.</uiTip>
+														</enumItem>
+														<enumItem>
+															<term>RRID</term>
+															<uiTip>Research Resource Identifier as used by the NIH-supported Resource Identification Portal (https://scicrunch.org/resources).</uiTip>
+														</enumItem>
+														<enumItem>
+															<term>CPE</term>
+															<uiTip>Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/).</uiTip>
+														</enumItem>
+													</enum>
+												</xs:appinfo>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value=""/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="enumType">
+													<xs:enumeration value="toolid"/>
+													<xs:enumeration value="doi"/>
+													<xs:enumeration value="rrid"/>
+													<xs:enumeration value="cpe"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="version" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Version (typically a version number) of the software assigned by the software developer or service provider.</xs:documentation>
+												<xs:appinfo>
+													<uiTip>Software version number.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												</xs:appinfo>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="versionNumber"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+												<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="nameType">
+													<xs:whiteSpace value="collapse"/>
+													<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -753,7 +794,6 @@
 										<xs:enumeration value="BitTorrent-1.1"/>
 										<xs:enumeration value="Borceux"/>
 										<xs:enumeration value="CATOSL-1.1"/>
-										<xs:enumeration value="CBS License"/>
 										<xs:enumeration value="CC-BY-1.0"/>
 										<xs:enumeration value="CC-BY-2.0"/>
 										<xs:enumeration value="CC-BY-2.5"/>
@@ -1882,7 +1922,19 @@
 												<uiTip>The principal publication about the software itself; the article to cite when acknowledging use of the software.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Benchmark</term>
+												<term>Deployment</term>
+												<uiTip>A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Method</term>
+												<uiTip>A publication describing a scientific method or algorithm implemented by the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Usage</term>
+												<uiTip>A publication describing the application of the software to scientific research, a particular task or dataset.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Comparison</term>
 												<uiTip>A publication which assessed the performance of the software.</uiTip>
 											</enumItem>
 											<enumItem>
@@ -1891,7 +1943,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Other</term>
-												<uiTip>A publication about the software but not the primary publication or a benchmark study.</uiTip>
+												<uiTip>A publication of relevance to the software but not fitting the other cateogries.</uiTip>
 											</enumItem>
 										</enum>
 									</xs:appinfo>
@@ -1899,7 +1951,10 @@
 								<xs:simpleType>
 									<xs:restriction base="enumType">
 										<xs:enumeration value="Primary"/>
-										<xs:enumeration value="Benchmark"/>
+										<xs:enumeration value="Deployment"/>
+										<xs:enumeration value="Method"/>
+										<xs:enumeration value="Usage"/>
+										<xs:enumeration value="Comparison"/>
 										<xs:enumeration value="Review"/>
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
@@ -2542,6 +2597,7 @@
 		<xs:restriction base="xs:token">
 			<xs:whiteSpace value="collapse"/>
 			<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+			<xs:pattern value="Not available"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="textType">
@@ -2566,6 +2622,7 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:token">
 				<xs:pattern value="(PMC)[1-9][0-9]{0,8}"/>
+				<xs:pattern value="Not available"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -2587,6 +2644,7 @@
 			<xs:restriction base="xs:token">
 				<xs:pattern value="(PMID:)[1-9][0-9]{0,8}"/>
 				<xs:pattern value="[1-9][0-9]{0,8}"/>
+				<xs:pattern value="Not available"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>

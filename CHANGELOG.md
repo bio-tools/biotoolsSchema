@@ -8,8 +8,29 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
-Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
+
+## Added
+1. Added "Not available" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is "Not available" for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
+
+## Added / changed / removed
+1. 'publication->type' enum, mulitple modifications:
+1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
+1.2 "Deployment" (new!) A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.
+1.3 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
+1.4 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
+1.5 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
+1.6 "Review" (no change) A publication where the software was reviewed.
+1.7 "Other" (removed!)
 	
+## Removed
+1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
+
+## Removed
+
+
+# November 17, 2016 biotoolsSchema-2.0.0.xsd released
+Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
+
 # November 8, 2016 biotoolsSchema-2.0-beta04.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.
 
