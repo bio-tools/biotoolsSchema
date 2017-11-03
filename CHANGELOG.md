@@ -54,7 +54,7 @@ Description of changes are grouped as follows:
 	8.4 At least one of 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
 	8.5 'credit->typeRole' cardinality changed from 0...many from 0...1
 	8.6 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
-          
+9. 'summary->description' 'maxlen' facet reduced to 500 from 1000.
 	
 	
 5. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
