@@ -30,7 +30,8 @@ Description of changes are grouped as follows:
 	3.2 'summary->version' element (now xs:token)
 	3.3 'contact->name' element (now xs:token)
 	3.4 'credit->name' element (now xs:token)
-	
+4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
+
 ## Changed
 1. 'summary->version' moved to 'identifier->version' (and still optional, i.e. 0 or 1) 
 2. 'name' element 'maxlen' facet set to 50.
@@ -44,6 +45,17 @@ Description of changes are grouped as follows:
 	6.2 'labels->toolType' (now 0...many)
 	6.3 'labels->topic' (now 0...many)
 	6.4 'labels' (now 0...1)
+7. 'summary->shortDescription' 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
+8. 'credit' element group refactored:
+	8.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
+	8.2 'credit->name' is now optional
+	8.3 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify either an ELIXIR platform or node name or a credit with an optional name, a mandatory ID/means of contact and optional type and role (see the schema docs)
+	8.3 'credit->tel' (telephone number) added
+	8.4 At least one of 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
+	8.5 'credit->typeRole' cardinality changed from 0...many from 0...1
+	8.6 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
+          
+	
 	
 5. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 	

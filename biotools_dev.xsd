@@ -89,14 +89,13 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="Short software description : a single declarative sentence in the present tense stating the tool function. Do not include tool name."/>
 											<altova:example value="Detect and visualise single-nucleotide polymorphisms (SNPs)."/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
-										<xs:maxLength value="200"/>
+										<xs:maxLength value="100"/>
 										<xs:whiteSpace value="collapse"/>
 										<xs:minLength value="10"/>
 									</xs:restriction>
@@ -1946,299 +1945,290 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="contact" minOccurs="0" maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>Details of primary point(s) of contact, e.g. person, helpdesk or mailing list.</xs:documentation>
-						<xs:appinfo>
-							<uiTip>Details of primary point(s) of contact, e.g. person, helpdesk or mailing list.</uiTip>
-							<biotoolsUsage>Recommended</biotoolsUsage>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:choice>
-								<xs:sequence>
-									<xs:element name="email">
-										<xs:annotation>
-											<xs:documentation>Email address of the primary contact.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>Email address of the primary contact.</uiTip>
-												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-											</xs:appinfo>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="joebloggst@elixir-dk.org"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:whiteSpace value="collapse"/>
-												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="url" type="xs:anyURI" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>URL of the primary contact.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>URL of the primary contact.</uiTip>
-												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-											</xs:appinfo>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="https://joebloggs.com"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-									</xs:element>
-								</xs:sequence>
-								<xs:element name="url" type="xs:anyURI"/>
-							</xs:choice>
-							<xs:element name="name" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Name of the primary contact.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Name of the primary contact.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="Joe Bloggs"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:maxLength value="100"/>
-										<xs:minLength value="1"/>
-										<xs:whiteSpace value="collapse"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="tel" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Telephone number of primary contact.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Telephone number of the primary contact.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="+49-89-636-48018"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:minLength value="5"/>
-										<xs:maxLength value="50"/>
-										<xs:whiteSpace value="collapse"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element name="credit" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>An individual or organisation that should be credited for the software.</xs:documentation>
+						<xs:documentation>An individual or organisation that should be credited, or may be contacted about the software.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>An individual or organisation that should be credited for the software.</uiTip>
+							<uiTip>An individual or organisation that should be credited, or may be contacted about the software.</uiTip>
 							<biotoolsUsage>Recommended</biotoolsUsage>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="name">
-								<xs:annotation>
-									<xs:appinfo>
-										<uiTip>Name of credited entity.</uiTip>
-										<biotoolsUsage>Mandatory (conditionally).</biotoolsUsage>
-									</xs:appinfo>
-									<xs:documentation>Name of the entity that is credited.</xs:documentation>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="Person or institute name"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:minLength value="1"/>
-										<xs:maxLength value="100"/>
-										<xs:whiteSpace value="collapse"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
 							<xs:choice>
-								<xs:sequence>
-									<xs:element name="email">
+								<xs:choice>
+									<xs:element name="elixirPlatform">
 										<xs:annotation>
-											<xs:documentation>Email address of the entity that is credited.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>Email address of credited entity.</uiTip>
-												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-											</xs:appinfo>
+											<xs:documentation>ELIXIR platform.</xs:documentation>
 											<xs:appinfo>
 												<altova:exampleValues>
-													<altova:example value="joebloggst@elixir-dk.org"/>
+													<altova:example value="Training"/>
+												</altova:exampleValues>
+											</xs:appinfo>
+											<xs:appinfo>
+												<uiTip>ELIXIR platform.</uiTip>
+												<biotoolsUsage>Mandatory (conditional)</biotoolsUsage>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="enumType">
+												<xs:enumeration value="Data"/>
+												<xs:enumeration value="Tools"/>
+												<xs:enumeration value="Compute"/>
+												<xs:enumeration value="Interoperability"/>
+												<xs:enumeration value="Training"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="elixirNode">
+										<xs:annotation>
+											<xs:documentation>ELIXIR node.</xs:documentation>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="UK"/>
+												</altova:exampleValues>
+											</xs:appinfo>
+											<xs:appinfo>
+												<uiTip>ELIXIR node.</uiTip>
+												<biotoolsUsage>Mandatory (conditional)</biotoolsUsage>
+											</xs:appinfo>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="enumType">
+												<xs:enumeration value="Belgium"/>
+												<xs:enumeration value="Czech Republic"/>
+												<xs:enumeration value="Denmark"/>
+												<xs:enumeration value="EMBL"/>
+												<xs:enumeration value="Estonia"/>
+												<xs:enumeration value="Finland"/>
+												<xs:enumeration value="France"/>
+												<xs:enumeration value="Germany"/>
+												<xs:enumeration value="Greece"/>
+												<xs:enumeration value="Hungary"/>
+												<xs:enumeration value="Ireland"/>
+												<xs:enumeration value="Israel"/>
+												<xs:enumeration value="Italy"/>
+												<xs:enumeration value="Luxembourg"/>
+												<xs:enumeration value="Netherlands"/>
+												<xs:enumeration value="Norway"/>
+												<xs:enumeration value="Portugal"/>
+												<xs:enumeration value="Slovenia"/>
+												<xs:enumeration value="Spain"/>
+												<xs:enumeration value="Sweden"/>
+												<xs:enumeration value="Switzerland"/>
+												<xs:enumeration value="UK"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+								</xs:choice>
+								<xs:sequence>
+									<xs:element name="name" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<uiTip>Name of credited entity.</uiTip>
+												<biotoolsUsage>Mandatory (conditionally).</biotoolsUsage>
+											</xs:appinfo>
+											<xs:documentation>Name of the entity that is credited.</xs:documentation>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="Person or institute name"/>
 												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:token">
+												<xs:minLength value="1"/>
+												<xs:maxLength value="100"/>
 												<xs:whiteSpace value="collapse"/>
-												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="url" type="xs:anyURI" minOccurs="0">
+									<xs:choice maxOccurs="unbounded">
+										<xs:element name="email">
+											<xs:annotation>
+												<xs:documentation>Email address of the entity that is credited.</xs:documentation>
+												<xs:appinfo>
+													<uiTip>Email address of credited entity.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												</xs:appinfo>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="joebloggst@elixir-dk.org"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:whiteSpace value="collapse"/>
+													<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+													<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="url" type="xs:anyURI">
+											<xs:annotation>
+												<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
+												<xs:appinfo>
+													<uiTip>URL for credited entity.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												</xs:appinfo>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="orcidId">
+											<xs:annotation>
+												<xs:appinfo>
+													<uiTip>ORCID iD of person.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												</xs:appinfo>
+												<xs:documentation>Unique identifier (ORCID iD) of a person that is credited.</xs:documentation>
+												<xs:documentation>Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/. </xs:documentation>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="http://orcid.org/0000-0002-1825-0097"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:pattern value="http://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="gridId">
+											<xs:annotation>
+												<xs:appinfo>
+													<uiTip>GRID ID of organisation.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												</xs:appinfo>
+												<xs:documentation>Unique identifier (GRID ID) of an organisation that is credited. </xs:documentation>
+												<xs:documentation>Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.</xs:documentation>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="grid.5170.3"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:pattern value="grid.[0-9]{4,}.[a-f0-9]{1,2}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="tel">
+											<xs:annotation>
+												<xs:documentation>Telephone number of the entity that is credited.</xs:documentation>
+												<xs:appinfo>
+													<uiTip>Telephone number of the entity that is credited.</uiTip>
+													<biotoolsUsage>Optional</biotoolsUsage>
+												</xs:appinfo>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="+49-89-636-48018"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:minLength value="5"/>
+													<xs:maxLength value="50"/>
+													<xs:whiteSpace value="collapse"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:choice>
+									<xs:element name="typeEntity" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
+											<xs:documentation>Type of entity that is credited.</xs:documentation>
 											<xs:appinfo>
-												<uiTip>URL for credited entity.</uiTip>
-												<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+												<uiTip>Type of entity that is credited.</uiTip>
+												<biotoolsUsage>Optional</biotoolsUsage>
+												<enum>
+													<enumItem>
+														<term>Person</term>
+														<uiTip>Credit of an individual.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Project</term>
+														<uiTip>Credit of a community software project not formally associated with any single institute.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Division</term>
+														<uiTip>Credit of or a formal part of an institutional organisation, e.g. a department, research group, team, etc</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Institute</term>
+														<uiTip>Credit of an organisation such as a university, hospital, research institute, service center, unit etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Consortium</term>
+														<uiTip>Credit of an association of two or more institutes or other legal entities which have joined forces for some common purpose.  Includes Research Infrastructures (RIs) such as ELIXIR, parts of an RI such as an ELIXIR node etc. </uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Funding agency</term>
+														<uiTip>Credit of a legal entity providing funding for development of the software or provision of an online service.</uiTip>
+													</enumItem>
+												</enum>
 											</xs:appinfo>
 										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="enumType">
+												<xs:enumeration value="Person"/>
+												<xs:enumeration value="Project"/>
+												<xs:enumeration value="Division"/>
+												<xs:enumeration value="Institute"/>
+												<xs:enumeration value="Consortium"/>
+												<xs:enumeration value="Funding agency"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="typeRole" minOccurs="0">
+										<xs:annotation>
+											<xs:appinfo>
+												<uiTip>Role performed by credited entity.</uiTip>
+												<biotoolsUsage>Optional</biotoolsUsage>
+												<enum>
+													<enumItem>
+														<term>Developer</term>
+														<uiTip>Author of the original software source code.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Maintainer</term>
+														<uiTip>Maintainer of a mature software providing packaging, patching, distribution etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Provider</term>
+														<uiTip>Institutional provider of an online service.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Documentor</term>
+														<uiTip>Author of software documentation including making edits to a bio.tools entry.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Contributor</term>
+														<uiTip>Some other role in software production or service delivery including design, deployment, system administration, evaluation, testing, documentation, training, user support etc.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Support</term>
+														<uiTip>Provider of support in using the software.</uiTip>
+													</enumItem>
+												</enum>
+											</xs:appinfo>
+											<xs:documentation>Role performed by entity that is credited.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="enumType">
+												<xs:enumeration value="Developer"/>
+												<xs:enumeration value="Maintainer"/>
+												<xs:enumeration value="Provider"/>
+												<xs:enumeration value="Contributor"/>
+												<xs:enumeration value="Documentor"/>
+												<xs:enumeration value="Support"/>
+												<xs:enumeration value="Primary contact"/>
+											</xs:restriction>
+										</xs:simpleType>
 									</xs:element>
 								</xs:sequence>
-								<xs:element name="url" type="xs:anyURI"/>
 							</xs:choice>
-							<xs:choice minOccurs="0">
-								<xs:element name="orcidId">
-									<xs:annotation>
-										<xs:appinfo>
-											<uiTip>ORCID iD of person.</uiTip>
-											<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-										</xs:appinfo>
-										<xs:documentation>Unique identifier (ORCID iD) of a person that is credited.</xs:documentation>
-										<xs:documentation>Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/. </xs:documentation>
-										<xs:appinfo>
-											<altova:exampleValues>
-												<altova:example value="http://orcid.org/0000-0002-1825-0097"/>
-											</altova:exampleValues>
-										</xs:appinfo>
-									</xs:annotation>
-									<xs:simpleType>
-										<xs:restriction base="xs:token">
-											<xs:pattern value="http://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="gridId">
-									<xs:annotation>
-										<xs:appinfo>
-											<uiTip>GRID ID of organisation.</uiTip>
-											<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-										</xs:appinfo>
-										<xs:documentation>Unique identifier (GRID ID) of an organisation that is credited. </xs:documentation>
-										<xs:documentation>Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.</xs:documentation>
-										<xs:appinfo>
-											<altova:exampleValues>
-												<altova:example value="grid.5170.3"/>
-											</altova:exampleValues>
-										</xs:appinfo>
-									</xs:annotation>
-									<xs:simpleType>
-										<xs:restriction base="xs:token">
-											<xs:pattern value="grid.[0-9]{4,}.[a-f0-9]{1,2}"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:choice>
-							<xs:element name="typeEntity" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Type of entity that is credited.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Type of entity that is credited.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-										<enum>
-											<enumItem>
-												<term>Person</term>
-												<uiTip>Credit of an individual.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Project</term>
-												<uiTip>Credit of a community software project not formally associated with any single institute.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Division</term>
-												<uiTip>Credit of or a formal part of an institutional organisation, e.g. a department, research group, team, etc</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Institute</term>
-												<uiTip>Credit of an organisation such as a university, hospital, research institute, service center, unit etc.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Consortium</term>
-												<uiTip>Credit of an association of two or more institutes or other legal entities which have joined forces for some common purpose.  Includes Research Infrastructures (RIs) such as ELIXIR, parts of an RI such as an ELIXIR node etc. </uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Funding agency</term>
-												<uiTip>Credit of a legal entity providing funding for development of the software or provision of an online service.</uiTip>
-											</enumItem>
-										</enum>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="Person"/>
-										<xs:enumeration value="Project"/>
-										<xs:enumeration value="Division"/>
-										<xs:enumeration value="Institute"/>
-										<xs:enumeration value="Consortium"/>
-										<xs:enumeration value="Funding agency"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="typeRole" minOccurs="0">
-								<xs:annotation>
-									<xs:appinfo>
-										<uiTip>Role performed by credited entity.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-										<enum>
-											<enumItem>
-												<term>Developer</term>
-												<uiTip>Author of the original software source code.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Maintainer</term>
-												<uiTip>Maintainer of a mature software providing packaging, patching, distribution etc.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Provider</term>
-												<uiTip>Institutional provider of an online service.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Documentor</term>
-												<uiTip>Author of software documentation including making edits to a bio.tools entry.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Contributor</term>
-												<uiTip>Some other role in software production or service delivery including design, deployment, system administration, evaluation, testing, documentation, training, user support etc.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Support</term>
-												<uiTip>Provider of support in using the software.</uiTip>
-											</enumItem>
-										</enum>
-									</xs:appinfo>
-									<xs:documentation>Role performed by entity that is credited.</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="Developer"/>
-										<xs:enumeration value="Maintainer"/>
-										<xs:enumeration value="Provider"/>
-										<xs:enumeration value="Contributor"/>
-										<xs:enumeration value="Documentor"/>
-										<xs:enumeration value="Support"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
 							<xs:element name="comment" type="textType" minOccurs="0">
 								<xs:annotation>
 									<xs:appinfo>
@@ -2298,69 +2288,6 @@
 										<biotoolsUsage>Mandatory (conditional)</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
-							</xs:element>
-							<xs:element name="platform">
-								<xs:annotation>
-									<xs:documentation>ELIXIR platform.</xs:documentation>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="Training"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-									<xs:appinfo>
-										<uiTip>ELIXIR platform.</uiTip>
-										<biotoolsUsage>Mandatory (conditional)</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="Data"/>
-										<xs:enumeration value="Tools"/>
-										<xs:enumeration value="Compute"/>
-										<xs:enumeration value="Interoperability"/>
-										<xs:enumeration value="Training"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="node">
-								<xs:annotation>
-									<xs:documentation>ELIXIR node.</xs:documentation>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="UK"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-									<xs:appinfo>
-										<uiTip>ELIXIR node.</uiTip>
-										<biotoolsUsage>Mandatory (conditional)</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="Belgium"/>
-										<xs:enumeration value="Czech Republic"/>
-										<xs:enumeration value="Denmark"/>
-										<xs:enumeration value="EMBL"/>
-										<xs:enumeration value="Estonia"/>
-										<xs:enumeration value="Finland"/>
-										<xs:enumeration value="France"/>
-										<xs:enumeration value="Germany"/>
-										<xs:enumeration value="Greece"/>
-										<xs:enumeration value="Hungary"/>
-										<xs:enumeration value="Ireland"/>
-										<xs:enumeration value="Israel"/>
-										<xs:enumeration value="Italy"/>
-										<xs:enumeration value="Luxembourg"/>
-										<xs:enumeration value="Netherlands"/>
-										<xs:enumeration value="Norway"/>
-										<xs:enumeration value="Portugal"/>
-										<xs:enumeration value="Slovenia"/>
-										<xs:enumeration value="Spain"/>
-										<xs:enumeration value="Sweden"/>
-										<xs:enumeration value="Switzerland"/>
-										<xs:enumeration value="UK"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="comment" type="textType" minOccurs="0">
 								<xs:annotation>
