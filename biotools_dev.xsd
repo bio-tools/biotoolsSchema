@@ -2183,7 +2183,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="typeRole" minOccurs="0">
+									<xs:element name="typeRole" minOccurs="0" maxOccurs="unbounded">
 										<xs:annotation>
 											<xs:appinfo>
 												<uiTip>Role performed by credited entity.</uiTip>
