@@ -16,32 +16,29 @@ Description of changes are grouped as follows:
 	2.2 'summary->identifier->type' (0...1) is enum of the identifier type (toolid, doi, rrid, cpe)
 	2.3 'summary->identifier->version' (0...1) (moved from 'identifier->version')
 	3. 'labels->license' enum extended with "Unlicensed" value
-3.8 'link->type' enum extended:
-    3.8.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
-    3.8.2 "Technical monitoring" ("Information about the technical status of a tool."
+3. 'link->type' enum extended:
+    3.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
+    3.2 "Technical monitoring" ("Information about the technical status of a tool."
 4. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-	
+
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
-1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
-1.2 "Deployment" (new!) A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.
-1.3 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
-1.4 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
-1.5 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
-1.6 "Review" (no change) A publication where the software was reviewed.
-1.7 "Other" (removed!)
+   1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
+   1.2 "Deployment" (new!) A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.
+   1.3 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
+   1.4 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
+   1.5 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
+   1.6 "Review" (no change) A publication where the software was reviewed.
+   1.7 "Other" (removed!)
 
-	
-	
-	
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)
 3. 'nameType' simple type removed (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
-	3.1 'summary->name' element (now xs:token)
-	3.2 'summary->version' element (now xs:token)
-	3.3 'contact->name' element (now xs:token)
-	3.4 'credit->name' element (now xs:token)
+   3.1 'summary->name' element (now xs:token)
+   3.2 'summary->version' element (now xs:token)
+   3.3 'contact->name' element (now xs:token)
+   3.4 'credit->name' element (now xs:token)
 4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
 
 ## Changed
@@ -49,23 +46,23 @@ Description of changes are grouped as follows:
 2.  'name' element 'maxlen' facet set to 50.
 3.  'version' element 'maxlen' facet set to 50.
 4.  Various elements of type string are now type xs:token:
-        4.1 'summary->shortDescription'
-	4.2 'contact->tel'
+    4.1 'summary->shortDescription'
+    4.2 'contact->tel'
 5.  'contact->tel' 'minlen' facet set to 5 and 'maxlen' facet set to 50
 6.  Elements that were mandatory are now optional:
-        6.1 'function->operation' (now 0...many)
-	6.2 'labels->toolType' (now 0...many)
-	6.3 'labels->topic' (now 0...many)
-	6.4 'labels' (now 0...1)
+    6.1 'function->operation' (now 0...many)
+    6.2 'labels->toolType' (now 0...many)
+    6.3 'labels->topic' (now 0...many)
+    6.4 'labels' (now 0...1)
 7.  'summary->shortDescription' 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
 8.  'credit' element group refactored:
-	8.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
-	8.2 'credit->name' is now optional
-	8.3 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify either an ELIXIR platform or node name or a credit with an optional name, a mandatory ID/means of contact and optional type and role (see the schema docs)
-	8.3 'credit->tel' (telephone number) added
-	8.4 At least one of 'credit->name', 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
-	8.5 'credit->typeRole' cardinality changed from 0...many from 0...1
-	8.6 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
+    8.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
+    8.2 'credit->name' is now optional
+    8.3 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify either an ELIXIR platform or node name or a credit with an optional name, a mandatory ID/means of contact and optional type and role (see the schema docs)
+    8.4 'credit->tel' (telephone number) added
+    8.5 At least one of 'credit->name', 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
+    8.6 'credit->typeRole' cardinality changed from 0...many from 0...1
+    8.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 9.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
 10. 'biotoolsIdType' (as used now only by 'relation->biotoolsId') 'maxLen' facet removed
 11. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
@@ -76,7 +73,7 @@ Description of changes are grouped as follows:
 ## Fixed
 1. `credit->email` duplicate pattern restriction removed
 
-	
+
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
 
