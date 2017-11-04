@@ -11,7 +11,11 @@ Description of changes are grouped as follows:
 
 ## Added
 1. Added "Not available" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is "Not available" for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-
+2. 'summary->identifier' added "A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider."
+	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
+	2.2 'summary->identifier->type' (0...1) is enum of the identifier type (toolid, doi, rrid, cpe)
+	2.3 'summary->identifier->version' (0...1) (moved from 'identifier->version')
+	
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
 1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.

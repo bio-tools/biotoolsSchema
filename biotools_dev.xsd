@@ -162,7 +162,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="type">
+										<xs:element name="type" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Type of tool identifier.</xs:documentation>
 												<xs:documentation>bio.tools toolIDs are a URL-safe derivative of (often identical to) the tool name.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
