@@ -1169,7 +1169,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="biotoolsId" type="biotoolsUrlType">
+							<xs:element name="biotoolsId" type="biotoolsIdType">
 								<xs:annotation>
 									<xs:documentation>bio.tools ID (URL)  of an existing bio.tools entry which this software is related to.</xs:documentation>
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
@@ -2579,7 +2579,6 @@
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:minLength value="1"/>
-			<xs:maxLength value="12"/>
 			<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
 		</xs:restriction>
 	</xs:simpleType>
