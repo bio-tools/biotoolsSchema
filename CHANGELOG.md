@@ -10,7 +10,7 @@ Description of changes are grouped as follows:
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 
 ## Added
-1. Added "Not available" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is "Not available" for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
+1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
 2. 'summary->identifier' added "A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider."
 	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
 	2.2 'summary->identifier->type' (0...1) is enum of the identifier type (toolid, doi, rrid, cpe)
