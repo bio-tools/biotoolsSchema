@@ -2078,7 +2078,7 @@
 												</xs:appinfo>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="orcidId">
+										<xs:element name="orcidid">
 											<xs:annotation>
 												<xs:appinfo>
 													<uiTip>ORCID iD of person.</uiTip>
@@ -2098,7 +2098,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="gridId">
+										<xs:element name="gridid">
 											<xs:annotation>
 												<xs:appinfo>
 													<uiTip>GRID ID of organisation.</uiTip>

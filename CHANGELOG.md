@@ -61,10 +61,13 @@ Description of changes are grouped as follows:
 9.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
 10. 'biotoolsIdType' (as used now only by 'relation->biotoolsId') 'maxLen' facet removed
 11. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
-5. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
+12. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
+13. 'credit->orcidId' changed to 'credit->orcidid'
+14. 'credit->gridId' changed to 'credit->gridid'
 
 ## Fixed
-1. `credit->email` duplicate pattern restriction removed 
+1. `credit->email` duplicate pattern restriction removed
+
 	
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
