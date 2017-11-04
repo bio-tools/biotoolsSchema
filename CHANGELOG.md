@@ -15,6 +15,11 @@ Description of changes are grouped as follows:
 	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
 	2.2 'summary->identifier->type' (0...1) is enum of the identifier type (toolid, doi, rrid, cpe)
 	2.3 'summary->identifier->version' (0...1) (moved from 'identifier->version')
+	3. 'labels->license' enum extended with "Unlicensed" value
+3.8 'link->type' enum extended:
+    3.8.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
+    3.8.2 "Technical monitoring" ("Information about the technical status of a tool."
+4. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
 	
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
@@ -26,6 +31,9 @@ Description of changes are grouped as follows:
 1.6 "Review" (no change) A publication where the software was reviewed.
 1.7 "Other" (removed!)
 
+	
+	
+	
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)

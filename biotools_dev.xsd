@@ -1486,6 +1486,14 @@
 														<term>Social media</term>
 														<uiTip>A website used by the software community including social networking sites, discussion and support fora, WIKIs etc.</uiTip>
 													</enumItem>
+													<enumItem>
+														<term>Scientfic benchmark</term>
+														<uiTip>Information about the scientific performance of a tool.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Technical monitoring</term>
+														<uiTip>Information about the technical status of a tool.</uiTip>
+													</enumItem>
 												</enum>
 											</xs:appinfo>
 										</xs:annotation>
@@ -1499,6 +1507,8 @@
 												<xs:enumeration value="Registry"/>
 												<xs:enumeration value="Repository"/>
 												<xs:enumeration value="Social media"/>
+												<xs:enumeration value="Scientific benchmark"/>
+												<xs:enumeration value="Technical monitoring"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
