@@ -1169,7 +1169,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="biotoolsId" type="biotoolsIdType">
+							<xs:element name="biotoolsId">
 								<xs:annotation>
 									<xs:documentation>bio.tools ID (URL)  of an existing bio.tools entry which this software is related to.</xs:documentation>
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
@@ -1178,6 +1178,9 @@
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="biotoolsIdType"/>
+								</xs:simpleType>
 							</xs:element>
 							<xs:element name="type">
 								<xs:annotation>
@@ -2024,28 +2027,28 @@
 									</xs:element>
 								</xs:choice>
 								<xs:sequence>
-									<xs:element name="name" minOccurs="0">
-										<xs:annotation>
-											<xs:appinfo>
-												<uiTip>Name of credited entity.</uiTip>
-												<biotoolsUsage>Mandatory (conditionally).</biotoolsUsage>
-											</xs:appinfo>
-											<xs:documentation>Name of the entity that is credited.</xs:documentation>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="Person or institute name"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="100"/>
-												<xs:whiteSpace value="collapse"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
 									<xs:choice maxOccurs="unbounded">
+										<xs:element name="name">
+											<xs:annotation>
+												<xs:appinfo>
+													<uiTip>Name of credited entity.</uiTip>
+													<biotoolsUsage>Mandatory (conditionally).</biotoolsUsage>
+												</xs:appinfo>
+												<xs:documentation>Name of the entity that is credited.</xs:documentation>
+												<xs:appinfo>
+													<altova:exampleValues>
+														<altova:example value="Person or institute name"/>
+													</altova:exampleValues>
+												</xs:appinfo>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:minLength value="1"/>
+													<xs:maxLength value="100"/>
+													<xs:whiteSpace value="collapse"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="email">
 											<xs:annotation>
 												<xs:documentation>Email address of the entity that is credited.</xs:documentation>

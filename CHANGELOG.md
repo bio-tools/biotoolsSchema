@@ -51,7 +51,7 @@ Description of changes are grouped as follows:
 	8.2 'credit->name' is now optional
 	8.3 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify either an ELIXIR platform or node name or a credit with an optional name, a mandatory ID/means of contact and optional type and role (see the schema docs)
 	8.3 'credit->tel' (telephone number) added
-	8.4 At least one of 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
+	8.4 At least one of 'credit->name', 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
 	8.5 'credit->typeRole' cardinality changed from 0...many from 0...1
 	8.6 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 9.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
