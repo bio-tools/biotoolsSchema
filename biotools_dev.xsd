@@ -2360,6 +2360,7 @@
 		<xs:restriction base="xs:anyURI">
 			<xs:pattern value="https?://.+"/>
 			<xs:pattern value="s?ftp://.+"/>
+			<xs:pattern value="Not available"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="urlType">
