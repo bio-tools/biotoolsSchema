@@ -32,15 +32,15 @@ Description of changes are grouped as follows:
 	8.2 'download->version' (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
 	8.3 'publication->version' (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
 	
+	
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
    1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
-   1.2 "Deployment" (new!) A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.
-   1.3 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
-   1.4 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
-   1.5 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
-   1.6 "Review" (no change) A publication where the software was reviewed.
-   1.7 "Other" (removed!)
+   1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
+   1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
+   1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
+   1.5 "Review" (no change) A publication where the software was reviewed.
+   1.6 "Other" (no change)
 
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = doi)

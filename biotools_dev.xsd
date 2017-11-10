@@ -1952,10 +1952,6 @@
 												<uiTip>The principal publication about the software itself; the article to cite when acknowledging use of the software.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Deployment</term>
-												<uiTip>A publication describing a deployment of the software in some usable form, including for example a webserver providing the tool functions, or the inclusion of the tool in a larger package or suite.</uiTip>
-											</enumItem>
-											<enumItem>
 												<term>Method</term>
 												<uiTip>A publication describing a scientific method or algorithm implemented by the software.</uiTip>
 											</enumItem>
@@ -1981,7 +1977,6 @@
 								<xs:simpleType>
 									<xs:restriction base="enumType">
 										<xs:enumeration value="Primary"/>
-										<xs:enumeration value="Deployment"/>
 										<xs:enumeration value="Method"/>
 										<xs:enumeration value="Usage"/>
 										<xs:enumeration value="Comparison"/>
