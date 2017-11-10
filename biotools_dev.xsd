@@ -132,7 +132,7 @@
 							</xs:element>
 							<xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider.</xs:documentation>
+									<xs:documentation>A unique identifier of the software, typically assigned by an ID-assignment authority.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique identifier of the software.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -205,22 +205,16 @@
 										</xs:element>
 										<xs:element name="version" minOccurs="0">
 											<xs:annotation>
-												<xs:documentation>Version (typically a version number) of the software assigned by the software developer or service provider.</xs:documentation>
+												<xs:documentation>Version information (typically a version number) of the software applicable to this identififier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Software version number.</uiTip>
-													<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+													<biotoolsUsage>Optional</biotoolsUsage>
 												</xs:appinfo>
-												<xs:appinfo>
-													<altova:exampleValues>
-														<altova:example value="1.1"/>
-													</altova:exampleValues>
-												</xs:appinfo>
-												<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
-												<xs:restriction base="xs:token">
+												<xs:restriction base="versionType">
 													<xs:whiteSpace value="collapse"/>
-													<xs:maxLength value="50"/>
+													<xs:maxLength value="100"/>
 													<xs:minLength value="1"/>
 													<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
 												</xs:restriction>
@@ -318,6 +312,7 @@
 															<biotoolsUsage>Recommended</biotoolsUsage>
 														</xs:appinfo>
 														<xs:documentation>An EDAM Data concept URL and / or term are specified, e.g. "Protein sequences", http://edamontology.org/data_2976. </xs:documentation>
+														<xs:documentation/>
 													</xs:annotation>
 												</xs:element>
 												<xs:element name="format" type="EDAMformat" minOccurs="0" maxOccurs="unbounded">
@@ -1816,6 +1811,15 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
+							<xs:element name="version" type="versionType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Version information (typically a version number) of the software applicable to this download.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Software version number.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
 						</xs:all>
 					</xs:complexType>
 				</xs:element>
@@ -1985,6 +1989,15 @@
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
 								</xs:simpleType>
+							</xs:element>
+							<xs:element name="version" type="versionType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Version information (typically a version number) of the software applicable to this publication.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Software version number.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
@@ -2351,7 +2364,7 @@
 		<xs:annotation>
 			<xs:documentation>Attributes of a tool parameter.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence maxOccurs="unbounded">
+		<xs:sequence>
 			<xs:element name="data" type="EDAMdata">
 				<xs:annotation>
 					<xs:documentation>Type of data: EDAM Data term(s).</xs:documentation>
@@ -2615,10 +2628,36 @@
 	<xs:simpleType name="biotoolsIdType">
 		<xs:annotation>
 			<xs:documentation>bio.tools ID, either a toolID or versionID.</xs:documentation>
+			<xs:appinfo>
+				<altova:exampleValues>
+					<altova:example value="biotools:signalp"/>
+				</altova:exampleValues>
+			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:minLength value="1"/>
 			<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="versionType">
+		<xs:annotation>
+			<xs:documentation>Tool version label or version range.</xs:documentation>
+			<xs:appinfo>
+				<altova:exampleValues>
+					<altova:example value="1.1"/>
+					<altova:example value="beta01"/>
+					<altova:example value="2.0 - 2.7"/>
+					<altova:example value="1.1, 1.2.1, 1.4, v5"/>
+					<altova:example value="1.1 - 1.4, 2.0-alpha, 2.0-beta-01 - 2.0-beta-04, 2.0.0"/>
+				</altova:exampleValues>
+			</xs:appinfo>
+			<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="100"/>
+			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
