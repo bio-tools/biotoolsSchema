@@ -162,7 +162,7 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="type" minOccurs="0">
+										<xs:element name="type">
 											<xs:annotation>
 												<xs:documentation>Type of tool identifier.</xs:documentation>
 												<xs:documentation>bio.tools toolIDs are a URL-safe derivative of (often identical to) the tool name.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
@@ -232,7 +232,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="function" maxOccurs="unbounded">
+				<xs:element name="function" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Details of a function the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
@@ -242,7 +242,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="operation" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="operation" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>The basic operation(s) performed by this software function (EDAM Operation).</xs:documentation>
 									<xs:documentation>An EDAM Operation concept URL and / or term are specified, e.g. "Multiple sequence alignment", http://edamontology.org/operation_0492.</xs:documentation>
@@ -391,6 +391,18 @@
 										<xs:maxLength value="1000"/>
 										<xs:whiteSpace value="collapse"/>
 										<xs:minLength value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="cmd" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>A useful command (or command fragment) pertinent to this function, typically a command-line option for running the tool in this mode.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:token">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="100"/>
+										<xs:whiteSpace value="collapse"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -1779,7 +1791,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="cmd" type="textType" minOccurs="0">
+							<xs:element name="cmd" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>A useful command pertinent to the download, e.g. for getting or installing a tool.</xs:documentation>
 									<xs:appinfo>
@@ -1787,6 +1799,13 @@
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:token">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="100"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
 							</xs:element>
 						</xs:all>
 					</xs:complexType>

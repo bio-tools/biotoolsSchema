@@ -13,14 +13,18 @@ Description of changes are grouped as follows:
 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
 2. 'summary->identifier' added "A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider."
 	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
-	2.2 'summary->identifier->type' (0...1) is enum of the identifier type (toolid, doi, rrid, cpe)
+	2.2 'summary->identifier->type' (1 only) is enum of the identifier type (toolid, doi, rrid, cpe)
 	2.3 'summary->identifier->version' (0...1) (moved from 'identifier->version')
 	3. 'labels->license' enum extended with "Unlicensed" value
 3. 'link->type' enum extended:
     3.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
     3.2 "Technical monitoring" ("Information about the technical status of a tool."
 4. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-
+5. 'function->cmd' added ("A useful command (or command fragment) pertinent to this function, typically a command-line option for running the tool in this mode.")
+	5.1 Type is xs:token
+	5.2 'minLen' facet of 1
+	5.3 'maxLen' facet of 100
+	
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
    1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
@@ -50,7 +54,7 @@ Description of changes are grouped as follows:
     4.2 'contact->tel'
 5.  'contact->tel' 'minlen' facet set to 5 and 'maxlen' facet set to 50
 6.  Elements that were mandatory are now optional:
-    6.1 'function->operation' (now 0...many)
+    6.1 'function' (now 0...many)
     6.2 'labels->toolType' (now 0...many)
     6.3 'labels->topic' (now 0...many)
     6.4 'labels' (now 0...1)
@@ -69,7 +73,9 @@ Description of changes are grouped as follows:
 12. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 13. 'credit->orcidId' changed to 'credit->orcidid'
 14. 'credit->gridId' changed to 'credit->gridid'
-
+15. 'download->cmd` changed to xs:token (was 'textType' simple type)
+     15.1  'minLen' facet set to 1
+     15.2  'maxLen' facet set to 100
 ## Fixed
 1. `credit->email` duplicate pattern restriction removed
 

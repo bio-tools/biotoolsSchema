@@ -1,7 +1,7 @@
 # What is biotoolsSchema?
 **biotoolsSchema** is a formalised XML schema (XSD) which defines a description model for bioinformatics software.  It can be used to describe bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).   This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  A broad range of software types (see below) are covered including tools available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.
 
-biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 7 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.  It is used by the [ELIXIR Tools & Data Services Registry](https://bio.tools).
+biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal mandatory core of 3 attributes (name, description and homepage).  biotoolsSchema can help to support the cataloguing and discovery of software and is used by the [ELIXIR Tools & Data Services Registry](https://bio.tools).
 
 # Documentation
 Comprehensive documentation is available:
