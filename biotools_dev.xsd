@@ -145,7 +145,7 @@
 												<xs:documentation>Value of tool identifier.</xs:documentation>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="signalp"/>
+														<altova:example value="biotools:signalp"/>
 														<altova:example value="doi:10.1038/nmeth.1701"/>
 														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
 														<altova:example value="RRID:SCR_001156"/>
@@ -155,14 +155,14 @@
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
 													<xs:whiteSpace value="collapse"/>
-													<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
-													<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+													<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
+													<xs:pattern value="doi:?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="type">
+										<xs:element name="type" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Type of tool identifier.</xs:documentation>
 												<xs:documentation>bio.tools toolIDs are a URL-safe derivative of (often identical to) the tool name.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
@@ -190,13 +190,13 @@
 												</xs:appinfo>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="toolid"/>
+														<altova:example value="biotools"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="enumType">
-													<xs:enumeration value="toolid"/>
+													<xs:enumeration value="biotools"/>
 													<xs:enumeration value="doi"/>
 													<xs:enumeration value="rrid"/>
 													<xs:enumeration value="cpe"/>
@@ -396,7 +396,11 @@
 							</xs:element>
 							<xs:element name="cmd" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>A useful command (or command fragment) pertinent to this function, typically a command-line option for running the tool in this mode.</xs:documentation>
+									<xs:documentation>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
@@ -1189,6 +1193,11 @@
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="biotools:signalp"/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -2342,7 +2351,7 @@
 		<xs:annotation>
 			<xs:documentation>Attributes of a tool parameter.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:sequence maxOccurs="unbounded">
 			<xs:element name="data" type="EDAMdata">
 				<xs:annotation>
 					<xs:documentation>Type of data: EDAM Data term(s).</xs:documentation>
@@ -2400,15 +2409,12 @@
 			<xs:documentation>URL in the bio.tools tool namespace (bio.tools/tool/{version} or bio.tools/t{v}).</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="https://bio.tools/tool/toolName/version/versionNumber"/>
-					<altova:example value="https://bio.tools/t/toolName/v/versionNumber"/>
-					<altova:example value="https://bio.tools/tool/toolName"/>
-					<altova:example value="https://bio.tools/t/toolName"/>
+					<altova:example value="https://bio.tools/signalp"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://bio.tools/(tool|t)/[A-Za-z0-9_\- _ ~]+((/(version|v)/)?[A-Za-z0-9_\- _ ~]+)?"/>
+			<xs:pattern value="https?://bio.tools/[A-Za-z0-9_\- _ ~]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="biotoolsCollectionIdType">
@@ -2612,7 +2618,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:minLength value="1"/>
-			<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
+			<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

@@ -13,17 +13,17 @@ Description of changes are grouped as follows:
 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
 2. 'summary->identifier' added "A unique identifier of the software assigned by an ID-assignment authority, the software developer or service provider."
 	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
-	2.2 'summary->identifier->type' (1 only) is enum of the identifier type (toolid, doi, rrid, cpe)
+	2.2 'summary->identifier->type' (1 only) is enum of the identifier type (biotools, doi, rrid, cpe)
 	2.3 'summary->identifier->version' (0...1) (moved from 'identifier->version')
-	3. 'labels->license' enum extended with "Unlicensed" value
-3. 'link->type' enum extended:
-    3.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
-    3.2 "Technical monitoring" ("Information about the technical status of a tool."
-4. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-5. 'function->cmd' added ("A useful command (or command fragment) pertinent to this function, typically a command-line option for running the tool in this mode.")
-	5.1 Type is xs:token
-	5.2 'minLen' facet of 1
-	5.3 'maxLen' facet of 100
+3. 'labels->license' enum extended with "Unlicensed" value
+4. 'link->type' enum extended:
+    4.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
+    4.2 "Technical monitoring" ("Information about the technical status of a tool."
+5. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
+6. 'function->cmd' added ("Relevant command, command-line fragment or option for executing this function / running the tool in this mode.")
+	6.1 Type is xs:token
+	6.2 'minLen' facet of 1
+	6.3 'maxLen' facet of 100
 	
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
@@ -36,7 +36,7 @@ Description of changes are grouped as follows:
    1.7 "Other" (removed!)
 
 ## Removed
-1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = toolid)
+1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = doi)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)
 3. 'nameType' simple type removed (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
    3.1 'summary->name' element (now xs:token)
@@ -68,14 +68,17 @@ Description of changes are grouped as follows:
     8.6 'credit->typeRole' cardinality changed from 0...many from 0...1
     8.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 9.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
-10. 'biotoolsIdType' (as used now only by 'relation->biotoolsId') 'maxLen' facet removed
+10. 'biotoolsIdType' (as used now only by 'relation->biotoolsId') refactored:
+	10.1 'maxLen' facet removed
+	10.2 regex now mandates biotools CURIE, e.g. "biotools:signalp"
 11. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
 12. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 13. 'credit->orcidId' changed to 'credit->orcidid'
 14. 'credit->gridId' changed to 'credit->gridid'
 15. 'download->cmd` changed to xs:token (was 'textType' simple type)
      15.1  'minLen' facet set to 1
-     15.2  'maxLen' facet set to 100
+	15.2  'maxLen' facet set to 100
+16. 'biotoolsUrlType' simpleType pattern facet updated to reflect new (simpler) API scheme, i.e. "https://bio.tools/signalp", rather than using "/tool", "/t", "/version" and "/v".
 ## Fixed
 1. `credit->email` duplicate pattern restriction removed
 
