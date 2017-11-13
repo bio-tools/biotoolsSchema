@@ -130,7 +130,26 @@
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="identifier" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="biotoolsID" type="biotoolsIdType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
+									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
+										<biotoolsUsage>Mandatory</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="version" type="versionType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Version information (typically a version number) of the software applicable to this bio.tools entry.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Software version number.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="otherID" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>A unique identifier of the software, typically assigned by an ID-assignment authority.</xs:documentation>
 									<xs:appinfo>

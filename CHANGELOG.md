@@ -11,10 +11,10 @@ Description of changes are grouped as follows:
 
 ## Added
 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-2. 'summary->identifier' added "A unique identifier of the software, typically assigned by an ID-assignment authority."
-	2.1 'summary->identifier->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
-	2.2 'summary->identifier->type' (1 only) is enum of the identifier type (biotools, doi, rrid, cpe)
-	2.3 'summary->identifier->version' (0...1) 
+2. 'summary->otherID' added "A unique identifier of the software, typically assigned by an ID-assignment authority."
+	2.1 'summary->otherID->value' (1 only) is the value of the identifier (with appropriate regexs as per type, see below)
+	2.2 'summary->otherID->type' (1 only) is enum of the identifier type (biotools, doi, rrid, cpe)
+	2.3 'summary->otherID->version' (0...1) 
 3. 'labels->license' enum extended with "Unlicensed" value
 4. 'link->type' enum extended:
     4.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
@@ -27,8 +27,8 @@ Description of changes are grouped as follows:
 7. 'versionType' simpleType defined
 	7.1 'xs:token' with facets 'minlen' (1), 'maxlen' (100)
 	7.2 preserving pattern facet previously defined in 'summary->version'
-8. Support for version information
-	8.1 'summary->identifier->version' (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
+8. Support for version information on specific attributes:
+	8.1 'summary->otherID->version' (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
 	8.2 'download->version' (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
 	8.3 'publication->version' (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
 	
@@ -41,9 +41,10 @@ Description of changes are grouped as follows:
    1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
    1.5 "Review" (no change) A publication where the software was reviewed.
    1.6 "Other" (no change)
-
+2. 'summary->toolid' renamed to 'summary->biotoolsID'
+	
 ## Removed
-1. 'summary->doi' removed (use instead 'summary->identifier->value' and set 'summary->identifier->type' = doi)
+1. 'summary->doi' removed (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)
 3. 'nameType' simple type removed (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
    3.1 'summary->name' element (now xs:token)
@@ -53,7 +54,7 @@ Description of changes are grouped as follows:
 4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
 
 ## Changed
-1.  'summary->version' replaced by 'identifier->version' (and still optional, i.e. 0 or 1)
+1.  'summary->version' now 0...many (was 0 or 1)
 2.  'name' element 'maxlen' facet set to 50.
 3.  Various elements of type string are now type xs:token:
     3.1 'summary->shortDescription'
