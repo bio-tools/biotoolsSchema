@@ -72,7 +72,7 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
-										<xs:maxLength value="50"/>
+										<xs:maxLength value="100"/>
 										<xs:whiteSpace value="collapse"/>
 										<xs:minLength value="1"/>
 										<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
@@ -190,7 +190,6 @@
 												<xs:documentation>Value of tool identifier.</xs:documentation>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="biotools:signalp"/>
 														<altova:example value="doi:10.1038/nmeth.1701"/>
 														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
 														<altova:example value="RRID:SCR_001156"/>
@@ -201,7 +200,6 @@
 												<xs:restriction base="xs:token">
 													<xs:whiteSpace value="collapse"/>
 													<xs:minLength value="1"/>
-													<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
 													<xs:pattern value="doi:?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
@@ -236,13 +234,12 @@
 												</xs:appinfo>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="biotools"/>
+														<altova:example value="rrid"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="enumType">
-													<xs:enumeration value="biotools"/>
 													<xs:enumeration value="doi"/>
 													<xs:enumeration value="rrid"/>
 													<xs:enumeration value="cpe"/>
@@ -251,7 +248,7 @@
 										</xs:element>
 										<xs:element name="version" minOccurs="0">
 											<xs:annotation>
-												<xs:documentation>Version information (typically a version number) of the software applicable to this identififier.</xs:documentation>
+												<xs:documentation>Version information (typically a version number) of the software applicable to this identifier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Software version number.</uiTip>
 													<biotoolsUsage>Optional</biotoolsUsage>
@@ -274,7 +271,7 @@
 				</xs:element>
 				<xs:element name="function" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Details of a function the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
+						<xs:documentation>Details of a function (i.e. mode of operations) the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Details of a function the software provides, expressed in terms from the EDAM ontology.</uiTip>
 							<biotoolsUsage>Mandatory</biotoolsUsage>
