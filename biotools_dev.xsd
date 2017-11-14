@@ -130,15 +130,41 @@
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="biotoolsID" type="biotoolsIdType" minOccurs="0">
+							<xs:element name="biotoolsID" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
 									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
-										<biotoolsUsage>Mandatory</biotoolsUsage>
+										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="biotoolsIdType"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="biotoolsCURIE" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>bio.tools CURIE (compact URI) based on the unique bio.tools ID of the tool.</xs:documentation>
+									<xs:documentation>The bio.tools CURIE is simply the bio.tools tool ID with the prefix "biotools:".</xs:documentation>
+									<xs:appinfo>
+										<uiTip>bio.tools CURIE (compact URI) based on the unique bio.tools ID of the tool.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="biotools:signalp"/>
+										</altova:exampleValues>
+									</xs:appinfo>
+									<xs:documentation>bio.tools CURIEs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:anyURI">
+										<xs:minLength value="1"/>
+										<xs:whiteSpace value="collapse"/>
+										<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
+									</xs:restriction>
+								</xs:simpleType>
 							</xs:element>
 							<xs:element name="version" type="versionType" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
@@ -1208,11 +1234,6 @@
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="biotools:signalp"/>
-										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -2642,16 +2663,17 @@
 	</xs:element>
 	<xs:simpleType name="biotoolsIdType">
 		<xs:annotation>
-			<xs:documentation>bio.tools ID, either a toolID or versionID.</xs:documentation>
+			<xs:documentation>bio.tools tool ID.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="biotools:signalp"/>
+					<altova:example value="signalp"/>
 				</altova:exampleValues>
 			</xs:appinfo>
+			<xs:documentation>bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:minLength value="1"/>
-			<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
+			<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="versionType">

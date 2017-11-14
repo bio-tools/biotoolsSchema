@@ -31,8 +31,11 @@ Description of changes are grouped as follows:
 	8.1 'summary->otherID->version' (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
 	8.2 'download->version' (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
 	8.3 'publication->version' (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
-	
-	
+** 9.  'biotoolsCURIE' added
+**	9.1 0...1 cardinality
+**	9.2 type of xs:anyURI
+**	9.2 regex is  biotools:[A-Za-z0-9_\-_~.]+
+
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
    1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
@@ -41,8 +44,8 @@ Description of changes are grouped as follows:
    1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
    1.5 "Review" (no change) A publication where the software was reviewed.
    1.6 "Other" (no change)
-2. 'summary->toolid' renamed to 'summary->biotoolsID'
-	
+** 2. 'summary->toolid' renamed to 'summary->biotoolsID'
+
 ## Removed
 1. 'summary->doi' removed (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
 2. 'summary->versionID' removed (this no longer supported by bio.tools)
@@ -76,8 +79,8 @@ Description of changes are grouped as follows:
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
 9.  'biotoolsIdType' (as used now only by 'relation->biotoolsId') refactored:
+        10.0 'minLen' facet is 1
 	10.1 'maxLen' facet removed
-	10.2 regex now mandates biotools CURIE, e.g. "biotools:signalp"
 10. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
 11. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 12. 'credit->orcidId' changed to 'credit->orcidid'
