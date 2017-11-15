@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by Jon Ison (private) -->
+<!-- edited at GitHub (https://github.com) by Matus Kalas -->
 <xs:schema xmlns="http://bio.tools" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://bio.tools" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="tools">
 		<xs:annotation>
@@ -132,8 +133,7 @@
 							</xs:element>
 							<xs:element name="biotoolsID" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
-									<xs:documentation>The ID is a URL-safe derivative of (often identical to) the tool name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
+									<xs:documentation>Unique ID (case insensitive) of the tool that is assigned upon registration of the software in bio.tools, normally identical or similar to tool name.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -162,7 +162,7 @@
 									<xs:restriction base="xs:anyURI">
 										<xs:minLength value="1"/>
 										<xs:whiteSpace value="collapse"/>
-										<xs:pattern value="biotools:[A-Za-z0-9_\-_~.]+"/>
+										<xs:pattern value="biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -209,15 +209,10 @@
 										<xs:element name="type" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Type of tool identifier.</xs:documentation>
-												<xs:documentation>bio.tools toolIDs are a URL-safe derivative of (often identical to) the tool name.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. Spaces can be preserved as underscore ("_").</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Type of identifier.</uiTip>
 													<biotoolsUsage>Optional</biotoolsUsage>
 													<enum>
-														<enumItem>
-															<term>toolID</term>
-															<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</uiTip>
-														</enumItem>
 														<enumItem>
 															<term>DOI</term>
 															<uiTip>Digital Object Identifier of the software assigned (typically) by the software developer or service provider.</uiTip>
@@ -1226,8 +1221,8 @@
 						<xs:sequence>
 							<xs:element name="biotoolsId">
 								<xs:annotation>
-									<xs:documentation>bio.tools ID (URL)  of an existing bio.tools entry which this software is related to.</xs:documentation>
-									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
+									<xs:documentation>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</xs:documentation>
+									<xs:documentation>Relations may only be defined between registered software. The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -1365,7 +1360,7 @@
 												<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="/tool/{toolID}"/>
+														<altova:example value="/{toolID}"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 											</xs:annotation>
@@ -2427,7 +2422,7 @@
 			<xs:documentation>URL supporting FTP.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="http://someURL.org"/>
+					<altova:example value="http://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2439,10 +2434,10 @@
 	</xs:simpleType>
 	<xs:simpleType name="urlType">
 		<xs:annotation>
-			<xs:documentation>URL.</xs:documentation>
+			<xs:documentation>An HTTP or HTTPS URL.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="http://someURL.org"/>
+					<altova:example value="http://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2452,7 +2447,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="biotoolsUrlType">
 		<xs:annotation>
-			<xs:documentation>URL in the bio.tools tool namespace (bio.tools/tool/{version} or bio.tools/t{v}).</xs:documentation>
+			<xs:documentation>URL in the bio.tools namespace, in form of http(s)://bio.tools/{toolID}.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="https://bio.tools/signalp"/>
@@ -2460,7 +2455,7 @@
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://bio.tools/[A-Za-z0-9_\- _ ~]+"/>
+			<xs:pattern value="https?://bio.tools/[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="biotoolsCollectionIdType">
@@ -2661,6 +2656,7 @@
 	<xs:simpleType name="biotoolsIdType">
 		<xs:annotation>
 			<xs:documentation>bio.tools tool ID.</xs:documentation>
+			<xs:documentation>bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. The tool ID must start with a letter or an underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="signalp"/>
@@ -2670,7 +2666,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:minLength value="1"/>
-			<xs:pattern value="[A-Za-z0-9_\-_~.]+"/>
+			<xs:pattern value="[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="versionType">
