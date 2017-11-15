@@ -91,7 +91,7 @@ Description of changes are grouped as follows:
 **     14.2  'maxLen' facet set to 100
 15. 'biotoolsUrlType' simpleType pattern facet updated to reflect new (simpler) API scheme, i.e. "https://bio.tools/signalp", rather than using "/tool", "/t", "/version" and "/v".
 **16.  Changed 'maxlen' facet of 'summary->description' to 500 (was 50)
-17.  'dataType' complexType (as used by 'function->input' and 'function->output') cardinality is now 0...many (was 0...1) to allow for annotation of alternative ways to specify a single input or output.
+
 	
 ## Fixed
 1. `credit->email` duplicate pattern restriction removed
