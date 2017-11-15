@@ -79,9 +79,10 @@ Description of changes are grouped as follows:
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 ** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
 9.  'biotoolsIdType' refactored and used in multiple places:
-        10.0 'minLen' facet is 1
-	10.1 'maxLen' facet removed
-	Pattern `[_a-zA-Z][_\-.0-9a-zA-Z]*` added (used in `biotoolsIdType`, `biotoolsCURIE`, and `biotoolsUrlType`).
+        9.1 'minLen' facet is 1
+	9.2 'maxLen' facet removed
+	9.3 Pattern `[_a-zA-Z][_\-.0-9a-zA-Z]*` added (used in `biotoolsIdType`, `biotoolsCURIE`, and `biotoolsUrlType`).
+	9.4 type is now xs:NCName (was xs:anyURI)
 **10. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
 11. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 12. 'credit->orcidId' changed to 'credit->orcidid'
