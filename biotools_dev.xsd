@@ -196,8 +196,6 @@
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
-													<xs:whiteSpace value="collapse"/>
-													<xs:minLength value="1"/>
 													<xs:pattern value="doi:?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
@@ -2588,7 +2586,6 @@
 			<xs:documentation>Digital Object Identifier.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:whiteSpace value="collapse"/>
 			<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 			<xs:pattern value="Unpublished"/>
 		</xs:restriction>

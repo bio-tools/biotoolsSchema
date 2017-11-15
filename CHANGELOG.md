@@ -80,7 +80,7 @@ Description of changes are grouped as follows:
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 ** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
 9.  'biotoolsIdType' refactored and used in multiple places:
-        9.1 'minLen' facet is 1
+        9.1 'minLen' facet removed (redundant).
 	9.2 'maxLen' facet removed
 	9.3 Pattern `[_a-zA-Z][_\-.0-9a-zA-Z]*` added (used in `biotoolsIdType`, `biotoolsCURIE`, and `biotoolsUrlType`).
 	9.4 type is now xs:NCName (was xs:anyURI)
