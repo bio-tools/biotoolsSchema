@@ -7,7 +7,6 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
-# November 17, 2016 biotoolsSchema-2.0.0.xsd released
 
 ## Added
 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
@@ -35,7 +34,7 @@ Description of changes are grouped as follows:
 ** 9.  'biotoolsCURIE' added
 **	9.1 0...1 cardinality
 **	9.2 type of xs:anyURI
-**	9.2 regex is  biotools:[A-Za-z0-9_\-_~.]+
+**	9.2 regex is `biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*`
 
 ## Added / changed / removed
 1. 'publication->type' enum, mulitple modifications:
@@ -79,9 +78,10 @@ Description of changes are grouped as follows:
     7.6 'credit->typeRole' cardinality changed from 0...many from 0...1
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 ** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
-9.  'biotoolsIdType' (as used now only by 'relation->biotoolsId') refactored:
+9.  'biotoolsIdType' refactored and used in multiple places:
         10.0 'minLen' facet is 1
 	10.1 'maxLen' facet removed
+	Pattern `[_a-zA-Z][_\-.0-9a-zA-Z]*` added (used in `biotoolsIdType`, `biotoolsCURIE`, and `biotoolsUrlType`).
 **10. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
 11. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 12. 'credit->orcidId' changed to 'credit->orcidid'
