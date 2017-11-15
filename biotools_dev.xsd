@@ -2462,19 +2462,6 @@
 			<xs:pattern value="https?://bio.tools/[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="biotoolsCollectionIdType">
-		<xs:annotation>
-			<xs:documentation>Name of a software collection that the software has been assigned to.</xs:documentation>
-			<xs:appinfo>
-				<altova:exampleValues>
-					<altova:example value="collectionName"/>
-				</altova:exampleValues>
-			</xs:appinfo>
-		</xs:annotation>
-		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="[A-Za-z0-9_\- _ ~]+"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:complexType name="ontologyConcept">
 		<xs:annotation>
 			<xs:documentation>A concept from an ontology.</xs:documentation>

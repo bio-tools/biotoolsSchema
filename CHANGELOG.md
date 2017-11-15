@@ -55,7 +55,8 @@ Description of changes are grouped as follows:
    3.3 'contact->name' element (now xs:token)
    3.4 'credit->name' element (now xs:token)
 4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
-
+5. Removed biotoolsCollectionIdType simpleType (no longer used)
+	
 ## Changed
 1.  'summary->version' now 0...many (was 0 or 1)
 2.  'name' element 'maxlen' facet set to 50.
@@ -92,7 +93,7 @@ Description of changes are grouped as follows:
 **     14.2  'maxLen' facet set to 100
 15. 'biotoolsUrlType' simpleType pattern facet updated to reflect new (simpler) API scheme, i.e. "https://bio.tools/signalp", rather than using "/tool", "/t", "/version" and "/v".
 **16.  Changed 'maxlen' facet of 'summary->description' to 500 (was 50)
-
+17. 'collectionID' type changes to biotoolsIdType simpleType (was biotoolsCollectionIdType simpleType)
 	
 ## Fixed
 1. `credit->email` duplicate pattern restriction removed
