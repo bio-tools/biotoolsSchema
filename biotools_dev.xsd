@@ -1101,13 +1101,17 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="collectionID" type="biotoolsCollectionIdType" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="collectionID" type="biotoolsIdType" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Unique ID of a collection that the software has been assigned to within bio.tools.</xs:documentation>
-									<xs:documentation>The ID is a URL-safe name restricted to 12 characters maximum.  Unreserved characters (uppercase and lowercase letters, decimal digits, hyphen, period, underscore, and tilde) are allowed. All other characters including reserved characters and other characters deemed unsafe are not allowed. See http://biotools.readthedocs.io/.  Collections may be created for some other registry, catalogue, WIKI etc. where this tool is described, or for any arbitrary purpose.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique ID of a collection that the software has been assigned to within bio.tools.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="emboss"/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
