@@ -160,8 +160,6 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:anyURI">
-										<xs:minLength value="1"/>
-										<xs:whiteSpace value="collapse"/>
 										<xs:pattern value="biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 									</xs:restriction>
 								</xs:simpleType>
@@ -198,8 +196,6 @@
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
-													<xs:whiteSpace value="collapse"/>
-													<xs:minLength value="1"/>
 													<xs:pattern value="doi:?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
@@ -2590,7 +2586,6 @@
 			<xs:documentation>Digital Object Identifier.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:whiteSpace value="collapse"/>
 			<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 			<xs:pattern value="Unpublished"/>
 		</xs:restriction>
@@ -2656,7 +2651,6 @@
 			<xs:documentation>bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:NCName">
-			<xs:minLength value="1"/>
 			<xs:pattern value="[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
