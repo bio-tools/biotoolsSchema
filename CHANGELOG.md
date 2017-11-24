@@ -89,11 +89,9 @@ FIXFIXFIX 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pm
     7.6 'credit->typeRole' cardinality changed from 0...many from 0...1
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 ** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
-9. biotooldID regex (as used in 'biotoolsIdType' - see below, and summary->biotoolsCURIE) changed to '[_\-.0-9a-zA-Z]*'
-9.  'biotoolsIdType' refactored used in (used in 'summary->biotoolsIdType', 'labels->collectionID' and 'relation->biotoolsID')
-        9.1 'minLen' facet is 1
+9.  'biotoolsIdType' refactored and used in multiple places:
+        9.1 'minLen' facet removed (redundant).
 	9.2 'maxLen' facet removed
-	9.4 type is now xs:NCName (was xs:anyURI)
 10. 'relation->biotoolsId' refacored:
 	* type changed from 'biotoolsUrlType' to 'biotoolsIdType' simple type
 	* element name changed to 'biotoolsID'
