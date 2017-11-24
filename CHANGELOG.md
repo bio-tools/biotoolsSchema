@@ -7,9 +7,9 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
-
+Removing "Unpublished" to patterns for 'doiType'
 ## Added
-1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
+FIXFIXFIX 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
 ** 2. 'summary->otherID' added "A unique identifier of the software, typically assigned by an ID-assignment authority."
 **	2.1 'summary->otherID->value' (1 only), 'minlen' facet of 1, is the value of the identifier (with appropriate regexs as per type, see below)
 **	2.2 'summary->otherID->type' (1 only) is enum of the identifier type (doi, rrid, cpe)
@@ -37,15 +37,22 @@ Description of changes are grouped as follows:
 **	9.2 regex is `biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*`
 
 ## Added / changed / removed
-1. 'publication->type' enum, mulitple modifications:
-   1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
-   1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
-   1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
-   1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
-   1.5 "Review" (no change) A publication where the software was reviewed.
-   1.6 "Other" (no change)
+**1. 'publication->type' enum, mulitple modifications:
+**   1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
+**   1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
+**   1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
+**   1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
+**   1.5 "Review" (no change) A publication where the software was reviewed.
+**   1.6 "Other" (no change)
 ** 2. 'summary->toolid' renamed to 'summary->biotoolsID'
+3. 'documentation->type' enum extended:
+3.1 "Governance" ("Information about the software governance model.")
+3.2 "Contributions policy ("Information about policy for making contributions to the software project.")
+3.3 "Installation instructions" ("Instructions how to install the software.")
+3.4 "Tutorial" ("A tutorial about using the software.")
 
+	3. 'Governance' added to 'documentation->type' enum
+	
 ## Removed
 ** 1. 'summary->doi' removed (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
 ** 2. 'summary->versionID' removed (this no longer supported by bio.tools)
@@ -55,10 +62,11 @@ Description of changes are grouped as follows:
    3.3 'contact->name' element (now xs:token)
    3.4 'credit->name' element (now xs:token)
 4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
-5. Removed biotoolsCollectionIdType simpleType (no longer used)
+	5. Removed biotoolsCollectionIdType simpleType (no longer used)
+6. biotoolsUrlType simleType removed (no longer used)	
 	
 ## Changed
-1.  'summary->version' now 0...many (was 0 or 1)
+**1.  'summary->version' now 0...many (was 0 or 1)
 2.  'name' element 'maxlen' facet set to 50.
 3.  Various elements of type string are now type xs:token:
     3.1 'summary->shortDescription'
@@ -69,7 +77,9 @@ Description of changes are grouped as follows:
 **    5.2 'labels->toolType' (now 0...many)
 **    5.3 'labels->topic' (now 0...many)
 **    5.4 'labels' (now 0...1)
-** 6.  'summary->shortDescription' 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
+ 6.  'summary->shortDescription' refactored:
+	** 6.1 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
+	6.2 type set to 'textType' (was 'xs:token')
 7.  'credit' element group refactored:
     7.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
     7.2 'credit->name' is now optional
@@ -79,25 +89,27 @@ Description of changes are grouped as follows:
     7.6 'credit->typeRole' cardinality changed from 0...many from 0...1
     7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
 ** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
-9.  'biotoolsIdType' refactored and used in multiple places:
+9. biotooldID regex (as used in 'biotoolsIdType' - see below, and summary->biotoolsCURIE) changed to '[_\-.0-9a-zA-Z]*'
+9.  'biotoolsIdType' refactored used in (used in 'summary->biotoolsIdType', 'labels->collectionID' and 'relation->biotoolsID')
         9.1 'minLen' facet is 1
 	9.2 'maxLen' facet removed
-	9.3 Pattern `[_a-zA-Z][_\-.0-9a-zA-Z]*` added (used in `biotoolsIdType`, `biotoolsCURIE`, and `biotoolsUrlType`).
 	9.4 type is now xs:NCName (was xs:anyURI)
-**10. 'relation->biotoolsId' type changed from `biotoolsUrlType` to `biotoolsIdType` simple type.
+10. 'relation->biotoolsId' refacored:
+	* type changed from 'biotoolsUrlType' to 'biotoolsIdType' simple type
+	* element name changed to 'biotoolsID'
 11. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 12. 'credit->orcidId' changed to 'credit->orcidid'
 13. 'credit->gridId' changed to 'credit->gridid'
-**14. 'download->cmd` changed to xs:token (was 'textType' simple type)
+**14. 'download->cmd' changed to xs:token (was 'textType' simple type)
 **     14.1  'minLen' facet set to 1
 **     14.2  'maxLen' facet set to 100
-15. 'biotoolsUrlType' simpleType pattern facet updated to reflect new (simpler) API scheme, i.e. "https://bio.tools/signalp", rather than using "/tool", "/t", "/version" and "/v".
+
 **16.  Changed 'maxlen' facet of 'summary->description' to 500 (was 50)
 17. 'collectionID' type changes to biotoolsIdType simpleType (was biotoolsCollectionIdType simpleType)
 	
 ## Fixed
-1. `credit->email` duplicate pattern restriction removed
-
+1. 'credit->email' duplicate pattern restriction removed
+** 2. 'labels->accessibility' cardinality now 0...1 (was 0...many)
 
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
