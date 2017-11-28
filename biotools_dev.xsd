@@ -771,6 +771,7 @@
 											</enumItem>
 										</enum>
 									</xs:appinfo>
+									<xs:documentation>Use "Proprietary" where the software must be obtained from the provider (e.g. for money), and is then owned.  Use "Unlicensed" for software which is not licensed and is not proprietary, and "Other" for software under license not currently supported by biotoolsSchema.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
@@ -2614,14 +2615,13 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="doi:10.1093/nar/gkv1116"/>
+					<altova:example value="10.1093/nar/gkv1116"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 			<xs:documentation>Digital Object Identifier.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
-			<xs:pattern value="Unpublished"/>
+			<xs:pattern value="10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="textType">
@@ -2647,7 +2647,6 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:token">
 				<xs:pattern value="(PMC)[1-9][0-9]{0,8}"/>
-				<xs:pattern value="Unpublished"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -2661,15 +2660,12 @@
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="26538599"/>
-					<altova:example value="PMID:26538599 "/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:simpleType>
 			<xs:restriction base="xs:token">
-				<xs:pattern value="(PMID:)[1-9][0-9]{0,8}"/>
 				<xs:pattern value="[1-9][0-9]{0,8}"/>
-				<xs:pattern value="Unpublished"/>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
