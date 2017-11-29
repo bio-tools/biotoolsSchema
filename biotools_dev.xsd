@@ -198,10 +198,9 @@
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
-													<xs:pattern value="doi:?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+													<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
-													<xs:pattern value="[_a-zA-Z][_\-.0-9a-zA-Z]*"/>
 													<xs:pattern value="[_\-.0-9a-zA-Z]*"/>
 												</xs:restriction>
 											</xs:simpleType>
@@ -1103,11 +1102,11 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="collectionID" type="biotoolsIdType" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="collectionID" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Unique ID of a collection that the software has been assigned to within bio.tools.</xs:documentation>
+									<xs:documentation>Tag for a collection that the software has been assigned to within bio.tools.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>Unique ID of a collection that the software has been assigned to within bio.tools.</uiTip>
+										<uiTip>Tag for a collection that the software has been assigned to within bio.tools.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 									<xs:appinfo>
@@ -1116,6 +1115,12 @@
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="biotoolsIdType">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="50"/>
+									</xs:restriction>
+								</xs:simpleType>
 							</xs:element>
 							<xs:element name="maturity" minOccurs="0">
 								<xs:annotation>
@@ -2477,7 +2482,6 @@
 		<xs:restriction base="xs:anyURI">
 			<xs:pattern value="https?://.+"/>
 			<xs:pattern value="s?ftp://.+"/>
-			<xs:pattern value="Not available"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="urlType">

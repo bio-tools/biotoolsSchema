@@ -7,108 +7,110 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
-Removing "Unpublished" to patterns for 'doiType'
+
 ## Added
-FIXFIXFIX 1. Added "Unpublished" to patterns for 'doiType' (simple type) and 'pmid' and 'pmcid' (elements) to support the specification that a publication is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-** 2. 'summary->otherID' added "A unique identifier of the software, typically assigned by an ID-assignment authority."
-**	2.1 'summary->otherID->value' (1 only), 'minlen' facet of 1, is the value of the identifier (with appropriate regexs as per type, see below)
-**	2.2 'summary->otherID->type' (1 only) is enum of the identifier type (doi, rrid, cpe)
-**	2.3 'summary->otherID->version' (0...1) 
-** 3. 'labels->license' enum extended with "Unlicensed" value
-**4. 'link->type' enum extended:
-**    4.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
-**    4.2 "Technical monitoring" ("Information about the technical status of a tool."
-5. 'urlftpType' simple type (as used by 'link->url', 'download-url' and 'documentation->url') regex extended with "Not available" (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst).
-* 6. 'function->cmd' added ("Relevant command, command-line fragment or option for executing this function / running the tool in this mode.")
-*	6.1 Type is xs:token
-*	6.2 'minLen' facet of 1
-*	6.3 'maxLen' facet of 100
-** 7. Support for version information on specific attributes:
-**	7.1 'summary->otherID->version' (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
-**	7.2 'download->version' (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
-	**	7.3 'publication->version' (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
-**8. 'versionType' simpleType defined
-**	8.1 'xs:token' with facets 'minlen' (1), 'maxlen' (100)
-**	8.2 preserving pattern facet previously defined in 'summary->version'
+1. 'isAvailable' elements added to support the specification that an attribute is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst)
+   1.1 'publication->isAvailable'
+   2.2 'linkType' complexType as used in 'link->isAvailable' and 'documentation->isAvailable'
+   2.3 'download->isAvailable'
+2. 'summary->otherID' added ("A unique identifier of the software, typically assigned by an ID-assignment authority.")
+   2.1 'summary->otherID->value' (1 only), 'minlen' facet of 1, is the value of the identifier (with appropriate regexs as per type, see below)
+   2.2 'summary->otherID->type' (0 or 1) is enum of the identifier type (doi, rrid, cpe, biotoolsID)
+   2.3 'summary->otherID->version' (0...1)  (see below)
+3. Version information refactored
+   3.1 New 'versionType' simpleType
+   3.2 'xs:token' with facets 'minlen' (1), 'maxlen' (100)
+   3.3 preserving pattern facet previously defined in 'summary->version'
+4. Version elements added:
+   3.1 'summary->otherID->version' (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
+   3.2 'download->version' (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
+   3.3 'publication->version' (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
+5.  'summary->biotoolsCURIE'added
+   5.1 0...1 cardinality
+   5.2 type of xs:anyURI
+   5.3 regex is `biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*`
+6. 'function->cmd' added ("Relevant command, command-line fragment or option for executing this function / running the tool in this mode.")
+   6.1 Type is xs:token
+   6.2 'minLen' facet of 1
+   6.3 'maxLen' facet of 100
+7. 'link->type' enum extended:
+   7.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
+   7.2 "Technical monitoring" ("Information about the technical status of a tool."
+8. 'documentation->type' enum extended:
+   8.1 "Governance" ("Information about the software governance model.")
+   8.2 "Contributions policy ("Information about policy for making contributions to the software project.")
+   8.3 "Installation instructions" ("Instructions how to install the software.")
+   8.4 "Tutorial" ("A tutorial about using the software.")
+   8.5 'Governance' added to 'documentation->type' enum
+9. 'labels->license' enum extended with "Unlicensed" value
 
-** 9.  'biotoolsCURIE' added
-**	9.1 0...1 cardinality
-**	9.2 type of xs:anyURI
-**	9.2 regex is `biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*`
+## Added / changed
+1. 'publication->type' enum, mulitple modifications:
+   1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
+   1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
+   1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
+   1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
+   1.5 "Review" (no change) A publication where the software was reviewed.
+   1.6 "Other" (no change)
 
-## Added / changed / removed
-**1. 'publication->type' enum, mulitple modifications:
-**   1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
-**   1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
-**   1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
-**   1.4 "Comparison" (was "Benchmark") A publication which assessed the performance of the software relative to other tools.
-**   1.5 "Review" (no change) A publication where the software was reviewed.
-**   1.6 "Other" (no change)
-** 2. 'summary->toolid' renamed to 'summary->biotoolsID'
-3. 'documentation->type' enum extended:
-3.1 "Governance" ("Information about the software governance model.")
-3.2 "Contributions policy ("Information about policy for making contributions to the software project.")
-3.3 "Installation instructions" ("Instructions how to install the software.")
-3.4 "Tutorial" ("A tutorial about using the software.")
+## Changed
+1. Elements that were mandatory are now optional:
+   1.1 'function' (now 0...many)
+   1.2 'labels->toolType' (now 0...many)
+   1.3 'labels->topic' (now 0...many)
+   1.4 'labels' (now 0...1)
+2. 'credit' element group refactored (merging in attributes from old 'contact' element group)
+   2.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
+   2.2 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify 1) an ELIXIR platform or node name or 2) a credit with a name, a mandatory ID/means of contact and optional type and role (see the schema docs)
+   2.3 'credit->tel' (telephone number) added ( 'minlen' facet of 5, 'maxlen' facet of 50) (was in 
+   2.4 'credit->typeRole' cardinality changed to 0...many (was 0...1)
+   2.5 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
+   2.6 'credit->orcidId' changed to 'credit->orcidid'
+   2.7 'credit->gridId' changed to 'credit->gridid'
+3. 'download->cmd' refactored
+   3.1 xs:token (was 'textType' simple type)
+   3.2  'minLen' facet set to 1
+   3.3  'maxLen' facet set to 100
+4. 'biotoolsIdType' refactored
+   4.1 'minLen' facet removed (redundant).
+   4.2 'maxLen' facet removed
+5. 'relation->biotoolsID' refactored
+   5.1 type changed from 'biotoolsUrlType' to 'biotoolsIdType' simple type
+   5.2 name changed to 'biotoolsID'
+6. 'collectionID' refactored
+   6.1 type changes to biotoolsIdType simpleType (was biotoolsCollectionIdType simpleType)
+   6.2 'minlen' facet to 1, 'maxlen' to 50
+7.  'summary->shortDescription' refactored:
+   7.1 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
+   7.2 type set to 'textType' (was 'xs:token')
+8. Changes to elements in 'summary' group:
+   8.1 'summary->name' element 'maxlen' facet set to 100.
+   8.2 'summary->version' now 0...many (was 0 or 1)
+   8.3 'summary->description' 'maxlen' facet now 500 (was 50)
+   8.4 'summary->shortDescription' 'maxlen' facet now 500 (was 1000)
+   8.5 'summary->toolid' renamed to 'summary->biotoolsID'
+9. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
+10. 'doiType' simpleType and "pmid" global element refactored, to drop support for PMIDs and DOIs with "PMID:" and "DOI:" prefix respectively (regex's changed)
 
-	3. 'Governance' added to 'documentation->type' enum
-	
+
 ## Removed
-** 1. 'summary->doi' removed (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
-** 2. 'summary->versionID' removed (this no longer supported by bio.tools)
-3. 'nameType' simple type removed (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
+1. 'summary->doi' (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
+2. 'summary->versionID' (this no longer supported by bio.tools)
+3. 'nameType' simple type (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
    3.1 'summary->name' element (now xs:token)
-** 3.2 'summary->version' element (now 'versionType' simpleType)
+   3.2 'summary->version' element (now 'versionType' simpleType)
    3.3 'contact->name' element (now xs:token)
    3.4 'credit->name' element (now xs:token)
 4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
-	5. Removed biotoolsCollectionIdType simpleType (no longer used)
-6. biotoolsUrlType simleType removed (no longer used)	
-	
-## Changed
-**1.  'summary->version' now 0...many (was 0 or 1)
-2.  'name' element 'maxlen' facet set to 50.
-3.  Various elements of type string are now type xs:token:
-    3.1 'summary->shortDescription'
-    3.2 'contact->tel'
-4.  'contact->tel' 'minlen' facet set to 5 and 'maxlen' facet set to 50
-** 5.  Elements that were mandatory are now optional:
-**    5.1 'function' (now 0...many)
-**    5.2 'labels->toolType' (now 0...many)
-**    5.3 'labels->topic' (now 0...many)
-**    5.4 'labels' (now 0...1)
- 6.  'summary->shortDescription' refactored:
-	** 6.1 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
-	6.2 type set to 'textType' (was 'xs:token')
-7.  'credit' element group refactored:
-    7.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
-    7.2 'credit->name' is now optional
-    7.3 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify either an ELIXIR platform or node name or a credit with an optional name, a mandatory ID/means of contact and optional type and role (see the schema docs)
-    7.4 'credit->tel' (telephone number) added
-    7.5 At least one of 'credit->name', 'credit->email', 'credit->url', 'credit->orcidId', 'credit->gridId' and 'credit->tel' must be specified.  More than 1 of each of these may be specified.
-    7.6 'credit->typeRole' cardinality changed from 0...many from 0...1
-    7.7 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
-** 8.  'summary->description' 'maxlen' facet reduced to 500 from 1000.
-9.  'biotoolsIdType' refactored and used in multiple places:
-        9.1 'minLen' facet removed (redundant).
-	9.2 'maxLen' facet removed
-10. 'relation->biotoolsId' refacored:
-	* type changed from 'biotoolsUrlType' to 'biotoolsIdType' simple type
-	* element name changed to 'biotoolsID'
-11. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
-12. 'credit->orcidId' changed to 'credit->orcidid'
-13. 'credit->gridId' changed to 'credit->gridid'
-**14. 'download->cmd' changed to xs:token (was 'textType' simple type)
-**     14.1  'minLen' facet set to 1
-**     14.2  'maxLen' facet set to 100
+5. 'biotoolsCollectionIdType' simpleType (no longer used)
+6. biotoolsUrlType simpleType (no longer used)
 
-**16.  Changed 'maxlen' facet of 'summary->description' to 500 (was 50)
-17. 'collectionID' type changes to biotoolsIdType simpleType (was biotoolsCollectionIdType simpleType)
-	
 ## Fixed
 1. 'credit->email' duplicate pattern restriction removed
-** 2. 'labels->accessibility' cardinality now 0...1 (was 0...many)
+2. 'labels->accessibility' cardinality now 0...1 (was 0...many)
 
+
+	
 # November 17, 2016 biotoolsSchema-2.0.0.xsd released
 Sorry, no bandwidth to provide summary of changes : please see the schema documentation.  changelog will be maintained properly henceforth!
 
