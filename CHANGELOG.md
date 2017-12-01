@@ -62,12 +62,13 @@ Description of changes are grouped as follows:
 2. 'credit' element group refactored (merging in attributes from old 'contact' element group)
    2.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
    2.2 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify 1) an ELIXIR platform or node name or 2) a credit with a name, a mandatory ID/means of contact and optional type and role (see the schema docs)
-   2.3 'credit->tel' (telephone number) added ( 'minlen' facet of 5, 'maxlen' facet of 50) 
+   2.3 'credit->tel' (telephone number) added ( 'minlen' facet of 5, 'maxlen' facet of 50)
    2.4 'credit->typeRole' cardinality changed to 0...many (was 0...1)
    2.5 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
    2.6 'credit->orcidId' changed to 'credit->orcidid'
    2.7 'credit->gridId' changed to 'credit->gridid'
    2.8 'credit->name' now xs:token (was 'nameType' simple type)
+   2.9 'credit->url' now of 'urlTyp' simpleType
 
 3. 'download->cmd' refactored
    3.1 xs:token (was 'textType' simple type)
