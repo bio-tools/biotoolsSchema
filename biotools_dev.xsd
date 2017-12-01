@@ -2229,7 +2229,7 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="url" type="xs:anyURI" minOccurs="0">
+									<xs:element name="url" type="urlType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
 											<xs:appinfo>
