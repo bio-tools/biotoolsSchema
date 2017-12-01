@@ -60,7 +60,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="name">
+							<xs:element name="name" type="nameType">
 								<xs:annotation>
 									<xs:documentation>Canonical software name assigned by the software developer or service provider.</xs:documentation>
 									<xs:appinfo>
@@ -74,14 +74,6 @@
 									</xs:appinfo>
 									<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, space, plus symbol, period, comma, dash, colon, semicolon and parentheses.</xs:documentation>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:maxLength value="100"/>
-										<xs:whiteSpace value="collapse"/>
-										<xs:minLength value="1"/>
-										<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="shortDescription" minOccurs="0">
 								<xs:annotation>
@@ -1102,7 +1094,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="collectionID" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="collectionID" type="nameType" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Tag for a collection that the software has been assigned to within bio.tools.</xs:documentation>
 									<xs:appinfo>
@@ -1115,12 +1107,6 @@
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType">
-										<xs:minLength value="1"/>
-										<xs:maxLength value="50"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="maturity" minOccurs="0">
 								<xs:annotation>
@@ -2724,4 +2710,16 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
+	<xs:simpleType name="nameType">
+		<xs:annotation>
+			<xs:documentation>Tool or collection name.</xs:documentation>
+			<xs:appinfo>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

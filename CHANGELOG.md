@@ -62,11 +62,13 @@ Description of changes are grouped as follows:
 2. 'credit' element group refactored (merging in attributes from old 'contact' element group)
    2.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
    2.2 'credit->elixirPlatform' and 'credit->elixirNode' added (moved from 'elixirInfo'). In a credit one must specify 1) an ELIXIR platform or node name or 2) a credit with a name, a mandatory ID/means of contact and optional type and role (see the schema docs)
-   2.3 'credit->tel' (telephone number) added ( 'minlen' facet of 5, 'maxlen' facet of 50) (was in 
+   2.3 'credit->tel' (telephone number) added ( 'minlen' facet of 5, 'maxlen' facet of 50) 
    2.4 'credit->typeRole' cardinality changed to 0...many (was 0...1)
    2.5 'credit->typeRole' enum extended with "Primary contact" to indicate this credit is a primary contact for the software.
    2.6 'credit->orcidId' changed to 'credit->orcidid'
    2.7 'credit->gridId' changed to 'credit->gridid'
+   2.8 'credit->name' now xs:token (was 'nameType' simple type)
+
 3. 'download->cmd' refactored
    3.1 xs:token (was 'textType' simple type)
    3.2  'minLen' facet set to 1
@@ -78,7 +80,7 @@ Description of changes are grouped as follows:
    5.1 type changed from 'biotoolsUrlType' to 'biotoolsIdType' simple type
    5.2 name changed to 'biotoolsID'
 6. 'collectionID' refactored
-   6.1 type changes to biotoolsIdType simpleType (was biotoolsCollectionIdType simpleType)
+   6.1 type changes to nameType simpleType (was biotoolsCollectionIdType simpleType)
    6.2 'minlen' facet to 1, 'maxlen' to 50
 7.  'summary->shortDescription' refactored:
    7.1 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
@@ -93,17 +95,13 @@ Description of changes are grouped as follows:
 10. 'doiType' simpleType and "pmid" global element refactored, to drop support for PMIDs and DOIs with "PMID:" and "DOI:" prefix respectively (regex's changed)
 
 
+	
 ## Removed
 1. 'summary->doi' (use instead 'summary->otherID->value' and set 'summary->otherID->type' = doi)
 2. 'summary->versionID' (this no longer supported by bio.tools)
-3. 'nameType' simple type (facets are defined on individual elements now - this is clearer / more usable). Elements refactored are:
-   3.1 'summary->name' element (now xs:token)
-   3.2 'summary->version' element (now 'versionType' simpleType)
-   3.3 'contact->name' element (now xs:token)
-   3.4 'credit->name' element (now xs:token)
-4. 'contact' element grouping removed (the refactored 'credit' should be used instead)
-5. 'biotoolsCollectionIdType' simpleType (no longer used)
-6. biotoolsUrlType simpleType (no longer used)
+3. 'contact' element grouping removed (the refactored 'credit' should be used instead)
+4. 'biotoolsCollectionIdType' simpleType (no longer used)
+5. biotoolsUrlType simpleType (no longer used)
 
 ## Fixed
 1. 'credit->email' duplicate pattern restriction removed
