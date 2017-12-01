@@ -1168,7 +1168,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="accessibility" minOccurs="0">
+							<xs:element name="accessibility" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Whether the software is freely available for use.</xs:documentation>
 									<xs:appinfo>

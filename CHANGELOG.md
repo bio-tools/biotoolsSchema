@@ -105,7 +105,6 @@ Description of changes are grouped as follows:
 
 ## Fixed
 1. 'credit->email' duplicate pattern restriction removed
-2. 'labels->accessibility' cardinality now 0...1 (was 0...many)
 
 
 	
