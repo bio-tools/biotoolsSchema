@@ -83,15 +83,13 @@ Description of changes are grouped as follows:
 6. 'collectionID' refactored
    6.1 type changes to nameType simpleType (was biotoolsCollectionIdType simpleType)
    6.2 'minlen' facet to 1, 'maxlen' to 50
-7.  'summary->shortDescription' refactored:
-   7.1 'maxlen' facet reduced to 100 from 200 (enforcing that the short desriptions really must be short)
-   7.2 type set to 'textType' (was 'xs:token')
 8. Changes to elements in 'summary' group:
    8.1 'summary->name' element 'maxlen' facet set to 100.
    8.2 'summary->version' now 0...many (was 0 or 1)
    8.3 'summary->description' 'maxlen' facet now 500 (was 50)
-   8.4 'summary->shortDescription' 'maxlen' facet now 500 (was 1000)
-   8.5 'summary->toolid' renamed to 'summary->biotoolsID'
+   8.4 'summary->shortDescription' 'maxlen' facet now 100 (enforcing that the short desriptions really must be short!)
+   8.5 'summary->shortDescription' type set to 'textType' (was 'xs:token')
+   8.6 'summary->toolid' renamed to 'summary->biotoolsID'
 9. 'linkType->comment' type set to textType (consistent with other free-text comments) ('linkType' is complex type used by 'link->comment' and 'documentation->comment' elements)
 10. 'doiType' simpleType and "pmid" global element refactored, to drop support for PMIDs and DOIs with "PMID:" and "DOI:" prefix respectively (regex's changed)
 
