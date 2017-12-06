@@ -5,15 +5,15 @@ biotoolsSchema defines 50 important scientific, technical and administrative att
 
 # Documentation
 Comprehensive documentation is available:
-* https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-3.0.0-rc/docs/biotools-3.0.0.html (technical docs; save the HTML file and open it in your browser)
-* http://biotoolsschema.readthedocs.io/en/latest/ (general docs)
+* [Technical docs](https://github.com/bio-tools/biotoolsSchema/blob/master/versions/biotools-3.0.0-rc/docs/biotools-3.0.0.html) (save the HTML file and open it in your browser)
+* [General docs](http://biotoolsschema.readthedocs.io/en/latest/)
 
 
 # Information standard
 biotoolsSchema provides the foundation for a [tools information standard](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst#information-requirement) for the desription of tools.  It is being adopted by bio.tools and defines the attributes that must be defined within a 5-teir rating of entry completeness.
 
 # Software types 
-See the list of [software types](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst#tool-types) supported by the schema.
+See the list of [software types](http://biotools.readthedocs.io/en/latest/curators_guide.html#tool-type) supported by the schema.
 
 
 
