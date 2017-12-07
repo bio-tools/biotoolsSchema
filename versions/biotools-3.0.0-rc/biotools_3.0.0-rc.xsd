@@ -123,7 +123,7 @@
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="biotoolsID" minOccurs="0">
+							<xs:element name="biotoolsID" type="biotoolsIdType" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Unique ID (case insensitive) of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
 									<xs:appinfo>
@@ -132,9 +132,6 @@
 									</xs:appinfo>
 									<xs:documentation>bio.tools IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType"/>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="biotoolsCURIE" minOccurs="0">
 								<xs:annotation>
@@ -426,6 +423,11 @@
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 									<xs:documentation>Minimum 1 and maximum 100 characters.</xs:documentation>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="-cmd"/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
@@ -1219,7 +1221,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="biotoolsID">
+							<xs:element name="biotoolsID" type="biotoolsIdType">
 								<xs:annotation>
 									<xs:documentation>bio.tools ID of an existing bio.tools entry which this software is related to.</xs:documentation>
 									<xs:documentation>Relations may only be defined between software registered in bio.tools.  bio.tools IDs are assigned (by bio.tools admin) upon registration.</xs:documentation>
@@ -1228,9 +1230,6 @@
 										<biotoolsUsage>Unsupported</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType"/>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="type">
 								<xs:annotation>
@@ -1412,6 +1411,11 @@
 															<uiTip>Summary of service endpoint.</uiTip>
 															<biotoolsUsage>Unsupported</biotoolsUsage>
 														</xs:appinfo>
+														<xs:appinfo>
+															<altova:exampleValues>
+																<altova:example value="Textual summary of a service endpoint."/>
+															</altova:exampleValues>
+														</xs:appinfo>
 													</xs:annotation>
 												</xs:element>
 											</xs:sequence>
@@ -1460,6 +1464,11 @@
 																	<xs:appinfo>
 																		<uiTip>Comment about parameter.</uiTip>
 																		<biotoolsUsage>Unsupported</biotoolsUsage>
+																	</xs:appinfo>
+																	<xs:appinfo>
+																		<altova:exampleValues>
+																			<altova:example value="Comment about  a parameter of an endpoint."/>
+																		</altova:exampleValues>
 																	</xs:appinfo>
 																</xs:annotation>
 															</xs:element>
@@ -1578,6 +1587,11 @@
 											<xs:appinfo>
 												<uiTip>Comment about the link.</uiTip>
 												<biotoolsUsage>Optional</biotoolsUsage>
+											</xs:appinfo>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="Comment about the link."/>
+												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -1728,6 +1742,11 @@
 										<uiTip>Comment about the download.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="Comment about the download."/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
 							<xs:element name="diskFormat" minOccurs="0">
@@ -1853,6 +1872,11 @@
 									<xs:appinfo>
 										<uiTip>Relevant command, e.g. for getting or installing the tool.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="A useful command pertinent to the download, e.g. for getting or installing a tool."/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1983,6 +2007,11 @@
 											<xs:appinfo>
 												<uiTip>Comment about the documentation.</uiTip>
 												<biotoolsUsage>Optional</biotoolsUsage>
+											</xs:appinfo>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="Comment about the documentation."/>
+												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -2384,6 +2413,11 @@
 									</xs:appinfo>
 									<xs:documentation>A comment about the credit.</xs:documentation>
 									<xs:documentation>This can elaborate on the contribution of the credited entity.</xs:documentation>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="Comment about the credit."/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
 						</xs:sequence>
@@ -2442,6 +2476,11 @@
 									<xs:appinfo>
 										<uiTip>General comment.</uiTip>
 										<biotoolsUsage>Unsupported</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="General comment."/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
