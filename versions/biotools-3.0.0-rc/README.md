@@ -1,8 +1,5 @@
 # biotools-3.0.0-rc
 
-* GitHub: https://github.com/bio-tools/biotoolsschema/
-* readthedocs: http://biotoolsschema.readthedocs.io/en/latest/
-
 biotoolsSchema is a formalised XML schema (XSD) which defines a description model for bioinformatics software.  It can be used to describe bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).   This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions, tools available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.  
 
 biotoolsSchema defines 50 important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a highly minimal core of 3 attributes (tool name, homepage URL and short description).
