@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<title>biotools-2.0.0</title>
-	</head>
-	<body>
+# biotools-2.0.0
 
 See https://github.com/bio-tools/biotoolsschema/.
 
@@ -15,17 +8,14 @@ biotoolsSchema defines 50 important scientific, technical and administrative att
 
 The ELIXIR Tools & Data Services Registry (https://bio.tools/) is undergoing a phased migration to biotoolSchema 2.0 beginning in Nov 2016.
 
-<p>Files incldued are:</p>
-		<h1>biotools-2.0.0.xsd</h1>
-		<p>XML schema</p>
-		
-		<h1>docs/biotools-2.0.0.html</h1>
-		<p>Full schema documentation</p>
+File | Description
+---- | -----------
+biotools-2.0.0.xsd | XML schema
+docs/biotools-2.0.0.html | Full schema documentation
+example_files/biotools-2.0.0.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
+example_files/biotools-2.0.0_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
 
-		<h1>example_files/biotools-2.0.0.xml</h1>
-		<p>Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.</p>
 
-		<h1>example_files/biotools-2.0.0_mandatoryFieldsOnly.xml</h1>
-		<p>Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.</p>
-	</body>
-</html>
+
+
+

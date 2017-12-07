@@ -9,12 +9,12 @@ biotoolsSchema defines 50 important scientific, technical and administrative att
 
  biotoolsSchema can help to support the cataloguing and discovery of software and is used by the [ELIXIR Tools & Data Services Registry](https://bio.tools).
 
-Files incldued are:
-* **biotools-3.0.0-rc.xsd** (XML schema)
-* **docs/biotools-3.0.0-rc.html** (full schema documentation)
-* **example_files/biotools-3.0.0-rc.xml** (sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.)
-* **example_files/biotools-3.0.0-rc_mandatoryFieldsOnly.xml** (sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.)
-
+File | Description
+---- | -----------
+biotools-3.0.0-rc.xsd | XML schema
+docs/biotools-3.0.0-rc.html | Full schema documentation
+example_files/biotools-3.0.0-rc.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
+example_files/biotools-3.0.0-rc_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
 
 
 
