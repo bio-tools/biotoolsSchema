@@ -77,7 +77,7 @@
 							<xs:element name="shortDescription" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Short and concise textual description of the software function.</xs:documentation>
-									<xs:documentation>A single declarative sentence in the present tense, providing a terse statement of the tool function.  State what is done, i.e.operation, and primary inputs and outputs, but not how. Do not include tool name. Maximum 100 characters. See http://biotools.readthedocs.io/.</xs:documentation>
+									<xs:documentation>A single declarative sentence in the present tense, providing a terse statement of the tool function.  State what is done, i.e. the primary operation, but not how. Do not include tool name. 100 character maximum.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Short software description : a single declarative sentence in the present tense stating the tool function. Do not include tool name.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -97,7 +97,7 @@
 							<xs:element name="description">
 								<xs:annotation>
 									<xs:documentation>Textual description of the software.</xs:documentation>
-									<xs:documentation>This can be a few sentences copy-pasted from the software homepage.  Maximum 500 characters.</xs:documentation>
+									<xs:documentation>This can be a few sentences copy-pasted from the software homepage.  Minimum 10 and maximum 500 characters.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software description, e.g. a few sentences adapted from the software publication abstract or homepage.</uiTip>
 										<biotoolsUsage>Sparse</biotoolsUsage>
@@ -2688,7 +2688,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="textType">
 		<xs:annotation>
-			<xs:documentation>Free text with a minimum length of 10 and maximum length of 1000.</xs:documentation>
+			<xs:documentation>Free text with a minimum length of 10 and maximum length of 1000.
+Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces are not allowed / will be removed.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:whiteSpace value="collapse"/>
@@ -2738,10 +2739,10 @@
 	<xs:simpleType name="biotoolsIdType">
 		<xs:annotation>
 			<xs:documentation>bio.tools tool ID.</xs:documentation>
-			<xs:documentation>bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. The tool ID must start with a letter or an underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
+			<xs:documentation>bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="signalp"/>
+					<altova:example value="needle"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 			<xs:documentation>bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
@@ -2762,7 +2763,7 @@
 					<altova:example value="1.1 - 1.4, 2.0-alpha, 2.0-beta-01 - 2.0-beta-04, 2.0.0"/>
 				</altova:exampleValues>
 			</xs:appinfo>
-			<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
+			<xs:documentation>The name has a 100 character limit and may only contain space, uppercase and lowercase English letters, decimal digits, plus symbol, period, comma, dash, colon, semicolon and parentheses.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="1"/>
@@ -2789,7 +2790,8 @@
 	<xs:simpleType name="nameType">
 		<xs:annotation>
 			<xs:documentation>Tool or collection name.</xs:documentation>
-			<xs:appinfo>The name has a 100 character limit and may only contain space, uppercase and lowercase letters, decimal digits, plus symbol, period, comma, dash, underscore, colon, semicolon and parentheses.</xs:appinfo>
+			<xs:appinfo>The name has a 100 character limit and may only contain space, uppercase and lowercase letters, decimal digits, plus symbol, period, comma, dash, underscore, colon, semicolon and parentheses.
+Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces are not allowed / will be removed.</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="1"/>
