@@ -69,7 +69,7 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="toolName"/>
+											<altova:example value="needle"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
@@ -84,7 +84,7 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="Detect and visualise single-nucleotide polymorphisms (SNPs)."/>
+											<altova:example value="Needleman-Wunsch global alignment of two sequences"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
@@ -104,7 +104,7 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="Software description, e.g. a few sentences adapted from the software publication abstract or homepage."/>
+											<altova:example value="needle reads two input sequences and writes their optimal global sequence alignment to file. It uses the Needleman-Wunsch alignment algorithm to find the optimum alignment (including gaps) of two sequences along their entire length. The algorithm uses a dynamic programming method to ensure the alignment is optimum, by exploring all possible alignments and choosing the best."/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
