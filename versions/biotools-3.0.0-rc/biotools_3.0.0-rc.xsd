@@ -2780,7 +2780,7 @@
 	<xs:simpleType name="nameType">
 		<xs:annotation>
 			<xs:documentation>Tool or collection name.</xs:documentation>
-			<xs:appinfo>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:appinfo>
+			<xs:appinfo>The name has a 100 character limit and may only contain space, uppercase and lowercase letters, decimal digits, plus symbol, period, comma, dash, underscore, colon, semicolon and parentheses.</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="1"/>
