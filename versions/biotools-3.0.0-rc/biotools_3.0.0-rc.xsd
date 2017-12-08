@@ -121,6 +121,11 @@
 										<uiTip>Homepage of the software, or some URL that best serves this purpose.</uiTip>
 										<biotoolsUsage>Sparse</biotoolsUsage>
 									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="http://emboss.open-bio.org/rel/rel6/apps/needle.html"/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
 							<xs:element name="biotoolsID" type="biotoolsIdType" minOccurs="0">
@@ -2525,12 +2530,15 @@
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="http://someurl.org"/>
+					<altova:example value="ftp://someurl.org"/>
+					<altova:example value="https://someurl.org"/>
+					<altova:example value="sftp://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://.+"/>
-			<xs:pattern value="s?ftp://.+"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
+			<xs:pattern value="s?ftp://[^\s/$.?#].[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="urlType">
@@ -2538,12 +2546,13 @@
 			<xs:documentation>An HTTP or HTTPS URL.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
+					<altova:example value="https://someurl.org"/>
 					<altova:example value="http://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://.+"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ontologyConcept">
