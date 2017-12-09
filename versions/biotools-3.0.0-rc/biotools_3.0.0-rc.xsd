@@ -224,8 +224,8 @@
 															<uiTip>Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/).</uiTip>
 														</enumItem>
 														<enumItem>
-															<term>biotoolsID</term>
-															<uiTip>bio.tools tool identifier (secondary identifier).</uiTip>
+															<term>biotoolsCURIE</term>
+															<uiTip>bio.tools CURIE (secondary identifier).</uiTip>
 														</enumItem>
 													</enum>
 												</xs:appinfo>
