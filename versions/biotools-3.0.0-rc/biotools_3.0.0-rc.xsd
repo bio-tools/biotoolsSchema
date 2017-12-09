@@ -234,7 +234,7 @@
 														<altova:example value="doi"/>
 														<altova:example value="rrid"/>
 														<altova:example value="cpe"/>
-														<altova:example value="biotoolsID"/>
+														<altova:example value="biotoolsCURIE"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 											</xs:annotation>
@@ -243,7 +243,7 @@
 													<xs:enumeration value="doi"/>
 													<xs:enumeration value="rrid"/>
 													<xs:enumeration value="cpe"/>
-													<xs:enumeration value="biotoolsID"/>
+													<xs:enumeration value="biotoolsCURIE"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -669,6 +669,20 @@
 									<xs:appinfo>
 										<uiTip>Operating system supported by a downloadable software package.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Linux</term>
+												<uiTip>All flavours of Linux/UNIX operating systems.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Windows</term>
+												<uiTip>All flavours of Microsoft Windows operating system.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Mac</term>
+												<uiTip>All flavours of Apple Macintosh operating systems (primarily Mac OS X).</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
