@@ -269,7 +269,7 @@
 				</xs:element>
 				<xs:element name="function" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Details of a function (i.e. mode of operations) the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
+						<xs:documentation>Details of a function (i.e. mode of operation) the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Details of a function the software provides, expressed in terms from the EDAM ontology.</uiTip>
 							<biotoolsUsage>Detailed</biotoolsUsage>
@@ -434,7 +434,7 @@
 									<xs:documentation>Minimum 1 and maximum 100 characters.</xs:documentation>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="-cmd"/>
+											<altova:example value="-s best"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
