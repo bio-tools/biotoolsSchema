@@ -1531,7 +1531,7 @@
 										</xs:element>
 										<xs:element ref="isAvailable">
 											<xs:annotation>
-												<xs:documentation>Used (with value of "false") when a link of a certain type is known not to be available.</xs:documentation>
+												<xs:documentation>Used (with value of "Not available") when a link of a certain type is known not to be available.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Set when a link of a certain type is known not to be available.</uiTip>
 													<biotoolsUsage>Basic details</biotoolsUsage>
@@ -1645,7 +1645,7 @@
 								</xs:element>
 								<xs:element ref="isAvailable">
 									<xs:annotation>
-										<xs:documentation>Used (with value of "false") when a download of a certain type is known not to be available.</xs:documentation>
+										<xs:documentation>Used (with value of "Not available") when a download of a certain type is known not to be available.</xs:documentation>
 										<xs:appinfo>
 											<uiTip>Set when a download link of a certain type is known not to be available.</uiTip>
 											<biotoolsUsage>Highly detailed</biotoolsUsage>
