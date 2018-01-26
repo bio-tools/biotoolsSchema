@@ -489,7 +489,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Plug-in</term>
-												<uiTip>A software component encapsulating a set of related functions, which are not standalone but depend upon (and typically extend the function of) other software for its use, e.g. a Javascript widget, plug-in, extension or add-on.</uiTip>
+												<uiTip>A software component encapsulating a set of related functions, which are not standalone but depend upon (and typically extend the function of) other software for its use, e.g. a JavaScript widget, plug-in, extension or add-on.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Script</term>
@@ -725,7 +725,7 @@
 										<xs:enumeration value="Haskell"/>
 										<xs:enumeration value="Icarus"/>
 										<xs:enumeration value="Java"/>
-										<xs:enumeration value="Javascript"/>
+										<xs:enumeration value="JavaScript"/>
 										<xs:enumeration value="JSP"/>
 										<xs:enumeration value="LabVIEW"/>
 										<xs:enumeration value="Lisp"/>
@@ -1579,7 +1579,7 @@
 														<uiTip>A website used by the software community including social networking sites, discussion and support fora, WIKIs etc.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Scientfic benchmark</term>
+														<term>Scientific benchmark</term>
 														<uiTip>Information about the scientific performance of a tool.</uiTip>
 													</enumItem>
 													<enumItem>
@@ -1636,7 +1636,7 @@
 							<xs:choice>
 								<xs:element name="url" type="urlftpType">
 									<xs:annotation>
-										<xs:documentation>Link to download (or repo providing a download) for the software.</xs:documentation>
+										<xs:documentation>Link to download (or repository providing a download) for the software.</xs:documentation>
 										<xs:appinfo>
 											<uiTip>Download link.</uiTip>
 											<biotoolsUsage>Highly detailed</biotoolsUsage>
@@ -2114,7 +2114,7 @@
 												</enumItem>
 												<enumItem>
 													<term>Other</term>
-													<uiTip>A publication of relevance to the software but not fitting the other cateogries.</uiTip>
+													<uiTip>A publication of relevance to the software but not fitting the other categories.</uiTip>
 												</enumItem>
 											</enum>
 										</xs:appinfo>
@@ -2652,7 +2652,7 @@
 					<xs:sequence>
 						<xs:element name="uri">
 							<xs:annotation>
-								<xs:documentation>URL of an EDAM Forrmat concept.</xs:documentation>
+								<xs:documentation>URL of an EDAM Format concept.</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Format URL.</uiTip>
 									<biotoolsUsage>Comprehensive</biotoolsUsage>
@@ -2792,7 +2792,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 	</xs:simpleType>
 	<xs:element name="isAvailable">
 		<xs:annotation>
-			<xs:documentation>Set to false if informaton of a certain type is not available.</xs:documentation>
+			<xs:documentation>Set to false if information of a certain type is not available.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="Not available"/>
