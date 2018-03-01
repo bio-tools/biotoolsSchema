@@ -7,12 +7,51 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# March 1 2018 biotoolsSchema-3.0.0-rc-rev1.xsd released
+## Added
+
+## Changed
+1. All 'comment' elements renamed to 'note':
+   1.1 credit->note
+   1.2 documentation->note
+   1.3 download->note
+   1.4 link->note
+   1.5 function->note
+2. 'credit' refactored such that at least one of 'credit->name', 'credit->email' or 'credit->url' is mandatory.
+
+## Deprecated
+
+## Removed
+1. 'elixirInfo' element grouping removed.  These data can be handled internally by ELIXIR Hub (or can be reinstated in future).
+2. 'apiSpec' element grouping removed.  This can be reinstated as needed.
+3. 'relation' element grouping removed.  This can be reinstated as needed.
+4. 'isAvailable' elements removed: specification of information known to be unavailable (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst) will be handled internally by bio.tools
+   4.1 'publication->isAvailable'
+   4.2 'link->isAvailable'
+   4.3 'documentation->isAvailable'
+   4.4 'download->isAvailable'
+5. 'credit' grouping streamlined
+   5.1 'credit->tel' removed
+   5.2 'credit->gridid' removed
+6. 'labels' grouping streamlined
+   6.1 'labels->goTermID' removed (will be reinstated as needed)
+   6.2 'labels->soTermID' removed (will be reinstated as needed)
+   6.3 'labels->taxID' removed (will be reinstated as needed)
+7. 'download->cmd' removed
+8. 'summary->shortDescription' removed
+
+## Fixed
+
+## Misc
+
+
+# January 26 2018 biotoolsSchema-3.0.0-rc.xsd released
 
 ## Added
 1. 'isAvailable' elements added to support the specification that an attribute is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst)
    1.1 'publication->isAvailable'
-   2.2 'linkType' complexType as used in 'link->isAvailable' and 'documentation->isAvailable'
-   2.3 'download->isAvailable'
+   1.2 'linkType' complexType as used in 'link->isAvailable' and 'documentation->isAvailable'
+   1.3 'download->isAvailable'
 2. 'summary->otherID' added ("A unique identifier of the software, typically assigned by an ID-assignment authority.")
    2.1 'summary->otherID->value' (1 only), 'minlen' facet of 1, is the value of the identifier (with appropriate regexs as per type, see below)
    2.2 'summary->otherID->type' (0 or 1) is enum of the identifier type (doi, rrid, cpe, biotoolsID)
