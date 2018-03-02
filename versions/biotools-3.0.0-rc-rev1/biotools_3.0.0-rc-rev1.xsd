@@ -1455,7 +1455,7 @@
 							</xs:element>
 							<xs:element name="containerFormat" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>Virtual machine container format.</xs:documentation>
+									<xs:documentation>Container format.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Virtual machine container format. A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </uiTip>
 										<biotoolsUsage>Unsupported</biotoolsUsage>
@@ -1486,7 +1486,7 @@
 											</enumItem>
 											<enumItem>
 												<term>rkt</term>
-												<uiTip>Rocket container images</uiTip>
+												<uiTip>Rocket container image</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>singularity </term>
