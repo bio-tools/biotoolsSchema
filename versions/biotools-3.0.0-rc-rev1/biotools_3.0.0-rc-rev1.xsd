@@ -650,6 +650,7 @@
 										<xs:enumeration value="MATLAB"/>
 										<xs:enumeration value="MLXTRAN"/>
 										<xs:enumeration value="NMTRAN"/>
+										<xs:enumeration value="OCaml"/>
 										<xs:enumeration value="Pascal"/>
 										<xs:enumeration value="Perl"/>
 										<xs:enumeration value="PHP"/>
@@ -670,6 +671,7 @@
 										<xs:enumeration value="Verilog"/>
 										<xs:enumeration value="VHDL"/>
 										<xs:enumeration value="Visual Basic"/>
+										<xs:enumeration value="XAML"/>
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
 								</xs:simpleType>
