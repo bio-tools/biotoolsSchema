@@ -12,7 +12,7 @@ Comprehensive documentation is available:
 
 
 # Information standard
-biotoolsSchema provides the foundation for a [tools information standard](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst#information-requirement) for the desription of tools.  It is being adopted by bio.tools and defines the attributes that must be defined within a 5-teir rating of entry completeness.
+biotoolsSchema provides the foundation for a [tools information standard](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_standard.rst#information-standard) for the desription of tools.  It is being adopted by bio.tools and defines the attributes that must be defined within a 5-teir rating of entry completeness.
 
 # Software types 
 See the list of [software types](http://biotools.readthedocs.io/en/latest/curators_guide.html#tool-type) supported by the schema.
