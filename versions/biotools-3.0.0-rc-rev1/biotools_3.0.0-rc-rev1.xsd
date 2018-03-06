@@ -246,7 +246,7 @@
 				</xs:element>
 				<xs:element name="function" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Details of a function (i.e. mode of operation) the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
+						<xs:documentation>Details of a function (i.e. mode of operation) the software provides, expressed in concepts from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Details of a function the software provides, expressed in terms from the EDAM ontology.</uiTip>
 							<biotoolsUsage>Detailed</biotoolsUsage>
@@ -580,7 +580,7 @@
 							</xs:element>
 							<xs:element name="operatingSystem" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>The operating system supported by a downloadable software package.</xs:documentation>
+									<xs:documentation>The operating system supported by a downloadable software.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Operating system supported by a downloadable software package.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
@@ -610,7 +610,7 @@
 							</xs:element>
 							<xs:element name="language" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Name of programming language the software source code was written in.</xs:documentation>
+									<xs:documentation>Name of programming language, e.g. used for the software source code or compatible with an API.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Source code language.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
@@ -1674,27 +1674,27 @@
 										<enum>
 											<enumItem>
 												<term>Primary</term>
-												<uiTip>The principal publication about the software itself; the article to cite when acknowledging use of the software.</uiTip>
+												<uiTip>The principal publication about the tool itself; the article to cite when acknowledging use of the tool.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Method</term>
-												<uiTip>A publication describing a scientific method or algorithm implemented by the software.</uiTip>
+												<uiTip>A publication describing a scientific method or algorithm implemented by the tool.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Usage</term>
-												<uiTip>A publication describing the application of the software to scientific research, a particular task or dataset.</uiTip>
+												<uiTip>A publication describing the application of the tool to scientific research, a particular task or dataset.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Comparison</term>
-												<uiTip>A publication which assessed the performance of the software.</uiTip>
+												<uiTip>A publication which assessed the performance of the tool.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Review</term>
-												<uiTip>A publication where the software was reviewed.</uiTip>
+												<uiTip>A publication where the tool was reviewed.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Other</term>
-												<uiTip>A publication of relevance to the software but not fitting the other categories.</uiTip>
+												<uiTip>A publication of relevance to the tool but not fitting the other categories.</uiTip>
 											</enumItem>
 										</enum>
 									</xs:appinfo>

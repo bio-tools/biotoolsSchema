@@ -603,7 +603,7 @@
 							</xs:element>
 							<xs:element name="goTermID" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Gene function including molecular function, cellular component and biological process.  The ID of Gene Ontology (GO) concept(s) are specified.</xs:documentation>
+									<xs:documentation>Biological context comprising molecular function, cellular component and biological process.  The ID of Gene Ontology (GO) concept(s) are specified.</xs:documentation>
 									<xs:documentation>A GO concept ID is specified, e.g. “GO:0005125”. Gene Ontology (GO) covers biological concepts and provides terms to describe gene function, including molecular function (molecular activities of gene products), cellular component (where gene products are active) and biological process (pathways and larger processes made up of the activities of multiple gene products).</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Gene Ontology (GO) term ID.</uiTip>
