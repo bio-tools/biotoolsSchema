@@ -21,20 +21,17 @@
 			<xs:documentation>HTML link.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:choice>
-				<xs:element name="url" type="urlftpType">
-					<xs:annotation>
-						<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element ref="isAvailable"/>
-			</xs:choice>
+			<xs:element name="url" type="urlftpType">
+				<xs:annotation>
+					<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="type" type="enumType">
 				<xs:annotation>
 					<xs:documentation>The type of data or information that is obtained when the link is resolved.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="comment" type="textType" minOccurs="0">
+			<xs:element name="note" type="textType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Comment about the link.</xs:documentation>
 					<xs:appinfo>
@@ -69,42 +66,22 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="toolName"/>
+											<altova:example value="needle"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
-							</xs:element>
-							<xs:element name="shortDescription" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Short and concise textual description of the software function.</xs:documentation>
-									<xs:documentation>A single declarative sentence in the present tense, providing a terse statement of the tool function.  State what is done, i.e.operation, and primary inputs and outputs, but not how. Do not include tool name. Maximum 100 characters. See http://biotools.readthedocs.io/.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Short software description : a single declarative sentence in the present tense stating the tool function. Do not include tool name.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="Detect and visualise single-nucleotide polymorphisms (SNPs)."/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="textType">
-										<xs:maxLength value="100"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="description">
 								<xs:annotation>
 									<xs:documentation>Textual description of the software.</xs:documentation>
-									<xs:documentation>This can be a few sentences copy-pasted from the software homepage.  Maximum 500 characters.</xs:documentation>
+									<xs:documentation>This can be a few sentences copy-pasted from the software homepage.  Minimum 10 and maximum 500 characters.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software description, e.g. a few sentences adapted from the software publication abstract or homepage.</uiTip>
 										<biotoolsUsage>Sparse</biotoolsUsage>
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
-											<altova:example value="Software description, e.g. a few sentences adapted from the software publication abstract or homepage."/>
+											<altova:example value="needle reads two input sequences and writes their optimal global sequence alignment to file. It uses the Needleman-Wunsch alignment algorithm to find the optimum alignment (including gaps) of two sequences along their entire length. The algorithm uses a dynamic programming method to ensure the alignment is optimum, by exploring all possible alignments and choosing the best."/>
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
@@ -121,9 +98,14 @@
 										<uiTip>Homepage of the software, or some URL that best serves this purpose.</uiTip>
 										<biotoolsUsage>Sparse</biotoolsUsage>
 									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="http://emboss.open-bio.org/rel/rel6/apps/needle.html"/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
-							<xs:element name="biotoolsID" minOccurs="0">
+							<xs:element name="biotoolsID" type="biotoolsIdType" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Unique ID (case insensitive) of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
 									<xs:appinfo>
@@ -132,9 +114,6 @@
 									</xs:appinfo>
 									<xs:documentation>bio.tools IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType"/>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="biotoolsCURIE" minOccurs="0">
 								<xs:annotation>
@@ -183,8 +162,9 @@
 												<xs:appinfo>
 													<altova:exampleValues>
 														<altova:example value="doi:10.1038/nmeth.1701"/>
-														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
 														<altova:example value="RRID:SCR_001156"/>
+														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
+														<altova:example value="biotools:signalp"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 												<xs:appinfo>
@@ -197,7 +177,7 @@
 													<xs:pattern value="(doi:)?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="RRID:.+"/>
 													<xs:pattern value="cpe:.+"/>
-													<xs:pattern value="[_\-.0-9a-zA-Z]*"/>
+													<xs:pattern value="biotools:[_\-.0-9a-zA-Z]*"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -221,14 +201,17 @@
 															<uiTip>Common Platform Enumeration (CPE) identifier as listed in the CPE dictionary (https://cpe.mitre.org/dictionary/).</uiTip>
 														</enumItem>
 														<enumItem>
-															<term>biotoolsID</term>
-															<uiTip>bio.tools tool identifier (secondary identifier).</uiTip>
+															<term>biotoolsCURIE</term>
+															<uiTip>bio.tools CURIE (secondary identifier).</uiTip>
 														</enumItem>
 													</enum>
 												</xs:appinfo>
 												<xs:appinfo>
 													<altova:exampleValues>
+														<altova:example value="doi"/>
 														<altova:example value="rrid"/>
+														<altova:example value="cpe"/>
+														<altova:example value="biotoolsCURIE"/>
 													</altova:exampleValues>
 												</xs:appinfo>
 											</xs:annotation>
@@ -237,7 +220,7 @@
 													<xs:enumeration value="doi"/>
 													<xs:enumeration value="rrid"/>
 													<xs:enumeration value="cpe"/>
-													<xs:enumeration value="biotoolsID"/>
+													<xs:enumeration value="biotoolsCURIE"/>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
@@ -263,7 +246,7 @@
 				</xs:element>
 				<xs:element name="function" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Details of a function (i.e. mode of operations) the software provides, expressed in terms from the EDAM ontology.</xs:documentation>
+						<xs:documentation>Details of a function (i.e. mode of operation) the software provides, expressed in concepts from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Details of a function the software provides, expressed in terms from the EDAM ontology.</uiTip>
 							<biotoolsUsage>Detailed</biotoolsUsage>
@@ -401,7 +384,7 @@
 									</xs:complexContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="comment" minOccurs="0">
+							<xs:element name="note" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Concise comment about this function, if not apparent from the software description and EDAM annotations.</xs:documentation>
 									<xs:appinfo>
@@ -426,6 +409,11 @@
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 									<xs:documentation>Minimum 1 and maximum 100 characters.</xs:documentation>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="-s best"/>
+										</altova:exampleValues>
+									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
@@ -478,7 +466,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Plug-in</term>
-												<uiTip>A software component encapsulating a set of related functions, which are not standalone but depend upon (and typically extend the function of) other software for its use, e.g. a Javascript widget, plug-in, extension or add-on.</uiTip>
+												<uiTip>A software component encapsulating a set of related functions, which are not standalone but depend upon (and typically extend the function of) other software for its use, e.g. a JavaScript widget, plug-in, extension or add-on.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Script</term>
@@ -590,74 +578,26 @@
 									</xs:complexContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="goTermID" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-									<xs:documentation>Gene function including molecular function, cellular component and biological process.  The ID of Gene Ontology (GO) concept(s) are specified.</xs:documentation>
-									<xs:documentation>A GO concept ID is specified, e.g. “GO:0005125”. Gene Ontology (GO) covers biological concepts and provides terms to describe gene function, including molecular function (molecular activities of gene products), cellular component (where gene products are active) and biological process (pathways and larger processes made up of the activities of multiple gene products).</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Gene Ontology (GO) term ID.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="GO:0005125"/>
-											<altova:example value="0005125"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:pattern value="[0-9]{7}|GO:[0-9]{7}"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="soTermID" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-									<xs:documentation>Features which can be located on a biological sequence. The ID of Sequence Ontology (SO) concept(s) are specified.</xs:documentation>
-									<xs:documentation>A SO concept ID is specified, e.g. “SO:0000147”.  Sequence Ontology (SO) provides terms to describe features which can be located on a biological sequence. SO includes biological features (e.g. binding site and exon) are those which are defined by their disposition to be involved in a biological process; biomaterial features (e.g. aptamer and PCR product) intended for use in an experiment and experimental features (the result of an experiment).  The biological features are most relevant to software annotation.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Sequence Ontology (SO) term ID.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="SO:0000307"/>
-											<altova:example value="0000307"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:pattern value="[0-9]{7}|SO:[0-9]{7}"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="taxID" minOccurs="0" maxOccurs="unbounded">
-								<xs:annotation>
-									<xs:documentation>NCBI taxonomy ID of taxonomic group the software (particularly database portals) caters for.</xs:documentation>
-									<xs:documentation>The Taxonomy ID (TaxID or taxon number), e.g. “9606” is a stable unique identifier for each taxonomic group in the NCBI Taxonomy Browser. The TaxID is seen in the GenBank records under feature source.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>NCBI taxonomic group ID.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="9606"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:pattern value="[1-9][0-9]{0,8}"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
 							<xs:element name="operatingSystem" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>The operating system supported by a downloadable software package.</xs:documentation>
+									<xs:documentation>The operating system supported by a downloadable software.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Operating system supported by a downloadable software package.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Linux</term>
+												<uiTip>All flavours of Linux/UNIX operating systems.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Windows</term>
+												<uiTip>All flavours of Microsoft Windows operating system.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Mac</term>
+												<uiTip>All flavours of Apple Macintosh operating systems (primarily Mac OS X).</uiTip>
+											</enumItem>
+										</enum>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -670,7 +610,7 @@
 							</xs:element>
 							<xs:element name="language" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Name of programming language the software source code was written in.</xs:documentation>
+									<xs:documentation>Name of programming language, e.g. used for the software source code or compatible with an API.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Source code language.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
@@ -700,7 +640,7 @@
 										<xs:enumeration value="Haskell"/>
 										<xs:enumeration value="Icarus"/>
 										<xs:enumeration value="Java"/>
-										<xs:enumeration value="Javascript"/>
+										<xs:enumeration value="JavaScript"/>
 										<xs:enumeration value="JSP"/>
 										<xs:enumeration value="LabVIEW"/>
 										<xs:enumeration value="Lisp"/>
@@ -710,6 +650,7 @@
 										<xs:enumeration value="MATLAB"/>
 										<xs:enumeration value="MLXTRAN"/>
 										<xs:enumeration value="NMTRAN"/>
+										<xs:enumeration value="OCaml"/>
 										<xs:enumeration value="Pascal"/>
 										<xs:enumeration value="Perl"/>
 										<xs:enumeration value="PHP"/>
@@ -730,6 +671,7 @@
 										<xs:enumeration value="Verilog"/>
 										<xs:enumeration value="VHDL"/>
 										<xs:enumeration value="Visual Basic"/>
+										<xs:enumeration value="XAML"/>
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
 								</xs:simpleType>
@@ -1210,272 +1152,6 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="relation" minOccurs="0" maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>Details of a relationship this software shares with other software registered in bio.tools.</xs:documentation>
-						<xs:appinfo>
-							<uiTip>Details of a relationship this software shares with other software registered in bio.tools.</uiTip>
-							<biotoolsUsage>Unsupported</biotoolsUsage>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="biotoolsID">
-								<xs:annotation>
-									<xs:documentation>bio.tools ID of an existing bio.tools entry which this software is related to.</xs:documentation>
-									<xs:documentation>Relations may only be defined between software registered in bio.tools.  bio.tools IDs are assigned (by bio.tools admin) upon registration.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>bio.tools ID of an existing bio.tools entry which this software is related to.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="biotoolsIdType"/>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="type">
-								<xs:annotation>
-									<xs:documentation>Type of relation between this and another registered software.</xs:documentation>
-									<xs:documentation>Certain relations may only be defined between certain types of tool:  see http://biotools.readthedocs.io/en/latest/curators_guide.html.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Type of relation between this and another registered software.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-										<enum>
-											<enumItem>
-												<term>isNewVersionOf / hasNewVersion</term>
-												<uiTip>The software is a new version of an existing software, typically providing new or improved functionality.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>isInterfaceTo / hasInterface</term>
-												<uiTip>The software provides a user interface to some other software without changing or extending its basic functionality.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>uses / usedBy</term>
-												<uiTip>The software uses the functions of some other software under the hood,e.g. invoking a command-line tool or calling a Web API, Web service or SPARQL endpoint to perform its function.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>extends / extendedBy</term>
-												<uiTip>The software extends, restricts or improves (somehow) the functionality or performance of another software.  Includes adaptation and reimplementation of existing tools.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>includes / includedIn</term>
-												<uiTip>A workbench, toolkit or workflow includes some other, independently available, software.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>isPluginFor / hasPlugin</term>
-												<uiTip>The software is is a plug-in that extends the function of some other software.</uiTip>
-											</enumItem>
-										</enum>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="isNewVersionOf"/>
-										<xs:enumeration value="hasNewVersion"/>
-										<xs:enumeration value="isInterfaceTo"/>
-										<xs:enumeration value="hasInterface"/>
-										<xs:enumeration value="uses"/>
-										<xs:enumeration value="usedBy"/>
-										<xs:enumeration value="extends"/>
-										<xs:enumeration value="extendedBy"/>
-										<xs:enumeration value="includes"/>
-										<xs:enumeration value="includedIn"/>
-										<xs:enumeration value="isPluginFor"/>
-										<xs:enumeration value="hasPlugin"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="apiSpec" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Details of the API to a service including service endpoints.</xs:documentation>
-						<xs:appinfo>
-							<uiTip>Details of the API to a service including service endpoints.</uiTip>
-							<biotoolsUsage>Unsupported</biotoolsUsage>
-						</xs:appinfo>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="baseURL">
-								<xs:annotation>
-									<xs:documentation>The base URL of a service, upon which one or more service endpoints are hung.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Base URL of online service.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-									<xs:appinfo>
-										<altova:exampleValues>
-											<altova:example value="https://bio.tools"/>
-										</altova:exampleValues>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="urlType"/>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="endpoint" maxOccurs="unbounded">
-								<xs:annotation>
-									<xs:documentation>Details of an endpoint to a service, i.e. a URL that can be used to invoke a particular function of a service.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Details of an endpoint to a service.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="httpMethod">
-											<xs:annotation>
-												<xs:appinfo>
-													<uiTip>Endpoint HTTP method.</uiTip>
-													<biotoolsUsage>Unsupported</biotoolsUsage>
-												</xs:appinfo>
-												<xs:documentation>HTTP method used by the endpoint.</xs:documentation>
-												<xs:appinfo>
-													<altova:exampleValues>
-														<altova:example value="GET"/>
-													</altova:exampleValues>
-												</xs:appinfo>
-											</xs:annotation>
-											<xs:simpleType>
-												<xs:restriction base="enumType">
-													<xs:enumeration value="OPTIONS"/>
-													<xs:enumeration value="GET"/>
-													<xs:enumeration value="HEAD"/>
-													<xs:enumeration value="POST"/>
-													<xs:enumeration value="PUT"/>
-													<xs:enumeration value="DELETE"/>
-													<xs:enumeration value="TRACE"/>
-													<xs:enumeration value="CONNECT"/>
-												</xs:restriction>
-											</xs:simpleType>
-										</xs:element>
-										<xs:element name="urlTemplate" type="xs:token">
-											<xs:annotation>
-												<xs:documentation>Template for a URL fragment, which when appended to the base URL, defines the syntax of a valid resolvable URL.  The template can include parameters that must be substituted before the URL is resolved.</xs:documentation>
-												<xs:appinfo>
-													<uiTip>Template for a URL fragment, which when appended to the base URL, defines the syntax of a valid resolvable URL.  The template can include parameters that must be substituted before the URL is resolved.</uiTip>
-													<biotoolsUsage>Unsupported</biotoolsUsage>
-												</xs:appinfo>
-												<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
-												<xs:appinfo>
-													<altova:exampleValues>
-														<altova:example value="/{toolID}"/>
-													</altova:exampleValues>
-												</xs:appinfo>
-											</xs:annotation>
-										</xs:element>
-										<xs:choice>
-											<xs:sequence>
-												<xs:element name="output">
-													<xs:annotation>
-														<xs:appinfo>
-															<uiTip>Endpoint output.</uiTip>
-															<biotoolsUsage>Unsupported</biotoolsUsage>
-														</xs:appinfo>
-														<xs:documentation>Details of output data provided by the endpoint.</xs:documentation>
-													</xs:annotation>
-													<xs:complexType>
-														<xs:complexContent>
-															<xs:restriction base="dataType">
-																<xs:sequence>
-																	<xs:element name="data" type="EDAMdata">
-																		<xs:annotation>
-																			<xs:documentation>Type of output data, if any (EDAM Data).</xs:documentation>
-																			<xs:appinfo>
-																				<uiTip>Output data type (EDAM data).</uiTip>
-																				<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
-																			</xs:appinfo>
-																			<xs:documentation>An EDAM Data concept URL and (optionally) term may be specified, e.g. "Sequence alignment", http://edamontology.org/data_0863.</xs:documentation>
-																		</xs:annotation>
-																	</xs:element>
-																	<xs:element name="format" type="EDAMformat" minOccurs="0" maxOccurs="unbounded">
-																		<xs:annotation>
-																			<xs:documentation>Possible format(s) of the output data (EDAM Format).</xs:documentation>
-																			<xs:appinfo>
-																				<uiTip>Output data format (EDAM format).</uiTip>
-																				<biotoolsUsage>Recommended (conditionally)</biotoolsUsage>
-																			</xs:appinfo>
-																			<xs:documentation>An EDAM Format concept URL and (optionally) term may be specified, e.g. “FASTA-aln”, http://edamontology.org/format_1984.</xs:documentation>
-																		</xs:annotation>
-																	</xs:element>
-																</xs:sequence>
-															</xs:restriction>
-														</xs:complexContent>
-													</xs:complexType>
-												</xs:element>
-												<xs:element name="summary" type="textType" minOccurs="0">
-													<xs:annotation>
-														<xs:documentation>A textual summary of a service endpoint.  </xs:documentation>
-														<xs:documentation>The value is text with optional markdown, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
-														<xs:appinfo>
-															<uiTip>Summary of service endpoint.</uiTip>
-															<biotoolsUsage>Unsupported</biotoolsUsage>
-														</xs:appinfo>
-													</xs:annotation>
-												</xs:element>
-											</xs:sequence>
-											<xs:element name="summary" type="textType"/>
-										</xs:choice>
-										<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:documentation>A query string parameter in the template URL that that must be substituted before the URL is resolved.</xs:documentation>
-												<xs:appinfo>
-													<uiTip>A query string parameter in the template URL that that must be substituted before the URL is resolved.</uiTip>
-													<biotoolsUsage>Unsupported</biotoolsUsage>
-												</xs:appinfo>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="urlTemplateFragment" type="xs:token">
-														<xs:annotation>
-															<xs:appinfo>
-																<uiTip>Fragment from the URL template for a parameter, which is replaced by some value when the service is called.</uiTip>
-																<biotoolsUsage>Unsupported</biotoolsUsage>
-															</xs:appinfo>
-															<xs:documentation>A fragment from the URL template corresponding to a URL parameter, which is replaced by some value when the service is called.</xs:documentation>
-															<xs:documentation>The value is text adhering to a strict syntax, see https://github.com/bio-tools/biotoolsschema.</xs:documentation>
-															<xs:appinfo>
-																<altova:exampleValues>
-																	<altova:example value="{toolID}"/>
-																</altova:exampleValues>
-															</xs:appinfo>
-														</xs:annotation>
-													</xs:element>
-													<xs:choice>
-														<xs:sequence>
-															<xs:element name="data" type="EDAMdata">
-																<xs:annotation>
-																	<xs:appinfo>
-																		<uiTip>Parameter data type (EDAM data).</uiTip>
-																		<biotoolsUsage>Unsupported</biotoolsUsage>
-																	</xs:appinfo>
-																	<xs:documentation>Type of data (EDAM Data) of a parameter of an endpoint.</xs:documentation>
-																	<xs:documentation>An EDAM Data concept URL and (optionally) term may be specified, e.g. "UniProt accession", http://edamontology.org/data_3021. </xs:documentation>
-																</xs:annotation>
-															</xs:element>
-															<xs:element name="comment" type="textType" minOccurs="0">
-																<xs:annotation>
-																	<xs:documentation>A comment about a parameter of an endpoint.</xs:documentation>
-																	<xs:appinfo>
-																		<uiTip>Comment about parameter.</uiTip>
-																		<biotoolsUsage>Unsupported</biotoolsUsage>
-																	</xs:appinfo>
-																</xs:annotation>
-															</xs:element>
-														</xs:sequence>
-														<xs:element name="comment" type="textType"/>
-													</xs:choice>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element name="link" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>A miscellaneous link for the software e.g. repository, issue tracker or mailing list.</xs:documentation>
@@ -1488,26 +1164,15 @@
 						<xs:complexContent>
 							<xs:restriction base="linkType">
 								<xs:sequence>
-									<xs:choice>
-										<xs:element name="url" type="urlftpType">
-											<xs:annotation>
-												<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
-												<xs:documentation>
-													<uiTip>Miscellaneous link.</uiTip>
-													<biotoolsUsage>Basic details</biotoolsUsage>
-												</xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element ref="isAvailable">
-											<xs:annotation>
-												<xs:documentation>Used (with value of "false") when a link of a certain type is known not to be available.</xs:documentation>
-												<xs:appinfo>
-													<uiTip>Set when a link of a certain type is known not to be available.</uiTip>
-													<biotoolsUsage>Basic details</biotoolsUsage>
-												</xs:appinfo>
-											</xs:annotation>
-										</xs:element>
-									</xs:choice>
+									<xs:element name="url" type="urlftpType">
+										<xs:annotation>
+											<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
+											<xs:documentation>
+												<uiTip>Miscellaneous link.</uiTip>
+												<biotoolsUsage>Basic details</biotoolsUsage>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="type">
 										<xs:annotation>
 											<xs:documentation>The type of data, information or system that is obtained when the link is resolved.</xs:documentation>
@@ -1548,7 +1213,7 @@
 														<uiTip>A website used by the software community including social networking sites, discussion and support fora, WIKIs etc.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Scientfic benchmark</term>
+														<term>Scientific benchmark</term>
 														<uiTip>Information about the scientific performance of a tool.</uiTip>
 													</enumItem>
 													<enumItem>
@@ -1573,12 +1238,17 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="comment" type="textType" minOccurs="0">
+									<xs:element name="note" type="textType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Comment about the link.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the link.</uiTip>
 												<biotoolsUsage>Optional</biotoolsUsage>
+											</xs:appinfo>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="Comment about the link."/>
+												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -1597,26 +1267,15 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:choice>
-								<xs:element name="url" type="urlftpType">
-									<xs:annotation>
-										<xs:documentation>Link to download (or repo providing a download) for the software.</xs:documentation>
-										<xs:appinfo>
-											<uiTip>Download link.</uiTip>
-											<biotoolsUsage>Highly detailed</biotoolsUsage>
-										</xs:appinfo>
-									</xs:annotation>
-								</xs:element>
-								<xs:element ref="isAvailable">
-									<xs:annotation>
-										<xs:documentation>Used (with value of "false") when a download of a certain type is known not to be available.</xs:documentation>
-										<xs:appinfo>
-											<uiTip>Set when a download link of a certain type is known not to be available.</uiTip>
-											<biotoolsUsage>Highly detailed</biotoolsUsage>
-										</xs:appinfo>
-									</xs:annotation>
-								</xs:element>
-							</xs:choice>
+							<xs:element name="url" type="urlftpType">
+								<xs:annotation>
+									<xs:documentation>Link to download (or repository providing a download) for the software.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Download link.</uiTip>
+										<biotoolsUsage>Highly detailed</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
 							<xs:element name="type">
 								<xs:annotation>
 									<xs:documentation>Type of download that is linked to.</xs:documentation>
@@ -1722,12 +1381,17 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="comment" type="textType" minOccurs="0">
+							<xs:element name="note" type="textType" minOccurs="0">
 								<xs:annotation>
 									<xs:documentation>Comment about the download</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the download.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="Comment about the download."/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1794,7 +1458,7 @@
 							</xs:element>
 							<xs:element name="containerFormat" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>Virtual machine container format.</xs:documentation>
+									<xs:documentation>Container format.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Virtual machine container format. A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </uiTip>
 										<biotoolsUsage>Unsupported</biotoolsUsage>
@@ -1825,7 +1489,7 @@
 											</enumItem>
 											<enumItem>
 												<term>rkt</term>
-												<uiTip>Rocket container images</uiTip>
+												<uiTip>Rocket container image</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>singularity </term>
@@ -1845,22 +1509,6 @@
 										<xs:enumeration value="ovf"/>
 										<xs:enumeration value="rkt"/>
 										<xs:enumeration value="singularity"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="cmd" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>A useful command pertinent to the download, e.g. for getting or installing a tool.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Relevant command, e.g. for getting or installing the tool.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:minLength value="1"/>
-										<xs:maxLength value="100"/>
-										<xs:whiteSpace value="collapse"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -1888,26 +1536,15 @@
 						<xs:complexContent>
 							<xs:restriction base="linkType">
 								<xs:sequence>
-									<xs:choice>
-										<xs:element name="url" type="urlftpType">
-											<xs:annotation>
-												<xs:documentation>Link to documentation on the web for the tool.</xs:documentation>
-												<xs:documentation>
-													<uiTip>Documentation link.</uiTip>
-													<biotoolsUsage>Detailed</biotoolsUsage>
-												</xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element ref="isAvailable">
-											<xs:annotation>
-												<xs:documentation>Used (with value of "false") when documentation of a certain type is known not to be available.</xs:documentation>
-												<xs:appinfo>
-													<uiTip>Set when a documentation link of a certain type is known not to be available.</uiTip>
-													<biotoolsUsage>Detailed</biotoolsUsage>
-												</xs:appinfo>
-											</xs:annotation>
-										</xs:element>
-									</xs:choice>
+									<xs:element name="url" type="urlftpType">
+										<xs:annotation>
+											<xs:documentation>Link to documentation on the web for the tool.</xs:documentation>
+											<xs:documentation>
+												<uiTip>Documentation link.</uiTip>
+												<biotoolsUsage>Detailed</biotoolsUsage>
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="type">
 										<xs:annotation>
 											<xs:documentation>Type of documentation that is linked to.</xs:documentation>
@@ -1978,12 +1615,17 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
-									<xs:element name="comment" type="textType" minOccurs="0">
+									<xs:element name="note" type="textType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Comment about the documentation.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the documentation.</uiTip>
 												<biotoolsUsage>Optional</biotoolsUsage>
+											</xs:appinfo>
+											<xs:appinfo>
+												<altova:exampleValues>
+													<altova:example value="Comment about the documentation."/>
+												</altova:exampleValues>
 											</xs:appinfo>
 										</xs:annotation>
 									</xs:element>
@@ -2001,95 +1643,84 @@
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
-						<xs:choice>
-							<xs:element ref="isAvailable" minOccurs="0">
+						<xs:sequence>
+							<xs:choice>
+								<xs:sequence>
+									<xs:element name="doi" type="doiType">
+										<xs:annotation>
+											<xs:appinfo>
+												<uiTip>Digital Object Identifier.</uiTip>
+												<biotoolsUsage>Basic details</biotoolsUsage>
+											</xs:appinfo>
+											<xs:documentation>Digital Object Identifier (DOI) of a publication about the software.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element ref="pmid" minOccurs="0"/>
+									<xs:element ref="pmcid" minOccurs="0"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="pmid"/>
+									<xs:element ref="pmcid" minOccurs="0"/>
+								</xs:sequence>
+								<xs:sequence>
+									<xs:element ref="pmcid"/>
+								</xs:sequence>
+							</xs:choice>
+							<xs:element name="type" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>Used (with value of "false") when a publication is known not to be available.</xs:documentation>
+									<xs:documentation>Type of publication. </xs:documentation>
 									<xs:appinfo>
-										<uiTip>Set when a publication is known not to be available.</uiTip>
-										<biotoolsUsage>Basic details</biotoolsUsage>
+										<uiTip>Type of publication.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>Primary</term>
+												<uiTip>The principal publication about the tool itself; the article to cite when acknowledging use of the tool.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Method</term>
+												<uiTip>A publication describing a scientific method or algorithm implemented by the tool.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Usage</term>
+												<uiTip>A publication describing the application of the tool to scientific research, a particular task or dataset.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Comparison</term>
+												<uiTip>A publication which assessed the performance of the tool.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Review</term>
+												<uiTip>A publication where the tool was reviewed.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Other</term>
+												<uiTip>A publication of relevance to the tool but not fitting the other categories.</uiTip>
+											</enumItem>
+										</enum>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="enumType">
+										<xs:enumeration value="Primary"/>
+										<xs:enumeration value="Method"/>
+										<xs:enumeration value="Usage"/>
+										<xs:enumeration value="Comparison"/>
+										<xs:enumeration value="Review"/>
+										<xs:enumeration value="Other"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="version" type="versionType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Version information (typically a version number) of the software applicable to this publication.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Software version number.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
-							<xs:sequence>
-								<xs:choice>
-									<xs:sequence>
-										<xs:element name="doi" type="doiType">
-											<xs:annotation>
-												<xs:appinfo>
-													<uiTip>Digital Object Identifier.</uiTip>
-													<biotoolsUsage>Basic details</biotoolsUsage>
-												</xs:appinfo>
-												<xs:documentation>Digital Object Identifier (DOI) of a publication about the software.</xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element ref="pmid" minOccurs="0"/>
-										<xs:element ref="pmcid" minOccurs="0"/>
-									</xs:sequence>
-									<xs:sequence>
-										<xs:element ref="pmid"/>
-										<xs:element ref="pmcid" minOccurs="0"/>
-									</xs:sequence>
-									<xs:sequence>
-										<xs:element ref="pmcid"/>
-									</xs:sequence>
-								</xs:choice>
-								<xs:element name="type" minOccurs="0">
-									<xs:annotation>
-										<xs:documentation>Type of publication. </xs:documentation>
-										<xs:appinfo>
-											<uiTip>Type of publication.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
-											<enum>
-												<enumItem>
-													<term>Primary</term>
-													<uiTip>The principal publication about the software itself; the article to cite when acknowledging use of the software.</uiTip>
-												</enumItem>
-												<enumItem>
-													<term>Method</term>
-													<uiTip>A publication describing a scientific method or algorithm implemented by the software.</uiTip>
-												</enumItem>
-												<enumItem>
-													<term>Usage</term>
-													<uiTip>A publication describing the application of the software to scientific research, a particular task or dataset.</uiTip>
-												</enumItem>
-												<enumItem>
-													<term>Comparison</term>
-													<uiTip>A publication which assessed the performance of the software.</uiTip>
-												</enumItem>
-												<enumItem>
-													<term>Review</term>
-													<uiTip>A publication where the software was reviewed.</uiTip>
-												</enumItem>
-												<enumItem>
-													<term>Other</term>
-													<uiTip>A publication of relevance to the software but not fitting the other cateogries.</uiTip>
-												</enumItem>
-											</enum>
-										</xs:appinfo>
-									</xs:annotation>
-									<xs:simpleType>
-										<xs:restriction base="enumType">
-											<xs:enumeration value="Primary"/>
-											<xs:enumeration value="Method"/>
-											<xs:enumeration value="Usage"/>
-											<xs:enumeration value="Comparison"/>
-											<xs:enumeration value="Review"/>
-											<xs:enumeration value="Other"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="version" type="versionType" minOccurs="0">
-									<xs:annotation>
-										<xs:documentation>Version information (typically a version number) of the software applicable to this publication.</xs:documentation>
-										<xs:appinfo>
-											<uiTip>Software version number.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
-										</xs:appinfo>
-									</xs:annotation>
-								</xs:element>
-							</xs:sequence>
-						</xs:choice>
+						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="credit" minOccurs="0" maxOccurs="unbounded">
@@ -2169,27 +1800,40 @@
 									</xs:element>
 								</xs:choice>
 								<xs:sequence>
-									<xs:element name="name">
-										<xs:annotation>
-											<xs:appinfo>
-												<uiTip>Name of credited entity.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
-											</xs:appinfo>
-											<xs:documentation>Name of the entity that is credited.</xs:documentation>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="Person or institute name"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="100"/>
-												<xs:whiteSpace value="collapse"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
+									<xs:choice>
+										<xs:sequence>
+											<xs:element name="name">
+												<xs:annotation>
+													<xs:appinfo>
+														<uiTip>Name of credited entity.</uiTip>
+														<biotoolsUsage>Optional</biotoolsUsage>
+													</xs:appinfo>
+													<xs:documentation>Name of the entity that is credited.</xs:documentation>
+													<xs:appinfo>
+														<altova:exampleValues>
+															<altova:example value="Person or institute name"/>
+														</altova:exampleValues>
+													</xs:appinfo>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:token">
+														<xs:minLength value="1"/>
+														<xs:maxLength value="100"/>
+														<xs:whiteSpace value="collapse"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element ref="email" minOccurs="0"/>
+											<xs:element ref="url" minOccurs="0"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element ref="email"/>
+											<xs:element ref="url" minOccurs="0"/>
+										</xs:sequence>
+										<xs:sequence>
+											<xs:element ref="url"/>
+										</xs:sequence>
+									</xs:choice>
 									<xs:element name="orcidid" minOccurs="0">
 										<xs:annotation>
 											<xs:appinfo>
@@ -2207,76 +1851,6 @@
 										<xs:simpleType>
 											<xs:restriction base="xs:token">
 												<xs:pattern value="http://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="gridid" minOccurs="0">
-										<xs:annotation>
-											<xs:appinfo>
-												<uiTip>GRID ID of organisation.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
-											</xs:appinfo>
-											<xs:documentation>Unique identifier (GRID ID) of an organisation that is credited. </xs:documentation>
-											<xs:documentation>Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.</xs:documentation>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="grid.5170.3"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:pattern value="grid.[0-9]{4,}.[a-f0-9]{1,2}"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="email" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>Email address of the entity that is credited.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>Email address of credited entity.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
-											</xs:appinfo>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="joebloggst@elixir-dk.org"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:whiteSpace value="collapse"/>
-												<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:element>
-									<xs:element name="url" type="urlType" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>URL for credited entity.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
-											</xs:appinfo>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="tel" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>Telephone number of the entity that is credited.</xs:documentation>
-											<xs:appinfo>
-												<uiTip>Telephone number of credited entity.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
-											</xs:appinfo>
-											<xs:appinfo>
-												<altova:exampleValues>
-													<altova:example value="+49-89-636-48018"/>
-												</altova:exampleValues>
-											</xs:appinfo>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:token">
-												<xs:minLength value="5"/>
-												<xs:maxLength value="50"/>
-												<xs:whiteSpace value="collapse"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
@@ -2377,7 +1951,7 @@
 									</xs:element>
 								</xs:sequence>
 							</xs:choice>
-							<xs:element name="comment" type="textType" minOccurs="0">
+							<xs:element name="note" type="textType" minOccurs="0">
 								<xs:annotation>
 									<xs:appinfo>
 										<uiTip>A comment about the credit.</uiTip>
@@ -2385,64 +1959,10 @@
 									</xs:appinfo>
 									<xs:documentation>A comment about the credit.</xs:documentation>
 									<xs:documentation>This can elaborate on the contribution of the credited entity.</xs:documentation>
-								</xs:annotation>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="elixirInfo" minOccurs="0">
-					<xs:annotation>
-						<xs:appinfo>
-							<uiTip>Information for ELIXIR internal purposes, maintained by ELIXIR Hub.</uiTip>
-							<biotoolsUsage>Unsupported</biotoolsUsage>
-						</xs:appinfo>
-						<xs:documentation>Information for ELIXIR internal purposes, maintained by ELIXIR Hub.</xs:documentation>
-						<xs:documentation>Information here is maintained by ELIXIR Hub for official ELIXIR services including Node-funded Services (i.e. services included in the Service Delivery Plan of an ELIXIR Node) and Commissioned Services (services commissioned by ELIXIR Hub and carried out by ELIXIR nodes).</xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="lastReviewExternalSab" type="xs:date">
-								<xs:annotation>
-									<xs:documentation>Date of last review by the External SAB.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>Date of last review by the External SAB.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-							</xs:element>
-							<xs:element name="lastReviewElixirSab" type="xs:date">
-								<xs:annotation>
-									<xs:documentation>Date of last review by the ELIXIR SAB.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Date of last review by the ELIXIR SAB.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-							</xs:element>
-							<xs:element name="inSDP" type="xs:boolean">
-								<xs:annotation>
-									<xs:documentation>Whether the resource is listed in a node Service Delivery Plan.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Whether the resource is listed in a node Service Delivery Plan.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-							</xs:element>
-							<xs:element name="isCoreDataResource" type="xs:boolean">
-								<xs:annotation>
-									<xs:documentation>Whether the resource is an official core data resource.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Whether the resource is an official core data resource.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-									</xs:appinfo>
-								</xs:annotation>
-							</xs:element>
-							<xs:element name="comment" type="textType" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>General comment.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>General comment.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
+										<altova:exampleValues>
+											<altova:example value="Comment about the credit."/>
+										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -2487,12 +2007,15 @@
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="http://someurl.org"/>
+					<altova:example value="ftp://someurl.org"/>
+					<altova:example value="https://someurl.org"/>
+					<altova:example value="sftp://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://.+"/>
-			<xs:pattern value="s?ftp://.+"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
+			<xs:pattern value="s?ftp://[^\s/$.?#].[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="urlType">
@@ -2500,12 +2023,13 @@
 			<xs:documentation>An HTTP or HTTPS URL.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
+					<altova:example value="https://someurl.org"/>
 					<altova:example value="http://someurl.org"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="https?://.+"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ontologyConcept">
@@ -2587,7 +2111,7 @@
 					<xs:sequence>
 						<xs:element name="uri">
 							<xs:annotation>
-								<xs:documentation>URL of an EDAM Forrmat concept.</xs:documentation>
+								<xs:documentation>URL of an EDAM Format concept.</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Format URL.</uiTip>
 									<biotoolsUsage>Comprehensive</biotoolsUsage>
@@ -2641,7 +2165,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="textType">
 		<xs:annotation>
-			<xs:documentation>Free text with a minimum length of 10 and maximum length of 1000.</xs:documentation>
+			<xs:documentation>Free text with a minimum length of 10 and maximum length of 1000.
+Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces are not allowed / will be removed.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:whiteSpace value="collapse"/>
@@ -2691,10 +2216,10 @@
 	<xs:simpleType name="biotoolsIdType">
 		<xs:annotation>
 			<xs:documentation>bio.tools tool ID.</xs:documentation>
-			<xs:documentation>bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. The tool ID must start with a letter or an underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
+			<xs:documentation>bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="signalp"/>
+					<altova:example value="needle"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 			<xs:documentation>bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
@@ -2715,7 +2240,7 @@
 					<altova:example value="1.1 - 1.4, 2.0-alpha, 2.0-beta-01 - 2.0-beta-04, 2.0.0"/>
 				</altova:exampleValues>
 			</xs:appinfo>
-			<xs:documentation>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:documentation>
+			<xs:documentation>The name has a 100 character limit and may only contain space, uppercase and lowercase English letters, decimal digits, plus symbol, period, comma, dash, colon, semicolon and parentheses.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="1"/>
@@ -2726,7 +2251,7 @@
 	</xs:simpleType>
 	<xs:element name="isAvailable">
 		<xs:annotation>
-			<xs:documentation>Set to false if informaton of a certain type is not available.</xs:documentation>
+			<xs:documentation>Set to false if information of a certain type is not available.</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="Not available"/>
@@ -2742,7 +2267,8 @@
 	<xs:simpleType name="nameType">
 		<xs:annotation>
 			<xs:documentation>Tool or collection name.</xs:documentation>
-			<xs:appinfo>The name has a 100 character limit and may only contain uppercase and lowercase letters, decimal digits, period, comma, dash, colon, plus symbol, semicolon and parentheses.</xs:appinfo>
+			<xs:appinfo>The name has a 100 character limit and may only contain space, uppercase and lowercase letters, decimal digits, plus symbol, period, comma, dash, underscore, colon, semicolon and parentheses.
+Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces are not allowed / will be removed.</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="1"/>
@@ -2751,4 +2277,33 @@
 			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:element name="email">
+		<xs:annotation>
+			<xs:documentation>Email address of the entity that is credited.</xs:documentation>
+			<xs:appinfo>
+				<uiTip>Email address of credited entity.</uiTip>
+				<biotoolsUsage>Optional</biotoolsUsage>
+			</xs:appinfo>
+			<xs:appinfo>
+				<altova:exampleValues>
+					<altova:example value="joebloggst@elixir-dk.org"/>
+				</altova:exampleValues>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:token">
+				<xs:whiteSpace value="collapse"/>
+				<xs:pattern value="[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="url" type="urlType">
+		<xs:annotation>
+			<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
+			<xs:appinfo>
+				<uiTip>URL for credited entity.</uiTip>
+				<biotoolsUsage>Optional</biotoolsUsage>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
 </xs:schema>
