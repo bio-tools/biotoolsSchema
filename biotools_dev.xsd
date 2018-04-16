@@ -738,7 +738,7 @@
 								<xs:annotation>
 									<xs:documentation>Software or data usage license.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>Software or data usage license.</uiTip>
+										<uiTip>Software or data usage license. For online services, this refers to the license of the underlying software or data.</uiTip>
 										<biotoolsUsage>Detailed</biotoolsUsage>
 									</xs:appinfo>
 									<xs:documentation>Identifier from the SPDX license list (https://spdx.org/licenses/).  In future, based on the supplied license, a label e.g. "Open-source" may be applied to the entry in bio.tools.</xs:documentation>
@@ -763,6 +763,7 @@
 										</enum>
 									</xs:appinfo>
 									<xs:documentation>Use "Proprietary" where the software must be obtained from the provider (e.g. for money), and is then owned.  Use "Unlicensed" for software which is not licensed and is not proprietary, and "Other" for software under license not currently supported by biotoolsSchema.</xs:documentation>
+									<xs:documentation>Note that for online services, the license attribute refers to the license of the underlying software or data, or a part of those.</xs:documentation>
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
