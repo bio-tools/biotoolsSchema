@@ -4,21 +4,16 @@
 
 biotoolsSchema defines over 50 important scientific, technical and administrative attributes that support cataloguing, discovery, use and interoperability of software.  It concentrates upon the salient common features, with a minimal core of 3 attributes only (name, short description and homepage), to provide maximum flexibility for applications.  To enable concise information, standard identifiers are used where possible, including [EDAM ontology](http://github.com/edamontology/edamontology) concept IDs for specialised scientific aspects.  biotoolsSchema defines 15 controlled vocabularies for technical tool aspects.  Verbose information is referred to by URL.
 
-biotoolsSchema is used by the ELIXIR Tools & Data Services Registry (`bio.tools <https://bio.tools>`_).
+biotoolsSchema is applicable to a broad range of [software types](http://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#tool-type) and is used by the ELIXIR Tools & Data Services Registry [bio.tools](https://bio.tools) ).
 
 
 # Documentation (for stable version 3.0.0rc-rev1):
 Comprehensive documentation is available 
-* [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under ```stable/docs/```)
+* [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under [/stable/docs/](https://github.com/bio-tools/biotoolsSchema/tree/master/stable/docs) )
 * [General docs](http://biotoolsschema.readthedocs.io/en/latest/)
 
-
-
 # Information standard
-biotoolsSchema together with the [EDAM ontology](https://github.com/edamontology/edamontology) provide the foundation for a [tools information standard](https://github.com/bio-tools/Tool-Information-Standard) for the desription of tools.  It is being adopted by bio.tools and defines the attributes that must be defined within a 5-tier scale of entry completeness and quality.
-
-# Software types 
-biotoolsSchema is applicable to a broad range of [software types](http://biotools.readthedocs.io/en/latest/curators_guide.html#tool-type).
+biotoolsSchema together with the [EDAM ontology](https://github.com/edamontology/edamontology) provide the foundation for an [information standard](https://github.com/bio-tools/Tool-Information-Standard) for the desription of tools.  This standard is being adopted by bio.tools and defines the attributes that must be defined within a 5-tier scale of entry completeness and quality.
 
 
 
