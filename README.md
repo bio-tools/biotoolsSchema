@@ -8,7 +8,7 @@ biotoolsSchema is applicable to a broad range of [software types](http://biotool
 
 
 # Documentation (for stable version 3.0.0rc-rev1):
-Comprehensive documentation is available 
+Comprehensive documentation is available: 
 * [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under [/stable/docs/](https://github.com/bio-tools/biotoolsSchema/tree/master/stable/docs) )
 * [General docs](http://biotoolsschema.readthedocs.io/en/latest/) (built from files maintained [here](https://github.com/bio-tools/biotoolsschemadocs/) )
 
