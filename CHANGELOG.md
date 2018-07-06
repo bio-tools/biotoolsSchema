@@ -7,6 +7,17 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+
+# July??? ??? 2018 biotoolsSchema-3.0.0.xsd released
+
+Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
+
+## Changed
+1. regex patterns on 'otherID->value' improved:
+   - case-insensitie prefixes *e.g.* "DOI" or "doi"
+   - 
+	
+	
 # March 1 2018 biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Added
 
