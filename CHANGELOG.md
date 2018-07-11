@@ -15,7 +15,7 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Changed
 1. regex patterns on 'otherID->value' improved:
    - case-insensitie prefixes *e.g.* "DOI" or "doi"
-   - 
+   - all regex values **must** be prefixed
 	
 	
 # March 1 2018 biotoolsSchema-3.0.0-rc-rev1.xsd released
