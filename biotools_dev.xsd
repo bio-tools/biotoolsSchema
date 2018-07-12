@@ -441,7 +441,7 @@
 									<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
 									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>Type of tool.  A tool may have more than one type reflecting its different facets.</uiTip>
+										<uiTip>Type of application software.  A tool may have more than one type.</uiTip>
 										<biotoolsUsage>Basic details</biotoolsUsage>
 										<enum>
 											<enumItem>
@@ -1039,7 +1039,7 @@
 							</xs:element>
 							<xs:element name="collectionID" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Tag for a collection that the software has been assigned to within bio.tools.</xs:documentation>
+									<xs:documentation>A tag which assigns the software to a collection in bio.tools.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Tag for a collection that the software has been assigned to within bio.tools.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -1056,7 +1056,7 @@
 							</xs:element>
 							<xs:element name="maturity" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>How mature the software product is.</xs:documentation>
+									<xs:documentation>Development stage of the software product.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>How mature the software product is.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -1116,7 +1116,7 @@
 							</xs:element>
 							<xs:element name="accessibility" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>Whether the software is freely available for use.</xs:documentation>
+									<xs:documentation>How freely available the software is for use.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Whether the software is freely available for use.</uiTip>
 										<biotoolsUsage>Highly detailed</biotoolsUsage>
@@ -1383,7 +1383,7 @@
 							</xs:element>
 							<xs:element name="note" type="textType" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>Comment about the download</xs:documentation>
+									<xs:documentation>Comment about the download.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the download.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
@@ -1394,123 +1394,6 @@
 										</altova:exampleValues>
 									</xs:appinfo>
 								</xs:annotation>
-							</xs:element>
-							<xs:element name="diskFormat" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Virtual machine disk image format.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Virtual machine image disk format.</uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-										<enum>
-											<enumItem>
-												<term>aki</term>
-												<uiTip>An Amazon kernel image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>ami</term>
-												<uiTip>An Amazon machine image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>ari</term>
-												<uiTip>An Amazon ramdisk image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>iso</term>
-												<uiTip>An archive format for the data contents of an optical disc, such as CD-ROM</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>qcow2</term>
-												<uiTip>Supported by the QEMU emulator that can expand dynamically and supports Copy on Write</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>raw</term>
-												<uiTip>An unstructured disk image format; if you have a file without an extension it is possibly a raw format</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>vdi</term>
-												<uiTip>Supported by VirtualBox virtual machine monitor and the QEMU emulator</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>vhd</term>
-												<uiTip>The VHD disk format, a common disk format used by virtual machine monitors from VMware, Xen, Microsoft, VirtualBox, and others</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>vmdk</term>
-												<uiTip>Common disk format supported by many common virtual machine monitors</uiTip>
-											</enumItem>
-										</enum>
-									</xs:appinfo>
-									<xs:documentation>The disk format of a virtual machine image is the format of the underlying disk image. Virtual appliance vendors have different formats for laying out the information contained in a virtual machine disk image. </xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="aki"/>
-										<xs:enumeration value="ami"/>
-										<xs:enumeration value="ari"/>
-										<xs:enumeration value="iso"/>
-										<xs:enumeration value="qcow2"/>
-										<xs:enumeration value="raw"/>
-										<xs:enumeration value="vdi"/>
-										<xs:enumeration value="vhd"/>
-										<xs:enumeration value="vmdk"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="containerFormat" minOccurs="0">
-								<xs:annotation>
-									<xs:documentation>Container format.</xs:documentation>
-									<xs:appinfo>
-										<uiTip>Virtual machine container format. A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </uiTip>
-										<biotoolsUsage>Unsupported</biotoolsUsage>
-										<enum>
-											<enumItem>
-												<term>aki</term>
-												<uiTip>An Amazon kernel image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>ami</term>
-												<uiTip>An Amazon machine image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>ari</term>
-												<uiTip>An Amazon ramdisk image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>bare</term>
-												<uiTip>The image does not have a container or metadata envelope</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>docker</term>
-												<uiTip>A docker container format</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>ovf</term>
-												<uiTip>The OVF container format</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>rkt</term>
-												<uiTip>Rocket container image</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>singularity </term>
-												<uiTip>Singularity container format</uiTip>
-											</enumItem>
-										</enum>
-									</xs:appinfo>
-									<xs:documentation>The container format indicates whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine. A value of ‘bare’ should be specified if there is no container or metadata envelope for the image. </xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="enumType">
-										<xs:enumeration value="aki"/>
-										<xs:enumeration value="ami"/>
-										<xs:enumeration value="ari"/>
-										<xs:enumeration value="bare"/>
-										<xs:enumeration value="docker"/>
-										<xs:enumeration value="ovf"/>
-										<xs:enumeration value="rkt"/>
-										<xs:enumeration value="singularity"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="version" type="versionType" minOccurs="0">
 								<xs:annotation>
