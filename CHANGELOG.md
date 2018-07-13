@@ -18,7 +18,9 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
    - all regex values **must** be prefixed
 2. 'elixirPlatform' moved from 'credit' to 'labels' and is now optional (0 or 1)
 3. 'elixirNode' moved from 'credit' to 'labels' and is now optional (0 or 1)
+4. Regex patter of 'orcidid' now supports "http" or "https" prefixes
 
+	
 ## Removed
 1. download->containerFormat removed
 2. download->diskFormat removed	
