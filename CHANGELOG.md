@@ -16,6 +16,8 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 1. regex patterns on 'otherID->value' improved:
    - case-insensitie prefixes *e.g.* "DOI" or "doi"
    - all regex values **must** be prefixed
+2. 'elixirPlatform' moved from 'credit' to 'labels' and is now optional (0 or 1)
+3. 'elixirNode' moved from 'credit' to 'labels' and is now optional (0 or 1)
 
 ## Removed
 1. download->containerFormat removed

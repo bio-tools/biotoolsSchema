@@ -1586,9 +1586,9 @@
 								<xs:simpleType>
 									<xs:restriction base="enumType">
 										<xs:enumeration value="Primary"/>
+										<xs:enumeration value="Comparison"/>
 										<xs:enumeration value="Method"/>
 										<xs:enumeration value="Usage"/>
-										<xs:enumeration value="Comparison"/>
 										<xs:enumeration value="Review"/>
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
