@@ -87,7 +87,7 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="textType">
-										<xs:maxLength value="500"/>
+										<xs:maxLength value="1000"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
