@@ -7,7 +7,7 @@ biotoolsSchema defines over 50 important scientific, technical and administrativ
 biotoolsSchema is applicable to a broad range of [software types](http://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#tool-type) and is used by the ELIXIR Tools & Data Services Registry [bio.tools](https://bio.tools) ).
 
 
-# Documentation (for stable version 3.0.0rc-rev1):
+# Documentation (for stable version 3.0.0):
 Comprehensive documentation is available: 
 * [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under [/stable/docs/](https://github.com/bio-tools/biotoolsSchema/tree/master/stable/docs) )
 * [General docs](http://biotoolsschema.readthedocs.io/en/latest/) (built from files maintained [here](https://github.com/bio-tools/biotoolsschemadocs/) )
