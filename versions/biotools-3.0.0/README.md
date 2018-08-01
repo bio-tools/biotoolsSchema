@@ -1,4 +1,4 @@
-# biotools-3.0.0-rc-rev1
+# biotools-3.0.0
 
 **biotoolsSchema** is a formalised XML schema (XSD) which defines a description model for bioinformatics software.  It can be used to describe bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).   This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  A broad range of software types (see below) are covered including tools available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.
 
@@ -8,10 +8,10 @@ biotoolsSchema is applicable to a broad range of [software types](http://biotool
 
 File | Description
 ---- | -----------
-biotools-3.0.0-rc-rev1.xsd | XML schema
-docs/biotools-3.0.0-rc-rev1.html | Full schema documentation
-example_files/biotools-3.0.0-rc-rev1.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
-example_files/biotools-3.0.0-rc-rev1_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
+biotools-3.0.0.xsd | XML schema
+docs/biotools-3.0.0.html | Full schema documentation
+example_files/biotools-3.0.0.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
+example_files/biotools-3.0.0_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
 
 
 
