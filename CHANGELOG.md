@@ -25,14 +25,15 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Removed
 1. ```download->containerFormat``` removed
 2. ```download->diskFormat``` removed
-	
-	
-	
+
+
+
 # March 1 2018 biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Added
 
 ## Changed
 1. All ```comment``` elements renamed to ```note```:
+
    1.1 credit->note
    1.2 documentation->note
    1.3 download->note
@@ -47,13 +48,16 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 2. ```apiSpec``` element grouping removed.  This can be reinstated as needed.
 3. ```relation``` element grouping removed.  This can be reinstated as needed.
 4. ```isAvailable``` elements removed: specification of information known to be unavailable (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst) will be handled internally by bio.tools
+
    4.1 ```publication->isAvailable```
    4.2 ```link->isAvailable```
    4.3 ```documentation->isAvailable```
    4.4 ```download->isAvailable```
 5. ```credit``` grouping streamlined
+
    5.1 ```credit->tel``` removed
    5.2 ```credit->gridid``` removed
+
 6. ```labels``` grouping streamlined
    6.1 ```labels->goTermID``` removed (will be reinstated as needed)
    6.2 ```labels->soTermID``` removed (will be reinstated as needed)
@@ -69,34 +73,42 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 # January 26 2018 biotoolsSchema-3.0.0-rc.xsd released
 
 ## Added
-1. ```isAvailable``` elements added to support the specification that an attribute is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst)
+	1. ```isAvailable``` elements added to support the specification that an attribute is not available for a tool (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst)
+	
    1.1 ```publication->isAvailable```
    1.2 ```linkType``` complexType as used in ```link->isAvailable``` and ```documentation->isAvailable```
    1.3 ```download->isAvailable```
 2. ```summary->otherID``` added ("A unique identifier of the software, typically assigned by an ID-assignment authority.")
+	
    2.1 ```summary->otherID->value``` (1 only), ```minlen``` facet of 1, is the value of the identifier (with appropriate regexs as per type, see below)
    2.2 ```summary->otherID->type``` (0 or 1) is enum of the identifier type (doi, rrid, cpe, biotoolsID)
    2.3 ```summary->otherID->version``` (0...1)  (see below)
 3. Version information refactored
+
    3.1 New ```versionType``` simpleType
    3.2 ```xs:token``` with facets ```minlen``` (1), ```maxlen``` (100)
    3.3 preserving pattern facet previously defined in ```summary->version```
 4. Version elements added:
-   3.1 ```summary->otherID->version``` (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
-   3.2 ```download->version``` (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
-   3.3 ```publication->version``` (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
+
+   4.1 ```summary->otherID->version``` (0...1) ("Version information (typically a version number) of the software applicable to this identififier.")
+   4.2 ```download->version``` (0...1) added ("Version information (typically a version number) of the software applicable to this download.")
+   4.3 ```publication->version``` (0...1) added ("Version information (typically a version number) of the software applicable to this publication.")
 5.  ```summary->biotoolsCURIE```added
+
    5.1 0...1 cardinality
    5.2 type of xs:anyURI
    5.3 regex is `biotools:[_a-zA-Z][_\-.0-9a-zA-Z]*`
 6. ```function->cmd``` added ("Relevant command, command-line fragment or option for executing this function / running the tool in this mode.")
+
    6.1 Type is xs:token
    6.2 ```minLen``` facet of 1
    6.3 ```maxLen``` facet of 100
 7. ```link->type``` enum extended:
+
    7.1 "Scientfic benchmark" ("Information about the scientific performance of a tool."
    7.2 "Technical monitoring" ("Information about the technical status of a tool."
 8. ```documentation->type``` enum extended:
+
    8.1 "Governance" ("Information about the software governance model.")
    8.2 "Contributions policy ("Information about policy for making contributions to the software project.")
    8.3 "Installation instructions" ("Instructions how to install the software.")
@@ -106,6 +118,7 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 
 ## Added / changed
 1. ```publication->type``` enum, mulitple modifications:
+
    1.1 "Primary" (no change) The principal publication about the software itself; the article to cite when acknowledging use of the software.
    1.2 "Method" (new!) A publication describing a scientific method or algorithm implemented by the software.
    1.3 "Usage" (new!) A publication describing the application of the software to scientific research, a particular task or dataset.
@@ -115,11 +128,13 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 
 ## Changed
 1. Elements that were mandatory are now optional:
+
    1.1 ```function``` (now 0...many)
    1.2 ```labels->toolType``` (now 0...many)
    1.3 ```labels->topic``` (now 0...many)
    1.4 ```labels``` (now 0...1)
 2. ```credit``` element group refactored (merging in attributes from old ```contact``` element group)
+
    2.1 Annotation chaned to "An individual or organisation that should be credited, or may be contacted about the software."
    2.2 ```credit->elixirPlatform``` and ```credit->elixirNode``` added (moved from ```elixirInfo```). In a credit one must specify 1) an ELIXIR platform or node name or 2) a credit with a name, a mandatory ID/means of contact and optional type and role (see the schema docs)
    2.3 ```credit->tel``` (telephone number) added ( ```minlen``` facet of 5, ```maxlen``` facet of 50)
@@ -131,27 +146,32 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
    2.9 ```credit->url``` now of ```urlTyp``` simpleType
 
 3. ```download->cmd``` refactored
+
    3.1 xs:token (was ```textType``` simple type)
    3.2  ```minLen``` facet set to 1
    3.3  ```maxLen``` facet set to 100
 4. ```biotoolsIdType``` refactored
+
    4.1 ```minLen``` facet removed (redundant).
    4.2 ```maxLen``` facet removed
 5. ```relation->biotoolsID``` refactored
+
    5.1 type changed from ```biotoolsUrlType``` to ```biotoolsIdType``` simple type
    5.2 name changed to ```biotoolsID```
 6. ```collectionID``` refactored
+
    6.1 type changes to nameType simpleType (was biotoolsCollectionIdType simpleType)
    6.2 ```minlen``` facet to 1, ```maxlen``` to 50
-8. Changes to elements in ```summary``` group:
-   8.1 ```summary->name``` element ```maxlen``` facet set to 100.
-   8.2 ```summary->version``` now 0...many (was 0 or 1)
-   8.3 ```summary->description``` ```maxlen``` facet now 500 (was 50)
-   8.4 ```summary->shortDescription``` ```maxlen``` facet now 100 (enforcing that the short desriptions really must be short!)
-   8.5 ```summary->shortDescription``` type set to ```textType``` (was ```xs:token```)
-   8.6 ```summary->toolid``` renamed to ```summary->biotoolsID```
-9. ```linkType->comment``` type set to textType (consistent with other free-text comments) (```linkType``` is complex type used by ```link->comment``` and ```documentation->comment``` elements)
-10. ```doiType``` simpleType and "pmid" global element refactored, to drop support for PMIDs and DOIs with "PMID:" and "DOI:" prefix respectively (regex```s changed)
+7. Changes to elements in ```summary``` group:
+
+   7.1 ```summary->name``` element ```maxlen``` facet set to 100.
+   7.2 ```summary->version``` now 0...many (was 0 or 1)
+   7.3 ```summary->description``` ```maxlen``` facet now 500 (was 50)
+   7.4 ```summary->shortDescription``` ```maxlen``` facet now 100 (enforcing that the short desriptions really must be short!)
+   7.5 ```summary->shortDescription``` type set to ```textType``` (was ```xs:token```)
+   7.6 ```summary->toolid``` renamed to ```summary->biotoolsID```
+8. ```linkType->comment``` type set to textType (consistent with other free-text comments) (```linkType``` is complex type used by ```link->comment``` and ```documentation->comment``` elements)
+9. ```doiType``` simpleType and "pmid" global element refactored, to drop support for PMIDs and DOIs with "PMID:" and "DOI:" prefix respectively (regex```s changed)
 
 
 	
@@ -212,15 +232,17 @@ A complete revision of the schema.  Too many changes to list, therefore the high
 
 ## Added : new enum values
 1. New values to <license> enum:
-"Other"
-"Proprietary"
-"Common Development and Distribution License (CDDL-1.0)"
+
+   * "Other"
+   * "Proprietary"
+   * "Common Development and Distribution License (CDDL-1.0)"
 
 2. New values to <language> enum:
-"AWK"
-"MATLAB"
-"JSP"
-"PyMOL"
+
+   * "AWK"
+   * "MATLAB"
+   * "JSP"
+   * "PyMOL"
 
 ## Changed : element name changes
 1. ```resources``` -> ```tools```
@@ -286,6 +308,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
 **potentially breaking change:**
 
 * ```maturity``` element enum values changed to:
+
   * "Early" (was "Nascent" or "Young" in biotoolsXSD 1.2)
   * "Stable" (was "Established" in biotoolsXSD 1.2)
   * "Deprecated" (was "Retiring" or "Extinct" in biotoolsXSD 1.2)
@@ -295,6 +318,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
 * ```resourceType``` element enum values removed: "Dataset", "Tool (query and retrieval), "Tool (analysis)", "Tool (deposition)", "Tool (visualiser)", "Tool (utility)", "Suite", "Framework", "Virtual machine", "Widget" and "Other"
 
 * New ```resourceType``` enum values are as follows:
+
    * "Database" (was "Database" or "Dataset" in biotoolsXSD 1.2)
    * "Tool" (was "Tool", "Tool (query and retrieval), "Tool (analysis)", "Tool (deposition)", "Tool (visualiser)", "Tool (utility)" or "Workflow" in biotoolsXSD 1.2)
    * "Service" (new in biotoolsXSD 1.3)
@@ -304,6 +328,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
    * "Library" (was "Library" or "Widget" in biotoolsXSD 1.2)
 
 * The definition of these resource types are:
+
    * "Database" - A collection of data, datasets, a registry etc.
    * "Tool" - Software which you can download, install, configure and run yourself.
    * "Service" - Software provided as a service and available for immediate use, e.g. on the Web.
@@ -315,6 +340,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
 * ```interfaceType``` element enum values removed:  "REST API", "URL", "SQL" and "SPARQL"
 
 * New ```interfaceType``` enum values are as follows:
+
    * "Command-line" (no change)
    * "Web UI" (no change)
    * "Desktop GUI" (no change)
@@ -324,6 +350,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
    * "QL" (new in biotoolsXSD 1.3, was "SQL" or "SPARQL" in biotoolsXSD 1.2)
 
 * The definition of these interface types are:
+
    * "Command line" - Text-based interface to a tool or service.
    * "Web UI" - Graphical user interface available on the Web.
    * "Desktop GUI" - Graphical user interface that runs on your own machine.
@@ -353,6 +380,7 @@ A complete revision of the schema.  Too many changes to list, therefore the high
 * maxLen facet restriction on all elements of type ```Text``` removed (was 512), such that the length restriction of 1000 (defined on ```Text```) applies
 * Single space added to ```Name``` simpleType pattern restriction, which is now  [\p{Zs}A-Za-z0-9\.,\-_:;]*
 * The following elements (all simpleType) changed type to simpleType ```Name```:
+
   * ```collection```
   * ```usesName```
   * ```function->input/output->dataHandle```
