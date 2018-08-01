@@ -4,11 +4,10 @@ biotoolsSchema is a formalised XML schema (XSD) which defines a description mode
 
 biotoolsSchema defines 50+ important scientific, technical and administrative attributes.  It concentrates upon the salient common features, with a minimal core of 7 attributes, mandating the necessary and sufficient information to support cataloguing and discovery of software.
 
-The ELIXIR Tools & Data Services Registry (https://bio.tools/) is undergoing a phased migration to biotoolSchema 3.0 beginning in Nov 2016.
 
 File | Description
 ---- | -----------
-biotools.xsd | Latest stable XML schema (currently v2.0.0)
+biotools.xsd | Latest stable XML schema (currently v3.0.0)
 docs/biotools.html | Full schema documentation
 example_files/biotools.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
 example_files/biotools_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
