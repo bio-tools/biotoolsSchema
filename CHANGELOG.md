@@ -8,23 +8,23 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 
-# July??? ??? 2018 biotoolsSchema-3.0.0.xsd released
+# August 01 2018 biotoolsSchema-3.0.0.xsd released
 
 Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 
 ## Changed
-1. regex patterns on 'otherID->value' improved:
+1. regex patterns on ```otherID->value``` improved:
    - case-insensitie prefixes *e.g.* "DOI" or "doi"
    - all regex values **must** be prefixed
-2. 'elixirPlatform' moved from 'credit' to 'labels' and is now optional (0 or 1)
-3. 'elixirNode' moved from 'credit' to 'labels' and is now optional (0 or 1)
-4. Regex patter of 'orcidid' now supports "http" or "https" prefixes
-5. 'summary->description' 'maxlen' facet now 100 (was 500)
+2. ```elixirPlatform``` moved from ```credit``` to ```labels``` and is now optional (0 or 1)
+3. ```elixirNode``` moved from ```credit``` to ```labels``` and is now optional (0 or 1)
+4. Regex pattern of ```orcidid``` now supports "http" or "https" prefixes
+5. ```summary->description``` ```maxlen``` facet now 100 (was 500)
 	
 	
 ## Removed
-1. download->containerFormat removed
-2. download->diskFormat removed	
+1. ```download->containerFormat``` removed
+2. ```download->diskFormat``` removed
 	
 	
 	
