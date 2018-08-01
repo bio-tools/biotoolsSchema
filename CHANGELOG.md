@@ -15,8 +15,8 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Changed
 1. regex patterns on ```otherID->value``` improved:
 
-   - case-insensitie prefixes *e.g.* "DOI" or "doi"
-   - all regex values **must** be prefixed
+   * case-insensitie prefixes *e.g.* "DOI" or "doi"
+   * all regex values **must** be prefixed
 2. ```elixirPlatform``` moved from ```credit``` to ```labels``` and is now optional (0 or 1)
 3. ```elixirNode``` moved from ```credit``` to ```labels``` and is now optional (0 or 1)
 4. Regex pattern of ```orcidid``` now supports "http" or "https" prefixes
@@ -35,11 +35,11 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Changed
 1. All ```comment``` elements renamed to ```note```:
 
-    1.1 credit->note
-    1.2 documentation->note
-    1.3 download->note
-    1.4 link->note
-    1.5 function->note
+   * credit->note
+   * documentation->note
+   * download->note
+   * link->note
+   * function->note
 2. ```credit``` refactored such that at least one of ```credit->name```, ```credit->email``` or ```credit->url``` is mandatory.
 
 ## Deprecated
@@ -50,20 +50,20 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 3. ```relation``` element grouping removed.  This can be reinstated as needed.
 4. ```isAvailable``` elements removed: specification of information known to be unavailable (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst) will be handled internally by bio.tools
 
-    4.1 ```publication->isAvailable```
-    4.2 ```link->isAvailable```
-    4.3 ```documentation->isAvailable```
-    4.4 ```download->isAvailable```
+   * ```publication->isAvailable```
+   * ```link->isAvailable```
+   * ```documentation->isAvailable```
+   * ```download->isAvailable```
 5. ```credit``` grouping streamlined
 
-    5.1 ```credit->tel``` removed
-    5.2 ```credit->gridid``` removed
+   * ```credit->tel``` removed
+   * ```credit->gridid``` removed
 
 6. ```labels``` grouping streamlined
 
-    6.1 ```labels->goTermID``` removed (will be reinstated as needed)
-    6.2 ```labels->soTermID``` removed (will be reinstated as needed)
-    6.3 ```labels->taxID``` removed (will be reinstated as needed)
+   * ```labels->goTermID``` removed (will be reinstated as needed)
+   * ```labels->soTermID``` removed (will be reinstated as needed)
+   * ```labels->taxID``` removed (will be reinstated as needed)
 7. ```download->cmd``` removed
 8. ```summary->shortDescription``` removed
 
