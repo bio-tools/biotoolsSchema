@@ -35,11 +35,11 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 ## Changed
 1. All ```comment``` elements renamed to ```note```:
 
-   * credit->note
-   * documentation->note
-   * download->note
-   * link->note
-   * function->note
+   * ```credit->note```
+   * ```documentation->note```
+   * ```download->note```
+   * ```link->note```
+   * ```function->note```
 2. ```credit``` refactored such that at least one of ```credit->name```, ```credit->email``` or ```credit->url``` is mandatory.
 
 ## Deprecated
@@ -48,7 +48,7 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 1. ```elixirInfo``` element grouping removed.  These data can be handled internally by ELIXIR Hub (or can be reinstated in future).
 2. ```apiSpec``` element grouping removed.  This can be reinstated as needed.
 3. ```relation``` element grouping removed.  This can be reinstated as needed.
-4. ```isAvailable``` elements removed: specification of information known to be unavailable (as required by the bio.tools information standard (https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst) will be handled internally by bio.tools
+4. ```isAvailable``` elements removed: specification of information known to be unavailable (as required by the bio.tools [information standard](https://github.com/bio-tools/biotoolsSchemaDocs/blob/master/information_requirement.rst) will be handled internally by bio.tools
 
    * ```publication->isAvailable```
    * ```link->isAvailable```
