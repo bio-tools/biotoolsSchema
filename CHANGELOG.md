@@ -21,7 +21,11 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 3. ```elixirNode``` moved from ```credit``` to ```labels``` and is now optional (0 or 1)
 4. Regex pattern of ```orcidid``` now supports "http" or "https" prefixes
 5. ```summary->description``` ```maxlen``` facet now 100 (was 500)
+6. Schema settings now are:
 
+   * ```elementFormDefault``` == ```qualified```
+   * ```attributeFormDefault``` == ```qualified```
+   * No target namespace
 
 ## Removed
 1. ```download->containerFormat``` removed
