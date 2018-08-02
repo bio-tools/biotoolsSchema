@@ -25,7 +25,7 @@ Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 
    * ```elementFormDefault``` == ```qualified```
    * ```attributeFormDefault``` == ```qualified```
-   * No target namespace
+   * No ```targetNamespace```
 
 ## Removed
 1. ```download->containerFormat``` removed
