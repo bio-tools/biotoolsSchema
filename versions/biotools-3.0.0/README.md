@@ -9,6 +9,7 @@ biotoolsSchema is applicable to a broad range of [software types](http://biotool
 File | Description
 ---- | -----------
 biotools-3.0.0.xsd | XML schema
+biotools-3.0.0.xsd-singletool | Version of schema that mandates a single tool only
 docs/biotools-3.0.0.html | Full schema documentation
 example_files/biotools-3.0.0.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
 example_files/biotools-3.0.0_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
