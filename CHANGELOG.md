@@ -7,6 +7,14 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# June 03 2019 biotoolsSchema-3.0.0.xsd released
+
+## Added
+1. ```tool->relation``` elements added: "Details of a relationship this software shares with other software registered in bio.tools."
+
+   * ```relation->biotoolsID``` : "bio.tools ID of an existing bio.tools entry which this software is related to."
+   * ```relation->type``` : "Type of relation between this and another registered software."  (isNewVersionOf, hasNewVersion, uses, usedBy, include, includedIn)
+
 
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 
