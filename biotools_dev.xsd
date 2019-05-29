@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by Jon Ison (private) -->
+<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Jon Ison (private) -->
 <!-- edited at GitHub (https://github.com) by Matus Kalas -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="tools">
@@ -1578,6 +1578,59 @@
 								</xs:sequence>
 							</xs:restriction>
 						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="relation" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Details of a relationship this software shares with other software registered in bio.tools.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="biotoolsID" type="biotoolsIdType">
+								<xs:annotation>
+									<xs:documentation>bio.tools ID of an existing bio.tools entry which this software is related to.</xs:documentation>
+									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="type">
+								<xs:annotation>
+									<xs:documentation>Type of relation between this and another registered software.</xs:documentation>
+									<xs:documentation>Certain relations may only be defined between certain types of tool.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Type of relation between this and another registered software.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+										<enum>
+											<enumItem>
+												<term>isNewVersionOf / hasNewVersion</term>
+												<uiTip>The software is a new version of an existing software, typically providing new or improved functionality.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>uses / usedBy</term>
+												<uiTip>The software provides an interface to or in some other way uses the functions of other software under the hood,e.g. invoking a command-line tool or calling a Web API, Web service or SPARQL endpoint to perform its function.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>includes / includedIn</term>
+												<uiTip>A workbench, toolkit or workflow includes some other, independently available, software.</uiTip>
+											</enumItem>
+										</enum>
+									</xs:appinfo>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="enumType">
+										<xs:enumeration value="isNewVersionOf"/>
+										<xs:enumeration value="hasNewVersion"/>
+										<xs:enumeration value="uses"/>
+										<xs:enumeration value="usedBy"/>
+										<xs:enumeration value="includes"/>
+										<xs:enumeration value="includedIn"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="publication" minOccurs="0" maxOccurs="unbounded">
