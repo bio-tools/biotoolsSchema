@@ -41,6 +41,7 @@ Description of changes are grouped as follows:
 
 3. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
 
+4. '''doiType''' pattern (as used in ```publication->doi```) removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)  Regex is now 10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/     *bio.tools* annotations will be refactored accordingly. 
 	
 	
 ## Deprecated

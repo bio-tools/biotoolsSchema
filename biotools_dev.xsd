@@ -164,7 +164,7 @@
 												<xs:documentation>Value of tool identifier.</xs:documentation>
 												<xs:appinfo>
 													<altova:exampleValues>
-														<altova:example value="DOI:10.1038/nmeth.1701"/>
+														<altova:example value="10.1038/nmeth.1701"/>
 														<altova:example value="RRID:SCR_001156"/>
 														<altova:example value="cpe:2.3:a:microsoft:internet_explorer:8.0.6001:beta:*:*:*:*:*:*"/>
 														<altova:example value="biotools:signalp"/>
@@ -177,7 +177,7 @@
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
-													<xs:pattern value="(doi|DOI):?10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+													<xs:pattern value="10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 													<xs:pattern value="(rrid|RRID):.+"/>
 													<xs:pattern value="(cpe|CPE):.+"/>
 													<xs:pattern value="(BIOTOOLS|biotools):[_\-.0-9a-zA-Z]*"/>
