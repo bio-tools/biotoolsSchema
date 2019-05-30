@@ -27,6 +27,11 @@ Description of changes are grouped as follows:
    * "FAQ" ("Frequently Asked Questions (and answers) about the software.")
    * "Release notes" ("Notes about a software release or changes to the software; a change log.")
 
+4. ```link->type``` enum extended:
+
+   * "Discussion forum" ("Online forum for user discussions about the software.")
+   * "Service" ("An online service that provides access (an interface) to the software.")
+   * "Other" ("Other type of link for software - the default if a more specific type is not available.")
 
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 

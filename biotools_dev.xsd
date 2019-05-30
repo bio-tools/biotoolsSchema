@@ -1249,6 +1249,10 @@
 														<uiTip>A website for browsing data.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>Discussion forum</term>
+														<uiTip>Online forum for user discussions about the software.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Helpdesk</term>
 														<uiTip>Helpdesk providing support in using the software.</uiTip>
 													</enumItem>
@@ -1281,8 +1285,16 @@
 														<uiTip>Information about the scientific performance of a tool.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>Service</term>
+														<uiTip>An online service that provides access (an interface) to the software.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Technical monitoring</term>
 														<uiTip>Information about the technical status of a tool.</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>Other</term>
+														<uiTip>Other type of link for software - the default if a more specific type is not available.</uiTip>
 													</enumItem>
 												</enum>
 											</xs:appinfo>
@@ -1290,15 +1302,18 @@
 										<xs:simpleType>
 											<xs:restriction base="enumType">
 												<xs:enumeration value="Browser"/>
+												<xs:enumeration value="Discussion forum"/>
 												<xs:enumeration value="Helpdesk"/>
 												<xs:enumeration value="Issue tracker"/>
 												<xs:enumeration value="Mailing list"/>
 												<xs:enumeration value="Mirror"/>
 												<xs:enumeration value="Registry"/>
 												<xs:enumeration value="Repository"/>
+												<xs:enumeration value="Service"/>
 												<xs:enumeration value="Social media"/>
 												<xs:enumeration value="Scientific benchmark"/>
 												<xs:enumeration value="Technical monitoring"/>
+												<xs:enumeration value="Other"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
