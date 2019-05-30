@@ -861,6 +861,7 @@
 										<xs:enumeration value="Intel"/>
 										<xs:enumeration value="Intel-ACPI"/>
 										<xs:enumeration value="Interbase-1.0"/>
+										<xs:enumeration value="Julia"/>
 										<xs:enumeration value="JSON"/>
 										<xs:enumeration value="JasPer-2.0"/>
 										<xs:enumeration value="LAL-1.2"/>
