@@ -1518,6 +1518,10 @@
 														<uiTip>Information on how to correctly cite use of the software.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>Command-line options</term>
+														<uiTip>Information about the command-line interface to a tool.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Contributions policy</term>
 														<uiTip>Information about policy for making contributions to the software project.</uiTip>
 													</enumItem>
@@ -1560,6 +1564,7 @@
 											<xs:restriction base="enumType">
 												<xs:enumeration value="API documentation"/>
 												<xs:enumeration value="Citation instructions"/>
+												<xs:enumeration value="Command-line options"/>
 												<xs:enumeration value="Contributions policy"/>
 												<xs:enumeration value="General"/>
 												<xs:enumeration value="Governance"/>
