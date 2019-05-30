@@ -37,6 +37,12 @@ Description of changes are grouped as follows:
 ## Changed
 1. ```function->cmd``` ```maxlen``` facet now 1000 (was 100)
 
+2. ```labels->elixirPlatform``` documentation improved : "ELIXIR platform credited for developing or providing the software."  (*bio.tools* tool tip will be improved)
+
+3. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
+
+	
+	
 ## Deprecated
 1. ```link->type``` enum restricted:
 

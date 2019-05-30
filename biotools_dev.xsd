@@ -1152,14 +1152,14 @@
 							</xs:element>
 							<xs:element name="elixirPlatform" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>ELIXIR platform.</xs:documentation>
+									<xs:documentation>ELIXIR platform credited for developing or providing the software.</xs:documentation>
 									<xs:appinfo>
 										<altova:exampleValues>
 											<altova:example value="Training"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 									<xs:appinfo>
-										<uiTip>ELIXIR platform.</uiTip>
+										<uiTip>ELIXIR platform credited for developing or providing the software.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
@@ -1175,14 +1175,14 @@
 							</xs:element>
 							<xs:element name="elixirNode" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>ELIXIR node.</xs:documentation>
+									<xs:documentation>ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan.</xs:documentation>
 									<xs:appinfo>
 										<altova:exampleValues>
 											<altova:example value="UK"/>
 										</altova:exampleValues>
 									</xs:appinfo>
 									<xs:appinfo>
-										<uiTip>ELIXIR node.</uiTip>
+										<uiTip>ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan.</uiTip>
 										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
