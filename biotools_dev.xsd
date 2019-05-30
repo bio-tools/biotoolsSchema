@@ -1546,6 +1546,10 @@
 														<uiTip>Information on how to use the software.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>Release notes</term>
+														<uiTip>Notes about a software release or changes to the software; a change log.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Terms of use</term>
 														<uiTip>Rules that one must agree to abide by in order to use a service.</uiTip>
 													</enumItem>
@@ -1575,6 +1579,7 @@
 												<xs:enumeration value="Governance"/>
 												<xs:enumeration value="Installation instructions"/>
 												<xs:enumeration value="Manual"/>
+												<xs:enumeration value="Release notes"/>
 												<xs:enumeration value="Terms of use"/>
 												<xs:enumeration value="Training material"/>
 												<xs:enumeration value="Tutorial"/>

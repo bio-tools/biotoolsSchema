@@ -25,6 +25,7 @@ Description of changes are grouped as follows:
 
    * "Command-line options" ("Information about the command-line interface to a tool.")
    * "FAQ" ("Frequently Asked Questions (and answers) about the software.")
+   * "Release notes" ("Notes about a software release or changes to the software; a change log.")
 
 
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
