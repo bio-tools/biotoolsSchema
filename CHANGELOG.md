@@ -48,6 +48,10 @@ Description of changes are grouped as follows:
 
    * "Browser" ("A website for browsing data.") removed.  Any existing annotations in *bio.tools* will be replaced by type "Other".
 
+
+## Misc
+	
+1. Pattern restricting a version number now appears in one place only (under ```versionType```) to avoid potential future inconsistencies.
 	
 	
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
