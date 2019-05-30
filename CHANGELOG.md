@@ -15,6 +15,10 @@ Description of changes are grouped as follows:
    * ```relation->biotoolsID``` : "bio.tools ID of an existing bio.tools entry which this software is related to."
    * ```relation->type``` : "Type of relation between this and another registered software."  (isNewVersionOf, hasNewVersion, uses, usedBy, include, includedIn)
 
+2. ```download->type``` enum extended:
+
+   * "Other" ("Other type of download for software - the default if a more specific type is not available.")
+   * "Downloads page" ("Web page summarising general downloads available for the software.")
 
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 

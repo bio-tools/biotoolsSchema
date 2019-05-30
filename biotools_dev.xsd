@@ -1419,8 +1419,12 @@
 												<uiTip>Virtual machine (VM) image for the software.</uiTip>
 											</enumItem>
 											<enumItem>
+												<term>Downloads page</term>
+												<uiTip>Web page summarising general downloads available for the software.</uiTip>
+											</enumItem>
+											<enumItem>
 												<term>Other</term>
-												<uiTip>Other type of download for software (the default if a more specifici type is not available).</uiTip>
+												<uiTip>Other type of download for software - the default if a more specific type is not available.</uiTip>
 											</enumItem>
 										</enum>
 									</xs:appinfo>
@@ -1445,6 +1449,7 @@
 										<xs:enumeration value="Tool wrapper (taverna)"/>
 										<xs:enumeration value="Tool wrapper (other)"/>
 										<xs:enumeration value="VM image"/>
+										<xs:enumeration value="Downloads page"/>
 										<xs:enumeration value="Other"/>
 									</xs:restriction>
 								</xs:simpleType>
