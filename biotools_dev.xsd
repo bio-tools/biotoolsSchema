@@ -1245,10 +1245,6 @@
 												<biotoolsUsage>Basic details</biotoolsUsage>
 												<enum>
 													<enumItem>
-														<term>Browser</term>
-														<uiTip>A website for browsing data.</uiTip>
-													</enumItem>
-													<enumItem>
 														<term>Discussion forum</term>
 														<uiTip>Online forum for user discussions about the software.</uiTip>
 													</enumItem>
@@ -1301,7 +1297,6 @@
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="enumType">
-												<xs:enumeration value="Browser"/>
 												<xs:enumeration value="Discussion forum"/>
 												<xs:enumeration value="Helpdesk"/>
 												<xs:enumeration value="Issue tracker"/>

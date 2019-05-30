@@ -36,8 +36,16 @@ Description of changes are grouped as follows:
 
 ## Changed
 1. ```function->cmd``` ```maxlen``` facet now 1000 (was 100)
+
+## Deprecated
+1. ```link->type``` enum restricted:
+
+   * "Browser" ("A website for browsing data.") removed.  Any existing annotations in *bio.tools* will be replaced by type "Other".
+
+	
 	
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
+
 
 Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
 
