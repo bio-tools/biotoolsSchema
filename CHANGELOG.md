@@ -33,6 +33,10 @@ Description of changes are grouped as follows:
    * "Service" ("An online service that provides access (an interface) to the software.")
    * "Other" ("Other type of link for software - the default if a more specific type is not available.")
 
+
+## Changed
+1. ```function->cmd``` ```maxlen``` facet now 1000 (was 100)
+	
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 
 Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released

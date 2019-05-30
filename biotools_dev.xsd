@@ -417,7 +417,7 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
-										<xs:maxLength value="100"/>
+										<xs:maxLength value="1000"/>
 										<xs:whiteSpace value="collapse"/>
 										<xs:minLength value="1"/>
 									</xs:restriction>
