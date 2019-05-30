@@ -1526,6 +1526,10 @@
 														<uiTip>Information about policy for making contributions to the software project.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>FAQ</term>
+														<uiTip>Frequently Asked Questions (and answers) about the software.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>General</term>
 														<uiTip>General documentation.</uiTip>
 													</enumItem>
@@ -1566,6 +1570,7 @@
 												<xs:enumeration value="Citation instructions"/>
 												<xs:enumeration value="Command-line options"/>
 												<xs:enumeration value="Contributions policy"/>
+												<xs:enumeration value="FAQ"/>
 												<xs:enumeration value="General"/>
 												<xs:enumeration value="Governance"/>
 												<xs:enumeration value="Installation instructions"/>

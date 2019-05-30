@@ -20,6 +20,13 @@ Description of changes are grouped as follows:
    * "Other" ("Other type of download for software - the default if a more specific type is not available.")
    * "Downloads page" ("Web page summarising general downloads available for the software.")
 
+
+3. ```documentation->type``` enum extended:
+
+   * "Command-line options" ("Information about the command-line interface to a tool.")
+   * "FAQ" ("Frequently Asked Questions (and answers) about the software.")
+
+
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 
 Changes since biotoolsSchema-3.0.0-rc-rev1.xsd released
