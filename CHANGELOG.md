@@ -43,20 +43,26 @@ Description of changes are grouped as follows:
 
 4. More stringent regex patterns to enforce correct use of fullstop ('.') character (this was not escaped before, meaning any character could be given):
 
-	* ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
+   * ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
 
    * ```dataType``` complexType (as used in ```function->input->data->uri```, ```function->output->data->uri```, ```function->input->format->uri``` and ```function->output->format->uri```).   Regex is now ```http://edamontology\.org/data_[0-9]{4}```
 
    * ```urltype``` simpleType as used in ```summary->homepage``` and ```credit->url```.  Regex is now ```http(s?)://[^\s/$.?#]*\.[^\s]*```
    * ```doitype``` simpleType as used in ```publication->doi```.  Regex is now ```10\.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+```
    * ```function->operation->uri```.  Regex is now ```http://edamontology\.org/operation_[0-9]{4}```
+   * ```doiType``` simpleType (see below)
    * *bio.tools* will be refactored if required
+
+5. '''doiType''' simpleType pattern (as used in ```publication->doi```)
+   * removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)
+   * enforces correct use of fullstop ('.') character
+   * supports ```[```, ```]```, ```<``` and ```>``` characters
+   * Regex are now ```10\.[0-9]{4,9}/[A-Za-z0-9:;\)\(_/.-]+``` and ```10\.[0-9]{4,9}/[\[\]&lt;&gt;A-Za-z0-9:;\)\(_/.-]+```
+   * *bio.tools* annotations will be refactored if required
 
 ## Fixed
 
-1. '''doiType''' pattern (as used in ```publication->doi```) removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)  Regex is now ```10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/```     *bio.tools* annotations will be refactored accordingly. 
-
-2. '''credit->orcidid''' pattern fixed:
+1. '''credit->orcidid''' pattern fixed:
 
    * removed requirement for "http(s?)://orcid.org/" prefix (which isn't  part of the ORCID sytnax)
    * added support for terminal 'X' character

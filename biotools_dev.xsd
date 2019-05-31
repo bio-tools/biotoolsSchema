@@ -2131,6 +2131,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:pattern value="10\.[0-9]{4,9}/[A-Za-z0-9:;\)\(_/.-]+"/>
+			<xs:pattern value="10\.[0-9]{4,9}/[\[\]&lt;&gt;A-Za-z0-9:;\)\(_/.-]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="textType">
