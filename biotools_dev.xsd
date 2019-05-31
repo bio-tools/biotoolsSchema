@@ -285,7 +285,7 @@
 														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:anyURI">
-																<xs:pattern value="http://edamontology.org/operation_[0-9]{4}"/>
+																<xs:pattern value="http://edamontology\.org/operation_[0-9]{4}"/>
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
@@ -1984,8 +1984,8 @@
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
-			<xs:pattern value="s?ftp://[^\s/$.?#].[^\s]*"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#]*\.[^\s]*"/>
+			<xs:pattern value="s?ftp://[^\s/$.?#]*\.[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="urlType">
@@ -2046,7 +2046,7 @@
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:anyURI">
-									<xs:pattern value="http://edamontology.org/data_[0-9]{4}"/>
+									<xs:pattern value="http://edamontology\.org/data_[0-9]{4}"/>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
@@ -2130,7 +2130,7 @@
 			<xs:documentation>Digital Object Identifier.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:pattern value="10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
+			<xs:pattern value="10\.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="textType">

@@ -41,15 +41,26 @@ Description of changes are grouped as follows:
 
 3. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
 
+4. More stringent regex patterns to enforce correct use of fullstop ('.') character:
+
+	* ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
+
+   * ```dataType``` complexType (as used in ```function->input->data->uri```, ```function->output->data->uri```, ```function->input->format->uri``` and ```function->output->format->uri```).   Regex is now ```http://edamontology\.org/data_[0-9]{4}```
+
+   * ```urltype``` simpleType as used in ```summary->homepage``` and ```credit->url```.  Regex is now ```http(s?)://[^\s/$.?#]*\.[^\s]*```
+   * ```doitype``` simpleType as used in ```publication->doi```.  Regex is now ```10\.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+```
+   * ```function->operation->uri```.  Regex is now ```http://edamontology\.org/operation_[0-9]{4}```
+   * *bio.tools* will be refactored if required
+
 ## Fixed
-	
-1. '''doiType''' pattern (as used in ```publication->doi```) removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)  Regex is now 10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/     *bio.tools* annotations will be refactored accordingly. 
+
+1. '''doiType''' pattern (as used in ```publication->doi```) removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)  Regex is now ```10.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+"/```     *bio.tools* annotations will be refactored accordingly. 
 
 2. '''credit->orcidid''' pattern fixed:
 
    * removed requirement for "http(s?)://orcid.org/" prefix (which isn't  part of the ORCID sytnax)
    * added support for terminal 'X' character
-   * Regex is now [0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}
+   * Regex is now ```[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]```
    * *bio.tools* annotations will be refactored accordingly. 
 
 ## Deprecated
