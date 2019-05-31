@@ -1999,7 +1999,7 @@
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="http(s?)://[^\s/$.?#].[^\s]*"/>
+			<xs:pattern value="http(s?)://[^\s/$.?#]*\.[^\s]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ontologyConcept">
