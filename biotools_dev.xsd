@@ -1820,7 +1820,7 @@
 									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:token">
-											<xs:pattern value="http(s?)://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
+											<xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
