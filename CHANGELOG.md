@@ -41,7 +41,7 @@ Description of changes are grouped as follows:
 
 3. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
 
-4. More stringent regex patterns to enforce correct use of fullstop ('.') character:
+4. More stringent regex patterns to enforce correct use of fullstop ('.') character (this was not escaped before, meaning any character could be given):
 
 	* ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
 
