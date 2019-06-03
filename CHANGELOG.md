@@ -78,7 +78,8 @@ Description of changes are grouped as follows:
 ## Misc
 	
 1. Pattern restricting a version number now appears in one place only (under ```versionType```) to avoid potential future inconsistencies.
-	
+
+2. Target and default namespace set to "https://bio.tools"
 	
 # August 01 2018 biotoolsSchema-3.0.0.xsd released
 
