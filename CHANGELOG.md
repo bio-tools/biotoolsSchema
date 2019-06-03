@@ -35,25 +35,28 @@ Description of changes are grouped as follows:
 
 
 ## Changed
-1. ```function->cmd``` ```maxlen``` facet now 1000 (was 100)
 
-2. ```labels->elixirPlatform``` documentation improved : "ELIXIR platform credited for developing or providing the software."  (*bio.tools* tool tip will be improved)
+1.  ```summary->homepage``` is now of ```urlftptype``` simpleType (was ```urltype``` simpleType) to support those entries (old tools in rare cases) which only have an FTP site for a homepage.
 
-3. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
+2. ```function->cmd``` ```maxlen``` facet now 1000 (was 100)
 
-4. More stringent regex patterns to enforce correct use of fullstop ('.') character (this was not escaped before, meaning any character could be given):
+3. ```labels->elixirPlatform``` documentation improved : "ELIXIR platform credited for developing or providing the software."  (*bio.tools* tool tip will be improved)
 
-   * ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
+4. ```labels->elixirNode``` documentation improved : "ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan." (*bio.tools* tool tip will be improved)
+
+5. More stringent regex patterns to enforce correct use of fullstop ('.') character (this was not escaped before, meaning any character could be given):
+
+   * ```urlftptype``` simpleType as used in ```linkType``` complexType (for ```link->url``` and ```documentation->url```) and for ```summary->homepage```, ```download->uri``` and ```labels->topic->uri```.   Regex's are now ```http(s?)://[^\s/$.?#]*\.[^\s]*```   and   ```s?ftp://[^\s/$.?#]*\.[^\s]*```
 
    * ```dataType``` complexType (as used in ```function->input->data->uri```, ```function->output->data->uri```, ```function->input->format->uri``` and ```function->output->format->uri```).   Regex is now ```http://edamontology\.org/data_[0-9]{4}```
 
-   * ```urltype``` simpleType as used in ```summary->homepage``` and ```credit->url```.  Regex is now ```http(s?)://[^\s/$.?#]*\.[^\s]*```
+   * ```urltype``` simpleType as used in ```credit->url```.  Regex is now ```http(s?)://[^\s/$.?#]*\.[^\s]*```
    * ```doitype``` simpleType as used in ```publication->doi```.  Regex is now ```10\.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+```
    * ```function->operation->uri```.  Regex is now ```http://edamontology\.org/operation_[0-9]{4}```
    * ```doiType``` simpleType (see below)
    * *bio.tools* will be refactored if required
 
-5. '''doiType''' simpleType pattern (as used in ```publication->doi```)
+6. '''doiType''' simpleType pattern (as used in ```publication->doi```)
    * removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)
    * enforces correct use of fullstop ('.') character
    * supports ```[```, ```]```, ```<``` and ```>``` characters

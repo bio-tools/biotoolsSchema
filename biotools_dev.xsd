@@ -91,7 +91,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="homepage" type="urlType">
+							<xs:element name="homepage" type="urlftpType">
 								<xs:annotation>
 									<xs:documentation>Homepage of the software, or some URL that best serves this purpose.</xs:documentation>
 									<xs:appinfo>
