@@ -7,7 +7,7 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
-# June 03 2019 biotoolsSchema-3.0.0.xsd released
+# June 03 2019 biotoolsSchema-3.1.0.xsd released
 
 ## Added
 1. ```tool->relation``` elements added: "Details of a relationship this software shares with other software registered in bio.tools."
@@ -53,14 +53,13 @@ Description of changes are grouped as follows:
    * ```urltype``` simpleType as used in ```credit->url```.  Regex is now ```http(s?)://[^\s/$.?#]*\.[^\s]*```
    * ```doitype``` simpleType as used in ```publication->doi```.  Regex is now ```10\.[0-9]{4,9}[A-Za-z0-9:;\)\(_/.-]+```
    * ```function->operation->uri```.  Regex is now ```http://edamontology\.org/operation_[0-9]{4}```
-   * ```doiType``` simpleType (see below)
    * *bio.tools* will be refactored if required
 
 6. '''doiType''' simpleType pattern (as used in ```publication->doi```)
    * removed requirement for "doi" or "DOI" prefix (which technically isn't part of the DOI sytnax)
    * enforces correct use of fullstop ('.') character
    * supports ```[```, ```]```, ```<``` and ```>``` characters
-   * Regex are now ```10\.[0-9]{4,9}/[A-Za-z0-9:;\)\(_/.-]+``` and ```10\.[0-9]{4,9}/[\[\]&lt;&gt;A-Za-z0-9:;\)\(_/.-]+```
+   * Regex are now ```10\.[0-9]{4,9}/[A-Za-z0-9:;\)\(_/.-]+``` and ```10\.[0-9]{4,9}/[\[\]&lt;&gt;A-Za-z0-9:;\)\(_/.-]+```  (the second pattern is more restrictive than the first - once we're happy this is OK just this more restrictive one will be needed)
    * *bio.tools* annotations will be refactored if required
 
 ## Fixed
