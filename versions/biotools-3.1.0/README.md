@@ -1,4 +1,4 @@
-# What is biotoolsSchema?
+# biotools-3.1.0
 
 **biotoolsSchema** is a formalised XML schema (XSD) which defines a description model for bioinformatics software.  It can be used to describe bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).   This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  A broad range of software types (see below) are covered including tools available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.
 
@@ -6,14 +6,13 @@ biotoolsSchema defines over 50 important scientific, technical and administrativ
 
 biotoolsSchema is applicable to a broad range of [software types](http://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#tool-type) and is used by the ELIXIR Tools & Data Services Registry [bio.tools](https://bio.tools) ).
 
-
-# Documentation (for stable version 3.1.0):
-Comprehensive documentation is available: 
-* [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under [/stable/docs/](https://github.com/bio-tools/biotoolsSchema/tree/master/stable/docs) )
-* [General docs](http://biotoolsschema.readthedocs.io/en/latest/) (built from files maintained [here](https://github.com/bio-tools/biotoolsschemadocs/) )
-
-# Information standard
-biotoolsSchema together with the [EDAM ontology](https://github.com/edamontology/edamontology) provide the foundation for an [information standard](https://github.com/bio-tools/Tool-Information-Standard) for the desription of tools.  This standard is being adopted by bio.tools and defines the attributes that must be defined within a 5-tier scale of entry completeness and quality.
+File | Description
+---- | -----------
+biotools-3.1.0.xsd | XML schema
+biotools-3.1.0.xsd-singletool | Version of schema that mandates a single tool only
+docs/biotools-3.1.0.html | Full schema documentation
+example_files/biotools-3.1.0.xml | Sample XML format file, including all non-mandatory elements and including 2 elements if marked as repeatable in the schema.
+example_files/biotools-3.1.0_mandatoryFieldsOnly.xml | Sample XML format file, including only mandatory elements and including only 1 element if marked as repeatable in the schema.
 
 
 
