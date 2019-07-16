@@ -90,7 +90,7 @@
 			<name>Person or institute name</name>
 			<email>joebloggst@elixir-dk.org</email>
 			<url>https://someurl.org</url>
-			<orcidid>0000-0002-1825-0097</orcidid>
+			<orcidid>https://orcid.org/0000-0002-1825-0097</orcidid>
 			<typeEntity>Person</typeEntity>
 			<typeRole>Primary contact</typeRole>
 			<note>Comment about the credit.</note>

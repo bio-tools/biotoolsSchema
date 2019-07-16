@@ -1814,14 +1814,14 @@
 										<xs:documentation>Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/. </xs:documentation>
 										<xs:appinfo>
 											<altova:exampleValues>
-												<altova:example value="0000-0002-1825-0097"/>
-												<altova:example value="0000-0002-1825-009X"/>
+												<altova:example value="https://orcid.org/0000-0002-1825-0097"/>
+												<altova:example value="https://orcid.org/0000-0002-1825-009X"/>
 											</altova:exampleValues>
 										</xs:appinfo>
 									</xs:annotation>
 									<xs:simpleType>
 										<xs:restriction base="xs:token">
-											<xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"/>
+											<xs:pattern value="https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
