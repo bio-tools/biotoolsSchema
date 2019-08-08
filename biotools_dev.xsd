@@ -642,6 +642,7 @@
 										<xs:enumeration value="Icarus"/>
 										<xs:enumeration value="Java"/>
 										<xs:enumeration value="JavaScript"/>
+										<xs:enumeration value="Julia"/>
 										<xs:enumeration value="JSP"/>
 										<xs:enumeration value="LabVIEW"/>
 										<xs:enumeration value="Lisp"/>
