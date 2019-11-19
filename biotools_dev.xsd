@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Jon Ison (private) -->
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by Jon Ison (private) -->
 <!-- edited at GitHub (https://github.com) by Matus Kalas -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="http://bio.tools" targetNamespace="http://bio.tools" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="tools">
@@ -446,6 +446,10 @@
 										<biotoolsUsage>Basic details</biotoolsUsage>
 										<enum>
 											<enumItem>
+												<term>Bioinformatics portal</term>
+												<uiTip>A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on.</uiTip>
+											</enumItem>
+											<enumItem>
 												<term>Command-line tool</term>
 												<uiTip>A tool with a text-based (command-line) interface.</uiTip>
 											</enumItem>
@@ -506,6 +510,7 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="enumType">
+										<xs:enumeration value="Bioinformatics portal"/>
 										<xs:enumeration value="Command-line tool"/>
 										<xs:enumeration value="Database portal"/>
 										<xs:enumeration value="Desktop application"/>
