@@ -455,7 +455,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Database portal</term>
-												<uiTip>A Web application, suite or workbench providing a portal to a biological database.</uiTip>
+												<uiTip>A Web site providing a portal to a biological database, typically allowing a user to browse, deposit, search, visualise, analyse or download data.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Desktop application</term>
