@@ -1276,7 +1276,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Repository</term>
-														<uiTip>Repository where source code, data and other files may be downloaded.</uiTip>
+														<uiTip>A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Social media</term>
