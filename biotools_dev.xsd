@@ -1392,10 +1392,6 @@
 												<uiTip>Icon of the software.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Ontology</term>
-												<uiTip>A file containing an ontology, controlled vocabulary, terminology etc.</uiTip>
-											</enumItem>
-											<enumItem>
 												<term>Screenshot</term>
 												<uiTip>Screenshot of the software.</uiTip>
 											</enumItem>
@@ -1451,7 +1447,6 @@
 										<xs:enumeration value="Container file"/>
 										<xs:enumeration value="CWL file"/>
 										<xs:enumeration value="Icon"/>
-										<xs:enumeration value="Ontology"/>
 										<xs:enumeration value="Software package"/>
 										<xs:enumeration value="Screenshot"/>
 										<xs:enumeration value="Source code"/>
