@@ -1260,7 +1260,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Helpdesk</term>
-														<uiTip>Helpdesk providing support in using the software.</uiTip>
+														<uiTip>A phone line, web site or email-based system providing help to the end-user of the software.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Issue tracker</term>
