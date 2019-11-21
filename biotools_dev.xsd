@@ -1518,7 +1518,7 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="type">
+									<xs:element name="type" maxOccurs="unbounded">
 										<xs:annotation>
 											<xs:documentation>Type of documentation that is linked to.</xs:documentation>
 											<xs:appinfo>
