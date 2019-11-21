@@ -1255,6 +1255,10 @@
 														<uiTip>Online forum for user discussions about the software.</uiTip>
 													</enumItem>
 													<enumItem>
+														<term>Galaxy service</term>
+														<uiTip>An online service providing the tool through the Galaxy platform.</uiTip>
+													</enumItem>
+													<enumItem>
 														<term>Helpdesk</term>
 														<uiTip>Helpdesk providing support in using the software.</uiTip>
 													</enumItem>
@@ -1288,7 +1292,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Service</term>
-														<uiTip>An online service that provides access (an interface) to the software.</uiTip>
+														<uiTip>An online service (other than Galaxy) that provides access (an interface) to the software.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Technical monitoring</term>
@@ -1304,6 +1308,7 @@
 										<xs:simpleType>
 											<xs:restriction base="enumType">
 												<xs:enumeration value="Discussion forum"/>
+												<xs:enumeration value="Galaxy service"/>
 												<xs:enumeration value="Helpdesk"/>
 												<xs:enumeration value="Issue tracker"/>
 												<xs:enumeration value="Mailing list"/>
