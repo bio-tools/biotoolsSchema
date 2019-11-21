@@ -26,7 +26,7 @@
 					<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="type" type="enumType">
+			<xs:element name="type" type="enumType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>The type of data or information that is obtained when the link is resolved.</xs:documentation>
 				</xs:annotation>
@@ -1041,7 +1041,8 @@
 										<xs:enumeration value="zlib-acknowledgement"/>
 										<xs:enumeration value="Proprietary"/>
 										<xs:enumeration value="Other"/>
-										<xs:enumeration value="Unlicensed"/>
+										<xs:enumeration value="Not licensed"/>
+										<xs:enumeration value="Freeware"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -1152,8 +1153,6 @@
 									<xs:restriction base="enumType">
 										<xs:enumeration value="Open access"/>
 										<xs:enumeration value="Restricted access"/>
-										<xs:enumeration value="Proprietary"/>
-										<xs:enumeration value="Freeware"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -1244,7 +1243,7 @@
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="type">
+									<xs:element name="type" maxOccurs="unbounded">
 										<xs:annotation>
 											<xs:documentation>The type of data, information or system that is obtained when the link is resolved.</xs:documentation>
 											<xs:appinfo>
@@ -1532,7 +1531,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Citation instructions</term>
-														<uiTip>Information on how to correctly cite use of the software.</uiTip>
+														<uiTip>Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Command-line options</term>
@@ -1559,8 +1558,8 @@
 														<uiTip>Instructions how to install the software.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Manual</term>
-														<uiTip>Information on how to use the software.</uiTip>
+														<term>User manual</term>
+														<uiTip>Information on how to use the software, tailored to the end-user.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Release notes</term>
@@ -1595,7 +1594,7 @@
 												<xs:enumeration value="General"/>
 												<xs:enumeration value="Governance"/>
 												<xs:enumeration value="Installation instructions"/>
-												<xs:enumeration value="Manual"/>
+												<xs:enumeration value="User manual"/>
 												<xs:enumeration value="Release notes"/>
 												<xs:enumeration value="Terms of use"/>
 												<xs:enumeration value="Training material"/>
@@ -1828,6 +1827,26 @@
 									<xs:simpleType>
 										<xs:restriction base="xs:token">
 											<xs:pattern value="https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="gridId" minOccurs="0">
+									<xs:annotation>
+										<xs:appinfo>
+											<uiTip>GRID ID of organisation.</uiTip>
+											<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+										</xs:appinfo>
+										<xs:documentation>Unique identifier (GRID ID) of an organisation that is credited. </xs:documentation>
+										<xs:documentation>Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.</xs:documentation>
+										<xs:appinfo>
+											<altova:exampleValues>
+												<altova:example value="grid.5170.3"/>
+											</altova:exampleValues>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:token">
+											<xs:pattern value="grid.[0-9]{4,}.[a-f0-9]{1,2}"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
