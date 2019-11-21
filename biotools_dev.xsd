@@ -1598,7 +1598,6 @@
 												<xs:enumeration value="Release notes"/>
 												<xs:enumeration value="Terms of use"/>
 												<xs:enumeration value="Training material"/>
-												<xs:enumeration value="Tutorial"/>
 												<xs:enumeration value="Other"/>
 											</xs:restriction>
 										</xs:simpleType>
