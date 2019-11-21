@@ -1275,8 +1275,8 @@
 														<uiTip>Mirror of an (identical) online service.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Registry</term>
-														<uiTip>Some registry, catalogue etc. other than bio.tools.</uiTip>
+														<term>Software catalogue</term>
+														<uiTip>Some registry, catalogue etc. other than bio.tools where the tool is also described..</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Repository</term>
@@ -1313,7 +1313,7 @@
 												<xs:enumeration value="Issue tracker"/>
 												<xs:enumeration value="Mailing list"/>
 												<xs:enumeration value="Mirror"/>
-												<xs:enumeration value="Registry"/>
+												<xs:enumeration value="Software catalogue"/>
 												<xs:enumeration value="Repository"/>
 												<xs:enumeration value="Service"/>
 												<xs:enumeration value="Social media"/>
