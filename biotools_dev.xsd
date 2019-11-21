@@ -1373,11 +1373,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Binaries</term>
-												<uiTip>Binaries for the software.</uiTip>
-											</enumItem>
-											<enumItem>
-												<term>Binary package</term>
-												<uiTip>Binary package for the software.</uiTip>
+												<uiTip>Binaries for the software; compiled code that allow a program to be installed without having to compile the source code.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Command-line specification</term>
@@ -1405,11 +1401,11 @@
 											</enumItem>
 											<enumItem>
 												<term>Source code</term>
-												<uiTip>Software source code.</uiTip>
+												<uiTip>The source code for the software, that can be compiled or assembled into an executable computer program.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Source package</term>
-												<uiTip>Source package (of various types) for the software.</uiTip>
+												<term>Software package</term>
+												<uiTip>A software package; a bundle of files and information about those files, typically including source code and / or binaries.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Test data</term>
@@ -1451,15 +1447,14 @@
 										<xs:enumeration value="API specification"/>
 										<xs:enumeration value="Biological data"/>
 										<xs:enumeration value="Binaries"/>
-										<xs:enumeration value="Binary package"/>
 										<xs:enumeration value="Command-line specification"/>
 										<xs:enumeration value="Container file"/>
 										<xs:enumeration value="CWL file"/>
 										<xs:enumeration value="Icon"/>
 										<xs:enumeration value="Ontology"/>
+										<xs:enumeration value="Software package"/>
 										<xs:enumeration value="Screenshot"/>
 										<xs:enumeration value="Source code"/>
-										<xs:enumeration value="Source package"/>
 										<xs:enumeration value="Test data"/>
 										<xs:enumeration value="Test script"/>
 										<xs:enumeration value="Tool wrapper (galaxy)"/>
