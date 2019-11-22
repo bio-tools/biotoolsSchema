@@ -1701,7 +1701,7 @@
 									<xs:element ref="pmcid"/>
 								</xs:sequence>
 							</xs:choice>
-							<xs:element name="type" minOccurs="0">
+							<xs:element name="type" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Type of publication. </xs:documentation>
 									<xs:appinfo>
