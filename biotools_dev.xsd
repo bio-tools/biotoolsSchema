@@ -1755,6 +1755,20 @@
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
+							<xs:element name="note" type="textType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Comment about the publication.</xs:documentation>
+									<xs:appinfo>
+										<uiTip>Comment about the publication.</uiTip>
+										<biotoolsUsage>Optional</biotoolsUsage>
+									</xs:appinfo>
+									<xs:appinfo>
+										<altova:exampleValues>
+											<altova:example value="Comment about the publication."/>
+										</altova:exampleValues>
+									</xs:appinfo>
+								</xs:annotation>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
