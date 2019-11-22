@@ -1384,10 +1384,6 @@
 												<uiTip>Container file including the software.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>CWL file</term>
-												<uiTip>Common Workflow Language (CWL) file for the software.</uiTip>
-											</enumItem>
-											<enumItem>
 												<term>Icon</term>
 												<uiTip>Icon of the software.</uiTip>
 											</enumItem>
@@ -1412,15 +1408,19 @@
 												<uiTip>Script used for testing testing whether the software is working correctly.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Tool wrapper (galaxy)</term>
+												<term>Tool wrapper (CWL)</term>
+												<uiTip>Tool wrapper in Common Workflow Language (CWL) for the software.</uiTip>
+											</enumItem>
+											<enumItem>
+												<term>Tool wrapper (Galaxy)</term>
 												<uiTip>Galaxy tool configuration file (wrapper) for the software.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Tool wrapper (taverna)</term>
+												<term>Tool wrapper (Taverna)</term>
 												<uiTip>Taverna configuration file for the software.  </uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Tool wrapper (other)</term>
+												<term>Tool wrapper (Other)</term>
 												<uiTip>Workbench configuration file (other than taverna, galaxy or CWL wrapper) for the software.</uiTip>
 											</enumItem>
 											<enumItem>
@@ -1445,16 +1445,16 @@
 										<xs:enumeration value="Binaries"/>
 										<xs:enumeration value="Command-line specification"/>
 										<xs:enumeration value="Container file"/>
-										<xs:enumeration value="CWL file"/>
 										<xs:enumeration value="Icon"/>
 										<xs:enumeration value="Software package"/>
 										<xs:enumeration value="Screenshot"/>
 										<xs:enumeration value="Source code"/>
 										<xs:enumeration value="Test data"/>
 										<xs:enumeration value="Test script"/>
-										<xs:enumeration value="Tool wrapper (galaxy)"/>
-										<xs:enumeration value="Tool wrapper (taverna)"/>
-										<xs:enumeration value="Tool wrapper (other)"/>
+										<xs:enumeration value="Tool wrapper (CWL)"/>
+										<xs:enumeration value="Tool wrapper (Galaxy)"/>
+										<xs:enumeration value="Tool wrapper (Taverna)"/>
+										<xs:enumeration value="Tool wrapper (Other)"/>
 										<xs:enumeration value="VM image"/>
 										<xs:enumeration value="Downloads page"/>
 										<xs:enumeration value="Other"/>
