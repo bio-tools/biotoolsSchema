@@ -1287,10 +1287,6 @@
 														<uiTip>A website used by the software community including social networking sites, discussion and support fora, WIKIs etc.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Scientific benchmark</term>
-														<uiTip>Information about the scientific performance of a tool.</uiTip>
-													</enumItem>
-													<enumItem>
 														<term>Service</term>
 														<uiTip>An online service (other than Galaxy) that provides access (an interface) to the software.</uiTip>
 													</enumItem>
@@ -1317,7 +1313,6 @@
 												<xs:enumeration value="Repository"/>
 												<xs:enumeration value="Service"/>
 												<xs:enumeration value="Social media"/>
-												<xs:enumeration value="Scientific benchmark"/>
 												<xs:enumeration value="Technical monitoring"/>
 												<xs:enumeration value="Other"/>
 											</xs:restriction>
@@ -1726,7 +1721,7 @@
 												<uiTip>A publication describing the application of the tool to scientific research, a particular task or dataset.</uiTip>
 											</enumItem>
 											<enumItem>
-												<term>Comparison</term>
+												<term>Benchmarking study</term>
 												<uiTip>A publication which assessed the performance of the tool.</uiTip>
 											</enumItem>
 											<enumItem>
@@ -1743,7 +1738,7 @@
 								<xs:simpleType>
 									<xs:restriction base="enumType">
 										<xs:enumeration value="Primary"/>
-										<xs:enumeration value="Comparison"/>
+										<xs:enumeration value="Benchmarking study"/>
 										<xs:enumeration value="Method"/>
 										<xs:enumeration value="Usage"/>
 										<xs:enumeration value="Review"/>
