@@ -10,7 +10,7 @@ Description of changes are grouped as follows:
 # November 25 2019 biotoolsSchema-3.2.0.xsd released
 
 ## Added
-* ```publication->note`` element added: "Comment about the publication."
+* ```publication->note``` element added: *"Comment about the publication."*
 
 ## Changed
 
