@@ -13,6 +13,9 @@ Description of changes are grouped as follows:
 * [[177](https://github.com/bio-tools/biotoolsSchema/issues/177)] ```publication->note``` element added: *"Comment about the publication."*
 * [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridId``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
 * [[162](https://github.com/bio-tools/biotoolsSchema/issues/162)] ```documentation->type``` enum extended with *Code of conduct*: *"A set of guidelines or rules outlining the norms, expectations, responsibilities and proper practice for individuals working within the software project."*
+* [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
+An online service providing the tool through the Galaxy platform."*
+
 
 ## Changed
 Changes enabling more precise annotation and simpler==cleaner data:
