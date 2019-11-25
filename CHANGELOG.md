@@ -11,12 +11,12 @@ Description of changes are grouped as follows:
 
 ## Added
 * [[177](https://github.com/bio-tools/biotoolsSchema/issues/177)] ```publication->note``` element added: *"Comment about the publication."*
-* [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridId``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
+* [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridid``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
 * [[162](https://github.com/bio-tools/biotoolsSchema/issues/162)] ```documentation->type``` enum extended with *Code of conduct*: *"A set of guidelines or rules outlining the norms, expectations, responsibilities and proper practice for individuals working within the software project."*
 * [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
 An online service providing the tool through the Galaxy platform."*
 * [[149](https://github.com/bio-tools/biotoolsSchema/issues/149)] ```toolType``` enum extended with *Bioinformatics portal*: *"A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on."* : although not really "tools" this is pragmatic to include (lots of entries in *bio.tools* match this description).
-* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidId``` regex pattern now supports ```http://``` (as well as ```https://``)
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidid``` regex pattern now supports ```http://``` (as well as ```https://``)
 
 
 ## Changed
