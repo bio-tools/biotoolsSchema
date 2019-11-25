@@ -141,7 +141,6 @@
 									<xs:documentation>Version information (typically a version number) of the software applicable to this bio.tools entry.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Version information (typically a version number) of the software applicable to this bio.tools entry.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -153,7 +152,6 @@
 									<xs:documentation>A unique identifier of the software, typically assigned by an ID-assignment authority other than bio.tools.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique identifier of the software not (typically) assigned by bio.tools.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
 									</xs:appinfo>
 									<xs:documentation>This field is not normally used for bio.tools toolIDs, but could be in the exceptional case that multiple such IDs were needed for a given entry.</xs:documentation>
 								</xs:annotation>
@@ -172,7 +170,7 @@
 												</xs:appinfo>
 												<xs:appinfo>
 													<uiTip>Value of tool identifier.</uiTip>
-													<biotoolsUsage>Optional</biotoolsUsage>
+													
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
@@ -189,7 +187,7 @@
 												<xs:documentation>Type of tool identifier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Type of tool identifier.</uiTip>
-													<biotoolsUsage>Optional</biotoolsUsage>
+													
 													<enum>
 														<enumItem>
 															<term>doi</term>
@@ -232,7 +230,7 @@
 												<xs:documentation>Version information (typically a version number) of the software applicable to this identifier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Software version number.</uiTip>
-													<biotoolsUsage>Optional</biotoolsUsage>
+													
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
@@ -390,7 +388,7 @@
 									<xs:documentation>Concise comment about this function, if not apparent from the software description and EDAM annotations.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>General comment about function.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -407,7 +405,7 @@
 									<xs:documentation>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:documentation>Minimum 1 and maximum 1000 characters.</xs:documentation>
 									<xs:appinfo>
@@ -1050,7 +1048,7 @@
 									<xs:documentation>A tag which assigns the software to a collection in bio.tools.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Tag for a collection that the software has been assigned to within bio.tools.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1067,7 +1065,7 @@
 									<xs:documentation>Development stage of the software product.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>How mature the software product is.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>Emerging</term>
@@ -1165,7 +1163,7 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<uiTip>ELIXIR platform credited for developing or providing the software.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1188,7 +1186,7 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<uiTip>ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1322,7 +1320,7 @@
 											<xs:documentation>Comment about the link.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the link.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
+												
 											</xs:appinfo>
 											<xs:appinfo>
 												<altova:exampleValues>
@@ -1465,7 +1463,7 @@
 									<xs:documentation>Comment about the download.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the download.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1479,7 +1477,7 @@
 									<xs:documentation>Version information (typically a version number) of the software applicable to this download.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software version number.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1601,7 +1599,7 @@
 											<xs:documentation>Comment about the documentation.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the documentation.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
+												
 											</xs:appinfo>
 											<xs:appinfo>
 												<altova:exampleValues>
@@ -1627,7 +1625,7 @@
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1637,7 +1635,7 @@
 									<xs:documentation>Certain relations may only be defined between certain types of tool.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of relation between this and another registered software.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>isNewVersionOf / hasNewVersion</term>
@@ -1705,7 +1703,7 @@
 									<xs:documentation>Type of publication. </xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of publication.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>Primary</term>
@@ -1750,7 +1748,7 @@
 									<xs:documentation>Version information (typically a version number) of the software applicable to this publication.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software version number.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1759,7 +1757,7 @@
 									<xs:documentation>Comment about the publication.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the publication.</uiTip>
-										<biotoolsUsage>Optional</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1776,7 +1774,7 @@
 						<xs:documentation>An individual or organisation that should be credited, or may be contacted about the software.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>An individual or organisation that should be credited, or may be contacted about the software.</uiTip>
-							<biotoolsUsage>Optional</biotoolsUsage>
+							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1787,7 +1785,7 @@
 										<xs:annotation>
 											<xs:appinfo>
 												<uiTip>Name of credited entity.</uiTip>
-												<biotoolsUsage>Optional</biotoolsUsage>
+												
 											</xs:appinfo>
 											<xs:documentation>Name of the entity that is credited.</xs:documentation>
 											<xs:appinfo>
@@ -1820,7 +1818,7 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>ORCID iD of person.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
+											
 										</xs:appinfo>
 										<xs:documentation>Unique identifier (ORCID iD) of a person that is credited.</xs:documentation>
 										<xs:documentation>Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/. </xs:documentation>
@@ -1864,7 +1862,7 @@
 										<xs:documentation>Type of entity that is credited.</xs:documentation>
 										<xs:appinfo>
 											<uiTip>Type of entity that is credited.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
+											
 											<enum>
 												<enumItem>
 													<term>Person</term>
@@ -1908,7 +1906,7 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>Role performed by credited entity.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
+											
 											<enum>
 												<enumItem>
 													<term>Developer</term>
@@ -1958,7 +1956,7 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>A comment about the credit.</uiTip>
-											<biotoolsUsage>Optional</biotoolsUsage>
+											
 										</xs:appinfo>
 										<xs:documentation>A comment about the credit.</xs:documentation>
 										<xs:documentation>This can elaborate on the contribution of the credited entity.</xs:documentation>
@@ -1991,7 +1989,7 @@
 					<xs:documentation>Allowed format(s) of the data: EDAM Format term(s).</xs:documentation>
 					<xs:appinfo>
 						<uiTip>Allowed format(s) of the data: EDAM Format term(s).</uiTip>
-						<biotoolsUsage>Recommended</biotoolsUsage>
+						
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2286,7 +2284,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:documentation>Email address of the entity that is credited.</xs:documentation>
 			<xs:appinfo>
 				<uiTip>Email address of credited entity.</uiTip>
-				<biotoolsUsage>Optional</biotoolsUsage>
+				
 			</xs:appinfo>
 			<xs:appinfo>
 				<altova:exampleValues>
@@ -2306,7 +2304,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
 			<xs:appinfo>
 				<uiTip>URL for credited entity.</uiTip>
-				<biotoolsUsage>Optional</biotoolsUsage>
+				
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
