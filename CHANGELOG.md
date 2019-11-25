@@ -13,7 +13,7 @@ Description of changes are grouped as follows:
 * ```publication->note``` element added: *"Comment about the publication."*
 
 ## Changed
-* ```publication->type``` cardinality now ```0...many``` (was ```0...1```) : to enable more precise annotation and simpler data
+* ```publication->type``` cardinality now *0...many* (was *0...1*) : to enable more precise annotation and simpler data
 
 ## Deprecated
 
