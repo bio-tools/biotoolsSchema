@@ -11,7 +11,7 @@ Description of changes are grouped as follows:
 
 ## Added
 * ```publication->note``` element added: *"Comment about the publication."*
-* **credit->gridId** element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : more ID types will be needed in future
+* **credit->gridId** element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
 
 ## Changed
 * ```publication->type``` cardinality now *0...many* (was *0...1*) : enables more precise annotation and simpler data
