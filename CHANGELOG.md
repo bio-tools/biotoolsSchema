@@ -24,6 +24,7 @@ Other changes:
 * [[173](https://github.com/bio-tools/biotoolsSchema/issues/173)] ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
 * [[167](https://github.com/bio-tools/biotoolsSchema/issues/167)] ```download->type``` value of *CWL file* changed to *Tool wrapper (CWL)* and redefined to *"Tool wrapper in Common Workflow Language (CWL) format for the software."* : to make it consistent with the other types of tool wrapper that are supported. 
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```publication-type``` enum value *Comparison* changed to *Benchmarking study* and redefined as *"A publication which assessed the performance of the tool"* : makes it more explicit and more useful.
+* [[156](https://github.com/bio-tools/biotoolsSchema/issues/156)] ```link-type``` enum value *Registry* changed to *Software catalogue* and redefined as *"Some registry, catalogue etc. other than bio.tools where the tool is also described."* : makes it clearer.
 
 ## Deprecated
 
