@@ -27,7 +27,7 @@ Other changes:
 * [[156](https://github.com/bio-tools/biotoolsSchema/issues/156)] ```link-type``` enum value *Registry* changed to *Software catalogue* and redefined as *"Some registry, catalogue etc. other than bio.tools where the tool is also described."* : makes it clearer.
 * [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
-*"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*.
+*"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
 
 
 ## Deprecated
