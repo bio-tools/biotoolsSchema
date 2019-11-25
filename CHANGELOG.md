@@ -17,6 +17,7 @@ Description of changes are grouped as follows:
 * [[176](https://github.com/bio-tools/biotoolsSchema/issues/176)] ```publication->type``` cardinality now *0...many* (was *0...1*) : enables more precise annotation and simpler data
 * [[174](https://github.com/bio-tools/biotoolsSchema/issues/174)] ```documentation->type``` cardinality now *1...many* (was *1 only*) : enables more precise annotation and simpler data
 * [[173](https://github.com/bio-tools/biotoolsSchema/issues/173)] ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
+* [[167](https://github.com/bio-tools/biotoolsSchema/issues/167)] ```download->type``` value of *CWL file* changed to *Tool wrapper (CWL)* and redefined to *"Tool wrapper in Common Workflow Language (CWL) format for the software."* : to make it consistent with the other types of tool wrapper that are supported. 
 
 ## Deprecated
 
