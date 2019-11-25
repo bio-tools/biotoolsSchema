@@ -31,7 +31,7 @@ Other changes:
 * [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
 *"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
-
+* [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
 
 ## Deprecated
 
