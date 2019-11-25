@@ -24,12 +24,14 @@ Description of changes are grouped as follows:
 
 ## Removed
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```link-type``` enum value *Scientific benchmark* removed : it was conflated / redundant with ```publication->type``` of *Benchmarking study* 
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binary package* and *Source package* replaced by *Software package* defined as *"A software package; a bundle of files and information about those files, typically including source code and / or binaries"* : to simplify the model / reflect reality better.
 
 ## Fixed
 
 ## Misc
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
-
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."* : makes it clearer.
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* : makes it clearer.
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
