@@ -38,6 +38,7 @@ Other changes:
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."* : makes it clearer.
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* : makes it clearer.
+* [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* : makes it clearer.
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
