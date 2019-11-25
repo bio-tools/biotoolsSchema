@@ -47,6 +47,7 @@ Other changes:
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* : makes it clearer.
 * [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* : makes it clearer.
 * [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* : makes it clearer.
+* [[153](https://github.com/bio-tools/biotoolsSchema/issues/153)] ```link->type``` enum value *Service* redefined as *"An online service (other than Galaxy) that provides access (an interface) to the software."* : makes it clearer.
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
