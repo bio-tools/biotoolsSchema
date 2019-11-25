@@ -26,6 +26,9 @@ Other changes:
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```publication-type``` enum value *Comparison* changed to *Benchmarking study* and redefined as *"A publication which assessed the performance of the tool"* : makes it more explicit and more useful.
 * [[156](https://github.com/bio-tools/biotoolsSchema/issues/156)] ```link-type``` enum value *Registry* changed to *Software catalogue* and redefined as *"Some registry, catalogue etc. other than bio.tools where the tool is also described."* : makes it clearer.
 * [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
+*"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*.
+
 
 ## Deprecated
 
@@ -34,6 +37,7 @@ Other changes:
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binary package* and *Source package* replaced by *Software package* defined as *"A software package; a bundle of files and information about those files, typically including source code and / or binaries"* : to simplify the model / reflect reality better.
 * [[161](https://github.com/bio-tools/biotoolsSchema/issues/161)] ```documentation-type``` enum value *Tutorial* removed : it was not needed given the general-purpose *Training material*, which is now redefined as *"Online training material such as a tutorial, a presentation, video etc."* : out of bitoolsSchema scope to describe all the different types of training material!
 * [[159](https://github.com/bio-tools/biotoolsSchema/issues/159)] ```download-type``` enum value *Ontology* removed : too much of an edge-case to justify keeping. 
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` enum value *Proprietary* and *Freeware* removed : it was conflated / redundant with ```license``` 
 
 ## Fixed
 
