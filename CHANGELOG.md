@@ -42,12 +42,15 @@ Other changes:
 ## Fixed
 
 ## Misc
+Redefinition of enum values to make their meaning clearer:
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."*
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* 
+* [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* 
+* [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* 
+* [[153](https://github.com/bio-tools/biotoolsSchema/issues/153)] ```link->type``` enum value *Service* redefined as *"An online service (other than Galaxy) that provides access (an interface) to the software."* 
+
+Other:
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
-* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."* : makes it clearer.
-* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* : makes it clearer.
-* [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* : makes it clearer.
-* [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* : makes it clearer.
-* [[153](https://github.com/bio-tools/biotoolsSchema/issues/153)] ```link->type``` enum value *Service* redefined as *"An online service (other than Galaxy) that provides access (an interface) to the software."* : makes it clearer.
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
