@@ -15,7 +15,7 @@ Description of changes are grouped as follows:
 ## Changed
 * ```publication->type``` cardinality now *0...many* (was *0...1*) : enables more precise annotation and simpler data
 * ```documentation->type``` cardinality now *1...many* (was *1 only*) : enables more precise annotation and simpler data
-* ```license->type``` enum changed *"Unlicensed"* to *"Not licensed"* : to avoid confusion with the *"Unlicense"* license
+* ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
 
 ## Deprecated
 
