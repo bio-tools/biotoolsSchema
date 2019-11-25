@@ -31,6 +31,7 @@ Other changes:
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```link-type``` enum value *Scientific benchmark* removed : it was conflated / redundant with ```publication->type``` of *Benchmarking study* 
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binary package* and *Source package* replaced by *Software package* defined as *"A software package; a bundle of files and information about those files, typically including source code and / or binaries"* : to simplify the model / reflect reality better.
 * [[161](https://github.com/bio-tools/biotoolsSchema/issues/161)] ```documentation-type``` enum value *Tutorial* removed : it was not needed given the general-purpose *Training material*, which is now redefined as *"Online training material such as a tutorial, a presentation, video etc."* : out of bitoolsSchema scope to describe all the different types of training material!
+* [[159](https://github.com/bio-tools/biotoolsSchema/issues/159)] ```download-type``` enum value *Ontology* removed : too much of an edge-case to justify keeping. 
 
 ## Fixed
 
