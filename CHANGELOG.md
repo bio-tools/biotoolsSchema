@@ -11,8 +11,13 @@ Description of changes are grouped as follows:
 
 ## Added
 * [[177](https://github.com/bio-tools/biotoolsSchema/issues/177)] ```publication->note``` element added: *"Comment about the publication."*
-* [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridId``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
+* [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridid``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
 * [[162](https://github.com/bio-tools/biotoolsSchema/issues/162)] ```documentation->type``` enum extended with *Code of conduct*: *"A set of guidelines or rules outlining the norms, expectations, responsibilities and proper practice for individuals working within the software project."*
+* [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
+An online service providing the tool through the Galaxy platform."*
+* [[149](https://github.com/bio-tools/biotoolsSchema/issues/149)] ```toolType``` enum extended with *Bioinformatics portal*: *"A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on."* : although not really "tools" this is pragmatic to include (lots of entries in *bio.tools* match this description).
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidid``` regex pattern now supports ```http://``` (as well as ```https://``)
+
 
 ## Changed
 Changes enabling more precise annotation and simpler==cleaner data:
@@ -26,6 +31,11 @@ Other changes:
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```publication-type``` enum value *Comparison* changed to *Benchmarking study* and redefined as *"A publication which assessed the performance of the tool"* : makes it more explicit and more useful.
 * [[156](https://github.com/bio-tools/biotoolsSchema/issues/156)] ```link-type``` enum value *Registry* changed to *Software catalogue* and redefined as *"Some registry, catalogue etc. other than bio.tools where the tool is also described."* : makes it clearer.
 * [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
+*"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
+* [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```.``` character now escaped consistently in all regex patterns.
+
 
 ## Deprecated
 
@@ -34,15 +44,24 @@ Other changes:
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binary package* and *Source package* replaced by *Software package* defined as *"A software package; a bundle of files and information about those files, typically including source code and / or binaries"* : to simplify the model / reflect reality better.
 * [[161](https://github.com/bio-tools/biotoolsSchema/issues/161)] ```documentation-type``` enum value *Tutorial* removed : it was not needed given the general-purpose *Training material*, which is now redefined as *"Online training material such as a tutorial, a presentation, video etc."* : out of bitoolsSchema scope to describe all the different types of training material!
 * [[159](https://github.com/bio-tools/biotoolsSchema/issues/159)] ```download-type``` enum value *Ontology* removed : too much of an edge-case to justify keeping. 
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` enum value *Proprietary* and *Freeware* removed : it was conflated / redundant with ```license``` 
 
 ## Fixed
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```labels->license``` enum value *Julia* removed (it's a programming language!)
 
 ## Misc
+Redefinition of enum values to make their meaning clearer:
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."*
+* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* 
+* [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* 
+* [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* 
+* [[153](https://github.com/bio-tools/biotoolsSchema/issues/153)] ```link->type``` enum value *Service* redefined as *"An online service (other than Galaxy) that provides access (an interface) to the software."* 
+* [[150](https://github.com/bio-tools/biotoolsSchema/issues/150)] ```toolType``` enum value *Database portal* redefined as *"A Web site providing a portal to a biological database, typically allowing a user to browse, deposit, search, visualise, analyse or download data."* 
+
+Other:
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
-* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."* : makes it clearer.
-* [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* : makes it clearer.
-* [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* : makes it clearer.
-* [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* : makes it clearer.
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```doi``` regex pattern now consistent wherever it's used (```otherId->value``` and ```publication->doi```).
+
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
