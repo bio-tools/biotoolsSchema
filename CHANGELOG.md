@@ -22,6 +22,7 @@ Description of changes are grouped as follows:
 ## Deprecated
 
 ## Removed
+* [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```link-type``` enum value *Scientific benchmark* removed : it was conflated / redundant with ```publication->type``` of *Benchmarking study* 
 
 ## Fixed
 
