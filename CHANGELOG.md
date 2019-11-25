@@ -10,13 +10,13 @@ Description of changes are grouped as follows:
 # November 25 2019 biotoolsSchema-3.2.0.xsd released
 
 ## Added
-* ```publication->note``` element added: *"Comment about the publication."*
-* **credit->gridId** element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
+* [[177](https://github.com/bio-tools/biotoolsSchema/issues/177)] ```publication->note``` element added: *"Comment about the publication."*
+* [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] **credit->gridId** element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
 
 ## Changed
-* ```publication->type``` cardinality now *0...many* (was *0...1*) : enables more precise annotation and simpler data
-* ```documentation->type``` cardinality now *1...many* (was *1 only*) : enables more precise annotation and simpler data
-* ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
+* [[176](https://github.com/bio-tools/biotoolsSchema/issues/176)] ```publication->type``` cardinality now *0...many* (was *0...1*) : enables more precise annotation and simpler data
+* [[174](https://github.com/bio-tools/biotoolsSchema/issues/174)] ```documentation->type``` cardinality now *1...many* (was *1 only*) : enables more precise annotation and simpler data
+* [[173](https://github.com/bio-tools/biotoolsSchema/issues/173)] ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
 
 ## Deprecated
 
