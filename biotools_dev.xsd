@@ -52,7 +52,7 @@
 						<xs:documentation>Basic information about the software.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Basic information about the software.</uiTip>
-							<biotoolsUsage>Sparse</biotoolsUsage>
+							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -62,7 +62,7 @@
 									<xs:documentation>Canonical software name assigned by the software developer or service provider.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software name.</uiTip>
-										<biotoolsUsage>Sparse</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -77,7 +77,7 @@
 									<xs:documentation>This can be a few sentences copy-pasted from the software homepage.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software description, e.g. a few sentences adapted from the software publication abstract or homepage.</uiTip>
-										<biotoolsUsage>Sparse</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -96,7 +96,7 @@
 									<xs:documentation>Homepage of the software, or some URL that best serves this purpose.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Homepage of the software, or some URL that best serves this purpose.</uiTip>
-										<biotoolsUsage>Sparse</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -110,7 +110,7 @@
 									<xs:documentation>Unique ID (case insensitive) of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Unique ID of the tool that is assigned upon registration of the software in bio.tools.</uiTip>
-										<biotoolsUsage>Sparse</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:documentation>bio.tools IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 								</xs:annotation>
@@ -121,7 +121,7 @@
 									<xs:documentation>The bio.tools CURIE is simply the bio.tools tool ID with the prefix "biotools:".</xs:documentation>
 									<xs:appinfo>
 										<uiTip>bio.tools CURIE (compact URI) based on the bio.tools tool ID.</uiTip>
-										<biotoolsUsage>Sparse</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -170,7 +170,6 @@
 												</xs:appinfo>
 												<xs:appinfo>
 													<uiTip>Value of tool identifier.</uiTip>
-													
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
@@ -187,7 +186,6 @@
 												<xs:documentation>Type of tool identifier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Type of tool identifier.</uiTip>
-													
 													<enum>
 														<enumItem>
 															<term>doi</term>
@@ -230,7 +228,6 @@
 												<xs:documentation>Version information (typically a version number) of the software applicable to this identifier.</xs:documentation>
 												<xs:appinfo>
 													<uiTip>Software version number.</uiTip>
-													
 												</xs:appinfo>
 											</xs:annotation>
 											<xs:simpleType>
@@ -248,7 +245,7 @@
 						<xs:documentation>Details of a function (i.e. mode of operation) the software provides, expressed in concepts from the EDAM ontology.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Details of a function the software provides, expressed in terms from the EDAM ontology.</uiTip>
-							<biotoolsUsage>Detailed</biotoolsUsage>
+							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -259,7 +256,7 @@
 									<xs:documentation>An EDAM Operation concept URL and / or term are specified, e.g. "Multiple sequence alignment", http://edamontology.org/operation_0492.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Operation performed (EDAM operation).</uiTip>
-										<biotoolsUsage>Detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:complexType>
@@ -272,7 +269,7 @@
 															<xs:documentation>URL of an EDAM Operation concept.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Operation URL.</uiTip>
-																<biotoolsUsage>Detailed</biotoolsUsage>
+																
 															</xs:appinfo>
 															<xs:documentation>The URL must be in the EDAM Operation namespace, i.e. http://edamontology.org/operation_.</xs:documentation>
 															<xs:appinfo>
@@ -292,7 +289,7 @@
 															<xs:documentation>An EDAM Operation term (preferred label or synonym).</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Operation term (preferred label or synonym).</uiTip>
-																<biotoolsUsage>Detailed</biotoolsUsage>
+																
 															</xs:appinfo>
 															<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 															<xs:appinfo>
@@ -314,7 +311,7 @@
 									<xs:documentation>Details of primary input data.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Details of primary input data.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:complexType>
@@ -326,7 +323,7 @@
 														<xs:documentation>Type of primary input data, if any (EDAM data). </xs:documentation>
 														<xs:appinfo>
 															<uiTip>Input data type (EDAM data).</uiTip>
-															<biotoolsUsage>Highly detailed</biotoolsUsage>
+															
 														</xs:appinfo>
 														<xs:documentation>An EDAM Data concept URL and / or term are specified, e.g. "Protein sequences", http://edamontology.org/data_2976. </xs:documentation>
 													</xs:annotation>
@@ -336,7 +333,7 @@
 														<xs:documentation>Allowed format(s) of the input data (EDAM Format). </xs:documentation>
 														<xs:appinfo>
 															<uiTip>Input data format (EDAM format).</uiTip>
-															<biotoolsUsage>Comprehensive</biotoolsUsage>
+															
 														</xs:appinfo>
 														<xs:appinfo>An EDAM Format concept URL and / or term are specified, e.g. "FASTA", http://edamontology.org/format_1929.</xs:appinfo>
 													</xs:annotation>
@@ -351,7 +348,7 @@
 									<xs:documentation>Details of primary output data.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Details of primary output data.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:complexType>
@@ -363,7 +360,7 @@
 														<xs:documentation>Type of primary output data, if any (EDAM Data).</xs:documentation>
 														<xs:appinfo>
 															<uiTip>Output data type (EDAM data).</uiTip>
-															<biotoolsUsage>Highly detailed</biotoolsUsage>
+															
 														</xs:appinfo>
 														<xs:documentation>An EDAM Data concept URL and (optionally) term are specified, e.g. "Sequence alignment", http://edamontology.org/data_0863.</xs:documentation>
 													</xs:annotation>
@@ -373,7 +370,7 @@
 														<xs:documentation>Allowed format(s) of the output data (EDAM Format).</xs:documentation>
 														<xs:appinfo>
 															<uiTip>Output data format (EDAM format).</uiTip>
-															<biotoolsUsage>Comprehensive</biotoolsUsage>
+															
 														</xs:appinfo>
 														<xs:appinfo>An EDAM Format concept URL and (optionally) term are specified, e.g. “FASTA-aln”, http://edamontology.org/format_1984.</xs:appinfo>
 													</xs:annotation>
@@ -388,7 +385,6 @@
 									<xs:documentation>Concise comment about this function, if not apparent from the software description and EDAM annotations.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>General comment about function.</uiTip>
-										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -405,7 +401,6 @@
 									<xs:documentation>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Relevant command, command-line fragment or option for executing this function / running the tool in this mode.</uiTip>
-										
 									</xs:appinfo>
 									<xs:documentation>Minimum 1 and maximum 1000 characters.</xs:documentation>
 									<xs:appinfo>
@@ -430,7 +425,7 @@
 						<xs:documentation>Miscellaneous scientific, technical and administrative details of the software, expressed in terms from controlled vocabularies.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Miscellaneous scientific, technical and administrative details of the software, expressed in terms from controlled vocabularies.</uiTip>
-							<biotoolsUsage>Basic details</biotoolsUsage>
+							>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -441,7 +436,7 @@
 									<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of application software.  A tool may have more than one type.</uiTip>
-										<biotoolsUsage>Basic details</biotoolsUsage>
+										>
 										<enum>
 											<enumItem>
 												<term>Bioinformatics portal</term>
@@ -532,7 +527,7 @@
 									<xs:documentation>An EDAM Topic concept URL and / or term are specified, e.g. "Proteomics", http://edamontology.org/topic_0121.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Scientific topic (EDAM Topic).</uiTip>
-										<biotoolsUsage>Basic details</biotoolsUsage>
+										>
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:complexType>
@@ -545,7 +540,7 @@
 															<xs:documentation>URL of an EDAM Topic concept.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Topic URL.</uiTip>
-																<biotoolsUsage>Basic details</biotoolsUsage>
+																>
 															</xs:appinfo>
 															<xs:documentation>The URL must be in the EDAM Topic namespace, i.e. http://edamontology.org/topic_.</xs:documentation>
 															<xs:appinfo>
@@ -566,7 +561,7 @@
 															<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 															<xs:appinfo>
 																<uiTip>EDAM Topic term (preferred label or synonym).</uiTip>
-																<biotoolsUsage>Basic details</biotoolsUsage>
+																>
 															</xs:appinfo>
 															<xs:appinfo>
 																<altova:exampleValues>
@@ -587,7 +582,7 @@
 									<xs:documentation>The operating system supported by a downloadable software.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Operating system supported by a downloadable software package.</uiTip>
-										<biotoolsUsage>Detailed</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>Linux</term>
@@ -617,7 +612,7 @@
 									<xs:documentation>Name of programming language, e.g. used for the software source code or compatible with an API.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Source code language.</uiTip>
-										<biotoolsUsage>Detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -686,7 +681,7 @@
 									<xs:documentation>Software or data usage license.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software or data usage license. For online services, this refers to the license of the underlying software or data.</uiTip>
-										<biotoolsUsage>Detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 									<xs:documentation>Identifier from the SPDX license list (https://spdx.org/licenses/).  In future, based on the supplied license, a label e.g. "Open-source" may be applied to the entry in bio.tools.</xs:documentation>
 									<xs:appinfo>
@@ -1048,7 +1043,6 @@
 									<xs:documentation>A tag which assigns the software to a collection in bio.tools.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Tag for a collection that the software has been assigned to within bio.tools.</uiTip>
-										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1065,7 +1059,6 @@
 									<xs:documentation>Development stage of the software product.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>How mature the software product is.</uiTip>
-										
 										<enum>
 											<enumItem>
 												<term>Emerging</term>
@@ -1095,7 +1088,7 @@
 									<xs:documentation>Monetary cost of acquiring the software.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Monetary cost of acquiring the software.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>Free of charge</term>
@@ -1125,7 +1118,7 @@
 									<xs:documentation>How freely available the software is for use.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Whether the software is freely available for use.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>Open access</term>
@@ -1163,7 +1156,6 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<uiTip>ELIXIR platform credited for developing or providing the software.</uiTip>
-										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1186,7 +1178,6 @@
 									</xs:appinfo>
 									<xs:appinfo>
 										<uiTip>ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan.</uiTip>
-										
 									</xs:appinfo>
 								</xs:annotation>
 								<xs:simpleType>
@@ -1224,7 +1215,7 @@
 						<xs:documentation>A miscellaneous link for the software e.g. repository, issue tracker or mailing list.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>A miscellaneous link for the software e.g. repository, issue tracker or mailing list.</uiTip>
-							<biotoolsUsage>Basic details</biotoolsUsage>
+							>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1236,7 +1227,7 @@
 											<xs:documentation>A link of some relevance to the software (URL).</xs:documentation>
 											<xs:documentation>
 												<uiTip>Miscellaneous link.</uiTip>
-												<biotoolsUsage>Basic details</biotoolsUsage>
+												>
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
@@ -1245,7 +1236,7 @@
 											<xs:documentation>The type of data, information or system that is obtained when the link is resolved.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Type of thing linked to.</uiTip>
-												<biotoolsUsage>Basic details</biotoolsUsage>
+												>
 												<enum>
 													<enumItem>
 														<term>Discussion forum</term>
@@ -1320,7 +1311,6 @@
 											<xs:documentation>Comment about the link.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the link.</uiTip>
-												
 											</xs:appinfo>
 											<xs:appinfo>
 												<altova:exampleValues>
@@ -1339,7 +1329,7 @@
 						<xs:documentation>A link to a download for the software, e.g. source code, virtual machine image or container.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>A link to a download for the software, e.g. source code, virtual machine image or container.</uiTip>
-							<biotoolsUsage>Highly detailed</biotoolsUsage>
+							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1349,7 +1339,7 @@
 									<xs:documentation>Link to download (or repository providing a download) for the software.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Download link.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1358,7 +1348,7 @@
 									<xs:documentation>Type of download that is linked to.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Download type.</uiTip>
-										<biotoolsUsage>Highly detailed</biotoolsUsage>
+										
 										<enum>
 											<enumItem>
 												<term>API specification</term>
@@ -1406,7 +1396,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Tool wrapper (CWL)</term>
-												<uiTip>Tool wrapper in Common Workflow Language (CWL) for the software.</uiTip>
+												<uiTip>Tool wrapper in Common Workflow Language (CWL) format for the software.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Tool wrapper (Galaxy)</term>
@@ -1463,7 +1453,6 @@
 									<xs:documentation>Comment about the download.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the download.</uiTip>
-										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1477,7 +1466,6 @@
 									<xs:documentation>Version information (typically a version number) of the software applicable to this download.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software version number.</uiTip>
-										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1489,7 +1477,7 @@
 						<xs:documentation>A link to documentation about the software e.g. manual, API specification or training material.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>A link to documentation about the software e.g. manual, API specification or training material.</uiTip>
-							<biotoolsUsage>Detailed</biotoolsUsage>
+							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1501,7 +1489,7 @@
 											<xs:documentation>Link to documentation on the web for the tool.</xs:documentation>
 											<xs:documentation>
 												<uiTip>Documentation link.</uiTip>
-												<biotoolsUsage>Detailed</biotoolsUsage>
+												
 											</xs:documentation>
 										</xs:annotation>
 									</xs:element>
@@ -1510,7 +1498,7 @@
 											<xs:documentation>Type of documentation that is linked to.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Documentation type.</uiTip>
-												<biotoolsUsage>Detailed</biotoolsUsage>
+												
 												<enum>
 													<enumItem>
 														<term>API documentation</term>
@@ -1599,7 +1587,6 @@
 											<xs:documentation>Comment about the documentation.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Comment about the documentation.</uiTip>
-												
 											</xs:appinfo>
 											<xs:appinfo>
 												<altova:exampleValues>
@@ -1625,7 +1612,6 @@
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
-										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1635,7 +1621,6 @@
 									<xs:documentation>Certain relations may only be defined between certain types of tool.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of relation between this and another registered software.</uiTip>
-										
 										<enum>
 											<enumItem>
 												<term>isNewVersionOf / hasNewVersion</term>
@@ -1671,7 +1656,7 @@
 						<xs:documentation>A publication about the software.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>A publication about the software.</uiTip>
-							<biotoolsUsage>Basic details</biotoolsUsage>
+							>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1682,7 +1667,7 @@
 										<xs:annotation>
 											<xs:appinfo>
 												<uiTip>Digital Object Identifier.</uiTip>
-												<biotoolsUsage>Basic details</biotoolsUsage>
+												>
 											</xs:appinfo>
 											<xs:documentation>Digital Object Identifier (DOI) of a publication about the software.</xs:documentation>
 										</xs:annotation>
@@ -1703,7 +1688,6 @@
 									<xs:documentation>Type of publication. </xs:documentation>
 									<xs:appinfo>
 										<uiTip>Type of publication.</uiTip>
-										
 										<enum>
 											<enumItem>
 												<term>Primary</term>
@@ -1748,7 +1732,6 @@
 									<xs:documentation>Version information (typically a version number) of the software applicable to this publication.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Software version number.</uiTip>
-										
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1757,7 +1740,6 @@
 									<xs:documentation>Comment about the publication.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Comment about the publication.</uiTip>
-										
 									</xs:appinfo>
 									<xs:appinfo>
 										<altova:exampleValues>
@@ -1774,7 +1756,6 @@
 						<xs:documentation>An individual or organisation that should be credited, or may be contacted about the software.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>An individual or organisation that should be credited, or may be contacted about the software.</uiTip>
-							
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1785,7 +1766,6 @@
 										<xs:annotation>
 											<xs:appinfo>
 												<uiTip>Name of credited entity.</uiTip>
-												
 											</xs:appinfo>
 											<xs:documentation>Name of the entity that is credited.</xs:documentation>
 											<xs:appinfo>
@@ -1818,7 +1798,6 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>ORCID iD of person.</uiTip>
-											
 										</xs:appinfo>
 										<xs:documentation>Unique identifier (ORCID iD) of a person that is credited.</xs:documentation>
 										<xs:documentation>Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/. </xs:documentation>
@@ -1841,7 +1820,7 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>GRID ID of organisation.</uiTip>
-											<biotoolsUsage>Mandatory (conditionally)</biotoolsUsage>
+											
 										</xs:appinfo>
 										<xs:documentation>Unique identifier (GRID ID) of an organisation that is credited. </xs:documentation>
 										<xs:documentation>Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.</xs:documentation>
@@ -1862,7 +1841,6 @@
 										<xs:documentation>Type of entity that is credited.</xs:documentation>
 										<xs:appinfo>
 											<uiTip>Type of entity that is credited.</uiTip>
-											
 											<enum>
 												<enumItem>
 													<term>Person</term>
@@ -1906,7 +1884,6 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>Role performed by credited entity.</uiTip>
-											
 											<enum>
 												<enumItem>
 													<term>Developer</term>
@@ -1956,7 +1933,6 @@
 									<xs:annotation>
 										<xs:appinfo>
 											<uiTip>A comment about the credit.</uiTip>
-											
 										</xs:appinfo>
 										<xs:documentation>A comment about the credit.</xs:documentation>
 										<xs:documentation>This can elaborate on the contribution of the credited entity.</xs:documentation>
@@ -1989,7 +1965,6 @@
 					<xs:documentation>Allowed format(s) of the data: EDAM Format term(s).</xs:documentation>
 					<xs:appinfo>
 						<uiTip>Allowed format(s) of the data: EDAM Format term(s).</uiTip>
-						
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:element>
@@ -2068,7 +2043,7 @@
 								<xs:documentation>The URL must be in the EDAM Data namespace, i.e. http://edamontology.org/data_.</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Data URL.</uiTip>
-									<biotoolsUsage>Highly detailed</biotoolsUsage>
+									
 								</xs:appinfo>
 								<xs:appinfo>
 									<altova:exampleValues>
@@ -2087,7 +2062,7 @@
 								<xs:documentation>An EDAM Data term (preferred label or synonym).</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Data term (preferred label or synonym).</uiTip>
-									<biotoolsUsage>Highly detailed</biotoolsUsage>
+									
 								</xs:appinfo>
 								<xs:appinfo>
 									<altova:exampleValues>
@@ -2116,7 +2091,7 @@
 								<xs:documentation>URL of an EDAM Format concept.</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Format URL.</uiTip>
-									<biotoolsUsage>Comprehensive</biotoolsUsage>
+									
 								</xs:appinfo>
 								<xs:documentation>The URL must be in the EDAM  Format namespace, i.e. http://edamontology.org/format_.</xs:documentation>
 								<xs:appinfo>
@@ -2136,7 +2111,7 @@
 								<xs:documentation>An EDAM Format term (preferred label or synonym).</xs:documentation>
 								<xs:appinfo>
 									<uiTip>EDAM Format term (preferred label or synonym)</uiTip>
-									<biotoolsUsage>Comprehensive</biotoolsUsage>
+									
 								</xs:appinfo>
 								<xs:documentation>The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.</xs:documentation>
 								<xs:appinfo>
@@ -2187,7 +2162,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			</xs:appinfo>
 			<xs:appinfo>
 				<uiTip>PubMed Central Identifier.</uiTip>
-				<biotoolsUsage>Basic details</biotoolsUsage>
+				>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:simpleType>
@@ -2200,7 +2175,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 		<xs:annotation>
 			<xs:appinfo>
 				<uiTip>PubMed Identifier.</uiTip>
-				<biotoolsUsage>Basic details</biotoolsUsage>
+				>
 			</xs:appinfo>
 			<xs:documentation>PubMed Identifier (PMID) of a publication about the software.</xs:documentation>
 			<xs:appinfo>
@@ -2284,7 +2259,6 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:documentation>Email address of the entity that is credited.</xs:documentation>
 			<xs:appinfo>
 				<uiTip>Email address of credited entity.</uiTip>
-				
 			</xs:appinfo>
 			<xs:appinfo>
 				<altova:exampleValues>
@@ -2304,7 +2278,6 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:documentation>URL for the entity that is credited, e.g. homepage of an institute.</xs:documentation>
 			<xs:appinfo>
 				<uiTip>URL for credited entity.</uiTip>
-				
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
