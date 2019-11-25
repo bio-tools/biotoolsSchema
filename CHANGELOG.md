@@ -15,7 +15,7 @@ Description of changes are grouped as follows:
 * [[162](https://github.com/bio-tools/biotoolsSchema/issues/162)] ```documentation->type``` enum extended with *Code of conduct*: *"A set of guidelines or rules outlining the norms, expectations, responsibilities and proper practice for individuals working within the software project."*
 * [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
 An online service providing the tool through the Galaxy platform."*
-
+* [[149](https://github.com/bio-tools/biotoolsSchema/issues/149)] ```toolType``` enum extended with *Bioinformatics portal*: *"A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on."* : although not really "tools" this is pragmatic to include (lots of entries in *bio.tools* match this description).
 
 ## Changed
 Changes enabling more precise annotation and simpler==cleaner data:
