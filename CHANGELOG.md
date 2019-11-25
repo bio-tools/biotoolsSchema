@@ -16,6 +16,8 @@ Description of changes are grouped as follows:
 * [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
 An online service providing the tool through the Galaxy platform."*
 * [[149](https://github.com/bio-tools/biotoolsSchema/issues/149)] ```toolType``` enum extended with *Bioinformatics portal*: *"A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on."* : although not really "tools" this is pragmatic to include (lots of entries in *bio.tools* match this description).
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidId``` regex pattern now supports ```http://``` (as well as ```https://``)
+
 
 ## Changed
 Changes enabling more precise annotation and simpler==cleaner data:
@@ -32,6 +34,8 @@ Other changes:
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
 *"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
 * [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```.``` character now escaped consistently in all regex patterns.
+
 
 ## Deprecated
 
@@ -43,6 +47,7 @@ Other changes:
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` enum value *Proprietary* and *Freeware* removed : it was conflated / redundant with ```license``` 
 
 ## Fixed
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```labels->license``` enum value *Julia* removed (it's a programming language!)
 
 ## Misc
 Redefinition of enum values to make their meaning clearer:
@@ -55,6 +60,8 @@ Redefinition of enum values to make their meaning clearer:
 
 Other:
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```doi``` regex pattern now consistent wherever it's used (```otherId->value``` and ```publication->doi```).
+
 
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
