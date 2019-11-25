@@ -7,6 +7,22 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+# November 25 2019 biotoolsSchema-3.2.0.xsd released
+
+## Added
+
+## Changed
+
+## Deprecated
+
+## Removed
+
+## Fixed
+
+## Misc
+1. Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant given progress this is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
+
+
 # June 03 2019 biotoolsSchema-3.1.0.xsd released
 
 ## Added
