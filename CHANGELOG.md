@@ -10,22 +10,26 @@ Description of changes are grouped as follows:
 # November 25 2019 biotoolsSchema-3.2.0.xsd released
 
 ## Added
+Extensions to enums defining types of things:
 * [[177](https://github.com/bio-tools/biotoolsSchema/issues/177)] ```publication->note``` element added: *"Comment about the publication."*
 * [[172](https://github.com/bio-tools/biotoolsSchema/issues/172)] ```credit->gridid``` element added: *"Unique identifier (GRID ID) of an organisation that is credited."* with pattern ```grid.[0-9]{4,}.[a-f0-9]{1,2``` : to support organisational IDs
+* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidid``` regex pattern now supports ```http://``` (as well as ```https://``)
+
+Other:
 * [[162](https://github.com/bio-tools/biotoolsSchema/issues/162)] ```documentation->type``` enum extended with *Code of conduct*: *"A set of guidelines or rules outlining the norms, expectations, responsibilities and proper practice for individuals working within the software project."*
 * [[152](https://github.com/bio-tools/biotoolsSchema/issues/152)] ```link->type``` enum extended with *Galaxy service*: *"
 An online service providing the tool through the Galaxy platform."*
 * [[149](https://github.com/bio-tools/biotoolsSchema/issues/149)] ```toolType``` enum extended with *Bioinformatics portal*: *"A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on."* : although not really "tools" this is pragmatic to include (lots of entries in *bio.tools* match this description).
-* [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```credit->orcidid``` regex pattern now supports ```http://``` (as well as ```https://``)
 
 
 ## Changed
-Changes enabling more precise annotation and simpler==cleaner data:
+Changes to cardinality enabling more precise annotation and simpler==cleaner data:
 * [[176](https://github.com/bio-tools/biotoolsSchema/issues/176)] ```publication->type``` cardinality now *0...many* (was *0...1*) 
 * [[174](https://github.com/bio-tools/biotoolsSchema/issues/174)] ```documentation->type``` cardinality now *1...many* (was *1 only*) 
 * [[163](https://github.com/bio-tools/biotoolsSchema/issues/163)] ```link->type``` cardinality now *1...many* (was *1 only*) 
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` cardinality now *0 or 1* (was 0...many) given there are now two mutually exclusive terms for this value.
 
-Other changes:
+Changes to enum values to improve specificity:
 * [[173](https://github.com/bio-tools/biotoolsSchema/issues/173)] ```license->type``` enum changed *Unlicensed* to *Not licensed* : to avoid confusion with the *Unlicense* license
 * [[167](https://github.com/bio-tools/biotoolsSchema/issues/167)] ```download->type``` value of *CWL file* changed to *Tool wrapper (CWL)* and redefined to *"Tool wrapper in Common Workflow Language (CWL) format for the software."* : to make it consistent with the other types of tool wrapper that are supported. 
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```publication-type``` enum value *Comparison* changed to *Benchmarking study* and redefined as *"A publication which assessed the performance of the tool"* : makes it more explicit and more useful.
@@ -33,13 +37,15 @@ Other changes:
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
 *"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
 * [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
+
+Other changes:
 * [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```.``` character now escaped consistently in all regex patterns.
-* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` cardinality now *0 or 1* (was 0...many) given there are now two mutually exclusive terms for this value.
 
 
 ## Deprecated
 
 ## Removed
+Removing enum values to improve scope focus:
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```link-type``` enum value *Scientific benchmark* removed : it was conflated / redundant with ```publication->type``` of *Benchmarking study* 
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binary package* and *Source package* replaced by *Software package* defined as *"A software package; a bundle of files and information about those files, typically including source code and / or binaries"* : to simplify the model / reflect reality better.
 * [[161](https://github.com/bio-tools/biotoolsSchema/issues/161)] ```documentation-type``` enum value *Tutorial* removed : it was not needed given the general-purpose *Training material*, which is now redefined as *"Online training material such as a tutorial, a presentation, video etc."* : out of bitoolsSchema scope to describe all the different types of training material!
