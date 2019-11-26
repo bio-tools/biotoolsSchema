@@ -34,6 +34,7 @@ Other changes:
 *"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
 * [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
 * [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```.``` character now escaped consistently in all regex patterns.
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` cardinality now *0 or 1* (was 0...many) given there are now two mutually exclusive terms for this value.
 
 
 ## Deprecated
