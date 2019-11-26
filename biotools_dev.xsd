@@ -692,6 +692,8 @@
 											<term>Freeware</term>
 											<uiTip>Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission.</uiTip>
 										</enumItem>
+									<enumItem><term>Not licensed</term><uiTip>Software which is not licensed and is not proprietary.</uiTip></enumItem>	
+																		<enumItem><term>Other</term><uiTip>Software under license not currently supported by biotoolsSchema.</uiTip></enumItem>
 									</xs:appinfo>
 									<xs:documentation>Use "Proprietary" where the software must be obtained from the provider (e.g. for money), and is then owned.  Use "Freeware" for proprietary software that is available at no monetary cost. Use "Not licensed" for software which is not licensed and is not proprietary, and "Other" for software under license not currently supported by biotoolsSchema.</xs:documentation>
 									<xs:documentation>Note that for online services, the license attribute refers to the license of the underlying software or data, or a part of those.</xs:documentation>
