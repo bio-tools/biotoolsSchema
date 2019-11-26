@@ -60,7 +60,7 @@ Redefinition of enum values to make their meaning clearer:
 * [[150](https://github.com/bio-tools/biotoolsSchema/issues/150)] ```toolType``` enum value *Database portal* redefined as *"A Web site providing a portal to a biological database, typically allowing a user to browse, deposit, search, visualise, analyse or download data."* 
 
 Other:
-* [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" or "Optional" : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
+* [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" *etc* : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
 * [[148](https://github.com/bio-tools/biotoolsSchema/issues/148)] ```doi``` regex pattern now consistent wherever it's used (```otherId->value``` and ```publication->doi```).
 
 
