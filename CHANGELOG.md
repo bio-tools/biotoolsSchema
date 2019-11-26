@@ -30,7 +30,6 @@ Other changes:
 * [[167](https://github.com/bio-tools/biotoolsSchema/issues/167)] ```download->type``` value of *CWL file* changed to *Tool wrapper (CWL)* and redefined to *"Tool wrapper in Common Workflow Language (CWL) format for the software."* : to make it consistent with the other types of tool wrapper that are supported. 
 * [[166](https://github.com/bio-tools/biotoolsSchema/issues/166)] ```publication-type``` enum value *Comparison* changed to *Benchmarking study* and redefined as *"A publication which assessed the performance of the tool"* : makes it more explicit and more useful.
 * [[156](https://github.com/bio-tools/biotoolsSchema/issues/156)] ```link-type``` enum value *Registry* changed to *Software catalogue* and redefined as *"Some registry, catalogue etc. other than bio.tools where the tool is also described."* : makes it clearer.
-* [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
 * [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```license``` enum value *Freeware* added *""* : 
 *"Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission."*
 * [[151](https://github.com/bio-tools/biotoolsSchema/issues/151)] ```documentation-type``` enum value *Manual* changed to *User manual* and redefined as *"Information on how to use the software, tailored to the end-user."* : makes it clearer.
@@ -51,6 +50,7 @@ Other changes:
 
 ## Misc
 Redefinition of enum values to make their meaning clearer:
+* [[155](https://github.com/bio-tools/biotoolsSchema/issues/155)] ```link-type``` enum value *Helpdesk* redefined as *"A phone line, web site or email-based system providing help to the end-user of the software."* : makes it clearer.
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Binaries* redefined as *"Binaries for the software; compiled code that allow a program to be installed without having to compile the source code."*
 * [[164](https://github.com/bio-tools/biotoolsSchema/issues/164)] ```download->type``` enum value *Source code* redefined as *"The source code for the software, that can be compiled or assembled into an executable computer program."* 
 * [[160](https://github.com/bio-tools/biotoolsSchema/issues/160)] ```documentation->type``` enum value *Citation instructions* redefined as *"Information on how to correctly cite use of the software; typically which publication(s) to cite, or something more general, e.g. a form of words to use."* 
