@@ -1111,7 +1111,7 @@
 							</xs:element>
 							<xs:element name="accessibility" minOccurs="0">
 								<xs:annotation>
-									<xs:documentation>How freely available the software is for use.</xs:documentation>
+									<xs:documentation>Whether an online service is freely available for use.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>Whether the software is freely available for use.</uiTip>
 										<enum>
@@ -1230,7 +1230,6 @@
 											<xs:documentation>The type of data, information or system that is obtained when the link is resolved.</xs:documentation>
 											<xs:appinfo>
 												<uiTip>Type of thing linked to.</uiTip>
-												>
 												<enum>
 													<enumItem>
 														<term>Discussion forum</term>
