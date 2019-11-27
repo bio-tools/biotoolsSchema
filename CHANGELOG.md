@@ -64,6 +64,7 @@ Redefinition of enum values to make their meaning clearer:
 * [[157](https://github.com/bio-tools/biotoolsSchema/issues/157)] ```link->type``` enum value *Repository* redefined as *"A place where source code, data and other files can be retrieved from, typically via platforms like GitHub which provide version control and other features, or something simpler, e.g. an FTP site."* 
 * [[153](https://github.com/bio-tools/biotoolsSchema/issues/153)] ```link->type``` enum value *Service* redefined as *"An online service (other than Galaxy) that provides access (an interface) to the software."* 
 * [[150](https://github.com/bio-tools/biotoolsSchema/issues/150)] ```toolType``` enum value *Database portal* redefined as *"A Web site providing a portal to a biological database, typically allowing a user to browse, deposit, search, visualise, analyse or download data."* 
+* [[154](https://github.com/bio-tools/biotoolsSchema/issues/154)] ```accessibility``` redefined as *"Whether an online service is freely available for use."*
 
 Other:
 * [[179](https://github.com/bio-tools/biotoolsSchema/issues/179)] Removed ```<biotoolsUsage></biotoolsUsage>```  annotations (in ```<xs:annotation>``` elements) indicating whether an element was "Mandatory", "Recommended" *etc* : this is now redundant as it is handled in the emerging [Tool Information Profiles](https://github.com/bio-tools/Tool-Information-Standard/tree/master/toolInformationProfiles).
