@@ -7,7 +7,7 @@ biotoolsSchema defines over 50 important scientific, technical and administrativ
 biotoolsSchema is applicable to a broad range of [software types](http://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#tool-type) and is used by the ELIXIR Tools & Data Services Registry [bio.tools](https://bio.tools) ).
 
 
-# Documentation (for stable version 3.1.0):
+# Documentation (for stable version 3.2.0):
 Comprehensive documentation is available: 
 * [Technical docs](http://bio-tools.github.io/biotoolsSchema/) (built from files under [/stable/docs/](https://github.com/bio-tools/biotoolsSchema/tree/master/stable/docs) )
 * [General docs](http://biotoolsschema.readthedocs.io/en/latest/) (built from files maintained [here](https://github.com/bio-tools/biotoolsschemadocs/) )
@@ -16,4 +16,14 @@ Comprehensive documentation is available:
 biotoolsSchema together with the [EDAM ontology](https://github.com/edamontology/edamontology) provide the foundation for an [information standard](https://github.com/bio-tools/Tool-Information-Standard) for the desription of tools.  This standard is being adopted by bio.tools and defines the attributes that must be defined within a 5-tier scale of entry completeness and quality.
 
 
+# Files
+
+File                            | Description
+----                            | -----------
+biotools_dev.xsd                | biotoolsSchema - dev version (XML schema)
+stable                          | Current stable version of the schema + docs 
+docs                            | Technical docs formatted for website (latest stable version).  Hosted [here](http://bio-tools.github.io/biotoolsSchema/) (uses files copied from "stable" folder)
+versions                        | Older stable versions of the schema + docs
+LICENSE                         | biotoolsSchema license information
+README.md		        | This file
 
