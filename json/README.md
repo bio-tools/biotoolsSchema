@@ -18,7 +18,7 @@ To make bitoolsSchemaJSON easy to understand and maintain, it uses JSON schema [
 * **tool**
 * **EDAMdata**
 * **EDAMformat**
-* **biotoolsIdType
+* **biotoolsIdType**
 * **dataType**
 * **ontologyConcept**
 * **textType**
