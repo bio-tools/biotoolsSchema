@@ -9,9 +9,28 @@ Here you'll find biotoolsSchemaJSON - a JSON schema version of biotoolsSchema:
 * biotoolsSschema comments are preserved in JSON ```description:``` properties.  A convention is used where the first sentence is the attribute description, and everything following ```(NOTE:``` is an extended comment.
 
 
+To make bitoolsSchemaJSON easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
 <p align="center">
-<img src="assets/types.png" />
+<img src="types.png" />
 </p>
+
+* **tools** is the top-level property
+* **tool**
+* **EDAMdata**
+* **EDAMformat**
+* **biotoolsIdType
+* **dataType**
+* **ontologyConcept**
+* **textType**
+* **urlftpType**
+* **versionType**
+
+
+Many of the XSD object definitions (```complexType``` and ```simpleType```) are not 
+
+
+
+
 
 
 # Files
