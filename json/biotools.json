@@ -12,28 +12,20 @@
 	},
 	"additionalProperties": false,
 	"definitions": {
-		"email": {
-			"description": "Email address of the entity that is credited.",
-			"type": "string",
-			"pattern": "^([0-9A-Z_a-z]+(['\\+\\--\\.][0-9A-Z_a-z]+)*@[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*\\.[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*)$"
-		},
-		"pmcid": {
-			"description": "PubMed Central Identifier (PMCID) of a publication about the software.",
-			"type": "string",
-			"pattern": "^((PMC)[1-9][0-9]{0,8})$"
-		},
-		"pmid": {
-			"description": "PubMed Identifier (PMID) of a publication about the software.",
-			"type": "string",
-			"pattern": "^([1-9][0-9]{0,8})$"
-		},
+
 		"tool": {
 			"description": "Attributes of a bioinformatics tool.",
 			"type": "object",
 			"properties": {
 				"name": {
-					"$ref": "#/definitions/nameType",
-					"description": "Canonical software name assigned by the software developer or service provider."
+							"description": "Canonical software name assigned by the software developer or service provider.", 
+							"type": "string",
+							"minLength": 1,
+							"maxLength": 100,
+							"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$"
+		
+					
+					
 				},
 				"description": {
 					"description": "Textual description of the software.\nThis can be a few sentences copy-pasted from the software homepage.",
@@ -145,8 +137,8 @@
 							"term": {
 								"type": "array",
 								"items": {
-									"$ref": "#/definitions/xs:token",
-									"description": "An EDAM Topic term (preferred label or synonym).(NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)"
+									"description": "An EDAM Topic term (preferred label or synonym).(NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)",
+									"type": "string"
 								}
 							},
 							"uri": {
@@ -700,8 +692,8 @@
 										"term": {
 											"type": "array",
 											"items": {
-												"$ref": "#/definitions/xs:token",
-												"description": "An EDAM Operation term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM)."
+												"description": "An EDAM Operation term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM).",
+												"type": "string"
 											}
 										},
 										"uri": {
@@ -921,19 +913,31 @@
 						"type": "object",
 						"properties": {
 							"doi": {
-								"$ref": "#/definitions/doiType",
-								"description": "Digital Object Identifier (DOI) of a publication about the software."
+									"description": "Digital Object Identifier (DOI) of a publication about the software.",
+							"type": "string",
+			"pattern": "^(10\\.[0-9]{4,9}/[\\(-\\)\\--<>A-\\[\\]_a-z]+)$"
 							},
-							"note": {
+								
+								
+								"note": {
 								"$ref": "#/definitions/textType",
 								"description": "Comment about the publication."
 							},
 							"pmcid": {
-								"$ref": "#/definitions/pmcid"
+			"description": "PubMed Central Identifier (PMCID) of a publication about the software.",
+			"type": "string",
+			"pattern": "^((PMC)[1-9][0-9]{0,8})$"
 							},
+							
+							
 							"pmid": {
-								"$ref": "#/definitions/pmid"
-							},
+			"description": "PubMed Identifier (PMID) of a publication about the software.",
+			"type": "string",
+			"pattern": "^([1-9][0-9]{0,8})$"},
+							
+							
+							
+							
 							"type": {
 								"type": "array",
 								"items": {
@@ -964,7 +968,14 @@
 						"type": "object",
 						"properties": {
 							"email": {
-								"$ref": "#/definitions/email"
+					
+			"description": "Email address of the entity that is credited.",
+			"type": "string",
+			"pattern": "^([0-9A-Z_a-z]+(['\\+\\--\\.][0-9A-Z_a-z]+)*@[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*\\.[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*)$"
+							
+								
+								
+								
 							},
 							"gridid": {
 								"description": "Unique identifier (GRID ID) of an organisation that is credited. (NOTE: Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.)",
@@ -1022,7 +1033,10 @@
 								}
 							},
 							"url": {
-								"$ref": "#/definitions/url"
+				"description": "URL for the entity that is credited, e.g. homepage of an institute. (NOTE: An HTTP or HTTPS URL.)",
+			"type": "string"			
+																
+								
 							}
 						},
 						"required": [
@@ -1056,10 +1070,6 @@
 			],
 			"additionalProperties": false
 		},
-		"url": {
-			"$ref": "#/definitions/urlType",
-			"description": "URL for the entity that is credited, e.g. homepage of an institute."
-		},
 		"EDAMdata": {
 			"description": "EDAM Data concept.",
 			"type": "object",
@@ -1067,8 +1077,8 @@
 				"term": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/xs:token",
-						"description": "An EDAM Data term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)"
+						"description": "An EDAM Data term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)",
+						"type": "string"
 					}
 				},
 				"uri": {
@@ -1086,8 +1096,8 @@
 				"term": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/xs:token",
-						"description": "An EDAM Format term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)"
+						"description": "An EDAM Format term (preferred label or synonym). (NOTE: The term must be either the preferred label of the concept or a synonym of this term, as defined in EDAM.)",
+						"type": "string"
 					}
 				},
 				"uri": {
@@ -1124,49 +1134,7 @@
 			],
 			"additionalProperties": false
 		},
-		"doiType": {
-			"description": "Digital Object Identifier.",
-			"type": "string",
-			"pattern": "^(10\\.[0-9]{4,9}/[\\(-\\)\\--<>A-\\[\\]_a-z]+)$"
-		},
-		"enumType": {
-			"description": "Enumeration of labels.",
-			"type": "string"
-		},
-		"linkType": {
-			"description": "HTML link.",
-			"type": "object",
-			"properties": {
-				"note": {
-					"$ref": "#/definitions/textType",
-					"description": "Comment about the link."
-				},
-				"type": {
-					"type": "array",
-					"minItems": 1,
-					"items": {
-						"$ref": "#/definitions/enumType",
-						"description": "The type of data or information that is obtained when the link is resolved."
-					}
-				},
-				"url": {
-					"$ref": "#/definitions/urlftpType",
-					"description": "A link of some relevance to the software (URL)."
-				}
-			},
-			"required": [
-				"type",
-				"url"
-			],
-			"additionalProperties": false
-		},
-		"nameType": {
-			"description": "Tool or collection name.",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 100,
-			"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$"
-		},
+
 		"ontologyConcept": {
 			"description": "A concept from an ontology.",
 			"type": "object",
@@ -1174,13 +1142,16 @@
 				"term": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/xs:token",
-						"description": "An ontology concept term (preferred label or synonym)."
+								"description": "An ontology concept term (preferred label or synonym).",
+						
+			"type": "string"
+							
+						
 					}
 				},
 				"uri": {
-					"$ref": "#/definitions/xs:anyURI",
-					"description": "Unique identifier of the concept (URI)."
+					"description": "Unique identifier of the concept (URI).",
+			"type": "string"
 				}
 			},
 			"additionalProperties": false
@@ -1191,10 +1162,7 @@
 			"minLength": 10,
 			"maxLength": 1000
 		},
-		"urlType": {
-			"description": "An HTTP or HTTPS URL.",
-			"type": "string"
-		},
+
 		"urlftpType": {
 			"description": "URL supporting FTP.",
 			"type": "string"
@@ -1205,12 +1173,6 @@
 			"minLength": 1,
 			"maxLength": 100,
 			"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$"
-		},
-		"xs:anyURI": {
-			"type": "string"
-		},
-		"xs:token": {
-			"type": "string"
 		}
 	}
 }

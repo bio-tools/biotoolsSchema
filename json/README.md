@@ -1,12 +1,18 @@
-# biotoolsSchema (JSON version)
+# biotoolsSchemaJSON
 **IMPORTANT - work in progress - do not code to this schema!**
 
-Here you'll find a JSON schema version of biotoolsSchema:
+Here you'll find biotoolsSchemaJSON - a JSON schema version of biotoolsSchema:
 * "Organisational" biotoolsSchema elements (whose purpose is only to structure the schema) are discarded: ```summary```, ```labels```
-* All other biotoolsSchema elements are preserved as biotoolsSchemaJSON properties
+* All other biotoolsSchema elements are preserved as JSON properties
 * biotoolsSchema element structure / nesting is preserved (whilst discarding XSD design patterns not applicable in JSON schema)
-* biotoolsSchema element names are preserved as biotoolsSchemaJSON property names 
-* biotoolsSschema comments are preserved in JSON ```description:``` properties, , using a style convention to distinguish the element / property short description from more extended comments.
+* biotoolsSchema element names are preserved as JSON property names 
+* biotoolsSschema comments are preserved in JSON ```description:``` properties.  A convention is used where the first sentence is the attribute description, and everything following ```(NOTE:``` is an extended comment.
+
+
+<p align="center">
+<img src="assets/types.png" />
+</p>
+
 
 # Files
 
