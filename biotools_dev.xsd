@@ -2195,7 +2195,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 					<altova:example value="beta01"/>
 					<altova:example value="2.0 - 2.7"/>
 					<altova:example value="1.1, 1.2.1, 1.4, v5"/>
-					<altova:example value="1.1 - 1.4, 2.0-alpha, 2.0-beta-01 - 2.0-beta-04, 2.0.0"/>
+					<altova:example value="1.1 - 1.4, 2.0-alpha, 2.0-beta-01 - 2.0-beta-04, 2.0.0, 2.0~alpha-01"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 			<xs:documentation>The name has a 100 character limit and may only contain space, uppercase and lowercase English letters, decimal digits, plus symbol, period, comma, dash, colon, semicolon and parentheses.</xs:documentation>
@@ -2204,7 +2204,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:minLength value="1"/>
 			<xs:whiteSpace value="collapse"/>
 			<xs:maxLength value="100"/>
-			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*"/>
+			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*~"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="isAvailable">
