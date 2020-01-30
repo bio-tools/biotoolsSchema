@@ -126,7 +126,7 @@
 								</xs:annotation>
 								<xs:simpleType>
 									<xs:restriction base="xs:anyURI">
-										<xs:pattern value="biotools:[_\-.0-9a-zA-Z]*"/>
+										<xs:pattern value="biotools:[0-9a-z][_\-.0-9a-z]*"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
@@ -2183,7 +2183,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:documentation>bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="[_\-.0-9a-zA-Z]*"/>
+			<xs:pattern value="[0-9a-z][_\-.0-9a-z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="versionType">
