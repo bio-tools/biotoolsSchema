@@ -2180,7 +2180,7 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:minLength value="1"/>
 			<xs:whiteSpace value="collapse"/>
 			<xs:maxLength value="100"/>
-			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()]*~"/>
+			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()~]*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:element name="isAvailable">
