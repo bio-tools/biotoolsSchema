@@ -2184,21 +2184,6 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 			<xs:pattern value="[\p{Zs}A-Za-z0-9+\.,\-_:;()~]*"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:element name="isAvailable">
-		<xs:annotation>
-			<xs:documentation>Set to false if information of a certain type is not available.</xs:documentation>
-			<xs:appinfo>
-				<altova:exampleValues>
-					<altova:example value="Not available"/>
-				</altova:exampleValues>
-			</xs:appinfo>
-		</xs:annotation>
-		<xs:simpleType>
-			<xs:restriction base="enumType">
-				<xs:enumeration value="Not available"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
 	<xs:simpleType name="nameType">
 		<xs:annotation>
 			<xs:documentation>Tool or collection name.</xs:documentation>
