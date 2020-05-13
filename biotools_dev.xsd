@@ -1353,7 +1353,7 @@
 											</enumItem>
 											<enumItem>
 												<term>Test data</term>
-												<uiTip>Data for testing the software is working correctly.</uiTip>
+												<uiTip>Data for testing the scientific performance of the software or whether it is working correctly.</uiTip>
 											</enumItem>
 											<enumItem>
 												<term>Test script</term>
