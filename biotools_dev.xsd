@@ -1499,8 +1499,8 @@
 														<uiTip>Instructions how to install the software.</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>User manual</term>
-														<uiTip>Information on how to use the software, tailored to the end-user.</uiTip>
+														<term>Quick start guide</term>
+														<uiTip>A short guide helping the end-user to use the software as soon as possible.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Release notes</term>
@@ -1513,6 +1513,10 @@
 													<enumItem>
 														<term>Training material</term>
 														<uiTip>Online training material such as text on a Web page, a presentation, video etc. (but excluding tutorials).</uiTip>
+													</enumItem>
+													<enumItem>
+														<term>User manual</term>
+														<uiTip>Information on how to use the software, tailored to the end-user.</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Other</term>
@@ -1532,10 +1536,11 @@
 												<xs:enumeration value="General"/>
 												<xs:enumeration value="Governance"/>
 												<xs:enumeration value="Installation instructions"/>
-												<xs:enumeration value="User manual"/>
+												<xs:enumeration value="Quick start guide"/>
 												<xs:enumeration value="Release notes"/>
 												<xs:enumeration value="Terms of use"/>
 												<xs:enumeration value="Training material"/>
+												<xs:enumeration value="User manual"/>
 												<xs:enumeration value="Other"/>
 											</xs:restriction>
 										</xs:simpleType>
