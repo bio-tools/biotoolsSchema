@@ -423,6 +423,7 @@
 							<xs:enumeration value="Delphi"/>
 							<xs:enumeration value="Dylan"/>
 							<xs:enumeration value="Eiffel"/>
+							<xs:enumeration value="Elm"/>
 							<xs:enumeration value="Forth"/>
 							<xs:enumeration value="Fortran"/>
 							<xs:enumeration value="Groovy"/>
