@@ -972,6 +972,26 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="elixirCommunity" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>ELIXIR (or other) community to which the software is relevant.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="enumType">
+							<xs:enumeration value="3D-BioInfo"/>
+							<xs:enumeration value="Federated Human Data"/>
+							<xs:enumeration value="Galaxy"/>
+							<xs:enumeration value="Human Copy Number Variation"/>
+							<xs:enumeration value="Intrinsically Disordered Proteins"/>
+							<xs:enumeration value="Marine Metagenomics"/>
+							<xs:enumeration value="Metabolomics"/>
+							<xs:enumeration value="Microbial Biotechnology"/>
+							<xs:enumeration value="Plant Sciences"/>
+							<xs:enumeration value="Proteomics"/>
+							<xs:enumeration value="Rare Diseases"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
 				<xs:element name="elixirNode" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>ELIXIR node credited for developing or providing the software - the software is in Node Service Delivery Plan.</xs:documentation>
