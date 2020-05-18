@@ -8,14 +8,14 @@ Description of changes are grouped as follows:
 * **Misc:** some miscellaneous other change
 
 # May 14 2020 biotoolsSchema-3.3.0.xsd release
-The major change is some flattening of the schema by removing the ```<summary>``` and ```<labels>``` elements whose only purpose was to organise / structur the schema.  All sub-elements have been preserved and are now nested under ```<tool>```.  This change ensures the XML and JSON schema variants of biotoolsSchema have the same structure (so far as possible).  For biotoolsSchemaJ (JSON variant) see https://github.com/bio-tools/biotoolsschemaj.
+The major change is some flattening of the schema by removing the ```<summary>``` and ```<labels>``` elements whose only purpose was to organise / structure the schema.  All sub-elements have been preserved and are now nested under ```<tool>```.  This change ensures the XML and JSON schema variants of biotoolsSchema have the same structure (so far as possible).  For biotoolsSchemaJ (JSON variant) see https://github.com/bio-tools/biotoolsschemaj.
 
 ## Added
 
-* [[198](https://github.com/bio-tools/biotoolsSchema/issues/198)] ```credit->rorid``` element added: *"Unique identifier (ROR ID) of an organisation that is credited."*
-* [[114](https://github.com/bio-tools/biotoolsSchema/issues/114)] ```credit->fundrefid``` element added: *"Unique identifier (FundRef ID or Funder ID) of a funding organisation that is credited."*
-* [[178](https://github.com/bio-tools/biotoolsSchema/issues/178)] ```documentation->type``` enum extended with *Quick start guide*: *"A short guide helping the end-user to use the software as soon as possible."*
-* [[189](https://github.com/bio-tools/biotoolsSchema/issues/189)] ```tool->elixirCommunity``` enum added: *"ELIXIR (or other) community to which the software is relevant."*  See https://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#elixir-community.
+* [[198](https://github.com/bio-tools/biotoolsSchema/issues/198)] ```credit->rorid``` element added: "Unique identifier (ROR ID) of an organisation that is credited."
+* [[114](https://github.com/bio-tools/biotoolsSchema/issues/114)] ```credit->fundrefid``` element added: "Unique identifier (FundRef ID or Funder ID) of a funding organisation that is credited."
+* [[178](https://github.com/bio-tools/biotoolsSchema/issues/178)] ```documentation->type``` enum extended with *Quick start guide*: "A short guide helping the end-user to use the software as soon as possible."
+* [[189](https://github.com/bio-tools/biotoolsSchema/issues/189)] ```tool->elixirCommunity``` enum added: "ELIXIR (or other) community to which the software is relevant."  See https://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#elixir-community.
 * [[195](https://github.com/bio-tools/biotoolsSchema/issues/195)] ```tool->language``` enum extended with *Elm*
 
 ## Changed
