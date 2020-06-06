@@ -21,16 +21,20 @@ To make bitoolsSchemaJ easy to understand and maintain, it uses JSON schema [def
 Of these, **tool** is the top-level object. **dataType** and **ontologyConcept** are defined but not actually used (they're retained for now in case they find future use).  All the others are definitions that are refered to in multiple places within the schema.
 
 
+Documentation (for latest stable version)
+-----------------------------------------
+Technical docs formatted for website are maintained in biotoolsSchemaJ repo and hosted [here](http://bio-tools.github.io/biotoolsSchemaJ) (uses files copied from "stable" folder)
+
+
 # Files
 
 File                            | Description
 ----                            | -----------
 biotoolsj.json                  | biotoolsSchemaJ (JSON schema)
-docs                            | Technical docs formatted for website (latest stable version).  Hosted [here](http://bio-tools.github.io/biotoolsSchemaJ) (uses files copied from "stable" folder)
-docs/example.json		| Example tool description in JSON format
 LICENSE                         | biotoolsSchemaj license information
 assets                          | Folder for images and other assets
 assets/biotoolsSchema_json.xsd  | Ignore (biotoolsSchema 3.2.0 (XSD schema) produced for initial reverse-engineering of the JSON schema)
-stable                          | (not used yet) - current stable version of the schema + docs)
-versions                        | (not used yet) - older stable versions of the schema + docs
+stable                          | (not used yet) - current stable version of the schema)
+versions                        | (not used yet) - older stable versions of the schema
 README.md		        | This file
+
