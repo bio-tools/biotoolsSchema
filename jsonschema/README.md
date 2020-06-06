@@ -1,4 +1,4 @@
-# biotoolsSchemaJ
+# biotools.json
 Here you'll find *biotools.json* - the JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
 
 Production
