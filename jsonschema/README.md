@@ -34,7 +34,7 @@ biotoolsj.json                  | biotoolsSchema (JSON schema)
 LICENSE                         | Schema license information
 assets                          | Folder for images and other assets
 assets/biotoolsSchema_json.xsd  | Ignore (biotoolsSchema 3.2.0 (XSD schema) produced for initial reverse-engineering of the JSON schema)
-stable                          | (not used yet) - current stable version of the schema)
+stable                          | (not used yet) - current stable version of the schema
 versions                        | (not used yet) - older stable versions of the schema
 README.md		        | This file
 
