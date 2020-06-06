@@ -1,9 +1,9 @@
-# biotools.json
-Here you'll find *biotools.json* - the JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
+# biotoolsj.json
+Here you'll find *biotoolsj.json* - the JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
 
 Production
 ----------
-biotools.json mirrors biotoolsSchema XML schema (XSD) as closely as possible where possible and desirable:
+biotoolsj.json mirrors biotoolsSchema XML schema (XSD) as closely as possible where possible and desirable:
 * XML elements [1] are preserved as JSON properties
 * XML element structure / nesting is preserved (whilst discarding XSD design patterns not applicable in JSON schema)
 * XML element names are preserved as JSON property names 
@@ -13,7 +13,7 @@ biotools.json mirrors biotoolsSchema XML schema (XSD) as closely as possible whe
 
 Structure
 ---------
-To make biotools.json easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
+To make biotoolsj.json easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
 <p align="center">
 <img src="assets/types.png" />
 </p>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by Jon Ison (private) -->
+<!-- edited with XMLSpy v2019 rel. 3 (x64) (http://www.altova.com) by Jon Ison (private) -->
 <!-- edited at GitHub (https://github.com) by Matus Kalas -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="biotoolsSchema" targetNamespace="biotoolsSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="tools">
@@ -932,14 +932,6 @@
 									<term>Restricted access</term>
 									<uiTip>An online service which is available for use to a restricted audience, e.g. members of a specific institute.</uiTip>
 								</enumItem>
-								<enumItem>
-									<term>Proprietary</term>
-									<uiTip>Software for which the software's publisher or another person retains intellectual property rights—usually copyright of the source code, but sometimes patent rights.</uiTip>
-								</enumItem>
-								<enumItem>
-									<term>Freeware</term>
-									<uiTip>Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission.</uiTip>
-								</enumItem>
 							</enum>
 						</xs:appinfo>
 					</xs:annotation>
@@ -974,7 +966,7 @@
 				</xs:element>
 				<xs:element name="elixirCommunity" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>ELIXIR (or other) community to which the software is relevant.</xs:documentation>
+						<xs:documentation>ELIXIR (or associated) community to which the software is relevant.</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="enumType">
@@ -1459,7 +1451,7 @@
 				</xs:element>
 				<xs:element name="documentation" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>A link to documentation about the software e.g. manual, API specification or training material.</xs:documentation>
+						<xs:documentation>A link to documentation about the software e.g. user manual, API documentation or training material.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>A link to documentation about the software e.g. manual, API specification or training material.</uiTip>
 						</xs:appinfo>
@@ -1591,7 +1583,7 @@
 						<xs:sequence>
 							<xs:element name="biotoolsID" type="biotoolsIdType">
 								<xs:annotation>
-									<xs:documentation>bio.tools ID of an existing bio.tools entry which this software is related to.</xs:documentation>
+									<xs:documentation>bio.tools ID of an existing bio.tools entry to which this software is related.</xs:documentation>
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
 										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>

@@ -687,7 +687,7 @@
 					"type": "array",
 					"items": {
 						"title": "ELIXIR platform",
-						"description": "ELIXIR (or other) community to which the software is relevant.",
+						"description": "ELIXIR (or associated) community to which the software is relevant.",
 						"type": "string",
 						"enum": [
 "3D-BioInfo",
@@ -936,7 +936,7 @@
 					"type": "array",
 					"items": {
 						"title": "Tool documentation",
-						"description": "A link to documentation about the software e.g. manual, API specification or training material.",
+						"description": "A link to documentation about the software e.g. user manual, API documentation or training material.",
 						"type": "object",
 						"properties": {
 							"url": {
@@ -1006,7 +1006,7 @@
 							"biotoolsID": {
 								"$ref": "#/definitions/biotoolsIdType",
 								"title": "bio.tools toolID",
-								"description": "bio.tools ID of an existing bio.tools entry which this software is related to.",
+								"description": "bio.tools ID of an existing bio.tools entry to which this software is related.",
 								"$comment": "Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/."
 							}
 						},
