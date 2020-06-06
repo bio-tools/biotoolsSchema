@@ -1,19 +1,19 @@
 # biotoolsSchemaJ
-Here you'll find *biotoolsSchemaJ* - a JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
+Here you'll find *biotools.json* - the JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
 
 Production
 ----------
-biotoolsSchemaJ mirrors biotoolsSchema as closely as possible where possible and desirable:
-* biotoolsSchema elements [1] are preserved as JSON properties
-* biotoolsSchema element structure / nesting is preserved (whilst discarding XSD design patterns not applicable in JSON schema)
-* biotoolsSchema element names are preserved as JSON property names 
-* biotoolsSchema comments are preserved in JSON ```title```, ```description``` and ```$comment``` properties.
+biotools.json mirrors biotoolsSchema XML schema (XSD) as closely as possible where possible and desirable:
+* XML elements [1] are preserved as JSON properties
+* XML element structure / nesting is preserved (whilst discarding XSD design patterns not applicable in JSON schema)
+* XML element names are preserved as JSON property names 
+* XML comments are preserved in JSON ```title```, ```description``` and ```$comment``` properties.
 
 [1] In biotoolsSchema 3.3.0 "organisational" elements (whose purpose was only to structure the schema) were discarded: ```summary```, ```labels```
 
 Structure
 ---------
-To make bitoolsSchemaJ easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
+To make biotools.json easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
 <p align="center">
 <img src="assets/types.png" />
 </p>
@@ -30,8 +30,8 @@ Technical docs formatted for website are maintained in biotoolsSchemaJ repo and 
 
 File                            | Description
 ----                            | -----------
-biotoolsj.json                  | biotoolsSchemaJ (JSON schema)
-LICENSE                         | biotoolsSchemaj license information
+biotoolsj.json                  | biotoolsSchema (JSON schema)
+LICENSE                         | Schema license information
 assets                          | Folder for images and other assets
 assets/biotoolsSchema_json.xsd  | Ignore (biotoolsSchema 3.2.0 (XSD schema) produced for initial reverse-engineering of the JSON schema)
 stable                          | (not used yet) - current stable version of the schema)
