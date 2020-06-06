@@ -23,7 +23,7 @@ Of these, **tool** is the top-level object. **dataType** and **ontologyConcept**
 
 Documentation (for latest stable version)
 -----------------------------------------
-Technical docs formatted for website are maintained in biotoolsSchemaJ repo and hosted [here](http://bio-tools.github.io/biotoolsSchemaJ) (uses files copied from "stable" folder)
+Technical docs formatted for website are maintained in [biotoolsSchemaJ repo](https://github.com/bio-tools/biotoolsSchemaJ) and hosted [here](http://bio-tools.github.io/biotoolsSchemaJ) (uses files copied from "stable" folder)
 
 
 # Files
