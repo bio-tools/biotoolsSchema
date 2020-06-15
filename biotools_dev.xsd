@@ -920,13 +920,17 @@
 				</xs:element>
 				<xs:element name="accessibility" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Whether an online service is freely available for use.</xs:documentation>
+						<xs:documentation>Whether there are non-monetary restrictions on accessing an online service.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Whether the software is freely available for use.</uiTip>
 							<enum>
 								<enumItem>
 									<term>Open access</term>
 									<uiTip>An online service which is available for use to all, but possibly requiring user accounts / authentication.</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>Open access (with restrictions)</term>
+									<uiTip>An online service which is available for use to all, but possibly with some usage limitations and other restrictions.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>Restricted access</term>
@@ -938,6 +942,7 @@
 					<xs:simpleType>
 						<xs:restriction base="enumType">
 							<xs:enumeration value="Open access"/>
+							<xs:enumeration value="Open access (with restrictions)"/>
 							<xs:enumeration value="Restricted access"/>
 						</xs:restriction>
 					</xs:simpleType>

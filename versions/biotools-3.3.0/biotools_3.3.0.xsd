@@ -920,7 +920,7 @@
 				</xs:element>
 				<xs:element name="accessibility" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Whether an online service is freely available for use.</xs:documentation>
+						<xs:documentation>Whether there are non-monetary restrictions on accessing an online service.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Whether the software is freely available for use.</uiTip>
 							<enum>
@@ -928,17 +928,13 @@
 									<term>Open access</term>
 									<uiTip>An online service which is available for use to all, but possibly requiring user accounts / authentication.</uiTip>
 								</enumItem>
+									<enumItem>
+									<term>Open access (with restrictions)</term>
+									<uiTip>An online service which is available for use to all, but possibly with some usage limitations and other restrictions.</uiTip>
+								</enumItem>
 								<enumItem>
 									<term>Restricted access</term>
 									<uiTip>An online service which is available for use to a restricted audience, e.g. members of a specific institute.</uiTip>
-								</enumItem>
-								<enumItem>
-									<term>Proprietary</term>
-									<uiTip>Software for which the software's publisher or another person retains intellectual property rights—usually copyright of the source code, but sometimes patent rights.</uiTip>
-								</enumItem>
-								<enumItem>
-									<term>Freeware</term>
-									<uiTip>Proprietary software that is available for use at no monetary cost. In other words, freeware may be used without payment but may usually not be modified, re-distributed or reverse-engineered without the author's permission.</uiTip>
 								</enumItem>
 							</enum>
 						</xs:appinfo>
@@ -946,6 +942,7 @@
 					<xs:simpleType>
 						<xs:restriction base="enumType">
 							<xs:enumeration value="Open access"/>
+							<xs:enumeration value="Open access (with restrictions)"/>
 							<xs:enumeration value="Restricted access"/>
 						</xs:restriction>
 					</xs:simpleType>
