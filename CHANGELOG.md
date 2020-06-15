@@ -17,8 +17,11 @@ The major change is some flattening of the schema by removing the ```<summary>``
 * [[178](https://github.com/bio-tools/biotoolsSchema/issues/178)] ```documentation->type``` enum extended with *Quick start guide*: "A short guide helping the end-user to use the software as soon as possible."
 * [[189](https://github.com/bio-tools/biotoolsSchema/issues/189)] ```tool->elixirCommunity``` enum added: "ELIXIR (or other) community to which the software is relevant."  See https://biotoolsschema.readthedocs.io/en/latest/controlled_vocabularies.html#elixir-community.
 * [[195](https://github.com/bio-tools/biotoolsSchema/issues/195)] ```tool->language``` enum extended with *Elm*
+* ```accessibility``` enum extended with *Open access (with restrictions)*: *"An online service which is available for use to all, but possibly with some usage limitations and other restrictions."*
 
 ## Changed
+* ```accessibility``` redefined to be "Whether there are non-monetary restrictions on accessing an online service." (was "Whether the software is freely available for use")  - clarifies the purpose of this field.
+	
 ## Deprecated
 ## Removed
 * [[196](https://github.com/bio-tools/biotoolsSchema/issues/196)] ```tool->labels``` and ```tool->summary``` elements removed (sub-elements are now nested under ```tool``` element)
