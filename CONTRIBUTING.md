@@ -1,0 +1,1 @@
+We welcome contributions to biotoolsSchema. Contribution guidelines can be found in [the biotoolsSchema documentation](https://biotoolsschema.readthedocs.io/en/latest/what_is_biotoolsschema.html#how-to-contribute-to-biotoolsschema).
