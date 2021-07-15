@@ -419,6 +419,7 @@
 							<xs:enumeration value="Clojure"/>
 							<xs:enumeration value="COBOL"/>
 							<xs:enumeration value="ColdFusion"/>
+							<xs:enumeration value="CUDA"/>
 							<xs:enumeration value="CWL"/>
 							<xs:enumeration value="D"/>
 							<xs:enumeration value="Delphi"/>
