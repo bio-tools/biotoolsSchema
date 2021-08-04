@@ -416,8 +416,10 @@
 							<xs:enumeration value="C"/>
 							<xs:enumeration value="C#"/>
 							<xs:enumeration value="C++"/>
+							<xs:enumeration value="Clojure"/>
 							<xs:enumeration value="COBOL"/>
 							<xs:enumeration value="ColdFusion"/>
+							<xs:enumeration value="CUDA"/>
 							<xs:enumeration value="CWL"/>
 							<xs:enumeration value="D"/>
 							<xs:enumeration value="Delphi"/>
@@ -630,6 +632,7 @@
 							<xs:enumeration value="EFL-1.0"/>
 							<xs:enumeration value="EFL-2.0"/>
 							<xs:enumeration value="EPL-1.0"/>
+							<xs:enumeration value="EPL-2.0"/>
 							<xs:enumeration value="EUDatagrid"/>
 							<xs:enumeration value="EUPL-1.0"/>
 							<xs:enumeration value="EUPL-1.1"/>
