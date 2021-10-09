@@ -432,6 +432,7 @@
 							<xs:enumeration value="Java"/>
 							<xs:enumeration value="JavaScript"/>
 							<xs:enumeration value="Julia"/>
+							<xs:enumeration value="Jypyter Notebook"/>
 							<xs:enumeration value="JSP"/>
 							<xs:enumeration value="LabVIEW"/>
 							<xs:enumeration value="Lisp"/>
@@ -440,6 +441,7 @@
 							<xs:enumeration value="Mathematica"/>
 							<xs:enumeration value="MATLAB"/>
 							<xs:enumeration value="MLXTRAN"/>
+							<xs:enumeration value="Nextflow"/>
 							<xs:enumeration value="NMTRAN"/>
 							<xs:enumeration value="OCaml"/>
 							<xs:enumeration value="Pascal"/>
