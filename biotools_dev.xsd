@@ -417,6 +417,7 @@
 							<xs:enumeration value="C#"/>
 							<xs:enumeration value="C++"/>
 							<xs:enumeration value="COBOL"/>
+							<xs:enumeration value="Cython"/>
 							<xs:enumeration value="ColdFusion"/>
 							<xs:enumeration value="CWL"/>
 							<xs:enumeration value="D"/>
@@ -424,6 +425,7 @@
 							<xs:enumeration value="Dylan"/>
 							<xs:enumeration value="Eiffel"/>
 							<xs:enumeration value="Elm"/>
+							<xs:enumeration value="F#"/>
 							<xs:enumeration value="Forth"/>
 							<xs:enumeration value="Fortran"/>
 							<xs:enumeration value="Groovy"/>
@@ -432,6 +434,7 @@
 							<xs:enumeration value="Java"/>
 							<xs:enumeration value="JavaScript"/>
 							<xs:enumeration value="Julia"/>
+							<xs:enumeration value="Jython"/>
 							<xs:enumeration value="Jypyter Notebook"/>
 							<xs:enumeration value="JSP"/>
 							<xs:enumeration value="LabVIEW"/>
@@ -450,6 +453,8 @@
 							<xs:enumeration value="Prolog"/>
 							<xs:enumeration value="PyMOL"/>
 							<xs:enumeration value="Python"/>
+							<xs:enumeration value="Q#"/>
+							<xs:enumeration value="QCL"/>
 							<xs:enumeration value="R"/>
 							<xs:enumeration value="Racket"/>
 							<xs:enumeration value="REXX"/>
