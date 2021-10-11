@@ -459,6 +459,7 @@
 							<xs:enumeration value="Racket"/>
 							<xs:enumeration value="REXX"/>
 							<xs:enumeration value="Ruby"/>
+							<xs:enumeration value="Rust"/>
 							<xs:enumeration value="SAS"/>
 							<xs:enumeration value="Scala"/>
 							<xs:enumeration value="Scheme"/>
