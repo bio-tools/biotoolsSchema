@@ -133,10 +133,12 @@
 							"Command-line tool",
 							"Database portal",
 							"Desktop application",
+							"Mobile application",
 							"Library",
 							"Ontology",
 							"Plug-in",
 							"Script",
+							"Notebook interface",
 							"SPARQL endpoint",
 							"Suite",
 							"Web application",
@@ -188,7 +190,9 @@
 						"enum": [
 							"Linux",
 							"Windows",
-							"Mac"
+							"Mac",
+							"Android",
+							"iOS"
 						]
 					}
 				},

@@ -244,7 +244,11 @@
 								</enumItem>
 								<enumItem>
 									<term>Desktop application</term>
-									<uiTip>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC or mobile device.</uiTip>
+									<uiTip>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC.</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>Mobile application</term>
+									<uiTip>A tool with a graphical user interface that runs on your mobile device.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>Library</term>
@@ -261,6 +265,10 @@
 								<enumItem>
 									<term>Script</term>
 									<uiTip>A tool written for some run-time environment (e.g. other applications or an OS shell) that automates the execution of tasks. Often a small program written in a general-purpose languages (e.g. Perl, Python) or some domain-specific languages (e.g. sed).</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>Notebook interface</term>
+									<uiTip>A virtual notebook environment used for literate programming.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>SPARQL endpoint</term>
@@ -299,10 +307,12 @@
 							<xs:enumeration value="Command-line tool"/>
 							<xs:enumeration value="Database portal"/>
 							<xs:enumeration value="Desktop application"/>
+							<xs:enumeration value="Mobile application"/>
 							<xs:enumeration value="Library"/>
 							<xs:enumeration value="Ontology"/>
 							<xs:enumeration value="Plug-in"/>
 							<xs:enumeration value="Script"/>
+							<xs:enumeration value="Notebook interface"/>
 							<xs:enumeration value="SPARQL endpoint"/>
 							<xs:enumeration value="Suite"/>
 							<xs:enumeration value="Web application"/>
@@ -387,6 +397,14 @@
 									<term>Mac</term>
 									<uiTip>All flavours of Apple Macintosh operating systems (primarily Mac OS X).</uiTip>
 								</enumItem>
+								<enumItem>
+									<term>Android</term>
+									<uiTip>All flavours of Android operating systems.</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>iOS</term>
+									<uiTip>All flavours of Apple iOS mobile operating systems.</uiTip>
+								</enumItem>
 							</enum>
 						</xs:appinfo>
 					</xs:annotation>
@@ -395,6 +413,8 @@
 							<xs:enumeration value="Linux"/>
 							<xs:enumeration value="Windows"/>
 							<xs:enumeration value="Mac"/>
+							<xs:enumeration value="Android"/>
+							<xs:enumeration value="iOS"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
