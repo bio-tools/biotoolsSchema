@@ -428,6 +428,7 @@
 							<xs:enumeration value="F#"/>
 							<xs:enumeration value="Forth"/>
 							<xs:enumeration value="Fortran"/>
+							<xs:enumeration value="Go"/>
 							<xs:enumeration value="Groovy"/>
 							<xs:enumeration value="Haskell"/>
 							<xs:enumeration value="Icarus"/>
