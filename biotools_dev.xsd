@@ -4,13 +4,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="biotoolsSchema" targetNamespace="biotoolsSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="tools">
 		<xs:annotation>
-			<xs:documentation>Description of one or more bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).  This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  Tools may be available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.</xs:documentation>
+			<xs:documentation>Description of one or more tools - application software with well-defined data processing functions (inputs, outputs and operations).  This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  Tools may be available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="tool" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Description of a bioinformatics software tool - a software application with well-defined data processing functions (inputs, outputs and operations).  A tool is a discrete, but possibly complex software entity.</xs:documentation>
+						<xs:documentation>Description of a software tool - a software application with well-defined data processing functions (inputs, outputs and operations).  A tool is a discrete, but possibly complex software entity.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
@@ -43,7 +43,7 @@
 	</xs:complexType>
 	<xs:element name="tool">
 		<xs:annotation>
-			<xs:documentation>Attributes of a bioinformatics tool.</xs:documentation>
+			<xs:documentation>Attributes of a tool.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -225,13 +225,13 @@
 				<xs:element name="toolType" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
-						<xs:documentation>bio.tools includes all types of bioinformatics tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
+						<xs:documentation>bio.tools includes all types of tools: application software with well-defined data processing functions (inputs, outputs and operations). When registering a tool, one or more tool types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Type of application software.  A tool may have more than one type.</uiTip>
 										>
 										<enum>
 								<enumItem>
-									<term>Bioinformatics portal</term>
+									<term>Web portal</term>
 									<uiTip>A web site providing a platform/portal to multiple resources used for research in a focused area, including biological databases, web applications, training resources and so on.</uiTip>
 								</enumItem>
 								<enumItem>
@@ -248,7 +248,7 @@
 								</enumItem>
 								<enumItem>
 									<term>Library</term>
-									<uiTip>A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.</uiTip>
+									<uiTip>A collection of components that are used to construct other tools.  bio.tools scope includes component libraries performing high-level scientific functions but excludes lower-level programming libraries.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>Ontology</term>
@@ -295,7 +295,7 @@
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="enumType">
-							<xs:enumeration value="Bioinformatics portal"/>
+							<xs:enumeration value="Web portal"/>
 							<xs:enumeration value="Command-line tool"/>
 							<xs:enumeration value="Database portal"/>
 							<xs:enumeration value="Desktop application"/>
