@@ -1785,7 +1785,6 @@
 											<altova:exampleValues>
 												<altova:example value="0000-0002-1825-0097"/>
 												<altova:example value="0000-0002-1825-009X"/>
-												<altova:example value="0000-0002-1825-009X"/>
 											</altova:exampleValues>
 										</xs:appinfo>
 									</xs:annotation>
