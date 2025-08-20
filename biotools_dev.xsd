@@ -416,8 +416,10 @@
 							<xs:enumeration value="C"/>
 							<xs:enumeration value="C#"/>
 							<xs:enumeration value="C++"/>
+							<xs:enumeration value="Clojure"/>
 							<xs:enumeration value="COBOL"/>
 							<xs:enumeration value="ColdFusion"/>
+							<xs:enumeration value="CUDA"/>
 							<xs:enumeration value="CWL"/>
 							<xs:enumeration value="D"/>
 							<xs:enumeration value="Delphi"/>
@@ -630,6 +632,7 @@
 							<xs:enumeration value="EFL-1.0"/>
 							<xs:enumeration value="EFL-2.0"/>
 							<xs:enumeration value="EPL-1.0"/>
+							<xs:enumeration value="EPL-2.0"/>
 							<xs:enumeration value="EUDatagrid"/>
 							<xs:enumeration value="EUPL-1.0"/>
 							<xs:enumeration value="EUPL-1.1"/>
@@ -1458,7 +1461,7 @@
 					<xs:annotation>
 						<xs:documentation>A link to documentation about the software e.g. user manual, API documentation or training material.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>A link to documentation about the software e.g. manual, API specification or training material.</uiTip>
+							<uiTip>A link to documentation about the software e.g. user manual, API documentation or training material.</uiTip>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:complexType>
@@ -1591,7 +1594,7 @@
 									<xs:documentation>bio.tools ID of an existing bio.tools entry to which this software is related.</xs:documentation>
 									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>bio.tools ID (URL) of an existing bio.tools entry which this software is related to.</uiTip>
+										<uiTip>bio.tools ID (URL) of an existing bio.tools entry to which this software is related.</uiTip>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
