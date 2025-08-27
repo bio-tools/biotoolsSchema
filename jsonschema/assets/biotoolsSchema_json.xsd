@@ -1515,10 +1515,6 @@
 														<uiTip>Online training material such as text on a Web page, a presentation, video etc. (but excluding tutorials).</uiTip>
 													</enumItem>
 													<enumItem>
-														<term>Tutorial</term>
-														<uiTip>A tutorial about using the software.</uiTip>
-													</enumItem>
-													<enumItem>
 														<term>Other</term>
 														<uiTip>Some other type of documentation not listed in biotoolsSchema.</uiTip>
 													</enumItem>
