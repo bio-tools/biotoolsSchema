@@ -1063,6 +1063,7 @@
 										"Method",
 										"Usage",
 										"Review",
+										"Preprint",
 										"Other"
 									]
 								}
@@ -1075,6 +1076,49 @@
 							"version": {
 								"$ref": "#/definitions/versionType",
 								"description": "Version information (typically a version number) of the software applicable to this publication."
+							},
+							"metadata": {
+								"type": "object",
+								"title": "Publication metadata",
+								"description": "Bibliographic metadata for the publication.",
+								"properties": {
+									"title": {
+										"title": "Publication title",
+										"description": "Title of the publication.",
+										"type": "string"
+									},
+									"authors": {
+										"title": "Publication authors",
+										"description": "List of authors of the publication.",
+										"type": "array",
+										"items": {
+											"type": "string"
+										}
+									},
+									"abstract": {
+										"title": "Publication abstract",
+										"description": "Abstract of the publication.",
+										"type": "string"
+									},
+									"date": {
+										"title": "Publication date",
+										"description": "Date of publication.",
+										"type": "string",
+										"format": "date"
+									},
+									"journal": {
+										"title": "Publication journal",
+										"description": "Journal in which the publication appeared.",
+										"type": "string"
+									},
+									"citationCount": {
+										"title": "Publication citation count",
+										"description": "Number of citations to the publication.",
+										"type": "integer",
+										"minimum": 0
+									}
+
+								}
 							}
 						},
 						"additionalProperties": false
@@ -1109,14 +1153,7 @@
 								"title": "Tool credit ORCID iD",
 								"description": "Unique identifier (ORCID iD) of a person that is credited. (NOTE: Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/.)",
 								"type": "string",
-								"anyOf": [
-									{
-										"pattern": "^(http\\://orcid\\.org/[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{3,3}[0-9X])$"
-									},
-									{
-										"pattern": "^(https\\://orcid\\.org/[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{3,3}[0-9X])$"
-									}
-								]
+								"pattern": "^([0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{3,3}[0-9X])$"
 							},
 							"gridid": {
 								"title": "Tool credit GRID ID",
