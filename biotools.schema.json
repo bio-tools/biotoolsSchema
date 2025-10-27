@@ -22,8 +22,8 @@
 					"title": "Tool description",
 					"description": "Textual description of the software.\nThis can be a few sentences copy-pasted from the software homepage.",
 					"type": "string",
-					"minLength": 10,
-					"maxLength": 1000,
+					"minLength": 50,
+					"maxLength": 2048,
 					"examples": [
 						"needle reads two input sequences and writes their optimal global sequence alignment to file. It uses the Needleman-Wunsch alignment algorithm to find the optimum alignment (including gaps) of two sequences along their entire length. The algorithm uses a dynamic programming method to ensure the alignment is optimum, by exploring all possible alignments and choosing the best."
 					]
@@ -691,18 +691,18 @@
 						"description": "ELIXIR (or associated) community to which the software is relevant.",
 						"type": "string",
 						"enum": [
-"3D-BioInfo",
-"Federated Human Data",
-"Galaxy",
-"Human Copy Number Variation",
-"Intrinsically Disordered Proteins",
-"Marine Metagenomics",
-"Metabolomics",
-"Microbial Biotechnology",
-"Plant Sciences",
-"Proteomics",
-"Rare Diseases"
-		]
+							"3D-BioInfo",
+							"Federated Human Data",
+							"Galaxy",
+							"Human Copy Number Variation",
+							"Intrinsically Disordered Proteins",
+							"Marine Metagenomics",
+							"Metabolomics",
+							"Microbial Biotechnology",
+							"Plant Sciences",
+							"Proteomics",
+							"Rare Diseases"
+						]
 					}
 				},
 				"function": {
