@@ -267,10 +267,6 @@
 									<uiTip>A tool written for some run-time environment (e.g. other applications or an OS shell) that automates the execution of tasks. Often a small program written in a general-purpose languages (e.g. Perl, Python) or some domain-specific languages (e.g. sed).</uiTip>
 								</enumItem>
 								<enumItem>
-									<term>Computational Notebook</term>
-									<uiTip>A virtual notebook environment used for literate programming.</uiTip>
-								</enumItem>
-								<enumItem>
 									<term>SPARQL endpoint</term>
 									<uiTip>A service that provides queries over an RDF knowledge base via the SPARQL query language and protocol, and returns results via HTTP.</uiTip>
 								</enumItem>
@@ -312,7 +308,6 @@
 							<xs:enumeration value="Ontology"/>
 							<xs:enumeration value="Plug-in"/>
 							<xs:enumeration value="Script"/>
-							<xs:enumeration value="Computational Notebook"/>
 							<xs:enumeration value="SPARQL endpoint"/>
 							<xs:enumeration value="Suite"/>
 							<xs:enumeration value="Web application"/>
