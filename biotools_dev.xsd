@@ -417,7 +417,6 @@
 							<xs:enumeration value="C#"/>
 							<xs:enumeration value="C++"/>
 							<xs:enumeration value="Clojure"/>
-							<xs:enumeration value="CMake"/>
 							<xs:enumeration value="COBOL"/>
 							<xs:enumeration value="Cython"/>
 							<xs:enumeration value="ColdFusion"/>
@@ -438,7 +437,6 @@
 							<xs:enumeration value="JavaScript"/>
 							<xs:enumeration value="Julia"/>
 							<xs:enumeration value="Jython"/>
-							<xs:enumeration value="Jypyter Notebook"/>
 							<xs:enumeration value="JSP"/>
 							<xs:enumeration value="LabVIEW"/>
 							<xs:enumeration value="Lisp"/>
@@ -447,7 +445,6 @@
 							<xs:enumeration value="Mathematica"/>
 							<xs:enumeration value="MATLAB"/>
 							<xs:enumeration value="MLXTRAN"/>
-							<xs:enumeration value="Nextflow"/>
 							<xs:enumeration value="NMTRAN"/>
 							<xs:enumeration value="OCaml"/>
 							<xs:enumeration value="Pascal"/>
