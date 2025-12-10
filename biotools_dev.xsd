@@ -470,7 +470,6 @@
 							<xs:enumeration value="Verilog"/>
 							<xs:enumeration value="VHDL"/>
 							<xs:enumeration value="Visual Basic"/>
-							<xs:enumeration value="Vue"/>
 							<xs:enumeration value="XAML"/>
 							<xs:enumeration value="Other"/>
 						</xs:restriction>
