@@ -244,7 +244,11 @@
 								</enumItem>
 								<enumItem>
 									<term>Desktop application</term>
-									<uiTip>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC or mobile device.</uiTip>
+									<uiTip>A tool with a graphical user interface that runs on your desktop environment, e.g. on a PC.</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>Mobile application</term>
+									<uiTip>A tool with a graphical user interface that runs on your mobile device.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>Library</term>
@@ -299,6 +303,7 @@
 							<xs:enumeration value="Command-line tool"/>
 							<xs:enumeration value="Database portal"/>
 							<xs:enumeration value="Desktop application"/>
+							<xs:enumeration value="Mobile application"/>
 							<xs:enumeration value="Library"/>
 							<xs:enumeration value="Ontology"/>
 							<xs:enumeration value="Plug-in"/>
@@ -387,6 +392,14 @@
 									<term>Mac</term>
 									<uiTip>All flavours of Apple Macintosh operating systems (primarily Mac OS X).</uiTip>
 								</enumItem>
+								<enumItem>
+									<term>Android</term>
+									<uiTip>All flavours of Android operating systems.</uiTip>
+								</enumItem>
+								<enumItem>
+									<term>iOS</term>
+									<uiTip>All flavours of Apple iOS mobile operating systems.</uiTip>
+								</enumItem>
 							</enum>
 						</xs:appinfo>
 					</xs:annotation>
@@ -395,6 +408,8 @@
 							<xs:enumeration value="Linux"/>
 							<xs:enumeration value="Windows"/>
 							<xs:enumeration value="Mac"/>
+							<xs:enumeration value="Android"/>
+							<xs:enumeration value="iOS"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>

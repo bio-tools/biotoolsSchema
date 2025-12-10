@@ -133,6 +133,7 @@
 							"Command-line tool",
 							"Database portal",
 							"Desktop application",
+							"Mobile application",
 							"Library",
 							"Ontology",
 							"Plug-in",
@@ -188,7 +189,9 @@
 						"enum": [
 							"Linux",
 							"Windows",
-							"Mac"
+							"Mac",
+							"Android",
+							"iOS"
 						]
 					}
 				},
