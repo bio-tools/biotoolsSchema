@@ -990,18 +990,26 @@
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="enumType">
-							<xs:enumeration value="3D-BioInfo"/>
-							<xs:enumeration value="Federated Human Data"/>
-							<xs:enumeration value="Galaxy"/>
-							<xs:enumeration value="Human Copy Number Variation"/>
-							<xs:enumeration value="Intrinsically Disordered Proteins"/>
-							<xs:enumeration value="Marine Metagenomics"/>
-							<xs:enumeration value="Metabolomics"/>
-							<xs:enumeration value="Microbial Biotechnology"/>
-							<xs:enumeration value="Plant Sciences"/>
-							<xs:enumeration value="Proteomics"/>
-							<xs:enumeration value="Rare Diseases"/>
-						</xs:restriction>
+    <xs:enumeration value="3D-BioInfo"/>
+    <xs:enumeration value="Biodiversity"/>
+    <xs:enumeration value="Cancer Data"/>
+    <xs:enumeration value="Federated Human Data"/>
+    <xs:enumeration value="Food and Nutrition"/>
+    <xs:enumeration value="Galaxy"/>
+    <xs:enumeration value="Human Copy Number Variation"/>
+    <xs:enumeration value="Intrinsically Disordered Proteins"/>
+    <xs:enumeration value="Marine Metagenomics"/>
+    <xs:enumeration value="Metabolomics"/>
+    <xs:enumeration value="Microbial Biotechnology"/>
+    <xs:enumeration value="Microbiome"/>
+    <xs:enumeration value="Plant Sciences"/>
+    <xs:enumeration value="Proteomics"/>
+    <xs:enumeration value="Rare Diseases"/>
+    <xs:enumeration value="Research Data Management"/>
+    <xs:enumeration value="Single-Cell Omics"/>
+    <xs:enumeration value="Systems Biology"/>
+    <xs:enumeration value="Toxicology"/>
+</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="elixirNode" minOccurs="0" maxOccurs="unbounded">
