@@ -438,6 +438,7 @@
 							<xs:enumeration value="Julia"/>
 							<xs:enumeration value="Jython"/>
 							<xs:enumeration value="JSP"/>
+							<xs:enumeration value="Kotlin"/>
 							<xs:enumeration value="LabVIEW"/>
 							<xs:enumeration value="Lisp"/>
 							<xs:enumeration value="Lua"/>
@@ -466,7 +467,9 @@
 							<xs:enumeration value="Shell"/>
 							<xs:enumeration value="Smalltalk"/>
 							<xs:enumeration value="SQL"/>
+							<xs:enumeration value="Swift"/>
 							<xs:enumeration value="Turing"/>
+							<xs:enumeration value="TypeScript"/>
 							<xs:enumeration value="Verilog"/>
 							<xs:enumeration value="VHDL"/>
 							<xs:enumeration value="Visual Basic"/>
