@@ -432,7 +432,6 @@
 							<xs:enumeration value="Go"/>
 							<xs:enumeration value="Groovy"/>
 							<xs:enumeration value="Haskell"/>
-							<xs:enumeration value="Icarus"/>
 							<xs:enumeration value="Java"/>
 							<xs:enumeration value="JavaScript"/>
 							<xs:enumeration value="Julia"/>
