@@ -75,7 +75,7 @@
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="textType">
-							<xs:maxLength value="1000"/>
+							<xs:maxLength value="2048"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
