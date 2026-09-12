@@ -38,12 +38,12 @@ jobs:
       - name: Build development artifacts
         if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
         run: |
-          build-schema --schema-dir dist
+          build-schema --output-dir dist
 
       - name: Build release artifacts
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          build-schema --schema-dir dist --version "${GITHUB_REF_NAME#v}"
+          build-schema --output-dir dist --version "${GITHUB_REF_NAME#v}"
 
       - name: Fetch official example files
         env:
