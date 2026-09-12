@@ -1,0 +1,102 @@
+name: Build & test
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - 'v*'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Validate release tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          if [[ ! "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$ ]]; then
+            echo "Error: Tag name '$GITHUB_REF_NAME' does not match semantic versioning (e.g., v1.2.3)."
+            echo "Expected format: vMAJOR.MINOR.PATCH[-PRERELEASE][+BUILD]"
+            exit 1
+          fi
+
+      - name: Build development artifacts
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          build-schema --output-dir dist
+
+      - name: Build release artifacts
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          build-schema --output-dir dist --version "${GITHUB_REF_NAME#v}"
+
+      - name: Run tests on built artifacts
+        run: pytest -q tests --schema-dir dist
+
+      - name: Upload built artifacts (development)
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: biotools-schema-dev
+          path: |
+            dist/biotools-dev.xsd
+            dist/biotools-dev.schema.json
+            dist/biotools_vocab.py
+          retention-days: 14
+
+      - name: Upload release artifacts
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: actions/upload-artifact@v4
+        with:
+          name: biotools-schema-release
+          path: |
+            dist/biotools-${GITHUB_REF_NAME#v}.xsd
+            dist/biotools-${GITHUB_REF_NAME#v}.schema.json
+            dist/biotools_vocab.py
+
+  release:
+    needs: build-and-test
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download release artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: biotools-schema-release
+          path: dist
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: true
+          body: |
+            Release of biotoolsSchema version ${{ github.ref_name }}.
+          files: |
+            dist/biotools-${GITHUB_REF_NAME#v}.xsd
+            dist/biotools-${GITHUB_REF_NAME#v}.schema.json
+            dist/biotools_vocab.py

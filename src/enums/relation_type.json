@@ -1,0 +1,8 @@
+[
+  "isNewVersionOf",
+  "hasNewVersion",
+  "uses",
+  "usedBy",
+  "includes",
+  "includedIn"
+]
