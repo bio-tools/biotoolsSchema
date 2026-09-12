@@ -45,16 +45,6 @@ jobs:
         run: |
           build-schema --output-dir dist --version "${GITHUB_REF_NAME#v}"
 
-      - name: Fetch official example files
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p examples
-          for f in biotools.xml biotools_mandatoryFieldsOnly.xml; do
-            gh api repos/bio-tools/biotoolsSchema/contents/examples/$f --jq '.content' \
-              | base64 -d > examples/$f
-          done
-
       - name: Run tests on built artifacts
         run: pytest -q tests --schema-dir dist
 
