@@ -28,6 +28,10 @@ dev = [
 [project.urls]
 Repository = "https://github.com/bio-tools/biotoolsSchema"
 
+[project.scripts]
+build-schema = "btschema.build:build"
+fetch-spdx = "btschema.fetch_spdx_licenses:fetch_spdx_licenses"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
