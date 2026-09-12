@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biotools-schema"
+version = "0.1.0"
+description = "JSON Schema, and XSD for the bio.tools Tool description format"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "CC-BY-4.0" }
+dependencies = [
+    "lxml>=6.1,<7",
+    "xmlschema>=4.3,<5",
+    "jsonschema>=4.26,<5",
+    "PyYAML>=6.0,<7",
+    "requests>=2.34,<3",
+    "xmltodict>=1.0,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "datamodel-code-generator>=0.76,<1",
+    "pre-commit>=4.5,<5",
+    "pytest>=9.1,<10",
+]
+
+[project.urls]
+Repository = "https://github.com/bio-tools/biotoolsSchema"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest]
+minversion = "9.0"
+testpaths = ["tests"]
