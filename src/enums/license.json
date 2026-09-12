@@ -1,8 +1,8 @@
 {
   "source": "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json",
-  "spdx_license_list_version": "01b8052",
-  "generated_at": "2026-09-04T13:19:42.545112+00:00",
-  "generator": "fetch_spdx",
+  "spdx_license_list_version": "1dd5767",
+  "generated_at": "2026-09-12T15:47:56.149981+00:00",
+  "generator": "src/btschema/fetch_spdx_licenses.py",
   "values": [
     {
       "id": "0BSD",
@@ -1032,7 +1032,7 @@
     {
       "id": "CNRI-Python-GPL-Compatible",
       "name": "CNRI Python Open Source GPL Compatible License Agreement",
-      "osi_approved": false
+      "osi_approved": true
     },
     {
       "id": "COIL-1.0",
@@ -2857,7 +2857,7 @@
     {
       "id": "Python-2.0.1",
       "name": "Python License 2.0.1",
-      "osi_approved": false
+      "osi_approved": true
     },
     {
       "id": "python-ldap",

@@ -69,7 +69,7 @@ def build_payload(spdx_data, curated_extra, ref: str):
         "source": SPDX_URL_TMPL.format(ref=ref),
         "spdx_license_list_version": spdx_data.get("licenseListVersion"),
         "generated_at": datetime.now(UTC).isoformat(),
-        "generator": "scripts/fetch_spdx_licenses.py",
+        "generator": "src/btschema/fetch_spdx_licenses.py",
         "values": values,
         "deprecated": deprecated,
         "curated_extra": curated_extra,
