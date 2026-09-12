@@ -2,7 +2,7 @@
   "source": "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json",
   "spdx_license_list_version": "01b8052",
   "generated_at": "2026-09-04T13:19:42.545112+00:00",
-  "generator": "scripts/fetch_spdx_licenses.py",
+  "generator": "fetch_spdx",
   "values": [
     {
       "id": "0BSD",
