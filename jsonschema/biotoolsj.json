@@ -1,43 +1,39 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"description": "Description of one or more bioinformatics tools - application software with well-defined data processing functions (inputs, outputs and operations).  This includes simple tools with one or a few closely related functions, and complex, multimodal tools with many functions.  Tools may be available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "bio.tools metadata",
+	"description": "A collection of bioinformatics software descriptions.",
 	"type": "array",
 	"items": {
-		"$ref": "#/definitions/tool"
+		"$ref": "#/$defs/tool"
 	},
-	"definitions": {
+	"$defs": {
 		"tool": {
 			"description": "Attributes of a bioinformatics tool.",
 			"type": "object",
 			"properties": {
 				"name": {
+					"$ref": "#/$defs/nameType",
 					"title": "Tool name",
 					"description": "Canonical software name assigned by the software developer or service provider.",
-					"type": "string",
-					"minLength": 1,
-					"maxLength": 100,
-					"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$",
 					"examples": [
 						"needle"
 					]
 				},
 				"description": {
+					"$ref": "#/$defs/textType",
 					"title": "Tool description",
 					"description": "Textual description of the software.\nThis can be a few sentences copy-pasted from the software homepage.",
-					"type": "string",
-					"minLength": 10,
-					"maxLength": 1000,
 					"examples": [
 						"needle reads two input sequences and writes their optimal global sequence alignment to file. It uses the Needleman-Wunsch alignment algorithm to find the optimum alignment (including gaps) of two sequences along their entire length. The algorithm uses a dynamic programming method to ensure the alignment is optimum, by exploring all possible alignments and choosing the best."
 					]
 				},
 				"homepage": {
-					"$ref": "#/definitions/urlftpType",
+					"$ref": "#/$defs/urlftpType",
 					"title": "Tool homepage URL",
 					"description": "Homepage of the software, or some URL that best serves this purpose."
 				},
 				"biotoolsID": {
-					"$ref": "#/definitions/biotoolsIdType",
+					"$ref": "#/$defs/biotoolsIdType",
 					"title": "bio.tools toolID",
 					"description": "Unique ID (case insensitive) of the tool that is assigned upon registration of the software in bio.tools, normally identical to tool name.",
 					"$comment": "bio.tools IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API."
@@ -46,7 +42,7 @@
 					"title": "bio.tools CURIE",
 					"description": "bio.tools CURIE (compact URI) based on the bio.tools tool ID.",
 					"type": "string",
-					"pattern": "^(biotools\\:[\\--\\.0-9A-Z_a-z]*)$",
+					"pattern": "^biotools:[A-Za-z0-9_.-]+(?![\\s\\S])",
 					"$comment": "The bio.tools CURIE is simply the bio.tools tool ID with the prefix 'biotools:'.bio.tools CURIEs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.",
 					"examples": [
 						"biotools:signalp"
@@ -55,7 +51,7 @@
 				"version": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/versionType",
+						"$ref": "#/$defs/versionType",
 						"title": "Tool version information",
 						"description": "Version information (typically a version number) of the software applicable to this bio.tools entry."
 					}
@@ -87,16 +83,16 @@
 								"type": "string",
 								"anyOf": [
 									{
-										"pattern": "^(10\\.[0-9]{4,9}/[\\(-\\)\\--<>A-\\[\\]_a-z]+)$"
+										"$ref": "#/$defs/doiType"
 									},
 									{
-										"pattern": "^((r|r|i|d|RRID)\\:[\\w\\D]+)$"
+										"pattern": "^(?:rrid|RRID):[^\\r\\n]+(?![\\s\\S])"
 									},
 									{
-										"pattern": "^((c|p|e|CPE)\\:[\\w\\D]+)$"
+										"pattern": "^(?:cpe|CPE):[^\\r\\n]+(?![\\s\\S])"
 									},
 									{
-										"pattern": "^((B|I|O|T|O|O|L|S|biotools)\\:[\\--\\.0-9A-Z_a-z]*)$"
+										"pattern": "^(?:biotools|BIOTOOLS):[A-Za-z0-9_.-]+(?![\\s\\S])"
 									}
 								],
 								"examples": [
@@ -104,12 +100,9 @@
 								]
 							},
 							"version": {
+								"$ref": "#/$defs/versionType",
 								"title": "Tool version information (other IDs)",
 								"description": "Version information (typically a version number) of the software applicable to this identifier.",
-								"type": "string",
-								"minLength": 1,
-								"maxLength": 100,
-								"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$",
 								"examples": [
 									"2.0 - 2.7"
 								]
@@ -130,6 +123,7 @@
 						"type": "string",
 						"enum": [
 							"Bioinformatics portal",
+							"Web portal",
 							"Command-line tool",
 							"Database portal",
 							"Desktop application",
@@ -169,7 +163,7 @@
 								"title": "EDAM Topic URI",
 								"description": "URL of an EDAM Topic concept.",
 								"type": "string",
-								"pattern": "^(http\\://edamontology\\.org/topic_[0-9]{4,4})$",
+								"pattern": "^http://edamontology\\.org/topic_[0-9]{4}(?![\\s\\S])",
 								"$comment": "The URL must be in the EDAM Topic namespace, i.e. http://edamontology.org/topic.",
 								"examples": [
 									"http://edamontology.org/topic_0121"
@@ -177,7 +171,8 @@
 							}
 						},
 						"additionalProperties": false,
-						"$comment": "An EDAM Topic concept URL and / or term are specified, e.g. 'Proteomics', http://edamontology.org/topic_0121."
+						"$comment": "An EDAM Topic concept URL and / or term are specified, e.g. 'Proteomics', http://edamontology.org/topic_0121.",
+						"minProperties": 1
 					}
 				},
 				"operatingSystem": {
@@ -720,12 +715,9 @@
 				"collectionID": {
 					"type": "array",
 					"items": {
+						"$ref": "#/$defs/nameType",
 						"title": "Tool collection ID",
 						"description": "A tag which assigns the software to a collection in bio.tools.",
-						"type": "string",
-						"minLength": 1,
-						"maxLength": 100,
-						"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$",
 						"examples": [
 							"emboss"
 						]
@@ -757,6 +749,7 @@
 					"type": "string",
 					"enum": [
 						"Open access",
+						"Open access (with restrictions)",
 						"Restricted access"
 					]
 				},
@@ -810,30 +803,30 @@
 				"elixirCommunity": {
 					"type": "array",
 					"items": {
-						"title": "ELIXIR platform",
+						"title": "ELIXIR community",
 						"description": "ELIXIR (or associated) community to which the software is relevant.",
 						"type": "string",
 						"enum": [
-"3D-BioInfo",
-"Biodiversity",
-"Cancer Data",
-"Federated Human Data",
-"Food and Nutrition",
-"Galaxy",
-"Human Copy Number Variation",
-"Intrinsically Disordered Proteins",
-"Marine Metagenomics",
-"Metabolomics",
-"Microbial Biotechnology",
-"Microbiome",
-"Plant Sciences",
-"Proteomics",
-"Rare Diseases",
-"Research Data Management",
-"Single-Cell Omics",
-"Systems Biology",
-"Toxicology"
-		]
+							"3D-BioInfo",
+							"Biodiversity",
+							"Cancer Data",
+							"Federated Human Data",
+							"Food and Nutrition",
+							"Galaxy",
+							"Human Copy Number Variation",
+							"Intrinsically Disordered Proteins",
+							"Marine Metagenomics",
+							"Metabolomics",
+							"Microbial Biotechnology",
+							"Microbiome",
+							"Plant Sciences",
+							"Proteomics",
+							"Rare Diseases",
+							"Research Data Management",
+							"Single-Cell Omics",
+							"Systems Biology",
+							"Toxicology"
+						]
 					}
 				},
 				"function": {
@@ -864,82 +857,37 @@
 											"title": "EDAM Operation URI",
 											"description": "URL of an EDAM Operation concept. (NOTE: The URL must be in the EDAM Operation namespace, i.e. http://edamontology.org/operation.)",
 											"type": "string",
-											"pattern": "^(http\\://edamontology\\.org/operation_[0-9]{4,4})$",
+											"pattern": "^http://edamontology\\.org/operation_[0-9]{4}(?![\\s\\S])",
 											"examples": [
 												"http://edamontology.org/operation_0492"
 											]
 										}
 									},
 									"additionalProperties": false,
-									"$comment": "An EDAM Operation concept URL and / or term are specified, e.g. 'Multiple sequence alignment', http://edamontology.org/operation_0492."
+									"$comment": "An EDAM Operation concept URL and / or term are specified, e.g. 'Multiple sequence alignment', http://edamontology.org/operation_0492.",
+									"minProperties": 1
 								}
 							},
 							"input": {
 								"type": "array",
 								"items": {
+									"$ref": "#/$defs/dataType",
 									"title": "Tool input",
-									"description": "Details of primary input data.",
-									"type": "object",
-									"properties": {
-										"data": {
-											"$ref": "#/definitions/EDAMdata",
-											"title": "Input data (EDAM Data)",
-											"description": "Type of primary input data, if any (EDAM data).",
-											"$comment": "An EDAM Data concept URL and / or term are specified, e.g. 'Protein sequences', http://edamontology.org/data_2976."
-										},
-										"format": {
-											"title": "EDAM Format concept(s)",
-											"description": "EDAM Format concept(s).",
-											"type": "array",
-											"items": {
-												"$ref": "#/definitions/EDAMformat",
-												"title": "Input format(s) (EDAM Format)",
-												"description": "Allowed format(s) of the input data (EDAM Format). "
-											}
-										}
-									},
-									"required": [
-										"data"
-									],
-									"additionalProperties": false
+									"description": "Details of primary input data."
 								}
 							},
 							"output": {
 								"type": "array",
 								"items": {
+									"$ref": "#/$defs/dataType",
 									"title": "Tool output",
-									"description": "Details of primary output data.",
-									"type": "object",
-									"properties": {
-										"data": {
-											"$ref": "#/definitions/EDAMdata",
-											"title": "Output data (EDAM Data)",
-											"description": "Type of primary output data, if any (EDAM Data).",
-											"$comment": "An EDAM Data concept URL and (optionally) term are specified, e.g. 'Sequence alignment', http://edamontology.org/data_0863."
-										},
-										"format": {
-											"title": "EDAM Format concept(s)",
-											"description": "EDAM Foramt concept(s)",
-											"type": "array",
-											"items": {
-												"$ref": "#/definitions/EDAMformat",
-												"title": "Output format(s) (EDAM Format)",
-												"description": "Allowed format(s) of the output data (EDAM Format)."
-											}
-										}
-									},
-									"required": [
-										"data"
-									],
-									"additionalProperties": false
+									"description": "Details of primary output data."
 								}
 							},
 							"note": {
+								"$ref": "#/$defs/textType",
 								"title": "Function note",
 								"description": "Concise comment about this function, if not apparent from the software description and EDAM annotations.",
-								"type": "string",
-								"minLength": 10,
-								"maxLength": 1000,
 								"examples": [
 									"Concise comment about this function, if not apparent from the software description and EDAM annotations."
 								]
@@ -969,7 +917,7 @@
 						"type": "object",
 						"properties": {
 							"url": {
-								"$ref": "#/definitions/urlftpType",
+								"$ref": "#/$defs/urlftpType",
 								"title": "Link URL",
 								"description": "A link of some relevance to the software (URL)."
 							},
@@ -997,7 +945,7 @@
 								}
 							},
 							"note": {
-								"$ref": "#/definitions/textType",
+								"$ref": "#/$defs/textType",
 								"title": "Link comment",
 								"description": "Comment about the link."
 							}
@@ -1017,7 +965,7 @@
 						"type": "object",
 						"properties": {
 							"url": {
-								"$ref": "#/definitions/urlftpType",
+								"$ref": "#/$defs/urlftpType",
 								"title": "Download URL",
 								"description": "Link to download (or repository providing a download) for the software."
 							},
@@ -1047,12 +995,12 @@
 								]
 							},
 							"note": {
-								"$ref": "#/definitions/textType",
+								"$ref": "#/$defs/textType",
 								"title": "Downlad comment",
 								"description": "Comment about the download."
 							},
 							"version": {
-								"$ref": "#/definitions/versionType",
+								"$ref": "#/$defs/versionType",
 								"title": "Tool version information (download)",
 								"description": "Version information (typically a version number) of the software applicable to this download."
 							}
@@ -1072,7 +1020,7 @@
 						"type": "object",
 						"properties": {
 							"url": {
-								"$ref": "#/definitions/urlftpType",
+								"$ref": "#/$defs/urlftpType",
 								"title": "Documentation URL",
 								"description": "Link to documentation on the web for the tool."
 							},
@@ -1103,7 +1051,7 @@
 								}
 							},
 							"note": {
-								"$ref": "#/definitions/textType",
+								"$ref": "#/$defs/textType",
 								"title": "Documentation comment",
 								"description": "Comment about the documentation."
 							}
@@ -1136,7 +1084,7 @@
 								]
 							},
 							"biotoolsID": {
-								"$ref": "#/definitions/biotoolsIdType",
+								"$ref": "#/$defs/biotoolsIdType",
 								"title": "bio.tools toolID",
 								"description": "bio.tools ID of an existing bio.tools entry to which this software is related.",
 								"$comment": "Relations may only be defined between registered software.  The ID is a URL in the bio.tools namespace and reflects (normally exactly) the tool name and version: see http://biotools.readthedocs.io/."
@@ -1156,10 +1104,9 @@
 						"type": "object",
 						"properties": {
 							"doi": {
+								"$ref": "#/$defs/doiType",
 								"title": "Publication DOI",
 								"description": "Digital Object Identifier (DOI) of a publication about the software.",
-								"type": "string",
-								"pattern": "^(10\\.[0-9]{4,9}/[\\(-\\)\\--<>A-\\[\\]_a-z]+)$",
 								"examples": [
 									"10.1093/nar/gkv1116"
 								]
@@ -1168,7 +1115,7 @@
 								"title": "Publication PMID",
 								"description": "PubMed Identifier (PMID) of a publication about the software.",
 								"type": "string",
-								"pattern": "^([1-9][0-9]{0,8})$",
+								"pattern": "^([1-9][0-9]{0,8})(?![\\s\\S])",
 								"examples": [
 									"26538599"
 								]
@@ -1177,7 +1124,7 @@
 								"title": "Publicaction PMCID",
 								"description": "PubMed Central Identifier (PMCID) of a publication about the software.",
 								"type": "string",
-								"pattern": "^((PMC)[1-9][0-9]{0,8})$",
+								"pattern": "^((PMC)[1-9][0-9]{0,8})(?![\\s\\S])",
 								"examples": [
 									"PMC4702812"
 								]
@@ -1199,16 +1146,33 @@
 								}
 							},
 							"note": {
-								"$ref": "#/definitions/textType",
+								"$ref": "#/$defs/textType",
 								"title": "Publication comment",
 								"description": "Comment about the publication."
 							},
 							"version": {
-								"$ref": "#/definitions/versionType",
+								"$ref": "#/$defs/versionType",
 								"description": "Version information (typically a version number) of the software applicable to this publication."
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": false,
+						"anyOf": [
+							{
+								"required": [
+									"doi"
+								]
+							},
+							{
+								"required": [
+									"pmid"
+								]
+							},
+							{
+								"required": [
+									"pmcid"
+								]
+							}
+						]
 					}
 				},
 				"credit": {
@@ -1229,43 +1193,47 @@
 								"title": "Tool credit email",
 								"description": "Email address of the entity that is credited.",
 								"type": "string",
-								"pattern": "^([0-9A-Z_a-z]+(['\\+\\--\\.][0-9A-Z_a-z]+)*@[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*\\.[0-9A-Z_a-z]+([\\--\\.][0-9A-Z_a-z]+)*)$"
+								"pattern": "^[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*\\.[A-Za-z0-9_]+([-.][A-Za-z0-9_]+)*(?![\\s\\S])"
 							},
 							"url": {
 								"title": "Tool credit URL",
 								"description": "URL for the entity that is credited, e.g. homepage of an institute. (NOTE: An HTTP or HTTPS URL.)",
-								"type": "string"
+								"type": "string",
+								"pattern": "^https?://[^\\s/?#]+(?:[/?#][^\\s]*)?(?![\\s\\S])"
 							},
 							"orcidid": {
 								"title": "Tool credit ORCID iD",
 								"description": "Unique identifier (ORCID iD) of a person that is credited. (NOTE: Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference to information on a researcher, see http://orcid.org/.)",
 								"type": "string",
-								"anyOf": [
-									{
-										"pattern": "^(http\\://orcid\\.org/[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{3,3}[0-9X])$"
-									},
-									{
-										"pattern": "^(https\\://orcid\\.org/[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{4,4}\\-[0-9]{3,3}[0-9X])$"
-									}
+								"pattern": "^(?:https?://orcid\\.org/)?[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X](?![\\s\\S])",
+								"examples": [
+									"0000-0002-1825-0097",
+									"https://orcid.org/0000-0002-1825-0097"
 								]
 							},
 							"gridid": {
 								"title": "Tool credit GRID ID",
 								"description": "Unique identifier (GRID ID) of an organisation that is credited. (NOTE: Global Research Identifier Database (GRID) IDs provide a persistent reference to information on research organisations, see https://www.grid.ac/.)",
 								"type": "string",
-								"pattern": "^(grid[\\w\\D][0-9]{4,}[\\w\\D][0-9a-f]{1,2})$"
+								"pattern": "^grid\\.[0-9]{4,}\\.[0-9a-f]{1,2}(?![\\s\\S])"
 							},
 							"rorid": {
 								"title": "Tool credit ROR ID",
 								"description": "Unique identifier (ROR ID) of an organisation that is credited. (NOTE: Research Organization Registry (ROR) IDs provide a persistent reference to information on research organisations, see https://ror.org/.)",
 								"type": "string",
-								"pattern": ""
+								"pattern": "^0[A-Za-z0-9]{6}[0-9]{2}(?![\\s\\S])",
+								"examples": [
+									"03yrm5c26"
+								]
 							},
 							"fundrefid": {
 								"title": "Tool credit FundRef ID",
 								"description": "Unique identifier (FundRef ID or Funder ID) of a funding organisation that is credited. (NOTE: The Funder Registry (formerly FundRef) IDs provide a persistent reference to information on funding organisations registered in the Crossref registry, see https://www.crossref.org/services/funder-registry/.)",
 								"type": "string",
-								"pattern": ""
+								"pattern": "^10\\.13039/[A-Za-z0-9\\[\\]<>():;_/.+\\-]+(?![\\s\\S])",
+								"examples": [
+									"10.13039/100009273"
+								]
 							},
 							"typeEntity": {
 								"title": "Tool credit entity type",
@@ -1298,15 +1266,29 @@
 								}
 							},
 							"note": {
-								"$ref": "#/definitions/textType",
+								"$ref": "#/$defs/textType",
 								"title": "Tool credit comment",
 								"description": "A comment about the credit.\nThis can elaborate on the contribution of the credited entity."
 							}
 						},
-						"required": [
-							"name"
-						],
-						"additionalProperties": false
+						"additionalProperties": false,
+						"anyOf": [
+							{
+								"required": [
+									"name"
+								]
+							},
+							{
+								"required": [
+									"email"
+								]
+							},
+							{
+								"required": [
+									"url"
+								]
+							}
+						]
 					}
 				}
 			},
@@ -1335,14 +1317,15 @@
 					"title": "EDAM Data URI",
 					"description": "URL of an EDAM Data concept.",
 					"type": "string",
-					"pattern": "^(http\\://edamontology\\.org/data_[0-9]{4,4})$",
+					"pattern": "^http://edamontology\\.org/data_[0-9]{4}(?![\\s\\S])",
 					"$comment": "The URL must be in the EDAM Data namespace, i.e. http://edamontology.org/data.",
 					"examples": [
 						"http://edamontology.org/data_2976"
 					]
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"minProperties": 1
 		},
 		"EDAMformat": {
 			"title": "EDAM Format concept",
@@ -1362,20 +1345,21 @@
 					"title": "EDAM Format URI",
 					"description": "URL of an EDAM Format concept.",
 					"type": "string",
-					"pattern": "^(http\\://edamontology\\.org/format_[0-9]{4,4})$",
+					"pattern": "^http://edamontology\\.org/format_[0-9]{4}(?![\\s\\S])",
 					"$comment": "The URL must be in the EDAM  Format namespace, i.e. http://edamontology.org/format.",
 					"examples": [
 						"http://edamontology.org/format_1929"
 					]
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"minProperties": 1
 		},
 		"biotoolsIdType": {
 			"title": "bio.tools toolID",
 			"description": "Tool unique identifier assigned by bio.tools.",
 			"type": "string",
-			"pattern": "^([\\--\\.0-9A-Z_a-z]*)$",
+			"pattern": "^[A-Za-z0-9_.-]+(?![\\s\\S])",
 			"$comment": "bio.tools tool IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the tool name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. Spaces can be preserved as underscore ('_'). bio.tools tool IDs are set by bio.tools admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.tools API.)",
 			"examples": [
 				"needle"
@@ -1387,14 +1371,14 @@
 			"type": "object",
 			"properties": {
 				"data": {
-					"$ref": "#/definitions/EDAMdata",
+					"$ref": "#/$defs/EDAMdata",
 					"title": "EDAM Data concept",
 					"description": "Type of data: EDAM Data term(s)."
 				},
 				"format": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/EDAMformat",
+						"$ref": "#/$defs/EDAMformat",
 						"title": "EDAM Format concept",
 						"description": "Allowed format(s) of the data: EDAM Format term(s)."
 					}
@@ -1405,47 +1389,24 @@
 			],
 			"additionalProperties": false
 		},
-		"ontologyConcept": {
-			"title": "Ontology concept",
-			"description": "A concept from an ontology.",
-			"type": "object",
-			"properties": {
-				"term": {
-					"type": "array",
-					"minItems": 0,
-					"maxItems": 1,
-					"items": {
-						"title": "Ontology term",
-						"description": "An ontology concept term (preferred label or synonym).",
-						"type": "string"
-					}
-				},
-				"uri": {
-					"title": "Ontology concept URI",
-					"description": "Unique identifier of the concept (URI).",
-					"type": "string"
-				}
-			},
-			"additionalProperties": false
-		},
 		"textType": {
 			"title": "Free text",
 			"description": "Free text with a minimum length of 10 and maximum length of 1000.",
 			"type": "string",
 			"minLength": 10,
 			"maxLength": 1000,
-			"$comment": "Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces are not allowed / will be removed.",
 			"examples": [
 				"Comment about the link."
 			]
 		},
 		"urlftpType": {
-			"title": "Tool homepage URL",
-			"description": "Homepage of the software, or some URL that best serves this purpose.",
+			"title": "URL",
+			"description": "An HTTP, HTTPS, FTP or SFTP URL.",
 			"type": "string",
 			"examples": [
 				"https://someurl.org"
-			]
+			],
+			"pattern": "^(?:https?|s?ftp)://[^\\s/?#]+(?:[/?#][^\\s]*)?(?![\\s\\S])"
 		},
 		"versionType": {
 			"title": "Tool version information",
@@ -1453,11 +1414,23 @@
 			"type": "string",
 			"minLength": 1,
 			"maxLength": 100,
-			"pattern": "^([ \\(-\\)\\+-\\.0-;A-Z_a-z  ᠎ -   　]*)$",
-			"$comment": "The name has a 100 character limit and may only contain space, uppercase and lowercase English letters, decimal digits, plus symbol, period, comma, dash, colon, semicolon and parentheses.",
+			"pattern": "^[ A-Za-z0-9+.,_:;()~\\-\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000]+(?![\\s\\S])",
+			"$comment": "Version labels can include a tilde, for example 2.0~alpha-01.",
 			"examples": [
 				"2.0 - 2.7"
 			]
+		},
+		"nameType": {
+			"description": "Tool or collection name.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 100,
+			"pattern": "^[ A-Za-z0-9+.,_:;()\\-\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000]+(?![\\s\\S])"
+		},
+		"doiType": {
+			"description": "Digital Object Identifier.",
+			"type": "string",
+			"pattern": "^10\\.[0-9]{4,9}/[A-Za-z0-9\\[\\]<>():;_/.+\\-]+(?![\\s\\S])"
 		}
 	}
 }

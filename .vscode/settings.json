@@ -1,0 +1,12 @@
+{
+	"json.schemas": [
+		{
+			"fileMatch": ["/jsonschema/examples/minimal.json", "**/*.tool.json"],
+			"url": "./jsonschema/biotools-tool.json"
+		},
+		{
+			"fileMatch": ["/jsonschema/examples/collection.json", "**/*.tools.json"],
+			"url": "./jsonschema/biotoolsj.json"
+		}
+	]
+}
