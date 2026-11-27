@@ -20,7 +20,7 @@ python jsonschema/validate.py jsonschema/examples/{minimal,collection}.json
 
 The CLI accepts single tools and arrays. It reports errors by file and JSON path. Run `python jsonschema/serve.py` and open the printed local URL to edit, validate, and download a tool record in the browser.
 
-VS Code offers completions for `*.tool.json` and `*.tools.json`. GitHub Actions checks the schema and runs the tests on pushes and pull requests. Run the tests locally with `python -m unittest discover -s tests`.
+VS Code offers completions for `*.tool.json` and `*.tools.json`. GitHub Actions checks the schema, runs the tests, and builds release artifacts. See the [contributor guide](../CONTRIBUTING.md) for build and SPDX refresh commands.
 
 To list ELIXIR communities directly from the schema:
 

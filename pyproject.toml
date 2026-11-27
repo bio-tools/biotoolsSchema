@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "biotools-schema"
+version = "0.1.0"
+description = "Build and maintain the bio.tools JSON Schema and controlled vocabularies"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "CC-BY-4.0" }
+dependencies = ["jsonschema>=4.19,<5"]
+
+[project.urls]
+Repository = "https://github.com/bio-tools/biotoolsSchema"
+
+[project.scripts]
+build-schema = "btschema.build:build"
+fetch-spdx = "btschema.fetch_spdx_licenses:fetch_spdx_licenses"
+
+[tool.setuptools.packages.find]
+where = ["src"]
