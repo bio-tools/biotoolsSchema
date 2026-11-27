@@ -1,28 +1,24 @@
 # bio.tools JSON Schema
 
-[`biotoolsj.json`](biotoolsj.json) is the development schema for tool metadata. It uses Draft 2020-12 and stores shared rules such as version labels and input/output definitions under `$defs`. All references resolve within the file. [JSON Schema reference](https://json-schema.org/draft/2020-12/json-schema-core#section-8.2).
+[`biotoolsj.json`](biotoolsj.json) is the canonical Draft 2020-12 schema for an array of tools. Use [`biotools-tool.json`](biotools-tool.json) or the `#/$defs/tool` fragment for a single tool. Each tool requires `name`, `description`, and `homepage`. Repeatable fields such as `version` and `publication` use arrays even for one value.
 
-The schema root validates an array of tools. Use the `#/$defs/tool` fragment for a single tool. Every tool requires `name`, `description`, and `homepage`. Repeatable fields such as `version`, `topic`, and `publication` use arrays, including when they have only one entry.
-
-- [Minimal single tool](examples/minimal.json)
-- [Collection with an annotated tool](examples/collection.json)
+[Minimal tool](examples/minimal.json) · [Annotated collection](examples/collection.json)
 
 ## Tooling
 
-From the repository root:
+Set up a virtual environment from the repository root.
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python jsonschema/validate.py jsonschema/examples/{minimal,collection}.json
 ```
 
-The CLI accepts single tools and arrays. It reports errors by file and JSON path. Run `python jsonschema/serve.py` and open the printed local URL to edit, validate, and download a tool record in the browser.
+- **CLI.** Run `python jsonschema/validate.py path/to/record.json`. Pass multiple files in one call. Errors include the file and JSON path. Use `--check-schema` to check the schema itself.
+- **Browser editor.** Run `python jsonschema/serve.py` and open the printed URL. Create a tool record or open an existing valid one, then validate and download the JSON.
+- **VS Code.** Use `*.tool.json` for single tools and `*.tools.json` for batches to get field and vocabulary suggestions.
 
-VS Code offers completions for `*.tool.json` and `*.tools.json`. GitHub Actions checks the schema, runs the tests, and builds release artifacts. See the [contributor guide](../CONTRIBUTING.md) for build and SPDX refresh commands.
-
-To list ELIXIR communities directly from the schema:
+For example, list the ELIXIR communities directly from the schema with `jq`.
 
 ```sh
 jq -r '."$defs".tool.properties.elixirCommunity.items.enum[]' jsonschema/biotoolsj.json
@@ -30,4 +26,6 @@ jq -r '."$defs".tool.properties.elixirCommunity.items.enum[]' jsonschema/biotool
 
 ## Migrating from the Draft 4 schema
 
-Use a Draft 2020-12 validator and update references to `#/definitions/tool` to `#/$defs/tool`. The JSON property names and array structure carry over. The schema now checks URL schemes and identifier patterns, requires `term` or `uri` for EDAM concepts, and requires an identifier for each publication. A credit can be identified by name, email, or URL. Both bare ORCID iDs and ORCID URLs are accepted.
+Use a Draft 2020-12 validator and change `#/definitions/tool` to `#/$defs/tool`. Field names and array structure carry over. The schema checks URL schemes and identifier syntax, requires a term or URI for EDAM concepts, and requires a DOI, PMID, or PMCID for publications. Credits can use a name, email, or URL. Both bare ORCID iDs and ORCID URLs work.
+
+[Legacy XML releases](../stable/README.md) · [Build, CI, and SPDX maintenance](../CONTRIBUTING.md)

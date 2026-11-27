@@ -1,12 +1,15 @@
 # Contributing to biotoolsSchema
 
-Use Python 3.12 or later. In a virtual environment, run `python -m pip install -e .`.
+Use Python 3.12 or later and run `python -m pip install -e .` from the repository root in a virtual environment. Edit the canonical JSON Schema for fields, validation rules, and manually maintained vocabularies. [Schema](jsonschema/biotoolsj.json) · [Local validation and editor](jsonschema/README.md#tooling)
 
-- Edit [`jsonschema/biotoolsj.json`](jsonschema/biotoolsj.json) for fields, rules, and vocabularies.
-- Run `python -m unittest discover -s tests` to check the schema and tooling.
-- Run `build-schema --version 4.0.0` to generate the versioned JSON Schema and Python vocabulary module in `dist/`. Push a version tag such as `v4.0.0` to have GitHub Actions prepare a draft release.
-- Run `fetch-spdx` to refresh the committed SPDX snapshot and the schema's license enum. Use `fetch-spdx --ref <tag>` for a specific SPDX release or `fetch-spdx --check` to check for drift. The scheduled workflow proposes the same changes in a pull request when GitHub Actions has repository permission to create PRs.
+## Tests and releases
 
-New SPDX licenses and curated bio.tools values are valid in the schema. Previously accepted IDs stay valid if SPDX deprecates them. The generated Python vocabulary also includes the other deprecated SPDX IDs so older registry data can still be represented.
+- Run `python -m unittest discover -s tests` to test validation, the form server, SPDX refresh, and build reproducibility.
+- Run `build-schema --version 4.0.0` to write `dist/biotools-4.0.0.schema.json` and `dist/biotools_vocab.py`.
+- GitHub Actions validates examples, runs tests, and uploads artifacts on pushes and pull requests. Pushing a version tag such as `v4.0.0` also creates a draft release.
 
-See the [tooling guide](jsonschema/README.md#tooling) for the validation CLI and browser editor.
+## Licenses
+
+Run `fetch-spdx` to refresh the committed SPDX snapshot and the schema's license list. Use `--ref <tag>` for a specific SPDX release or `--check` to check for drift without writing. Monthly automation proposes updates by pull request when repository permissions allow it. [SPDX snapshot](src/enums/license.json) · [Curated bio.tools values](src/enums/license_curated_extra.json)
+
+Previously accepted license IDs stay valid after SPDX deprecates them. The Python vocabulary includes additional deprecated SPDX IDs so older registry data can still be represented.

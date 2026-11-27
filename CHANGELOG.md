@@ -7,6 +7,12 @@ Description of changes are grouped as follows:
 * **Fixed:** a bug fix
 * **Misc:** some miscellaneous other change
 
+## Unreleased
+
+- Made Draft 2020-12 JSON Schema the development format and added single-tool and batch validation, a local browser editor, and VS Code autocomplete. [JSON Schema guide](jsonschema/README.md)
+- Added `Preprint`, expanded the SPDX license vocabulary, and retained previously accepted license IDs. Added monthly SPDX refresh pull requests and CI builds for versioned JSON Schema and Python vocabulary artifacts. [Contributor guide](CONTRIBUTING.md)
+- Retired the development XSD. Published XML schemas, examples, and documentation remain available for existing consumers. [Legacy XML guide](stable/README.md)
+
 # May 14 2020 biotoolsSchema-3.3.0.xsd release
 The major change is some flattening of the schema by removing the ```<summary>``` and ```<labels>``` elements whose only purpose was to organise / structure the schema.  All sub-elements have been preserved and are now nested under ```<tool>```.  This change ensures the XML and JSON schema variants of biotoolsSchema have the same structure (so far as possible).  For biotoolsSchemaJ (JSON variant) see https://github.com/bio-tools/biotoolsschemaj.
 
