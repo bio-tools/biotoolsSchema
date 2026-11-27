@@ -1,0 +1,46 @@
+[
+	{
+		"name": "Example Aligner",
+		"description": "Aligns protein sequences and writes the alignment to a file.",
+		"homepage": "https://example.org/aligner",
+		"version": ["2.0~alpha-01"],
+		"toolType": ["Command-line tool"],
+		"language": ["Python"],
+		"license": "MIT",
+		"function": [
+			{
+				"operation": [
+					{
+						"uri": "http://edamontology.org/operation_0492",
+						"term": "Multiple sequence alignment"
+					}
+				],
+				"input": [
+					{
+						"data": {"uri": "http://edamontology.org/data_2976"},
+						"format": [{"uri": "http://edamontology.org/format_1929"}]
+					}
+				],
+				"output": [
+					{
+						"data": {"uri": "http://edamontology.org/data_0863"},
+						"format": [{"term": "FASTA-aln"}]
+					}
+				]
+			}
+		],
+		"documentation": [
+			{
+				"url": "https://example.org/aligner/docs",
+				"type": ["User manual", "Quick start guide"]
+			}
+		],
+		"credit": [
+			{
+				"name": "Example team",
+				"email": "aligner@example.org",
+				"typeRole": ["Maintainer"]
+			}
+		]
+	}
+]

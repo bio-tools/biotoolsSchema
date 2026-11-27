@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create and validate metadata for a bioinformatics tool.">
+    <title>bio.tools metadata editor</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./form.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <span class="brand">bio.tools</span>
+        <h1>Metadata editor</h1>
+        <button id="open" type="button" disabled>Open JSON</button>
+        <input id="file" type="file" accept=".json,application/json" hidden>
+      </div>
+    </header>
+    <main>
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Tool details</h2>
+        <form id="fields" novalidate></form>
+      </section>
+      <aside aria-labelledby="preview-heading">
+        <div class="preview-header">
+          <h2 id="preview-heading">JSON preview</h2>
+          <span id="status" role="status">Loading schema…</span>
+        </div>
+        <pre id="preview" tabindex="0" aria-label="Generated JSON">{}</pre>
+        <ul id="errors" hidden aria-label="Validation errors"></ul>
+        <div class="actions">
+          <button id="validate" type="button" disabled>Validate</button>
+          <button id="download" class="primary" type="button" disabled>Download JSON</button>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

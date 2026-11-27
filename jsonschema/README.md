@@ -1,40 +1,31 @@
-# biotoolsj.json
-Here you'll find *biotoolsj.json* - the JSON schema version of [biotoolsSchema](https://github.com/bio-tools/biotoolsschema) - a data model for describing computational tools in life sciences.
+# bio.tools JSON Schema
 
-Production
-----------
-biotoolsj.json mirrors biotoolsSchema XML schema (XSD) as closely as possible where possible and desirable:
-* XML elements [1] are preserved as JSON properties
-* XML element structure / nesting is preserved (whilst discarding XSD design patterns not applicable in JSON schema)
-* XML element names are preserved as JSON property names 
-* XML comments are preserved in JSON ```title```, ```description``` and ```$comment``` properties.
+[`biotoolsj.json`](biotoolsj.json) is the canonical Draft 2020-12 schema for an array of tools. Use [`biotools-tool.json`](biotools-tool.json) or the `#/$defs/tool` fragment for a single tool. Each tool requires `name`, `description`, and `homepage`. Repeatable fields such as `version` and `publication` use arrays even for one value.
 
-[1] In biotoolsSchema 3.3.0 "organisational" elements (whose purpose was only to structure the schema) were discarded: ```summary```, ```labels```
+[Minimal tool](examples/minimal.json) · [Annotated collection](examples/collection.json)
 
-Structure
----------
-To make biotoolsj.json easy to understand and maintain, it uses JSON schema [definitions and references](https://cswr.github.io/JsonSchema/spec/definitions_references/) for objects, and properties with regex patterns, which are re-used in the schema:  
-<p align="center">
-<img src="assets/types.png" />
-</p>
+## Tooling
 
-Of these, **tool** is the top-level object. **dataType** and **ontologyConcept** are defined but not actually used (they're retained for now in case they find future use).  All the others are definitions that are refered to in multiple places within the schema.
+Set up a virtual environment from the repository root.
 
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
 
-Documentation (for latest stable version)
------------------------------------------
-Technical docs formatted for website are maintained in [biotoolsSchemaJ repo](https://github.com/bio-tools/biotoolsSchemaJ) and hosted [here](http://bio-tools.github.io/biotoolsSchemaJ) (uses files copied from "stable" folder)
+- **CLI.** Run `python jsonschema/validate.py path/to/record.json`. Pass multiple files in one call. Errors include the file and JSON path. Use `--check-schema` to check the schema itself.
+- **Browser editor.** Run `python jsonschema/serve.py` and open the printed URL. Create a tool record or open an existing valid one, then validate and download the JSON.
+- **VS Code.** Use `*.tool.json` for single tools and `*.tools.json` for batches to get field and vocabulary suggestions.
 
+For example, list the ELIXIR communities directly from the schema with `jq`.
 
-# Files
+```sh
+jq -r '."$defs".tool.properties.elixirCommunity.items.enum[]' jsonschema/biotoolsj.json
+```
 
-File                            | Description
-----                            | -----------
-biotoolsj.json                  | biotoolsSchema (JSON schema)
-LICENSE                         | Schema license information
-assets                          | Folder for images and other assets
-assets/biotoolsSchema_json.xsd  | Ignore (biotoolsSchema 3.2.0 (XSD schema) produced for initial reverse-engineering of the JSON schema)
-stable                          | (not used yet) - current stable version of the schema
-versions                        | (not used yet) - older stable versions of the schema
-README.md		        | This file
+## Migrating from the Draft 4 schema
 
+Use a Draft 2020-12 validator and change `#/definitions/tool` to `#/$defs/tool`. Field names and array structure carry over. The schema checks URL schemes and identifier syntax, requires a term or URI for EDAM concepts, and requires a DOI, PMID, or PMCID for publications. Credits can use a name, email, or URL. Both bare ORCID iDs and ORCID URLs work.
+
+[Legacy XML releases](../stable/README.md) · [Build, CI, and SPDX maintenance](../CONTRIBUTING.md)

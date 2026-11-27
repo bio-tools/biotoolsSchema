@@ -1,0 +1,5 @@
+{
+	"name": "Example Aligner",
+	"description": "Aligns protein sequences and writes the alignment to a file.",
+	"homepage": "https://example.org/aligner"
+}
